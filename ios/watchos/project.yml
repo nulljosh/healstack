@@ -1,0 +1,35 @@
+name: DoseWatch
+options:
+  bundleIdPrefix: com.heyitsmejosh
+  deploymentTarget:
+    watchOS: "10.0"
+settings:
+  DEVELOPMENT_TEAM: QMM486NPYC
+  SWIFT_VERSION: "6.0"
+  MARKETING_VERSION: "1.0.0"
+  CURRENT_PROJECT_VERSION: "1"
+  CODE_SIGN_STYLE: Automatic
+targets:
+  DoseWatch:
+    type: application
+    platform: watchOS
+    sources:
+      - path: .
+        excludes:
+          - "*.xcodeproj"
+          - "*.yml"
+          - "*.md"
+          - "*.svg"
+          - "*.entitlements"
+    entitlements:
+      path: DoseWatch.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.heyitsmejosh.dose
+    settings:
+      INFOPLIST_FILE: ""
+      GENERATE_INFOPLIST_FILE: YES
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose.watchos
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      PRODUCT_NAME: Dose
+      CODE_SIGN_ENTITLEMENTS: DoseWatch.entitlements

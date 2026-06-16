@@ -1,0 +1,51 @@
+name: DoseMac
+packages:
+  Supabase:
+    url: https://github.com/supabase/supabase-swift.git
+    from: "2.5.1"
+options:
+  bundleIdPrefix: com.heyitsmejosh
+  deploymentTarget:
+    macOS: '14.0'
+settings:
+  SWIFT_VERSION: '6.0'
+  MARKETING_VERSION: '2.0.0'
+  CURRENT_PROJECT_VERSION: '1'
+  DEVELOPMENT_TEAM: QMM486NPYC
+  CODE_SIGN_STYLE: Automatic
+targets:
+  DoseMac:
+    type: application
+    platform: macOS
+    sources:
+      - path: .
+        excludes:
+          - '*.xcodeproj'
+          - '*.yml'
+          - README.md
+          - CLAUDE.md
+          - icon.svg
+          - architecture.svg
+      - path: ../ios/Models/BiometricEntry.swift
+      - path: ../ios/Models/DoseEntry.swift
+      - path: ../ios/Models/HealthEntry.swift
+      - path: ../ios/Models/LabResult.swift
+      - path: ../ios/Models/MyMedication.swift
+      - path: ../ios/Models/Substance.swift
+      - path: ../ios/Data/SubstanceDatabase.swift
+      - path: ../ios/Services/DataStore.swift
+      - path: ../ios/Services/InsightEngine.swift
+      - path: ../ios/Services/AuthService.swift
+    dependencies:
+      - package: Supabase
+        product: Supabase
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose.mac
+      GENERATE_INFOPLIST_FILE: YES
+schemes:
+  DoseMac:
+    build:
+      targets:
+        DoseMac: all
+    run:
+      config: Debug

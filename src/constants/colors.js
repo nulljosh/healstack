@@ -1,0 +1,17 @@
+export const CATEGORY_COLORS = {
+  psychedelic: '#8b6b9e',
+  stimulant: '#c96b6b',
+  depressant: '#6b9ab8',
+  entactogen: '#b8607a',
+  cannabinoid: '#5d9e6f',
+  vitamin: '#c9a04e',
+  supplement: '#4d9e8f',
+  mineral: '#8a9399',
+  medication: '#5d8ab0',
+  dissociative: '#7d5e8f',
+  opioid: '#9e6b5c',
+  'opioid-adjacent': '#a85c5c',
+  benzodiazepine: '#7b7eae',
+  herb: '#7a9e6b',
+  nootropic: '#5c9e9e',
+};

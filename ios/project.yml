@@ -1,0 +1,89 @@
+name: Dose
+packages:
+  Supabase:
+    url: https://github.com/supabase/supabase-swift.git
+    from: "2.5.1"
+options:
+  bundleIdPrefix: com.heyitsmejosh
+  deploymentTarget:
+    iOS: '17.0'
+settings:
+  SWIFT_VERSION: '6.0'
+  MARKETING_VERSION: '2.3.1'
+  CURRENT_PROJECT_VERSION: '1'
+  DEVELOPMENT_TEAM: QMM486NPYC
+  CODE_SIGN_STYLE: Automatic
+targets:
+  Dose:
+    type: application
+    platform: iOS
+    sources:
+      - path: .
+        excludes:
+          - '*.xcodeproj'
+          - '*.yml'
+          - .git
+          - .gitignore
+          - README.md
+          - CLAUDE.md
+          - architecture.svg
+          - '*.entitlements'
+          - Tests
+          - DoseWidget
+          - watchos
+          - scripts
+    dependencies:
+      - sdk: HealthKit.framework
+      - target: DoseWidgetExtension
+      - package: Supabase
+        product: Supabase
+    entitlements:
+      path: Dose.entitlements
+      properties:
+        com.apple.developer.healthkit: true
+        com.apple.security.application-groups:
+          - group.com.heyitsmejosh.dose
+    settings:
+      INFOPLIST_FILE: Info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose
+      CODE_SIGN_ENTITLEMENTS: Dose.entitlements
+
+  DoseTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: Tests
+    dependencies:
+      - target: Dose
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose.tests
+      GENERATE_INFOPLIST_FILE: YES
+
+  DoseWidgetExtension:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: DoseWidget
+    entitlements:
+      path: DoseWidget/DoseWidget.entitlements
+      properties:
+        com.apple.security.application-groups:
+          - group.com.heyitsmejosh.dose
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose.widget
+      INFOPLIST_FILE: DoseWidget/Info.plist
+    dependencies:
+      - sdk: WidgetKit.framework
+      - sdk: SwiftUI.framework
+
+schemes:
+  Dose:
+    build:
+      targets:
+        Dose: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - DoseTests
