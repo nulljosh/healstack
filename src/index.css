@@ -1044,8 +1044,8 @@ button { user-select: none; font-family: inherit; }
 }
 
 @keyframes dotPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
+  0%, 100% { background: var(--accent); opacity: 0.45; }
+  50% { background: var(--accent); opacity: 1; }
 }
 
 .active-dot {
