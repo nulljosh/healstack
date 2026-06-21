@@ -30,5 +30,6 @@ git push           # Deploy (auto via Vercel Git integration from apps monorepo)
 - xcodegen generate && xcodebuild build -scheme Dose -project Dose.xcodeproj -destination "platform=iOS Simulator,name=iPhone 17 Pro"
 
 ## Pending
-- .env.local recreated 2026-06-12 (VITE_SUPABASE_* + DOSE_EMAIL/DOSE_PASSWORD)
-- Account recovery: no reset email arrived at trommatic@icloud.com (2026-06-12) — account likely under a different email. Check Supabase dashboard Auth > Users for the real email, or admin-reset password to match .env.local. Also check SMTP config (default Supabase mailer is heavily rate-limited).
+- .env.local recreated 2026-06-12 (VITE_SUPABASE_* + DOSE_EMAIL/DOSE_PASSWORD) — file is gone again as of 2026-06-20, needs recreating.
+- Account recovery: confirmed via `supabase db query --linked` against auth.users — real account email is jatrommel@gmail.com (not trommatic@icloud.com), already noted in README roadmap. Reset password to that address rather than chasing the icloud reset email further.
+- Web UI refresh, landing page, and iOS ship are tracked in README Roadmap (Declutter UI, Vibe clone portfolio aesthetic, iOS companion app) — not new asks, no changes applied yet.
