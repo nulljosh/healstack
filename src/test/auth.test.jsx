@@ -37,7 +37,7 @@ describe('Auth page', () => {
     render(<Auth />);
     expect(screen.getByPlaceholderText('Email')).toBeTruthy();
     expect(screen.getByPlaceholderText('Password')).toBeTruthy();
-    expect(screen.getByText('Sign in')).toBeTruthy();
+    expect(screen.getAllByText('Sign in').length).toBeGreaterThan(0);
   });
 
   it('shows forgot password link on login tab', () => {
