@@ -1,7 +1,7 @@
 <img src="icon.svg" width="80">
 
 # Dose
-![version](https://img.shields.io/badge/version-v2.1.1-blue)
+![version](https://img.shields.io/badge/version-v2.1.1-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fdose-black?logo=github)](https://github.com/nulljosh/dose)
 Personal substance tracker, harm reduction wiki, and health dashboard.
 
 ## Features
