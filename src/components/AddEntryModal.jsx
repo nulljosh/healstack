@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useSubstances } from '../hooks/useSubstances';
+import { useDoseLog } from '../hooks/useDoseLog';
+import { findInteractions, severityLabel } from './InteractionChecker';
 
 const ROUTES = ['oral', 'sublingual', 'smoked', 'vaped', 'insufflated', 'topical', 'IV', 'IM'];
 const UNITS = ['mg', 'g', 'mL', 'ug', 'mcg', 'IU', 'drops'];
 
 export default function AddEntryModal({ onAdd, onClose }) {
   const { substances } = useSubstances();
+  const { getActive } = useDoseLog();
   const [form, setForm] = useState({
     substanceId: '',
     dose: '',
@@ -19,6 +22,26 @@ export default function AddEntryModal({ onAdd, onClose }) {
   const [submitting, setSubmitting] = useState(false);
 
   const set = (k, v) => setForm(f => ({ ...f, [k]: v }));
+
+  const activeWarnings = useMemo(() => {
+    if (!form.substanceId) return [];
+    const selected = substances.find(s => s.id === form.substanceId);
+    if (!selected) return [];
+    const activeIds = [...new Set(getActive().map(e => e.substanceId))]
+      .filter(id => id !== form.substanceId);
+    const warnings = [];
+    for (const id of activeIds) {
+      const other = substances.find(s => s.id === id);
+      if (!other) continue;
+      const found = findInteractions(selected, other);
+      for (const item of found) {
+        warnings.push({ ...item, withName: other.name });
+      }
+    }
+    const order = { major: 0, moderate: 1, minor: 2 };
+    warnings.sort((a, b) => order[a.severity] - order[b.severity]);
+    return warnings;
+  }, [form.substanceId, substances, getActive]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -67,6 +90,20 @@ export default function AddEntryModal({ onAdd, onClose }) {
               {substances.map(s => <option key={s.id} value={s.id}>{s.name}</option>)}
             </select>
           </div>
+
+          {activeWarnings.length > 0 && (
+            <div className={`alert-error interaction-item--${activeWarnings[0].severity}`} role="alert">
+              <strong>{severityLabel(activeWarnings[0].severity)} interaction warning:</strong>{' '}
+              This substance interacts with your active stack.
+              <ul style={{ margin: '6px 0 0', paddingLeft: 18 }}>
+                {activeWarnings.map((w, i) => (
+                  <li key={i} style={{ fontSize: '0.82rem' }}>
+                    {w.text} {w.source !== 'shared' ? `(via ${w.withName})` : ''}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: 10 }}>
             <div>

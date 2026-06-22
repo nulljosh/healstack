@@ -11,13 +11,13 @@ function classifySeverity(interactionText) {
   return 'minor';
 }
 
-function severityLabel(severity) {
+export function severityLabel(severity) {
   if (severity === 'major') return 'Major';
   if (severity === 'moderate') return 'Moderate';
   return 'Minor';
 }
 
-function findInteractions(substanceA, substanceB) {
+export function findInteractions(substanceA, substanceB) {
   if (!substanceA || !substanceB || substanceA.id === substanceB.id) return [];
 
   const results = [];
