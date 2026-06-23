@@ -1,9 +1,16 @@
 import Supabase
 import Foundation
 
+private func infoPlistValue(_ key: String) -> String {
+    guard let value = Bundle.main.object(forInfoDictionaryKey: key) as? String, !value.isEmpty else {
+        fatalError("Missing \(key) in Info.plist")
+    }
+    return value
+}
+
 let supabaseClient = SupabaseClient(
-    supabaseURL: URL(string: "https://tjsxsqlxjmanwvmywwvw.supabase.co")!,
-    supabaseKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68"
+    supabaseURL: URL(string: infoPlistValue("SUPABASE_URL"))!,
+    supabaseKey: infoPlistValue("SUPABASE_ANON_KEY")
 )
 
 @Observable
