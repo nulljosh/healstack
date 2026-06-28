@@ -1,5 +1,6 @@
 import SwiftUI
 import LocalAuthentication
+import UIKit
 
 @main
 struct DoseApp: App {
@@ -15,6 +16,7 @@ struct DoseApp: App {
     @State private var isUnlocked = false
     @State private var isUnlocking = false
     @State private var unlockError: String?
+    @State private var selectedTab = 0
 
     private var requiresUnlock: Bool {
         biometryType != .none
@@ -31,37 +33,48 @@ struct DoseApp: App {
                 NewPasswordView(authService: authService)
             } else {
             ZStack {
-                TabView {
+                TabView(selection: $selectedTab) {
                     DashboardView(dataStore: dataStore, notificationService: notificationService, syncService: syncService, authService: authService)
-                        .tabItem {
-                            Label("Home", systemImage: "house.fill")
-                        }
+                        .tabItem { Label("Home", systemImage: "house.fill") }
+                        .tag(0)
+                        .toolbar(.hidden, for: .tabBar)
 
                     LibraryView(dataStore: dataStore)
-                        .tabItem {
-                            Label("Library", systemImage: "book.fill")
-                        }
+                        .tabItem { Label("Library", systemImage: "books.vertical.fill") }
+                        .tag(1)
+                        .toolbar(.hidden, for: .tabBar)
 
                     InsightsView(dataStore: dataStore)
-                        .tabItem {
-                            Label("Insights", systemImage: "chart.line.uptrend.xyaxis")
-                        }
+                        .tabItem { Label("Insights", systemImage: "chart.line.uptrend.xyaxis.circle.fill") }
+                        .tag(2)
+                        .toolbar(.hidden, for: .tabBar)
 
                     CombinedBodyView(dataStore: dataStore, healthKitService: healthKitService)
                         .environment(bodyworkStore)
-                        .tabItem {
-                            Label("Body", systemImage: "figure.mind.and.body")
-                        }
+                        .tabItem { Label("Body", systemImage: "figure.mind.and.body") }
+                        .tag(3)
+                        .toolbar(.hidden, for: .tabBar)
 
                     LabResultsView(dataStore: dataStore)
-                        .tabItem {
-                            Label("Labs", systemImage: "cross.vial.fill")
-                        }
+                        .tabItem { Label("Labs", systemImage: "cross.vial.fill") }
+                        .tag(4)
+                        .toolbar(.hidden, for: .tabBar)
+                }
+                .toolbar(.hidden, for: .tabBar)
+                .onChange(of: selectedTab) { _, _ in
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
                 .task {
                     if HealthKitService.isAvailable {
                         await healthKitService.requestAuthorization()
                     }
+                }
+
+                if !requiresUnlock || isUnlocked {
+                    DoseFloatingTabBar(selectedTab: $selectedTab)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                        .padding(.bottom, 8)
+                        .zIndex(1)
                 }
 
                 if !showSplash, requiresUnlock, !isUnlocked {
@@ -143,6 +156,49 @@ struct DoseApp: App {
         } catch {
             unlockError = error.localizedDescription
         }
+    }
+}
+
+private struct DoseFloatingTabBar: View {
+    @Binding var selectedTab: Int
+
+    private let tabs: [(icon: String, fill: String, label: String)] = [
+        ("house", "house.fill", "Home"),
+        ("books.vertical", "books.vertical.fill", "Library"),
+        ("chart.line.uptrend.xyaxis.circle", "chart.line.uptrend.xyaxis.circle.fill", "Insights"),
+        ("figure.mind.and.body", "figure.mind.and.body", "Body"),
+        ("cross.vial", "cross.vial.fill", "Labs"),
+    ]
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(tabs.indices, id: \.self) { index in
+                Button {
+                    selectedTab = index
+                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                } label: {
+                    Image(systemName: selectedTab == index ? tabs[index].fill : tabs[index].icon)
+                        .font(.system(size: 20, weight: .medium))
+                        .foregroundStyle(selectedTab == index ? Color.accentColor : Color.secondary)
+                        .symbolEffect(.bounce, value: selectedTab == index)
+                        .frame(width: 50, height: 40)
+                        .background {
+                            if selectedTab == index {
+                                Capsule().fill(Color.accentColor.opacity(0.1))
+                            }
+                        }
+                }
+                .frame(maxWidth: .infinity)
+                .buttonStyle(.plain)
+                .accessibilityLabel(tabs[index].label)
+            }
+        }
+        .padding(.horizontal, 10)
+        .padding(.vertical, 10)
+        .frame(maxWidth: 360)
+        .background(.regularMaterial, in: Capsule())
+        .overlay(Capsule().stroke(Color.primary.opacity(0.08), lineWidth: 1))
+        .shadow(color: .black.opacity(0.1), radius: 12, y: 4)
     }
 }
 

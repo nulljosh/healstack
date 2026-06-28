@@ -2,7 +2,7 @@
 
 # Dose
 
-![version](https://img.shields.io/badge/version-v2.1.0-blue)
+![version](https://img.shields.io/badge/version-v2.3.2-blue)
 
 iOS health tracker for supplements, medications, and biometrics.
 
