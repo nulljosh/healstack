@@ -35,7 +35,6 @@ vercel --prod
 - [ ] Claude/Apple Liquid Glass redesign (backdrop-filter blur, -apple-system font, #0071e3)
 - [ ] Vibe clone portfolio aesthetic
 - [ ] Multi-profile support — create profiles, transfer personal data between them
-- [ ] Move Supabase anon key out of source — `ios/Services/AuthService.swift:6` has it hardcoded, move to `Info.plist`
 
 ## Changelog
 v1.3.0
