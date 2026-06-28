@@ -1,3 +1,4 @@
+import AuthenticationServices
 import Supabase
 import Foundation
 
@@ -60,6 +61,18 @@ final class AuthService {
         try await supabaseClient.auth.resetPasswordForEmail(
             email,
             redirectTo: URL(string: "dose://")!
+        )
+    }
+
+    func signInWithApple(result: Result<ASAuthorization, Error>) async throws {
+        let auth = try result.get()
+        guard let cred = auth.credential as? ASAuthorizationAppleIDCredential,
+              let tokenData = cred.identityToken,
+              let token = String(data: tokenData, encoding: .utf8) else {
+            throw URLError(.badServerResponse)
+        }
+        try await supabaseClient.auth.signInWithIdToken(
+            credentials: .init(provider: .apple, idToken: token)
         )
     }
 

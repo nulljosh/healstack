@@ -1,3 +1,4 @@
+import AuthenticationServices
 import SwiftUI
 
 struct AuthView: View {
@@ -116,6 +117,22 @@ struct AuthView: View {
                 }
                 .buttonStyle(.borderedProminent)
                 .disabled(loading || email.isEmpty || (tab != .reset && password.isEmpty))
+
+                if tab == .signIn {
+                    Divider()
+                    SignInWithAppleButton(.signIn) { request in
+                        request.requestedScopes = [.email, .fullName]
+                    } onCompletion: { result in
+                        Task {
+                            loading = true
+                            defer { loading = false }
+                            do { try await authService.signInWithApple(result: result) }
+                            catch { errorMessage = error.localizedDescription }
+                        }
+                    }
+                    .signInWithAppleButtonStyle(.black)
+                    .frame(height: 50)
+                }
             }
             .padding(28)
             .background(.regularMaterial, in: RoundedRectangle(cornerRadius: 20))

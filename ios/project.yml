@@ -43,6 +43,8 @@ targets:
         com.apple.developer.healthkit: true
         com.apple.security.application-groups:
           - group.com.heyitsmejosh.dose
+        com.apple.developer.applesignin:
+          - Default
     settings:
       INFOPLIST_FILE: Info.plist
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose
