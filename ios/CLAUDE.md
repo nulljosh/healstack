@@ -1,6 +1,6 @@
 # Dose
 
-v2.3.1
+v2.3.2
 
 ## Rules
 
@@ -32,3 +32,4 @@ xcodebuild -scheme Dose test
 - Views/NewPasswordView.swift: password update after deep-link recovery
 - Views/DashboardView.swift: home dashboard for active stack and recent entries
 - Views/SettingsView.swift: account (email, sign out), profile, medications, sync, data export
+- Changelog v2.3.2 (2026-06-28): Added custom DoseFloatingTabBar (regularMaterial capsule, haptics, symbolEffect bounce). Fixed tab icons: house/house.fill, books.vertical/fill, chart.line.uptrend.xyaxis.circle/fill, figure.mind.and.body, cross.vial/cross.vial.fill. Corrected always-filled icon bug (unselected tabs now use outline variants).
