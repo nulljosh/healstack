@@ -22,6 +22,7 @@ import Facemaxxing from './pages/Facemaxxing';
 import LabResults from './pages/LabResults';
 import Routine from './pages/Routine';
 import Profile from './pages/Profile';
+import WhatsNew from './components/WhatsNew';
 
 function ThemeToggle({ theme, setTheme }) {
   return (
@@ -75,6 +76,7 @@ function AppShell({ theme, setTheme }) {
           <Route path="*" element={<Dashboard />} />
         </Routes>
         <Nav />
+        <WhatsNew />
       </div>
     </SessionProvider>
   );
