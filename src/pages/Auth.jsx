@@ -5,6 +5,7 @@ export default function Auth() {
   const [tab, setTab] = useState('login');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [tosChecked, setTosChecked] = useState(false);
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
@@ -19,6 +20,7 @@ export default function Auth() {
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) setError(error.message);
     } else if (tab === 'register') {
+      if (!tosChecked) { setError('You must agree to the Terms of Service'); setLoading(false); return; }
       const { error } = await supabase.auth.signUp({ email, password });
       if (error) setError(error.message);
     } else {
@@ -94,6 +96,14 @@ export default function Auth() {
           </p>
         )}
 
+        <button
+          type="button"
+          onClick={() => supabase.auth.signInWithOAuth({ provider: 'github', options: { redirectTo: window.location.origin } })}
+          style={{ width: '100%', padding: '10px', background: '#24292e', color: '#fff', border: 'none', borderRadius: 8, fontSize: '0.83rem', fontWeight: 500, cursor: 'pointer', marginBottom: 10, fontFamily: 'inherit' }}
+        >
+          Sign in with GitHub
+        </button>
+        <div style={{ textAlign: 'center', fontSize: '0.78rem', color: 'var(--text-tertiary)', marginBottom: 10 }}>or</div>
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           <input
             className="input"
@@ -127,6 +137,12 @@ export default function Auth() {
             </button>
           )}
 
+          {tab === 'register' && (
+            <label style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: '0.78rem', color: 'var(--text-tertiary)', cursor: 'pointer' }}>
+              <input type="checkbox" checked={tosChecked} onChange={e => setTosChecked(e.target.checked)} />
+              I agree to the <a href="/tos.html" target="_blank" style={{ color: 'var(--text-secondary)' }}>Terms of Service</a>
+            </label>
+          )}
           {error && (
             <p style={{ fontSize: '0.78rem', color: 'var(--danger)', margin: 0 }}>{error}</p>
           )}
