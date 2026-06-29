@@ -1,10 +1,10 @@
 # Dose
-v2.1.1
+v2.2.0
 
-## Pending (2026-06-28)
-- [ ] Enable GitHub OAuth provider in Supabase dashboard → spark project → Auth → Providers → GitHub
-  - Client ID: `0v23lihruvpnuTF2ZJvs`
-  - Client Secret: `6cbc46c3f3842ce2f9a18d1839cac41d58296a98`
+## Shipped (2026-06-28)
+- [x] ToS checkbox required on register tab — `src/pages/Auth.jsx`, `/tos.html`
+- [x] GitHub Sign In button via Supabase OAuth
+- [x] GitHub provider enabled in Supabase (spark project) via management API
 
 ## Rules
 - Portfolio vibe design (Geist font, flat monochrome + blue accent, no shadows/gradients)
