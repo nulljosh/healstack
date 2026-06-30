@@ -91,11 +91,6 @@ export default function Dashboard() {
   const activeSubIds = [...new Set(active.map(e => e.substanceId))];
   const allEntries = getEntries();
 
-  const hour = new Date().getHours();
-  let greeting = 'Good evening';
-  if (hour < 12) greeting = 'Good morning';
-  else if (hour < 17) greeting = 'Good afternoon';
-
   const latest = getLatest();
   const healthScore = useMemo(() => {
     if (!latest) return null;
@@ -116,11 +111,8 @@ export default function Dashboard() {
     <main className="page">
       <div style={{ marginBottom: 28, display: 'flex', alignItems: 'flex-start', gap: 16 }}>
         <div style={{ flex: 1 }}>
-          <div className="date-label">
+          <h1 className="page-title" style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: 6 }}>
             {longDate(new Date())}
-          </div>
-          <h1 className="page-title" style={{ fontSize: 'clamp(2rem, 8vw, 2.8rem)', marginBottom: 6 }}>
-            {greeting}.
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: 0 }}>
             {active.length === 0
