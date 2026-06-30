@@ -13,6 +13,7 @@ struct DoseApp: App {
     @State private var bodyworkStore = BodyworkSessionStore()
     @State private var showSplash = true
     @State private var biometryType: LABiometryType = .none
+    @AppStorage("app_theme") private var rawTheme = "system"
     @State private var isUnlocked = false
     @State private var isUnlocking = false
     @State private var unlockError: String?
@@ -127,6 +128,7 @@ struct DoseApp: App {
             }
             } // end auth check
             } // end Group
+            .preferredColorScheme(rawTheme == "dark" ? .dark : rawTheme == "light" ? .light : nil)
             .onOpenURL { url in
                 Task { try? await supabaseClient.auth.session(from: url) }
             }
