@@ -1,6 +1,8 @@
-# Dose
+# Healstack
 
 v2.3.3
+
+Display name renamed from Dose 2026-07-01. Bundle ID, App Group (group.com.heyitsmejosh.dose), and URL scheme (dose://) unchanged.
 
 ## Rules
 
@@ -9,7 +11,7 @@ v2.3.3
 - HealthKit entitlements via Dose.entitlements
 - App Group: group.com.heyitsmejosh.dose (widget data sync)
 - Supabase auth (email/password, password reset via dose:// deep link)
-- Local persistence: UserDefaults via DataStore; syncs to dose.heyitsmejosh.com/api/sync using Supabase JWT
+- Local persistence: UserDefaults via DataStore; syncs to healstack.heyitsmejosh.com/api/sync using Supabase JWT
 - no emojis
 
 ## Run

@@ -1,4 +1,4 @@
-name: DoseWatch
+name: HealstackWatch
 options:
   bundleIdPrefix: com.heyitsmejosh
   deploymentTarget:
