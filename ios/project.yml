@@ -32,6 +32,7 @@ targets:
           - DoseWidget
           - watchos
           - scripts
+          - .asc
     dependencies:
       - sdk: HealthKit.framework
       - target: DoseWidgetExtension
