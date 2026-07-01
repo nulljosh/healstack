@@ -76,6 +76,8 @@ struct DoseApp: App {
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                         .padding(.bottom, 8)
                         .zIndex(1)
+
+                    WhatsNewSheet()
                 }
 
                 if !showSplash, requiresUnlock, !isUnlocked {
