@@ -1,4 +1,4 @@
-name: Dose
+name: Healstack
 packages:
   Supabase:
     url: https://github.com/supabase/supabase-swift.git

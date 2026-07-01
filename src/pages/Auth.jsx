@@ -25,7 +25,7 @@ export default function Auth() {
       if (error) setError(error.message);
     } else {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: 'https://dose.heyitsmejosh.com/',
+        redirectTo: 'https://healstack.heyitsmejosh.com/',
       });
       if (error) setError(error.message);
       else setMessage('Check your email for a reset link');

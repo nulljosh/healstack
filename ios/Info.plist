@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSFaceIDUsageDescription</key>
-	<string>Unlock Dose with Face ID</string>
+	<string>Unlock Healstack with Face ID</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -34,7 +34,9 @@
 		<string>armv7</string>
 	</array>
 	<key>NSHealthShareUsageDescription</key>
-	<string>Dose reads your health data to track biometrics alongside your supplement and medication log.</string>
+	<string>Healstack reads your health data to track biometrics alongside your supplement and medication log.</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Healstack does not write to Health, but the HealthKit framework requires this description to be present.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

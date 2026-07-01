@@ -1,5 +1,7 @@
-# Dose
+# Healstack
 v2.2.0
+
+Renamed from Dose 2026-07-01 (Dose, Balm, Tonic, and several others all taken on the App Store — Healstack cleared). GitHub repo renamed to nulljosh/healstack, domain moved to healstack.heyitsmejosh.com. Bundle IDs, App Group, and URL scheme (dose://) intentionally left as `dose` to avoid re-provisioning/App Store relinking.
 
 ## Shipped (2026-06-28)
 - [x] ToS checkbox required on register tab — `src/pages/Auth.jsx`, `/tos.html`
