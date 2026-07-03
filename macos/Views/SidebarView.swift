@@ -10,6 +10,7 @@ enum SidebarItem: String, CaseIterable, Identifiable {
     case symptoms = "Symptoms"
     case facemaxxing = "Facemaxxing"
     case sessions = "Sessions"
+    case settings = "Settings"
 
     var id: String { rawValue }
 
@@ -24,6 +25,7 @@ enum SidebarItem: String, CaseIterable, Identifiable {
         case .symptoms: return "cross.circle"
         case .facemaxxing: return "face.smiling"
         case .sessions: return "clock.arrow.trianglehead.counterclockwise.rotate.90"
+        case .settings: return "gearshape"
         }
     }
 }
@@ -51,6 +53,7 @@ struct SidebarView: View {
             case .symptoms: MacSymptomFinderView()
             case .facemaxxing: MacFacemaxxingView()
             case .sessions: MacSessionHistoryView()
+            case .settings: MacSettingsView()
             }
         }
     }
