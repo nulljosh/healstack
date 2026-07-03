@@ -5,6 +5,7 @@ struct DoseMacApp: App {
     @State private var authService = AuthService()
     @State private var store = BodyworkSessionStore()
     @State private var dataStore = DataStore()
+    @AppStorage("app_theme") private var rawTheme = "system"
 
     var body: some Scene {
         WindowGroup {
@@ -25,6 +26,7 @@ struct DoseMacApp: App {
                     .frame(minWidth: 800, minHeight: 550)
                 }
             }
+            .preferredColorScheme(rawTheme == "dark" ? .dark : rawTheme == "light" ? .light : nil)
         }
         .defaultSize(width: 1050, height: 680)
         .windowStyle(.titleBar)
