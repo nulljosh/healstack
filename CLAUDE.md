@@ -37,7 +37,7 @@ git push           # Deploy (auto via Vercel Git integration from apps monorepo)
 - xcodegen generate && xcodebuild build -scheme Dose -project Dose.xcodeproj -destination "platform=iOS Simulator,name=iPhone 17 Pro"
 
 ## Pending
-- .env.local recreated 2026-06-12 (VITE_SUPABASE_* + DOSE_EMAIL/DOSE_PASSWORD) — file is gone again as of 2026-06-20, needs recreating.
+- .env.local recreated 2026-06-12 (VITE_SUPABASE_* + HEALSTACK_EMAIL/HEALSTACK_PASSWORD) — file is gone again as of 2026-06-20, needs recreating.
 - Account recovery: real account email is jatrommel@gmail.com (not trommatic@icloud.com). Reset password to that address rather than chasing the icloud reset email further.
 - Supabase anon key no longer hardcoded in `ios/Services/AuthService.swift` — now read via `infoPlistValue("SUPABASE_ANON_KEY")` from Info.plist (fixed 2026-06-23).
 - Web UI refresh, landing page, and iOS ship are tracked in README Roadmap (Declutter UI, Vibe clone portfolio aesthetic, iOS companion app) — not new asks, no changes applied yet.

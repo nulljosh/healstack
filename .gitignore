@@ -6,3 +6,4 @@ dist/
 ios/*.xcodeproj/
 ios/watchos/*.xcodeproj/
 ios/.asc/
+.env*
