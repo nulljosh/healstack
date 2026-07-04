@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import WidgetKit
 
 @Observable
 final class DataStore {
@@ -183,6 +184,10 @@ final class DataStore {
         let active = getActive()
         shared.set(active.count, forKey: "widget.doseCount")
 
+        if let last = doseEntries.max(by: { $0.timestamp < $1.timestamp }) {
+            shared.set(substanceName(for: last), forKey: "widget.lastDoseName")
+        }
+
         struct WidgetPill: Codable {
             let name: String
             let count: Int
@@ -193,6 +198,8 @@ final class DataStore {
         if let data = try? JSONEncoder().encode(pills) {
             shared.set(data, forKey: "widget.activePills")
         }
+
+        WidgetCenter.shared.reloadAllTimelines()
     }
 
     // MARK: - Persistence
