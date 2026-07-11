@@ -202,7 +202,6 @@ private struct DoseFloatingTabBar: View {
         .frame(maxWidth: 360)
         .background(.regularMaterial, in: Capsule())
         .overlay(Capsule().stroke(Color.primary.opacity(0.08), lineWidth: 1))
-        .shadow(color: .black.opacity(0.1), radius: 12, y: 4)
     }
 }
 

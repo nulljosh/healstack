@@ -11,7 +11,6 @@ struct GlassCard: ViewModifier {
                 RoundedRectangle(cornerRadius: 16, style: .continuous)
                     .stroke(Color.white.opacity(0.08), lineWidth: 1)
             }
-            .shadow(color: .black.opacity(0.3), radius: 8, x: 0, y: 2)
     }
 }
 
