@@ -1,0 +1,488 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0215C9C9BAF830E470EF0091 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6AFDD3692AEE45F5B5E2E3 /* DataStore.swift */; };
+		0C159F83119742A88297C90E /* BodyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C45C3FD56F2975F384C1E3 /* BodyMapView.swift */; };
+		11EFE424307AA9C52CA66EB2 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5913A272221D6000446F4512 /* AuthView.swift */; };
+		164D711819C9DC59A33CFC96 /* DoseMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0ECAA0B1CA805B0957C54F /* DoseMacApp.swift */; };
+		1A1D412A38C32E06AD1118D4 /* InsightEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97837BAE2FEFE28A049A07B /* InsightEngine.swift */; };
+		1F6AF64D3C50C98CEF812E0D /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C780039566502D611CDB696 /* Substance.swift */; };
+		23BFA67495BBDA2AF6D5C7B0 /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBB04EAB0A907552454090 /* MacSettingsView.swift */; };
+		27E3F5C64EEB97CAE3971DBE /* BodyworkSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339AA4634B1EE775A24B13B /* BodyworkSessionStore.swift */; };
+		2C7EF7A70E79FF92B82385F6 /* HealthEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233AB9925563AD60206E2E90 /* HealthEntry.swift */; };
+		49EBB94A6D504E83188395A5 /* MacMeridianListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E670EC99285A09DF100E7DC9 /* MacMeridianListView.swift */; };
+		4AEFA38259403A115789C932 /* MacSymptomFinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5C511275324C6A1D22C87 /* MacSymptomFinderView.swift */; };
+		4E000CC31483F44337D7D157 /* DoseEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AABC641F1865863B3FDBF9 /* DoseEntry.swift */; };
+		4E96B68C6E08CE3460DCE4CD /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658332455BF4468793E8E638 /* SidebarView.swift */; };
+		551F11EB3417FD6D385295E7 /* ReflexologyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA544E564F9BC9C78A43BC /* ReflexologyData.swift */; };
+		6385F384492A66AD25F035A5 /* MacAbdomenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72535493F0D0662D755B5AC /* MacAbdomenView.swift */; };
+		685D6773F59C6543742641AF /* MacSessionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E049B81C19DA4F1FE959B /* MacSessionHistoryView.swift */; };
+		6E02210F1391A32020F06D0D /* AcupunctureData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529D4EBDA9DB5D0CFE8E3620 /* AcupunctureData.swift */; };
+		8A959158F2AFE3397DF93AF4 /* MacDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F17D45D138F3B85ADB441 /* MacDashboardView.swift */; };
+		8C3EB53EFF310204299A769E /* SubstanceDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AE1515600BD8158EC3AD89 /* SubstanceDatabase.swift */; };
+		8DAAD7DFCC63F4F1FBC3E8F5 /* MyMedication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47F51C766D75EFC37CDB9AC /* MyMedication.swift */; };
+		ACA9AE618EDFCE20BF337062 /* MacFacemaxxingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81BD4C6B9C5439DADA2528D /* MacFacemaxxingView.swift */; };
+		AD6AD634F6ECF99CBC6077DB /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = A47CE26A06809915EBAC5471 /* Supabase */; };
+		B85038C32ADF2BB994988E67 /* AbdomenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325F038875E9F50100570F10 /* AbdomenData.swift */; };
+		BA6BC82E18C88BACB081A5D6 /* ZoneDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2560A79ADE4FA5FA4E09B4B7 /* ZoneDetailView.swift */; };
+		C0C25DCD1DBB18E1814531DE /* MacLabResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BFAC39E481BB7B6D3E7249 /* MacLabResultsView.swift */; };
+		C2AEC4FE19B4B9B6FEEE7F0B /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B462277BFFEFFC04DDAAD2 /* AuthService.swift */; };
+		C7266761E5F8A1B1C7A05C71 /* FacemaxxingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A726D1CEE1BF121384FF782 /* FacemaxxingData.swift */; };
+		D58EADB827F5FF8995537B8D /* BiometricEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D13B2BCE112D6A18E7751B /* BiometricEntry.swift */; };
+		D734AADA40072BA9DD155C4D /* SymptomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED70A58D3463009B435631 /* SymptomData.swift */; };
+		E1CA521009AD4BB40EB77221 /* LabResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92562854A3DE6250B1AE6C8C /* LabResult.swift */; };
+		EE24237D6486D6005BC7D3F8 /* MacReflexologyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12664FDBF1B0B853948B55D7 /* MacReflexologyView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12664FDBF1B0B853948B55D7 /* MacReflexologyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReflexologyView.swift; sourceTree = "<group>"; };
+		14F5C511275324C6A1D22C87 /* MacSymptomFinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSymptomFinderView.swift; sourceTree = "<group>"; };
+		233AB9925563AD60206E2E90 /* HealthEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthEntry.swift; sourceTree = "<group>"; };
+		2560A79ADE4FA5FA4E09B4B7 /* ZoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneDetailView.swift; sourceTree = "<group>"; };
+		2B8F17D45D138F3B85ADB441 /* MacDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDashboardView.swift; sourceTree = "<group>"; };
+		2C780039566502D611CDB696 /* Substance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Substance.swift; sourceTree = "<group>"; };
+		325F038875E9F50100570F10 /* AbdomenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbdomenData.swift; sourceTree = "<group>"; };
+		36FBB04EAB0A907552454090 /* MacSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingsView.swift; sourceTree = "<group>"; };
+		45D13B2BCE112D6A18E7751B /* BiometricEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricEntry.swift; sourceTree = "<group>"; };
+		529D4EBDA9DB5D0CFE8E3620 /* AcupunctureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcupunctureData.swift; sourceTree = "<group>"; };
+		5913A272221D6000446F4512 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		658332455BF4468793E8E638 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		7B0ECAA0B1CA805B0957C54F /* DoseMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseMacApp.swift; sourceTree = "<group>"; };
+		8339AA4634B1EE775A24B13B /* BodyworkSessionStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyworkSessionStore.swift; sourceTree = "<group>"; };
+		86C45C3FD56F2975F384C1E3 /* BodyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMapView.swift; sourceTree = "<group>"; };
+		8D6AFDD3692AEE45F5B5E2E3 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		92562854A3DE6250B1AE6C8C /* LabResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabResult.swift; sourceTree = "<group>"; };
+		9A726D1CEE1BF121384FF782 /* FacemaxxingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacemaxxingData.swift; sourceTree = "<group>"; };
+		A47F51C766D75EFC37CDB9AC /* MyMedication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMedication.swift; sourceTree = "<group>"; };
+		A9EA544E564F9BC9C78A43BC /* ReflexologyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflexologyData.swift; sourceTree = "<group>"; };
+		AEED70A58D3463009B435631 /* SymptomData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomData.swift; sourceTree = "<group>"; };
+		B3BFAC39E481BB7B6D3E7249 /* MacLabResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacLabResultsView.swift; sourceTree = "<group>"; };
+		B81BD4C6B9C5439DADA2528D /* MacFacemaxxingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacFacemaxxingView.swift; sourceTree = "<group>"; };
+		C0AABC641F1865863B3FDBF9 /* DoseEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoseEntry.swift; sourceTree = "<group>"; };
+		C3B462277BFFEFFC04DDAAD2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D2AE1515600BD8158EC3AD89 /* SubstanceDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstanceDatabase.swift; sourceTree = "<group>"; };
+		D72535493F0D0662D755B5AC /* MacAbdomenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAbdomenView.swift; sourceTree = "<group>"; };
+		DFA38C581C29F5406ED344E8 /* DoseMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoseMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E670EC99285A09DF100E7DC9 /* MacMeridianListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMeridianListView.swift; sourceTree = "<group>"; };
+		E97837BAE2FEFE28A049A07B /* InsightEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightEngine.swift; sourceTree = "<group>"; };
+		F77E049B81C19DA4F1FE959B /* MacSessionHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSessionHistoryView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E9CCED37391851D2924114F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD6AD634F6ECF99CBC6077DB /* Supabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		73CF88F78792B10637183F1A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D2AE1515600BD8158EC3AD89 /* SubstanceDatabase.swift */,
+			);
+			name = Data;
+			path = ../ios/Data;
+			sourceTree = "<group>";
+		};
+		7F859B2A8FF47F8DF97F371E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45D13B2BCE112D6A18E7751B /* BiometricEntry.swift */,
+				C0AABC641F1865863B3FDBF9 /* DoseEntry.swift */,
+				233AB9925563AD60206E2E90 /* HealthEntry.swift */,
+				92562854A3DE6250B1AE6C8C /* LabResult.swift */,
+				A47F51C766D75EFC37CDB9AC /* MyMedication.swift */,
+				2C780039566502D611CDB696 /* Substance.swift */,
+			);
+			name = Models;
+			path = ../ios/Models;
+			sourceTree = "<group>";
+		};
+		849F728B73ECD33EB822D405 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C3B462277BFFEFFC04DDAAD2 /* AuthService.swift */,
+				8D6AFDD3692AEE45F5B5E2E3 /* DataStore.swift */,
+				E97837BAE2FEFE28A049A07B /* InsightEngine.swift */,
+			);
+			name = Services;
+			path = ../ios/Services;
+			sourceTree = "<group>";
+		};
+		9FE32462372C14E1214D0D35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DFA38C581C29F5406ED344E8 /* DoseMac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6FEBCC0326A229912D41F56 /* macos */ = {
+			isa = PBXGroup;
+			children = (
+				7B0ECAA0B1CA805B0957C54F /* DoseMacApp.swift */,
+				DDF660EC3833FA9119E054FD /* Models */,
+				D3FA9DD9D4CC4CB1E262B4AB /* Views */,
+			);
+			name = macos;
+			path = .;
+			sourceTree = "<group>";
+		};
+		D3FA9DD9D4CC4CB1E262B4AB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5913A272221D6000446F4512 /* AuthView.swift */,
+				86C45C3FD56F2975F384C1E3 /* BodyMapView.swift */,
+				D72535493F0D0662D755B5AC /* MacAbdomenView.swift */,
+				2B8F17D45D138F3B85ADB441 /* MacDashboardView.swift */,
+				B81BD4C6B9C5439DADA2528D /* MacFacemaxxingView.swift */,
+				B3BFAC39E481BB7B6D3E7249 /* MacLabResultsView.swift */,
+				E670EC99285A09DF100E7DC9 /* MacMeridianListView.swift */,
+				12664FDBF1B0B853948B55D7 /* MacReflexologyView.swift */,
+				F77E049B81C19DA4F1FE959B /* MacSessionHistoryView.swift */,
+				36FBB04EAB0A907552454090 /* MacSettingsView.swift */,
+				14F5C511275324C6A1D22C87 /* MacSymptomFinderView.swift */,
+				658332455BF4468793E8E638 /* SidebarView.swift */,
+				2560A79ADE4FA5FA4E09B4B7 /* ZoneDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DDF660EC3833FA9119E054FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				325F038875E9F50100570F10 /* AbdomenData.swift */,
+				529D4EBDA9DB5D0CFE8E3620 /* AcupunctureData.swift */,
+				8339AA4634B1EE775A24B13B /* BodyworkSessionStore.swift */,
+				9A726D1CEE1BF121384FF782 /* FacemaxxingData.swift */,
+				A9EA544E564F9BC9C78A43BC /* ReflexologyData.swift */,
+				AEED70A58D3463009B435631 /* SymptomData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F5C0E07678C19212842C5E07 = {
+			isa = PBXGroup;
+			children = (
+				73CF88F78792B10637183F1A /* Data */,
+				A6FEBCC0326A229912D41F56 /* macos */,
+				DDF660EC3833FA9119E054FD /* Models */,
+				7F859B2A8FF47F8DF97F371E /* Models */,
+				849F728B73ECD33EB822D405 /* Services */,
+				D3FA9DD9D4CC4CB1E262B4AB /* Views */,
+				9FE32462372C14E1214D0D35 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7AC1389DF7B21989F491A107 /* DoseMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D56D04C92858DCC60A819438 /* Build configuration list for PBXNativeTarget "DoseMac" */;
+			buildPhases = (
+				0D08640F6AF202F68303193F /* Sources */,
+				9E9CCED37391851D2924114F /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoseMac;
+			packageProductDependencies = (
+				A47CE26A06809915EBAC5471 /* Supabase */,
+			);
+			productName = DoseMac;
+			productReference = DFA38C581C29F5406ED344E8 /* DoseMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		796FC5278B55401801225A02 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7AC1389DF7B21989F491A107 = {
+						DevelopmentTeam = QMM486NPYC;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 9BAFB1A1FBED7488F085CB22 /* Build configuration list for PBXProject "HealstackMac" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = F5C0E07678C19212842C5E07;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				17ABE9E9B7F10A206CF920EC /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 9FE32462372C14E1214D0D35 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7AC1389DF7B21989F491A107 /* DoseMac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0D08640F6AF202F68303193F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B85038C32ADF2BB994988E67 /* AbdomenData.swift in Sources */,
+				6E02210F1391A32020F06D0D /* AcupunctureData.swift in Sources */,
+				C2AEC4FE19B4B9B6FEEE7F0B /* AuthService.swift in Sources */,
+				11EFE424307AA9C52CA66EB2 /* AuthView.swift in Sources */,
+				D58EADB827F5FF8995537B8D /* BiometricEntry.swift in Sources */,
+				0C159F83119742A88297C90E /* BodyMapView.swift in Sources */,
+				27E3F5C64EEB97CAE3971DBE /* BodyworkSessionStore.swift in Sources */,
+				0215C9C9BAF830E470EF0091 /* DataStore.swift in Sources */,
+				4E000CC31483F44337D7D157 /* DoseEntry.swift in Sources */,
+				164D711819C9DC59A33CFC96 /* DoseMacApp.swift in Sources */,
+				C7266761E5F8A1B1C7A05C71 /* FacemaxxingData.swift in Sources */,
+				2C7EF7A70E79FF92B82385F6 /* HealthEntry.swift in Sources */,
+				1A1D412A38C32E06AD1118D4 /* InsightEngine.swift in Sources */,
+				E1CA521009AD4BB40EB77221 /* LabResult.swift in Sources */,
+				6385F384492A66AD25F035A5 /* MacAbdomenView.swift in Sources */,
+				8A959158F2AFE3397DF93AF4 /* MacDashboardView.swift in Sources */,
+				ACA9AE618EDFCE20BF337062 /* MacFacemaxxingView.swift in Sources */,
+				C0C25DCD1DBB18E1814531DE /* MacLabResultsView.swift in Sources */,
+				49EBB94A6D504E83188395A5 /* MacMeridianListView.swift in Sources */,
+				EE24237D6486D6005BC7D3F8 /* MacReflexologyView.swift in Sources */,
+				685D6773F59C6543742641AF /* MacSessionHistoryView.swift in Sources */,
+				23BFA67495BBDA2AF6D5C7B0 /* MacSettingsView.swift in Sources */,
+				4AEFA38259403A115789C932 /* MacSymptomFinderView.swift in Sources */,
+				8DAAD7DFCC63F4F1FBC3E8F5 /* MyMedication.swift in Sources */,
+				551F11EB3417FD6D385295E7 /* ReflexologyData.swift in Sources */,
+				4E96B68C6E08CE3460DCE4CD /* SidebarView.swift in Sources */,
+				1F6AF64D3C50C98CEF812E0D /* Substance.swift in Sources */,
+				8C3EB53EFF310204299A769E /* SubstanceDatabase.swift in Sources */,
+				D734AADA40072BA9DD155C4D /* SymptomData.swift in Sources */,
+				BA6BC82E18C88BACB081A5D6 /* ZoneDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		33BE79CD93C774B11E698608 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = QMM486NPYC;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 2.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		35F50159D245A00131837B73 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose.mac;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4347C98570E8F6BB5FD1B77A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose.mac;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E471F7B6E88EF1D4A46CCD9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = QMM486NPYC;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 2.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BAFB1A1FBED7488F085CB22 /* Build configuration list for PBXProject "HealstackMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E471F7B6E88EF1D4A46CCD9A /* Debug */,
+				33BE79CD93C774B11E698608 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D56D04C92858DCC60A819438 /* Build configuration list for PBXNativeTarget "DoseMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4347C98570E8F6BB5FD1B77A /* Debug */,
+				35F50159D245A00131837B73 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		17ABE9E9B7F10A206CF920EC /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A47CE26A06809915EBAC5471 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 17ABE9E9B7F10A206CF920EC /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 796FC5278B55401801225A02 /* Project object */;
+}

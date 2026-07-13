@@ -26,7 +26,7 @@ struct DashboardView: View {
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle("Dose")
+            .navigationTitle("Healstack")
         }
         .onAppear { store.reload() }
     }
