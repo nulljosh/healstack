@@ -23,7 +23,7 @@ struct AuthView: View {
                         .font(.system(size: 36, weight: .medium))
                         .foregroundStyle(.tint)
 
-                    Text("Dose")
+                    Text("Healstack")
                         .font(.title2.weight(.semibold))
 
                     Text("Health tracker")

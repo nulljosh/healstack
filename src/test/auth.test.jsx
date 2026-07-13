@@ -58,7 +58,7 @@ describe('Auth page', () => {
     fireEvent.click(screen.getByText('Forgot password?'));
     fireEvent.change(screen.getByPlaceholderText('Email'), { target: { value: 'test@test.com' } });
     fireEvent.submit(screen.getByText('Send reset email').closest('form'));
-    await waitFor(() => expect(mockResetPassword).toHaveBeenCalledWith('test@test.com', expect.objectContaining({ redirectTo: expect.stringContaining('dose') })));
+    await waitFor(() => expect(mockResetPassword).toHaveBeenCalledWith('test@test.com', expect.objectContaining({ redirectTo: expect.stringContaining('healstack') })));
   });
 
   it('shows confirmation message after successful reset request', async () => {

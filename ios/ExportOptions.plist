@@ -10,5 +10,14 @@
 	<true/>
 	<key>compileBitcode</key>
 	<false/>
+	<key>signingStyle</key>
+	<string>manual</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>com.heyitsmejosh.dose</key>
+		<string>Healstack iOS App Store</string>
+		<key>com.heyitsmejosh.dose.widget</key>
+		<string>Healstack Widget App Store</string>
+	</dict>
 </dict>
 </plist>
