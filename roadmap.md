@@ -13,3 +13,14 @@
 ## 2026-07-14 dump
 - [ ] Finish full Dose→Healstack rename audit (bundle/display names, docs, UI text, assets, CI, repo metadata)
 - [ ] Fix failed Vercel production deployment; verify env vars/domains post-rename
+
+## App Store submission (parked 2026-07-14, wrap-up)
+Done via API: copyright, age rating, content rights, encryption (build 53083cc3, VALID).
+Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0):
+- [ ] en-US description, keywords, support URL (asc metadata push)
+- [ ] review details (contact info)
+- [ ] primary category
+- [ ] availability (Pricing & Availability)
+- [ ] screenshots (none uploaded)
+- [ ] confirm App Privacy published
+Then: asc review submit --app 6785764864 --version 1.0 --confirm
