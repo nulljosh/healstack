@@ -9,3 +9,7 @@
 
 - [ ] If 2.3.3 ship failed: asc workflow run --file .asc/workflow.json ship-ios --resume ship-ios-20260713T003453Z-885325d5
   - note: rm .asc/artifacts/Healstack.ipa first (stale), then resume
+
+## 2026-07-14 dump
+- [ ] Finish full Dose→Healstack rename audit (bundle/display names, docs, UI text, assets, CI, repo metadata)
+- [ ] Fix failed Vercel production deployment; verify env vars/domains post-rename
