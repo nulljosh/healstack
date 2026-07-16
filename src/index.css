@@ -782,7 +782,7 @@ button { user-select: none; font-family: inherit; }
 /* --- Desktop: sidebar nav --- */
 @media (min-width: 641px) {
   .nav-mobile { display: none; }
-  .nav-desktop { display: flex; width: 100%; }
+  .nav-desktop { display: flex; flex-direction: column; width: 100%; gap: 6px; }
   .nav-sheet { display: none; }
   .nav-sheet-backdrop { display: none; }
 
@@ -1571,11 +1571,16 @@ button { user-select: none; font-family: inherit; }
   margin: 0 auto;
 }
 
+@media (min-width: 641px) {
+  .sub-tab-header {
+    padding: 32px 40px 0;
+    margin-left: 260px;
+  }
+}
+
 @media (min-width: 768px) {
   .sub-tab-header {
     max-width: 1080px;
-    padding: 32px 40px 0;
-    margin-left: 260px;
   }
 }
 
