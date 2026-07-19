@@ -3,6 +3,9 @@ packages:
   Supabase:
     url: https://github.com/supabase/supabase-swift.git
     from: "2.5.1"
+  SwiftLint:
+    url: https://github.com/realm/SwiftLint
+    from: "0.59.1"
 options:
   bundleIdPrefix: com.heyitsmejosh
   deploymentTarget:
@@ -38,6 +41,9 @@ targets:
       - target: DoseWidgetExtension
       - package: Supabase
         product: Supabase
+    buildToolPlugins:
+      - plugin: SwiftLintBuildToolPlugin
+        package: SwiftLint
     entitlements:
       path: Dose.entitlements
       properties:
