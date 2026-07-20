@@ -9,6 +9,9 @@ struct SettingsView: View {
     @State private var exportFileURL: URL?
     @AppStorage("app_theme") private var rawTheme = "system"
     @Environment(\.dismiss) private var dismiss
+    @State private var confirmingDelete = false
+    @State private var deletingAccount = false
+    @State private var deleteError: String?
 
     var body: some View {
         NavigationStack {
@@ -24,6 +27,10 @@ struct SettingsView: View {
                     Button("Sign out", role: .destructive) {
                         Task { try? await authService.signOut() }
                     }
+                    Button("Delete Account", role: .destructive) {
+                        confirmingDelete = true
+                    }
+                    .disabled(deletingAccount)
                 }
 
                 Section("Profile") {
@@ -157,6 +164,31 @@ struct SettingsView: View {
                     dataStore.myMedications = meds
                 }
             }
+            .confirmationDialog(
+                "Delete your account?",
+                isPresented: $confirmingDelete,
+                titleVisibility: .visible
+            ) {
+                Button("Delete Account", role: .destructive) {
+                    deletingAccount = true
+                    Task {
+                        do {
+                            try await authService.deleteAccount()
+                        } catch {
+                            deleteError = error.localizedDescription
+                        }
+                        deletingAccount = false
+                    }
+                }
+                Button("Cancel", role: .cancel) {}
+            } message: {
+                Text("This permanently deletes your account and all data. This cannot be undone.")
+            }
+            .alert("Couldn't Delete Account", isPresented: .constant(deleteError != nil), actions: {
+                Button("OK") { deleteError = nil }
+            }, message: {
+                Text(deleteError ?? "")
+            })
         }
     }
 
