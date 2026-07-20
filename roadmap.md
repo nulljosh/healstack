@@ -27,7 +27,7 @@ Then: asc review submit --app 6785764864 --version 1.0 --confirm
 
 ## From Healstack.pdf (imported 2026-07-19)
 - [ ] TestFlight build is stale — rename to Healstack not fully propagated: splash screen still shows old name "dose", Home Screen icon label still says "dose". Needs a fresh build with updated app display name/launch screen assets, then new TestFlight upload.
-- [ ] Tiles in-app still have drop shadows — design cleanup, remove per current flat-design direction (check other renamed apps for the pattern already applied).
+- [x] Tiles in-app still have drop shadows — verified: `glassCard()`/`GlassCard` modifier already has no shadow; found and removed the one remaining tile shadow (streak card, `orange.opacity(0.22)` in DashboardView.swift:79). Build-verified. Remaining `.shadow(...)` calls are intentional glow-text/splash effects, not tile shadows — left as-is.
 
 ## Stashed 2026-07-19
 - [ ] Review details: demoAccountRequired=true but no demo credentials set (detail a4dae036) — create a fresh demo user (not the personal account), then `asc review details-update --id a4dae036-7360-43a2-bb91-aeb8f4ff69df --demo-account-name X --demo-account-password Y`
