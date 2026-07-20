@@ -24,3 +24,7 @@ Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0)
 - [ ] screenshots (none uploaded)
 - [ ] confirm App Privacy published
 Then: asc review submit --app 6785764864 --version 1.0 --confirm
+
+## From Healstack.pdf (imported 2026-07-19)
+- [ ] TestFlight build is stale — rename to Healstack not fully propagated: splash screen still shows old name "dose", Home Screen icon label still says "dose". Needs a fresh build with updated app display name/launch screen assets, then new TestFlight upload.
+- [ ] Tiles in-app still have drop shadows — design cleanup, remove per current flat-design direction (check other renamed apps for the pattern already applied).
