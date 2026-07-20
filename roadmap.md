@@ -17,9 +17,9 @@
 ## App Store submission (parked 2026-07-14, wrap-up)
 Done via API: copyright, age rating, content rights, encryption (build 53083cc3, VALID).
 Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0):
-- [ ] en-US description, keywords, support URL (asc metadata push)
-- [ ] review details (contact info)
-- [ ] primary category
+- [x] en-US description, keywords, support URL — pushed via asc localizations update 2026-07-19
+- [x] review details (contact info) — created 2026-07-19 (a4dae036)
+- [x] primary category — HEALTH_AND_FITNESS + MEDICAL set 2026-07-19
 - [ ] availability (Pricing & Availability)
 - [ ] screenshots (none uploaded)
 - [ ] confirm App Privacy published
