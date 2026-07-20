@@ -20,9 +20,9 @@ Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0)
 - [x] en-US description, keywords, support URL — pushed via asc localizations update 2026-07-19
 - [x] review details (contact info) — created 2026-07-19 (a4dae036)
 - [x] primary category — HEALTH_AND_FITNESS + MEDICAL set 2026-07-19
-- [ ] availability (Pricing & Availability)
-- [ ] screenshots (none uploaded)
-- [ ] confirm App Privacy published
+- [ ] availability (Pricing & Availability) — dashboard-only, no CLI path
+- [ ] screenshots (none uploaded) — needs simulator capture pass
+- [ ] confirm App Privacy published — dashboard-only, unverifiable via API
 Then: asc review submit --app 6785764864 --version 1.0 --confirm
 
 ## From Healstack.pdf (imported 2026-07-19)
@@ -30,6 +30,6 @@ Then: asc review submit --app 6785764864 --version 1.0 --confirm
 - [x] Tiles in-app still have drop shadows — verified: `glassCard()`/`GlassCard` modifier already has no shadow; found and removed the one remaining tile shadow (streak card, `orange.opacity(0.22)` in DashboardView.swift:79). Build-verified. Remaining `.shadow(...)` calls are intentional glow-text/splash effects, not tile shadows — left as-is.
 
 ## Stashed 2026-07-19
-- [ ] Review details: demoAccountRequired=true but no demo credentials set (detail a4dae036) — create a fresh demo user (not the personal account), then `asc review details-update --id a4dae036-7360-43a2-bb91-aeb8f4ff69df --demo-account-name X --demo-account-password Y`
-- [ ] Screenshots: none uploaded (blocking) — appstore-screenshots skill / asc screenshots upload
+- [x] Review details: demoAccountRequired=true but no demo credentials set (detail a4dae036) — created fresh demo user healstack.demo@heyitsmejosh.com in shared spark Supabase project, pushed via `asc review details-update`, verified in response payload
+- [ ] Screenshots: none uploaded (blocking) — appstore-screenshots skill / asc screenshots upload; needs simulator capture pass, out of scope for this run
 - [ ] Availability: missing (dashboard-only dead-end) — ASC web Pricing & Availability for app 6785764864
