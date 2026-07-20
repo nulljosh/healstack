@@ -76,7 +76,6 @@ struct DashboardView: View {
                         .padding(.horizontal, 14)
                         .padding(.vertical, 12)
                         .glassCard()
-                        .shadow(color: .orange.opacity(0.22), radius: 10, x: 0, y: 0)
                     }
 
                     // Health score ring
