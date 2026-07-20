@@ -33,3 +33,6 @@ Then: asc review submit --app 6785764864 --version 1.0 --confirm
 - [x] Review details: demoAccountRequired=true but no demo credentials set (detail a4dae036) — created fresh demo user healstack.demo@heyitsmejosh.com in shared spark Supabase project, pushed via `asc review details-update`, verified in response payload
 - [ ] Screenshots: none uploaded (blocking) — appstore-screenshots skill / asc screenshots upload; needs simulator capture pass, out of scope for this run
 - [ ] Availability: missing (dashboard-only dead-end) — ASC web Pricing & Availability for app 6785764864
+
+## Account deletion audit 2026-07-20
+- [x] Added sign-out + delete-account parity (Guideline 5.1.1(v)) — reused the shared `delete-account` Edge Function on spark Supabase project (deployed for Litigate). Added deleteAccount() to AuthService.swift, wired into existing SettingsView Account section. Build-verified.
