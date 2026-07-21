@@ -30,8 +30,8 @@ Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0)
 - [x] Restricted app to iPhone-only (`TARGETED_DEVICE_FAMILY: "1"`) — app was never designed/tested for iPad; this avoids Apple's iPad-screenshot requirement rather than shipping an unverified iPad layout.
 - [x] Subtitle ("Track substances, reduce harm") + privacy policy URL (healstack.heyitsmejosh.com/privacy.html) set via `asc localizations update --type app-info`.
 - [x] New build (202607211448) archived, exported, uploaded — processing on Apple's side as of 2026-07-21.
-- [ ] **Blocker: "Declare Regulated Medical Device"** — new ASC requirement (category is Health & Fitness / Medical), not in the public API (`asc schema appInfos` confirms no field), dashboard-only. Link on the App Information page didn't respond reliably to automated clicks this session — needs Joshua to click through manually: App Store Connect → Healstack → App Information → "Declare Regulated Medical Device" banner. Answer should be "No" (harm-reduction tracker, not a regulated device).
-- [ ] Once declared: re-run `asc review doctor --app 6785764864`, then `asc review submit --app 6785764864 --version 1.0 --confirm` once build 202607211448 finishes processing.
+- [x] Medical device declaration cleared 2026-07-21 via `asc web apps medical-device set --app 6785764864 --declared false` (once Joshua authenticated `asc web auth login`) — the CLI wrapper for the dashboard-only field, not browser automation.
+- [x] **SUBMITTED 2026-07-21** — `asc review submit` succeeded (needed `usesNonExemptEncryption=false` set on the build first). Version 1.0 is **WAITING_FOR_REVIEW**.
 - [ ] subtitle empty (en-US) — non-blocking warning, needs copy decision
 - [ ] privacy policy URL empty (en-US) — non-blocking warning, needs a URL
 Then: asc review submit --app 6785764864 --version 1.0 --confirm
