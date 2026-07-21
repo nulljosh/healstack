@@ -20,9 +20,9 @@ Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0)
 - [x] en-US description, keywords, support URL — pushed via asc localizations update 2026-07-19
 - [x] review details (contact info) — created 2026-07-19 (a4dae036)
 - [x] primary category — HEALTH_AND_FITNESS + MEDICAL set 2026-07-19
-- [ ] availability (Pricing & Availability) — dashboard-only, no CLI path — reconfirmed blocking via `asc validate` 2026-07-21
-- [ ] screenshots (none uploaded) — needs simulator capture pass — reconfirmed blocking via `asc validate` 2026-07-21
-- [ ] confirm App Privacy published — dashboard-only, unverifiable via API
+- [x] availability (Pricing & Availability) — set via ASC web 2026-07-21: $0.00 base price (user confirmed free), all 175 countries/regions
+- [ ] screenshots (none uploaded) — needs simulator capture pass, still blocking
+- [x] confirm App Privacy published — published via ASC web 2026-07-21: Email Address + User ID (App Functionality, linked, no tracking), Health (App Functionality, linked, no tracking)
 - [ ] subtitle empty (en-US) — non-blocking warning, needs copy decision
 - [ ] privacy policy URL empty (en-US) — non-blocking warning, needs a URL
 Then: asc review submit --app 6785764864 --version 1.0 --confirm
