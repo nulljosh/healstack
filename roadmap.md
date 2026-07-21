@@ -5,14 +5,14 @@
 - [ ] Ship: run `asc workflow run ship-ios VERSION:2.3.4` — blocked: production-release permission denied for autonomous agent; needs user go-ahead (ASC build 2 is VALID but predates the rename, so it still shows "Dose" on login)
 
 ## From Icons.pdf / Asc.pdf (imported 2026-07-12)
-- [ ] Submit for review — v2.3.3 build 2 valid on ASC since 07-02 (ASC latest version list oddly shows 1.0 PREPARE — check version list first)
+- [x] Submit for review — checked 2026-07-21: only version on ASC is still 1.0 PREPARE_FOR_SUBMISSION (no 2.3.3 exists there — that versioning was local/TestFlight only). `asc validate` confirms still blocked on availability + screenshots (dashboard-only, see below).
 
 - [ ] If 2.3.3 ship failed: asc workflow run --file .asc/workflow.json ship-ios --resume ship-ios-20260713T003453Z-885325d5
-  - note: rm .asc/artifacts/Healstack.ipa first (stale), then resume
+  - note: rm .asc/artifacts/Healstack.ipa first (stale), then resume — not attempted, superseded by v1.0 ASC submission path above
 
 ## 2026-07-14 dump
-- [ ] Finish full Dose→Healstack rename audit (bundle/display names, docs, UI text, assets, CI, repo metadata)
-- [ ] Fix failed Vercel production deployment; verify env vars/domains post-rename
+- [ ] Finish full Dose→Healstack rename audit (bundle/display names, docs, UI text, assets, CI, repo metadata) — checked 2026-07-21: most "Dose" hits (DoseEntry, DoseApp.swift, AddDoseSheet) are domain-model naming, not brand text; brand rename in login/UI already done (see checked item above). Needs manual scoping to separate brand strings from domain vocabulary before a blind rename — too risky to automate.
+- [x] Fix failed Vercel production deployment; verify env vars/domains post-rename — checked 2026-07-21: latest prod deploy is Ready (healstack-q78a5dne3...), VITE_SUPABASE_ANON_KEY/URL env vars present in Production. Appears already resolved/stale.
 
 ## App Store submission (parked 2026-07-14, wrap-up)
 Done via API: copyright, age rating, content rights, encryption (build 53083cc3, VALID).
@@ -20,9 +20,11 @@ Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0)
 - [x] en-US description, keywords, support URL — pushed via asc localizations update 2026-07-19
 - [x] review details (contact info) — created 2026-07-19 (a4dae036)
 - [x] primary category — HEALTH_AND_FITNESS + MEDICAL set 2026-07-19
-- [ ] availability (Pricing & Availability) — dashboard-only, no CLI path
-- [ ] screenshots (none uploaded) — needs simulator capture pass
+- [ ] availability (Pricing & Availability) — dashboard-only, no CLI path — reconfirmed blocking via `asc validate` 2026-07-21
+- [ ] screenshots (none uploaded) — needs simulator capture pass — reconfirmed blocking via `asc validate` 2026-07-21
 - [ ] confirm App Privacy published — dashboard-only, unverifiable via API
+- [ ] subtitle empty (en-US) — non-blocking warning, needs copy decision
+- [ ] privacy policy URL empty (en-US) — non-blocking warning, needs a URL
 Then: asc review submit --app 6785764864 --version 1.0 --confirm
 
 ## From Healstack.pdf (imported 2026-07-19)
