@@ -23,6 +23,15 @@ Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0)
 - [x] availability (Pricing & Availability) — set via ASC web 2026-07-21: $0.00 base price (user confirmed free), all 175 countries/regions
 - [ ] screenshots (none uploaded) — needs simulator capture pass, still blocking
 - [x] confirm App Privacy published — published via ASC web 2026-07-21: Email Address + User ID (App Functionality, linked, no tracking), Health (App Functionality, linked, no tracking)
+
+## Build 202607211448 shipped 2026-07-21 — screenshots + fixes
+- [x] 4 App Store screenshots captured (Dashboard/Library/Insights/Body) using real account (jatrommel@gmail.com via `.env.local`, never demo accounts — see root CLAUDE.md rule) on iPhone 11 Pro Max sim, uploaded via `asc screenshots upload`.
+- [x] Fixed root cause of "Dose" branding bug: `INFOPLIST_KEY_CFBundleDisplayName: Healstack` was missing from `ios/project.yml` (target name is literally "Dose", CFBundleName fell back to it). Now set.
+- [x] Restricted app to iPhone-only (`TARGETED_DEVICE_FAMILY: "1"`) — app was never designed/tested for iPad; this avoids Apple's iPad-screenshot requirement rather than shipping an unverified iPad layout.
+- [x] Subtitle ("Track substances, reduce harm") + privacy policy URL (healstack.heyitsmejosh.com/privacy.html) set via `asc localizations update --type app-info`.
+- [x] New build (202607211448) archived, exported, uploaded — processing on Apple's side as of 2026-07-21.
+- [ ] **Blocker: "Declare Regulated Medical Device"** — new ASC requirement (category is Health & Fitness / Medical), not in the public API (`asc schema appInfos` confirms no field), dashboard-only. Link on the App Information page didn't respond reliably to automated clicks this session — needs Joshua to click through manually: App Store Connect → Healstack → App Information → "Declare Regulated Medical Device" banner. Answer should be "No" (harm-reduction tracker, not a regulated device).
+- [ ] Once declared: re-run `asc review doctor --app 6785764864`, then `asc review submit --app 6785764864 --version 1.0 --confirm` once build 202607211448 finishes processing.
 - [ ] subtitle empty (en-US) — non-blocking warning, needs copy decision
 - [ ] privacy policy URL empty (en-US) — non-blocking warning, needs a URL
 Then: asc review submit --app 6785764864 --version 1.0 --confirm
