@@ -40,7 +40,7 @@ targets:
       - package: Supabase
         product: Supabase
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose.mac
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose
       GENERATE_INFOPLIST_FILE: YES
 schemes:
   DoseMac:
