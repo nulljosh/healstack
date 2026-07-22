@@ -36,6 +36,9 @@ Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0)
 - [ ] privacy policy URL empty (en-US) — non-blocking warning, needs a URL
 Then: asc review submit --app 6785764864 --version 1.0 --confirm
 
+## From Merge status.pdf (imported 2026-07-21)
+- [ ] Medical-device declaration app-record deletion — needs Joshua's asc web auth login.
+
 ## From Healstack.pdf (imported 2026-07-19)
 - [ ] TestFlight build is stale — rename to Healstack not fully propagated: splash screen still shows old name "dose", Home Screen icon label still says "dose". Needs a fresh build with updated app display name/launch screen assets, then new TestFlight upload.
 - [x] Tiles in-app still have drop shadows — verified: `glassCard()`/`GlassCard` modifier already has no shadow; found and removed the one remaining tile shadow (streak card, `orange.opacity(0.22)` in DashboardView.swift:79). Build-verified. Remaining `.shadow(...)` calls are intentional glow-text/splash effects, not tile shadows — left as-is.
