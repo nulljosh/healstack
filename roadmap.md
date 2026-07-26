@@ -21,10 +21,6 @@ Then: asc review submit --app 6785764864 --version 1.0 --confirm
 ## From Merge status.pdf (imported 2026-07-21)
 - [ ] Medical-device declaration app-record deletion — needs Joshua's asc web auth login.
 
-## From Healstack.pdf (imported 2026-07-19)
-- [ ] TestFlight build is stale — rename to Healstack not fully propagated: splash screen still shows old name "dose", Home Screen icon label still says "dose". Needs a fresh build with updated app display name/launch screen assets, then new TestFlight upload.
-  - 2026-07-25: source-side root cause FIXED and build-verified. `ios/Info.plist` had no `CFBundleDisplayName`, so the Home Screen fell back to `CFBundleName` = `$(PRODUCT_NAME)` = "Dose"; the `INFOPLIST_KEY_CFBundleDisplayName: Healstack` in `ios/project.yml` was a no-op because the target uses an explicit `INFOPLIST_FILE`. Added the key to Info.plist directly — built bundle now reports `CFBundleDisplayName = Healstack`. SplashView already said "Healstack". **Only the fresh build + TestFlight upload remains** (gated by the ship item at the top of this file).
-
 ## Stashed 2026-07-19
 - [ ] Screenshots: none uploaded (blocking) — appstore-screenshots skill / asc screenshots upload; needs simulator capture pass, out of scope for this run
 - [ ] Availability: missing (dashboard-only dead-end) — ASC web Pricing & Availability for app 6785764864
