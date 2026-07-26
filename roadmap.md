@@ -8,9 +8,6 @@
 - [ ] If 2.3.3 ship failed: asc workflow run --file .asc/workflow.json ship-ios --resume ship-ios-20260713T003453Z-885325d5
   - note: rm .asc/artifacts/Healstack.ipa first (stale), then resume — not attempted, superseded by v1.0 ASC submission path above
 
-## 2026-07-14 dump
-- [x] Finish full Dose→Healstack rename audit — done 2026-07-25. Scoped brand strings from domain vocabulary: fixed `ios/Info.plist` (added CFBundleDisplayName), `macos/project.yml` (INFOPLIST_KEY_CFBundleDisplayName), `macos/Views/AuthView.swift` + `SidebarView.swift` ("Dose"→"Healstack"), `ios/DoseApp.swift` ("Dose is locked"). Deliberately kept as domain vocabulary: DoseEntry/AddDoseSheet/useDoseLog, "Log a Dose", "Doses Today", Section("Dose"), widget "Dose Summary". Bundle IDs / App Group / `dose://` scheme intentionally unchanged per CLAUDE.md.
-
 ## App Store submission (parked 2026-07-14, wrap-up)
 Done via API: copyright, age rating, content rights, encryption (build 53083cc3, VALID).
 Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0):
@@ -31,7 +28,3 @@ Then: asc review submit --app 6785764864 --version 1.0 --confirm
 ## Stashed 2026-07-19
 - [ ] Screenshots: none uploaded (blocking) — appstore-screenshots skill / asc screenshots upload; needs simulator capture pass, out of scope for this run
 - [ ] Availability: missing (dashboard-only dead-end) — ASC web Pricing & Availability for app 6785764864
-
-## Ingested 2026-07-25
-- [x] Rename still not fully applied — app name not showing correctly under icon after latest TestFlight build. Fixed 2026-07-25: root cause was the missing `CFBundleDisplayName` in `ios/Info.plist` (see note under "From Healstack.pdf" above). Landing page/login checked clean — web `index.html` title, `src/pages/Auth.jsx` h1 already read "Healstack"; macOS login/sidebar were still "Dose" and are now fixed. Needs a fresh build to show on device.
-- [x] Navbar overwriting content bug — fixed 2026-07-25 in `src/index.css`: `.page` had a flat `padding-bottom: 100px`, but the fixed nav pill occupies 12px offset + ~62px height + `env(safe-area-inset-bottom)` (~34px on home-indicator devices), so it covered content. Ported the sibling pattern (`lexly/css/lingo.css:216`) — now `calc(100px + env(safe-area-inset-bottom, 0px))`.
