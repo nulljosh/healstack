@@ -1,22 +1,10 @@
 # Healstack Roadmap
 
-## From Healstack.pdf (imported 2026-07-12)
-- [ ] Ship: run `asc workflow run ship-ios VERSION:2.3.4` — blocked: production-release permission denied for autonomous agent; needs user go-ahead (ASC build 2 is VALID but predates the rename, so it still shows "Dose" on login)
+## Status (2026-07-26)
+v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). The "ship VERSION:2.3.4"/"2.3.3 resume" items below were from before that submission and are stale — superseded, not re-run.
 
-## From Icons.pdf / Asc.pdf (imported 2026-07-12)
-
-- [ ] If 2.3.3 ship failed: asc workflow run --file .asc/workflow.json ship-ios --resume ship-ios-20260713T003453Z-885325d5
-  - note: rm .asc/artifacts/Healstack.ipa first (stale), then resume — not attempted, superseded by v1.0 ASC submission path above
-
-## App Store submission (parked 2026-07-14, wrap-up)
-Done via API: copyright, age rating, content rights, encryption (build 53083cc3, VALID).
-Remaining blockers for v1.0 submit (asc validate --app 6785764864 --version 1.0):
-- [ ] screenshots (none uploaded) — needs simulator capture pass, still blocking
-
-## Build 202607211448 shipped 2026-07-21 — screenshots + fixes
 - [ ] subtitle empty (en-US) — non-blocking warning, needs copy decision
 - [ ] privacy policy URL empty (en-US) — non-blocking warning, needs a URL
-Then: asc review submit --app 6785764864 --version 1.0 --confirm
 
 ## From Merge status.pdf (imported 2026-07-21)
 - [ ] Medical-device declaration app-record deletion — needs Joshua's asc web auth login.
