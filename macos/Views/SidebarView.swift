@@ -41,7 +41,7 @@ struct SidebarView: View {
             }
         }
         .navigationSplitViewColumnWidth(min: 180, ideal: 220)
-        .navigationTitle("Dose")
+        .navigationTitle("Healstack")
         .navigationDestination(for: SidebarItem.self) { item in
             switch item {
             case .dashboard: MacDashboardView(dataStore: dataStore)

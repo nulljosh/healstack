@@ -11,6 +11,7 @@
 		0C159F83119742A88297C90E /* BodyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C45C3FD56F2975F384C1E3 /* BodyMapView.swift */; };
 		11EFE424307AA9C52CA66EB2 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5913A272221D6000446F4512 /* AuthView.swift */; };
 		164D711819C9DC59A33CFC96 /* DoseMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0ECAA0B1CA805B0957C54F /* DoseMacApp.swift */; };
+		1720A546F328EEA2774817D4 /* ExportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F6B3794F32F35EBBFDA89AE /* ExportOptions.plist */; };
 		1A1D412A38C32E06AD1118D4 /* InsightEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97837BAE2FEFE28A049A07B /* InsightEngine.swift */; };
 		1F6AF64D3C50C98CEF812E0D /* Substance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C780039566502D611CDB696 /* Substance.swift */; };
 		23BFA67495BBDA2AF6D5C7B0 /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBB04EAB0A907552454090 /* MacSettingsView.swift */; };
@@ -49,6 +50,7 @@
 		2C780039566502D611CDB696 /* Substance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Substance.swift; sourceTree = "<group>"; };
 		325F038875E9F50100570F10 /* AbdomenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbdomenData.swift; sourceTree = "<group>"; };
 		36FBB04EAB0A907552454090 /* MacSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingsView.swift; sourceTree = "<group>"; };
+		3F6B3794F32F35EBBFDA89AE /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ExportOptions.plist; sourceTree = "<group>"; };
 		45D13B2BCE112D6A18E7751B /* BiometricEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricEntry.swift; sourceTree = "<group>"; };
 		529D4EBDA9DB5D0CFE8E3620 /* AcupunctureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcupunctureData.swift; sourceTree = "<group>"; };
 		5913A272221D6000446F4512 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				7B0ECAA0B1CA805B0957C54F /* DoseMacApp.swift */,
+				3F6B3794F32F35EBBFDA89AE /* ExportOptions.plist */,
 				DDF660EC3833FA9119E054FD /* Models */,
 				D3FA9DD9D4CC4CB1E262B4AB /* Views */,
 			);
@@ -193,6 +196,7 @@
 			buildConfigurationList = D56D04C92858DCC60A819438 /* Build configuration list for PBXNativeTarget "DoseMac" */;
 			buildPhases = (
 				0D08640F6AF202F68303193F /* Sources */,
+				2C93AD0F6ABE29933CA6EA59 /* Resources */,
 				9E9CCED37391851D2924114F /* Frameworks */,
 			);
 			buildRules = (
@@ -243,6 +247,17 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2C93AD0F6ABE29933CA6EA59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1720A546F328EEA2774817D4 /* ExportOptions.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0D08640F6AF202F68303193F /* Sources */ = {
@@ -334,7 +349,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -351,11 +366,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Healstack;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose.mac;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -366,11 +382,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Healstack;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose.mac;
+				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -430,7 +447,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 2.2.0;
+				MARKETING_VERSION = 2.0.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

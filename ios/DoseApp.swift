@@ -230,7 +230,7 @@ private struct DoseLockView: View {
                     .font(.system(size: 42))
                     .foregroundStyle(.primary)
 
-                Text("Dose is locked")
+                Text("Healstack is locked")
                     .font(.title2.weight(.semibold))
 
                 Text("Authenticate with \(biometricLabel) to access your health data.")

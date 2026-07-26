@@ -240,7 +240,9 @@ button { user-select: none; font-family: inherit; }
 /* --- Page Layout --- */
 
 .page {
-  padding: 24px 16px 100px;
+  /* Bottom nav is a fixed pill: 12px offset + ~62px tall + the home-indicator
+     inset it pads itself with. Clear all three or it covers page content. */
+  padding: 24px 16px calc(100px + env(safe-area-inset-bottom, 0px));
   width: 100%;
   max-width: 680px;
   margin: 0 auto;

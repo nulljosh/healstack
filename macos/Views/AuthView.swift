@@ -17,7 +17,7 @@ struct MacAuthView: View {
                 Image(systemName: "cross.vial.fill")
                     .font(.system(size: 32, weight: .medium))
                     .foregroundStyle(.tint)
-                Text("Dose")
+                Text("Healstack")
                     .font(.title2.weight(.semibold))
                 Text("Health tracker")
                     .font(.subheadline)
