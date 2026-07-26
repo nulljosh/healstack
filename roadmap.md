@@ -30,3 +30,7 @@ Then: asc review submit --app 6785764864 --version 1.0 --confirm
 ## Stashed 2026-07-19
 - [ ] Screenshots: none uploaded (blocking) — appstore-screenshots skill / asc screenshots upload; needs simulator capture pass, out of scope for this run
 - [ ] Availability: missing (dashboard-only dead-end) — ASC web Pricing & Availability for app 6785764864
+
+## Ingested 2026-07-25
+- [ ] Rename still not fully applied — app name not showing correctly under icon after latest TestFlight build. Double-check rename across landing page, login, etc.
+- [ ] Navbar overwriting content bug — already fixed in other projects, port the fix here.
