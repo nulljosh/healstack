@@ -54,8 +54,50 @@ final class DataStore {
     private let labResultsKey = "dose.labResults"
 
     init() {
+        if CommandLine.arguments.contains("UITEST_SNAPSHOT") {
+            seedForSnapshot()
+            isLoading = false
+            return
+        }
         loadAll()
         seedIfNeeded()
+    }
+
+    private func seedForSnapshot() {
+        isLoading = true
+        let vitaminD = Substance(name: "Vitamin D3", category: .vitamin, dosage: 2000, unit: "IU", frequency: "Daily")
+        let magnesium = Substance(name: "Magnesium Glycinate", category: .supplement, dosage: 400, unit: "mg", frequency: "Nightly")
+        let omega3 = Substance(name: "Omega-3", category: .supplement, dosage: 1, unit: "capsule", frequency: "Daily")
+        substances = [vitaminD, magnesium, omega3]
+
+        let now = Date()
+        doseEntries = [
+            DoseEntry(substanceId: vitaminD.id, timestamp: now.addingTimeInterval(-3600), notes: "With breakfast", dose: 2000, unit: "IU", route: "oral", rating: 4),
+            DoseEntry(substanceId: magnesium.id, timestamp: now.addingTimeInterval(-7 * 3600), notes: "Before bed", dose: 400, unit: "mg", route: "oral", rating: 5),
+            DoseEntry(substanceId: omega3.id, timestamp: now.addingTimeInterval(-27 * 3600), notes: "", dose: 1, unit: "capsule", route: "oral", rating: 4)
+        ]
+
+        myMedications = [
+            MyMedication(builtInSubstanceId: nil, name: "Vitamin D3", dosage: 2000, unit: "IU", schedule: .daily, reminderHour: 8, reminderMinute: 0),
+            MyMedication(builtInSubstanceId: nil, name: "Magnesium Glycinate", dosage: 400, unit: "mg", schedule: .daily, reminderHour: 21, reminderMinute: 0)
+        ]
+
+        biometricEntries = [
+            BiometricEntry(id: UUID(), date: now, weight: 172, bpSystolic: 118, bpDiastolic: 76, heartRate: 62, sleepHours: 7.5, steps: 8420, notes: "", respiratoryRate: 14, bloodOxygen: 98, hrv: 55, activeEnergy: 420, distance: 5200)
+        ]
+
+        healthEntries = [
+            HealthEntry(date: now, mood: 4, energy: 4, sleepHours: 7.5, notes: "Felt good after morning walk")
+        ]
+
+        labResults = [
+            LabResult(date: now.addingTimeInterval(-30 * 24 * 3600), lab: "Quest Diagnostics", panel: "Basic Metabolic Panel", markers: [
+                LabMarker(name: "Vitamin D, 25-OH", value: 42, unit: "ng/mL", refLow: 30, refHigh: 100, flag: .normal),
+                LabMarker(name: "Glucose", value: 88, unit: "mg/dL", refLow: 70, refHigh: 99, flag: .normal),
+                LabMarker(name: "LDL Cholesterol", value: 118, unit: "mg/dL", refLow: 0, refHigh: 100, flag: .high)
+            ])
+        ]
+        isLoading = false
     }
 
     // MARK: - Substances

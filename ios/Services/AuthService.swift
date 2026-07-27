@@ -22,6 +22,10 @@ final class AuthService {
     var isPasswordRecovery = false
 
     init() {
+        if CommandLine.arguments.contains("UITEST_SNAPSHOT") {
+            isLoading = false
+            return
+        }
         Task { @MainActor in
             for await (event, session) in supabaseClient.auth.authStateChanges {
                 switch event {

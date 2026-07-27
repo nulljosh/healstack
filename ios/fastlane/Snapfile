@@ -1,0 +1,18 @@
+devices([
+  "iPhone 11 Pro Max",
+  "iPhone 14 Plus"
+])
+
+languages(["en-US"])
+
+scheme("HealstackUITests")
+
+output_directory("./fastlane/screenshots")
+
+clear_previous_screenshots(true)
+
+override_status_bar(true)
+
+launch_arguments(["UITEST_SNAPSHOT"])
+
+xcargs("-skipPackagePluginValidation")

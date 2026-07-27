@@ -32,10 +32,12 @@ targets:
           - architecture.svg
           - '*.entitlements'
           - Tests
+          - UITests
           - DoseWidget
           - watchos
           - scripts
           - .asc
+          - fastlane
     dependencies:
       - sdk: HealthKit.framework
       - target: DoseWidgetExtension
@@ -72,6 +74,17 @@ targets:
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose.tests
       GENERATE_INFOPLIST_FILE: YES
 
+  HealstackUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: UITests
+    dependencies:
+      - target: Dose
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose.uitests
+      GENERATE_INFOPLIST_FILE: YES
+
   DoseWidgetExtension:
     type: app-extension
     platform: iOS
@@ -100,3 +113,12 @@ schemes:
       config: Debug
       targets:
         - DoseTests
+  HealstackUITests:
+    build:
+      targets:
+        Dose: all
+        HealstackUITests: all
+    test:
+      config: Debug
+      targets:
+        - HealstackUITests

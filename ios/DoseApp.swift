@@ -19,8 +19,12 @@ struct DoseApp: App {
     @State private var unlockError: String?
     @State private var selectedTab = 0
 
+    private var isUITestSnapshot: Bool {
+        CommandLine.arguments.contains("UITEST_SNAPSHOT")
+    }
+
     private var requiresUnlock: Bool {
-        biometryType != .none
+        !isUITestSnapshot && biometryType != .none
     }
 
     var body: some Scene {
@@ -28,7 +32,7 @@ struct DoseApp: App {
             Group {
             if authService.isLoading {
                 SplashView()
-            } else if authService.user == nil {
+            } else if authService.user == nil && !isUITestSnapshot {
                 AuthView(authService: authService)
             } else if authService.isPasswordRecovery {
                 NewPasswordView(authService: authService)
@@ -66,7 +70,7 @@ struct DoseApp: App {
                     UIImpactFeedbackGenerator(style: .light).impactOccurred()
                 }
                 .task {
-                    if HealthKitService.isAvailable {
+                    if HealthKitService.isAvailable && !isUITestSnapshot {
                         await healthKitService.requestAuthorization()
                     }
                 }
@@ -195,6 +199,7 @@ private struct DoseFloatingTabBar: View {
                 .frame(maxWidth: .infinity)
                 .buttonStyle(.plain)
                 .accessibilityLabel(tabs[index].label)
+                .accessibilityIdentifier("tab.\(tabs[index].label)")
             }
         }
         .padding(.horizontal, 10)
