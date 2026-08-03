@@ -4,6 +4,7 @@ import { useSubstances } from '../hooks/useSubstances';
 import LogEntry from '../components/LogEntry';
 import AddEntryModal from '../components/AddEntryModal';
 import { exportCsv } from '../utils/exportCsv';
+import { usePro } from '../hooks/usePro';
 
 const ROUTES = ['all', 'oral', 'sublingual', 'smoked', 'vaped', 'insufflated', 'IV', 'IM'];
 
@@ -13,6 +14,7 @@ export default function Journal() {
   const [showModal, setShowModal] = useState(false);
   const [filters, setFilters] = useState({ substanceId: '', route: 'all', since: '', until: '' });
   const [deleteConfirm, setDeleteConfirm] = useState(null);
+  const { isPro, loading: unlockLoading, unlock } = usePro();
 
   const entries = getEntries({
     substanceId: filters.substanceId || undefined,
@@ -37,7 +39,9 @@ export default function Journal() {
         <h1 className="page-title">Journal</h1>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           {entries.length > 0 && (
-            <button className="btn-ghost" onClick={() => exportCsv(entries, getById)}>Export CSV</button>
+            isPro
+              ? <button className="btn-ghost" onClick={() => exportCsv(entries, getById)}>Export CSV</button>
+              : <button className="btn-ghost" disabled={unlockLoading} onClick={unlock}>Unlock Pro to export &mdash; $1</button>
           )}
           <button className="btn-secondary" onClick={() => setShowModal(true)}>+ Log</button>
         </div>
