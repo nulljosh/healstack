@@ -13,4 +13,5 @@ v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). The "ship VERSION:2.3.4"/"2.3
 - [ ] Ship a macOS version of Healstack.
 
 ## Ingested 2026-08-04
-- [ ] Login works with everything now; still needs a landing page
+- [x] Login works with everything now; still needs a landing page — 2026-08-04: added `src/pages/Landing.jsx` (headline, product description, Get started / Sign in CTAs, 4-item feature grid, privacy + not-medical-advice footer linking the existing `/privacy.html` and `/tos.html`). `AppShell` in `src/App.jsx` now shows Landing when signed out and swaps to `<Auth />` on CTA click, instead of dropping straight into the login form. Uses existing design tokens only. `npm run build` passes.
+- [x] Favicon was an emoji (💊), against the no-emojis rule — replaced with an inline SVG of the same person glyph the Auth/Landing header uses, on the existing accent blue.

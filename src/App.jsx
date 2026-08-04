@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { SessionProvider } from './context/SessionContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Auth from './pages/Auth';
+import Landing from './pages/Landing';
 import ResetPassword from './pages/ResetPassword';
 import Nav from './components/Nav';
 import Dashboard from './pages/Dashboard';
@@ -44,10 +45,12 @@ function ThemeToggle({ theme, setTheme }) {
 
 function AppShell({ theme, setTheme }) {
   const { user, loading, isPasswordRecovery } = useAuth();
+  // ponytail: signed-out view is a two-state toggle, not a route — no router needed above AuthProvider
+  const [showAuth, setShowAuth] = useState(false);
 
   if (loading) return null;
   if (isPasswordRecovery) return <ResetPassword />;
-  if (!user) return <Auth />;
+  if (!user) return showAuth ? <Auth /> : <Landing onGetStarted={() => setShowAuth(true)} />;
 
   return (
     <SessionProvider>
