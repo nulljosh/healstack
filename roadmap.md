@@ -11,3 +11,6 @@ v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). The "ship VERSION:2.3.4"/"2.3
 
 ## From App Store.pdf (imported 2026-07-28)
 - [ ] Ship a macOS version of Healstack.
+
+## Ingested 2026-08-04
+- [ ] Login works with everything now; still needs a landing page
