@@ -1,7 +1,7 @@
 import { kv } from '@vercel/kv';
 import crypto from 'crypto';
 
-const ALLOWED_ORIGIN = 'https://dose.heyitsmejosh.com';
+const ALLOWED_ORIGIN = 'https://healstack.heyitsmejosh.com';
 
 function unauthorized(res) {
   return res.status(401).json({ error: 'unauthorized' });

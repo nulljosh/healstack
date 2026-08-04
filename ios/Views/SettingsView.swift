@@ -74,7 +74,7 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Toggle("Sync with dose.heyitsmejosh.com", isOn: Binding(
+                    Toggle("Sync with healstack.heyitsmejosh.com", isOn: Binding(
                         get: { syncService.syncEnabled },
                         set: { syncService.syncEnabled = $0 }
                     ))

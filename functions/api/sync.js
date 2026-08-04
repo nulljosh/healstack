@@ -1,4 +1,4 @@
-const ALLOWED_ORIGIN = 'https://dose.heyitsmejosh.com';
+const ALLOWED_ORIGIN = 'https://healstack.heyitsmejosh.com';
 
 function timingSafeEqual(a, b) {
   if (a.length !== b.length) return false;
