@@ -24,7 +24,7 @@ npm run build     # Production build
 ```
 
 ## Deploy
-Migrated from Vercel to Cloudflare Pages 2026-08-06. Direct-upload via `wrangler pages deploy` (not git-connected, to avoid staleness). Serverless functions ported to Cloudflare Pages Functions (`functions/api/stripe.js`, `functions/api/stripe-webhook.js`, `functions/api/sync.js`). KV namespace binding for Stripe Pro entitlements (`DOSE_KV`). Secrets managed via `wrangler pages secret put`; run locally via `wrangler pages dev dist`.
+Migrated from Vercel to Cloudflare Pages 2026-08-06. Direct-upload via `wrangler pages deploy` (not git-connected, to avoid staleness). Serverless functions ported to Cloudflare Pages Functions (`functions/api/stripe.js`, `functions/api/stripe-webhook.js`, `functions/api/sync.js`). KV namespace binding for sync data (`DOSE_KV`, id `933180aeff6b45e58e39b258b2fbe25b`). Secrets managed via `wrangler pages secret put`; run locally via `wrangler pages dev dist`. Custom domain must be explicitly attached via Pages API (`POST .../pages/projects/healstack/domains`) — a DNS CNAME alone is not enough, causes 522 until the domain is registered on the Pages project itself. `DOSE_SYNC_TOKEN` secret set fresh 2026-08-06 (Cloudflare KV was empty pre-migration — Vercel used a separate `@vercel/kv` store, no data migration needed); real app users need this token in their browser's `dose:sync_token` localStorage key. Cloudflare secret updates take ~1-2 min to propagate across all edge PoPs — expect transient 401s on `/api/sync` right after a `wrangler pages secret put`, not a bug.
 
 ## Key Files
 - src/App.jsx: App shell with routing, OS-aware theme (auto dark/light + manual toggle), nav.
@@ -44,3 +44,4 @@ Migrated from Vercel to Cloudflare Pages 2026-08-06. Direct-upload via `wrangler
 - Account recovery: real account email is jatrommel@gmail.com (not trommatic@icloud.com). Reset password to that address rather than chasing the icloud reset email further.
 - Supabase anon key no longer hardcoded in `ios/Services/AuthService.swift` — now read via `infoPlistValue("SUPABASE_ANON_KEY")` from Info.plist (fixed 2026-06-23).
 - Web UI refresh, landing page, and iOS ship are tracked in README Roadmap (Declutter UI, Vibe clone portfolio aesthetic, iOS companion app) — not new asks, no changes applied yet.
+- Stripe secrets (STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, real STRIPE_PRICE_ID) not set on Cloudflare — deliberately deferred 2026-08-06 (app is free/personal, $1 CSV-export gate isn't load-bearing). `functions/api/stripe.js`/`stripe-webhook.js` are deployed and respond correctly (400s on missing config, no crashes) but the Pro-unlock flow won't work until these are set.
