@@ -1,34 +1,12 @@
 name = "healstack"
-type = "javascript"
-main = "src/main.jsx"
 compatibility_date = "2025-01-01"
-
-[env.production]
-name = "healstack"
-routes = [
-  { pattern = "healstack.heyitsmejosh.com", zone_name = "heyitsmejosh.com" }
-]
+pages_build_output_dir = "dist"
 
 [[kv_namespaces]]
 binding = "DOSE_KV"
-id = "89dd8e64a15f4e41af2a4d49b5a3f7c0"
-preview_id = "89dd8e64a15f4e41af2a4d49b5a3f7c0"
+id = "933180aeff6b45e58e39b258b2fbe25b"
+preview_id = "933180aeff6b45e58e39b258b2fbe25b"
 
 [vars]
 ALLOWED_ORIGIN = "https://healstack.heyitsmejosh.com"
 STRIPE_PRICE_ID = "price_1234567890abcdef"
-
-[build]
-command = "npm run build"
-cwd = "."
-main = "dist/index.html"
-watch_paths = ["src/**/*.jsx"]
-
-[[build.upload.rules]]
-type = "CompiledContentType"
-globs = ["**/*"]
-fallthrough = true
-
-[[build.upload.rules]]
-type = "Text"
-globs = ["**/*.html", "**/*.css"]
