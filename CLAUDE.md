@@ -20,8 +20,11 @@ Renamed from Dose 2026-07-01 (Dose, Balm, Tonic, and several others all taken on
 npm run dev       # Dev server
 npm test          # Run tests
 npm run build     # Production build
-git push           # Deploy (auto via Vercel Git integration from apps monorepo)
+./deploy.sh       # Deploy to Cloudflare Pages (direct-upload)
 ```
+
+## Deploy
+Migrated from Vercel to Cloudflare Pages 2026-08-06. Direct-upload via `wrangler pages deploy` (not git-connected, to avoid staleness). Serverless functions ported to Cloudflare Pages Functions (`functions/api/stripe.js`, `functions/api/stripe-webhook.js`, `functions/api/sync.js`). KV namespace binding for Stripe Pro entitlements (`DOSE_KV`). Secrets managed via `wrangler pages secret put`; run locally via `wrangler pages dev dist`.
 
 ## Key Files
 - src/App.jsx: App shell with routing, OS-aware theme (auto dark/light + manual toggle), nav.
