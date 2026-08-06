@@ -1,7 +1,7 @@
 # Healstack Roadmap
 
-## Status (2026-07-26)
-v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). The "ship VERSION:2.3.4"/"2.3.3 resume" items below were from before that submission and are stale — superseded, not re-run.
+## Status (2026-08-06)
+v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). Infrastructure migrated from Vercel to Cloudflare Pages 2026-08-06 (wrangler config cleared of Vercel-only settings, landing page restyled with Lexly design system). The "ship VERSION:2.3.4"/"2.3.3 resume" items below were from before that submission and are stale — superseded, not re-run.
 
 ## From Merge status.pdf (imported 2026-07-21)
 - [ ] Medical-device declaration app-record deletion — needs Joshua's asc web auth login.
