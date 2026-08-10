@@ -57,3 +57,11 @@ v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). Infrastructure migrated from 
 ## App Store submission freeze — until 2026-08-18
 - [ ] **BLOCKED: no App Store submission on any app until 2026-08-18.** Account is under a Guideline 5.6 Developer Code of Conduct review suspension (Curvely, Transcriptly, Wiretext, NYC Survive). Apple warns that continued similar submissions may result in removal from the Apple Developer Program. Full detail: wiki `ship-plan.md` § "Guideline 5.6 suspension (2026-08-10)". TestFlight builds, pushes and web deploys are still fine.
 - [ ] Healstack iOS 1.0 REJECTED 2.1(a): "Unable to log in" (iPhone 17 Pro Max, iOS 26.5.1, build 202607211448). Production auth is broken — reproduce a real sign-in against the live backend and fix before any resubmit. Same root cause as Sparkjar and Lexly; see wiki `auth-email-audit`.
+
+## Auth 2026-08-10 — not yet reproduced, do this first
+Rejected 2.1(a) "Unable to log in" on build 202607211448 (iPhone 17 Pro Max, iOS 26.5.1).
+Sparkjar's identical-looking rejection turned out to be a healthy backend + a stale build, so do
+not assume the server is broken here either — verify before changing code.
+- [ ] Hit the live Supabase auth endpoint directly (project tjsxsqlxjmanwvmywwvw) with a fresh test account: sign up, then sign in. Record the actual status codes.
+- [ ] Check whether the reviewed build predates the Cloudflare Pages migration (2026-08-06) — if the build points at the old Vercel API base, that alone explains "unable to log in".
+- [ ] Verify the App Review demo account actually signs in before resubmitting.
