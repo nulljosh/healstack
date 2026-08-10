@@ -47,3 +47,9 @@ v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). Infrastructure migrated from 
 ## Ingested 2026-08-04
 - [x] Login works with everything now; still needs a landing page — 2026-08-04: added `src/pages/Landing.jsx` (headline, product description, Get started / Sign in CTAs, 4-item feature grid, privacy + not-medical-advice footer linking the existing `/privacy.html` and `/tos.html`). `AppShell` in `src/App.jsx` now shows Landing when signed out and swaps to `<Auth />` on CTA click, instead of dropping straight into the login form. Uses existing design tokens only. `npm run build` passes.
 - [x] Favicon was an emoji (💊), against the no-emojis rule — replaced with an inline SVG of the same person glyph the Auth/Landing header uses, on the existing accent blue.
+
+## Rejection reason pulled 2026-08-10 (Resolution Center)
+- [ ] **v1.0 REJECTED — Guideline 2.1(a) Performance/App Completeness.** Reviewed 2026-08-05 on iPhone 17 Pro Max, iOS 26.5.1, build `202607211448` (uploaded 07-21). Submission `2636ad65-3154-47ba-9d91-d333e8adbffe`. Apple's report is one line: **"Unable to log in."** No steps, no screenshots attached.
+- [ ] **Not an IAP problem** despite `asc review history` labelling the item `inAppPurchaseVersion` — the app has zero IAPs, the `6` in the item ID is a mislabelled type code. Same trap as sparkjar. Don't chase an IAP.
+- [ ] **Suspected stale build, not a live bug.** The roadmap's own `## Ingested 2026-08-04` section records "Login works with everything now" — that fix landed *after* the 07-21 build Apple reviewed. Verify login against the current main on a clean device, then rebuild + resubmit; if login genuinely works now, no code change is needed, only a new binary.
+- [ ] Reviewers get no demo account — the roadmap's outstanding "demo account" item is likely why a reviewer hit a wall. Provide review credentials in App Review notes with the resubmission.
