@@ -65,3 +65,26 @@ not assume the server is broken here either — verify before changing code.
 - [ ] Hit the live Supabase auth endpoint directly (project tjsxsqlxjmanwvmywwvw) with a fresh test account: sign up, then sign in. Record the actual status codes.
 - [ ] Check whether the reviewed build predates the Cloudflare Pages migration (2026-08-06) — if the build points at the old Vercel API base, that alone explains "unable to log in".
 - [ ] Verify the App Review demo account actually signs in before resubmitting.
+
+## 2026-08-10 — ROOT CAUSE FOUND AND FIXED: App Review demo account returned a 500
+Apple's 2.1(a) "Unable to log in" is resolved. It was not the app and not the network.
+
+The demo account App Store Connect hands reviewers is **healstack.demo@heyitsmejosh.com**
+(not jatrommel@gmail.com, which is a different, healthy account). That user's row in
+`auth.users` on the shared `spark` Supabase project had `email_change` and
+`email_change_token_new` set to **NULL**. GoTrue scans those columns into non-nullable Go
+strings, so any auth call touching that row threw:
+- `POST /auth/v1/token?grant_type=password` → **500 "Database error querying schema"**
+- `POST /auth/v1/signup` → **500 "Database error finding user"**
+
+A normal wrong-password login returns a clean 400, so the 500 was specific to this one row.
+The reviewer typed the exact credentials we gave them and got a server error. Exactly one user
+out of nine was affected — the demo account, which is why normal testing never caught it.
+
+Fix applied 2026-08-10: `update auth.users set email_change = coalesce(email_change, ''),
+email_change_token_new = coalesce(email_change_token_new, '')` for the affected row.
+Verified after: the same login now returns a clean **400 invalid_credentials** instead of 500.
+
+- [x] Root cause identified and fixed in the database.
+- [ ] Sign in with the real demo password once to confirm end-to-end before resubmitting (I could only verify the 500 is gone; the stored password is redacted via the API).
+- [ ] Then rebuild and resubmit — after 2026-08-18 per the submission freeze. No app code change is required for this rejection.
