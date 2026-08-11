@@ -88,3 +88,7 @@ Verified after: the same login now returns a clean **400 invalid_credentials** i
 - [x] Root cause identified and fixed in the database.
 - [ ] Sign in with the real demo password once to confirm end-to-end before resubmitting (I could only verify the 500 is gone; the stored password is redacted via the API).
 - [ ] Then rebuild and resubmit — after 2026-08-18 per the submission freeze. No app code change is required for this rejection.
+
+## From Apple Notes (imported 2026-08-10)
+- [x] Landing page screenshot shows the in-app "What's New" panel — should not be in the marketing screenshot (rest of landing page + happy-face icon look good) — swapped `public/screenshots/iPhone-home.png` for the clean light-mode home shot (fastlane's mislabeled `iPhone 17 Pro Max-1Library.png`), rebuilt + deployed to Cloudflare Pages 2026-08-10
+- [ ] Re-shoot the iOS fastlane screenshot set — the run is off by one step: `iPhone 17 Pro Max-0Home.png` caught the "What's New in v2.3.2" sheet, `-1Library.png` is actually Home, etc. Same stale set feeds the App Store screenshots, so the What's New sheet is likely in the store listing too. Fix = dismiss the changelog sheet (or set its seen-version default) in the snapshot launch args before capture.
