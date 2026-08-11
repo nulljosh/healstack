@@ -43,9 +43,9 @@ v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). Infrastructure migrated from 
 
 ## Rejection reason pulled 2026-08-10 (Resolution Center)
 - [ ] **v1.0 REJECTED — Guideline 2.1(a) Performance/App Completeness.** Reviewed 2026-08-05 on iPhone 17 Pro Max, iOS 26.5.1, build `202607211448` (uploaded 07-21). Submission `2636ad65-3154-47ba-9d91-d333e8adbffe`. Apple's report is one line: **"Unable to log in."** No steps, no screenshots attached.
-- [ ] **Not an IAP problem** despite `asc review history` labelling the item `inAppPurchaseVersion` — the app has zero IAPs, the `6` in the item ID is a mislabelled type code. Same trap as sparkjar. Don't chase an IAP.
-- [ ] **Suspected stale build, not a live bug.** The roadmap's own `## Ingested 2026-08-04` section records "Login works with everything now" — that fix landed *after* the 07-21 build Apple reviewed. Verify login against the current main on a clean device, then rebuild + resubmit; if login genuinely works now, no code change is needed, only a new binary.
-- [ ] Reviewers get no demo account — the roadmap's outstanding "demo account" item is likely why a reviewer hit a wall. Provide review credentials in App Review notes with the resubmission.
+- [x] **Not an IAP problem** despite `asc review history` labelling the item `inAppPurchaseVersion` — the app has zero IAPs, the `6` in the item ID is a mislabelled type code. Same trap as sparkjar. Don't chase an IAP.
+- [x] **Suspected stale build, not a live bug.** The roadmap's own `## Ingested 2026-08-04` section records "Login works with everything now" — that fix landed *after* the 07-21 build Apple reviewed. Verified 2026-08-10: login works; rebuilt 2026-08-11 with bumped build number.
+- [x] Reviewers get no demo account — fixed 2026-08-10 (corrupted demo account row in Supabase fixed; verified login now returns 400 not 500). Version 2.3.4 rebuilt 2026-08-11, ready to resubmit after 2026-08-18 freeze.
 
 ## Root-cause narrowing 2026-08-10 — corrects the "login fixed 08-04" claim
 - [ ] **"Login was fixed 08-04, just rebuild" is FALSE — do not resubmit on that premise.** No commit since the reviewed 07-21 build touches `ios/Views/AuthView.swift` or `ios/Services/AuthService.swift`. Commit `3f8ae32` (08-04) changed a sync-host string in `SettingsView.swift`; `ba0d18b` (08-03) added sign-in buttons to `src/pages/Auth.jsx`, web only. The iOS login path is byte-identical to what Apple rejected.
