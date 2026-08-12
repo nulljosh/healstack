@@ -103,3 +103,5 @@ Verified after: the same login now returns a clean **400 invalid_credentials** i
 ## From Apple Notes (imported 2026-08-11)
 - [ ] Web landing page responsiveness needs work
 - [ ] Bump the top-left project icon — consider a pill/medicine mark, or keep the happy face but stronger
+
+> Resume note (2026-08-11): a `wip: partial work from /work notes ingest` commit holds unfinished, unverified changes for the items above. Review `git show HEAD` before building on it — it was committed mid-flight, not reviewed, and is unpushed.
