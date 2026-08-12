@@ -1,5 +1,19 @@
 # Healstack Roadmap
 
+## App Review rejection reason — READ FROM RESOLUTION CENTER 2026-08-12
+
+**Guideline 2.1(a) — Performance — App Completeness.** Reviewed 2026-08-05 on iPhone 17 Pro
+Max, iOS 26.5.1, active internet, version 1.0 (202607211448).
+
+> Bug description: **Unable to log in**
+
+That is the entire defect. Same root cause as sparkjar and lexly Mac — sign-in is broken on
+all three. Fix auth, then this clears.
+
+Source: `asc web review show --app 6785764864 --apple-id trommatic@icloud.com` (needs `asc-login`;
+the public API only returns a generic "unresolved issues" wrapper). Submissions frozen
+until 2026-08-18 regardless — fix and stage, do not submit.
+
 ## Status (corrected 2026-08-10) — v1.0 is REJECTED, not waiting for review
 
 The line below (and `~/Documents/Code/CLAUDE.md`) said "v1.0 is WAITING_FOR_REVIEW
