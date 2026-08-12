@@ -135,3 +135,21 @@ endpoint was the thing broken on Vercel, the migration may have already fixed it
       account before resubmitting. If it works, say so explicitly in the App Review notes.
 - [ ] Do not rotate or recreate the demo account — it is working; changing it loses the one
       known-good credential.
+
+## Sign-in rejection — ALREADY FIXED, needs a build upload (confirmed 2026-08-12)
+
+Commit `2b4bf44` (2026-08-10) resolved this: the demo account row was returning a 500, the
+password was reset to a known value and republished to the ASC review detail, and
+`CURRENT_PROJECT_VERSION` was bumped off the rejected `202607211448`.
+
+Re-verified 2026-08-12 by hitting the real endpoint —
+`POST /auth/v1/token?grant_type=password` with the ASC demo credentials returns **HTTP 200
+with an access token**. Build settings were also checked: `SUPABASE_URL` and
+`SUPABASE_ANON_KEY` resolve correctly in a Release build (they have since 2026-06-23, so the
+`fatalError` path in `AuthService.swift` was never the cause).
+
+**The only thing left is that the fix was never built and uploaded.** Latest build on ASC is
+`202607261112` (2026-07-26) — older than the fix. Nothing about this is blocked by the 5.6
+freeze; uploading a build is not a submission.
+
+- [ ] Archive + upload a build containing `2b4bf44`, then resubmit once eligible.
