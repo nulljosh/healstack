@@ -17,9 +17,9 @@ export default defineConfig({
         cacheId: 'dose',
       },
       manifest: {
-        name: 'Dose',
-        short_name: 'Dose',
-        description: 'Health tracker',
+        name: 'Healstack',
+        short_name: 'Healstack',
+        description: 'Supplement & symptom tracker',
         theme_color: '#111111',
         background_color: '#111111',
         display: 'standalone',

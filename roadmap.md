@@ -99,3 +99,7 @@ Verified after: the same login now returns a clean **400 invalid_credentials** i
 - [ ] Re-shoot the iOS fastlane screenshot set — the run is off by one step: `iPhone 17 Pro Max-0Home.png` caught the "What's New in v2.3.2" sheet, `-1Library.png` is actually Home, etc. Same stale set feeds the App Store screenshots, so the What's New sheet is likely in the store listing too. Fix = dismiss the changelog sheet (or set its seen-version default) in the snapshot launch args before capture.
 
 - [x] Version decision made 2026-08-10: ASC version row 6785764864 edited 1.0 → **2.3.4** (`asc versions update --version-id bdf10a5f… --version 2.3.4`), and `ios/project.yml` MARKETING_VERSION bumped 2.3.3 → 2.3.4 to match. Keeps the 2.3.x lineage the in-app WhatsNewSheet and READMEs already speak, instead of rewriting the changelog down to 1.0. Store row and source now agree; next archive after the Aug 18 freeze is a clean rebuild.
+
+## From Apple Notes (imported 2026-08-11)
+- [ ] Web landing page responsiveness needs work
+- [ ] Bump the top-left project icon — consider a pill/medicine mark, or keep the happy face but stronger
