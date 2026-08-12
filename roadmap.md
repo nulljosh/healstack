@@ -119,3 +119,19 @@ Verified after: the same login now returns a clean **400 invalid_credentials** i
 - [ ] Bump the top-left project icon — consider a pill/medicine mark, or keep the happy face but stronger
 
 > Resume note (2026-08-11): a `wip: partial work from /work notes ingest` commit holds unfinished, unverified changes for the items above. Review `git show HEAD` before building on it — it was committed mid-flight, not reviewed, and is unpushed.
+
+## Sign-in rejection — partial diagnosis 2026-08-12
+
+Ruled out the obvious cause: the demo account **exists and works**.
+`healstack.demo@heyitsmejosh.com` is in `auth.users`, email confirmed, created 2026-07-20,
+and successfully signed in as recently as **2026-08-11** — well after the 2026-08-05 review.
+So "Unable to log in" is not a missing or unconfirmed account.
+
+Most likely remaining explanation: at review time (08-05) the app was still pointed at
+**Vercel**; the Cloudflare Pages migration landed **08-06**, one day later. If the auth
+endpoint was the thing broken on Vercel, the migration may have already fixed it.
+
+- [ ] Verify login end to end against the current Cloudflare deployment with the demo
+      account before resubmitting. If it works, say so explicitly in the App Review notes.
+- [ ] Do not rotate or recreate the demo account — it is working; changing it loses the one
+      known-good credential.
