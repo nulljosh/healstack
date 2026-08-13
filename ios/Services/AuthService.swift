@@ -1,17 +1,27 @@
 import AuthenticationServices
+import CryptoKit
 import Supabase
 import Foundation
 
-private func infoPlistValue(_ key: String) -> String {
-    guard let value = Bundle.main.object(forInfoDictionaryKey: key) as? String, !value.isEmpty else {
-        fatalError("Missing \(key) in Info.plist")
-    }
+private func infoPlistValue(_ key: String) -> String? {
+    guard let value = Bundle.main.object(forInfoDictionaryKey: key) as? String,
+          !value.isEmpty,
+          !value.hasPrefix("$(") else { return nil }
     return value
 }
 
+/// Non-nil when the bundle is missing its Supabase config. Surfaced in the UI instead of
+/// crashing: a `fatalError` here shipped a macOS build that died the moment sign-in loaded,
+/// which is what App Review saw as "Sign In will load briefly and then stops".
+let supabaseConfigError: String? = {
+    let missing = ["SUPABASE_URL", "SUPABASE_ANON_KEY"].filter { infoPlistValue($0) == nil }
+    guard !missing.isEmpty else { return nil }
+    return "App is misconfigured (missing \(missing.joined(separator: ", "))). Please reinstall or contact support."
+}()
+
 let supabaseClient = SupabaseClient(
-    supabaseURL: URL(string: infoPlistValue("SUPABASE_URL"))!,
-    supabaseKey: infoPlistValue("SUPABASE_ANON_KEY")
+    supabaseURL: URL(string: infoPlistValue("SUPABASE_URL") ?? "https://unconfigured.invalid")!,
+    supabaseKey: infoPlistValue("SUPABASE_ANON_KEY") ?? "unconfigured"
 )
 
 @Observable
@@ -20,6 +30,7 @@ final class AuthService {
     var user: User? = nil
     var isLoading = true
     var isPasswordRecovery = false
+    private var currentNonce: String?
 
     init() {
         if CommandLine.arguments.contains("UITEST_SNAPSHOT") {
@@ -47,13 +58,26 @@ final class AuthService {
         }
     }
 
+    /// Every network-backed entry point routes through this, so a misconfigured bundle
+    /// reports one readable error instead of failing differently per call site.
+    private func requireConfig() throws {
+        if let message = supabaseConfigError {
+            throw NSError(domain: "AuthService", code: -2, userInfo: [NSLocalizedDescriptionKey: message])
+        }
+    }
+
     func signIn(email: String, password: String) async throws {
+        try requireConfig()
         let session = try await supabaseClient.auth.signIn(email: email, password: password)
         user = session.user
     }
 
     func signUp(email: String, password: String) async throws {
-        try await supabaseClient.auth.signUp(email: email, password: password)
+        try requireConfig()
+        let response = try await supabaseClient.auth.signUp(email: email, password: password)
+        // The project auto-confirms, so sign-up yields a session immediately; without this the
+        // user is left staring at the auth screen after a successful registration.
+        if response.session != nil { user = response.user }
     }
 
     func signOut() async throws {
@@ -83,16 +107,41 @@ final class AuthService {
         )
     }
 
+    /// Apple hashes the nonce into the identity token; Supabase compares it against the raw
+    /// value we send back. Call this from the `SignInWithAppleButton` request closure.
+    func prepareAppleRequest(_ request: ASAuthorizationAppleIDRequest) {
+        let nonce = Self.randomNonce()
+        currentNonce = nonce
+        request.requestedScopes = [.fullName, .email]
+        request.nonce = SHA256.hash(data: Data(nonce.utf8))
+            .map { String(format: "%02x", $0) }
+            .joined()
+    }
+
     func signInWithApple(result: Result<ASAuthorization, Error>) async throws {
+        try requireConfig()
         let auth = try result.get()
         guard let cred = auth.credential as? ASAuthorizationAppleIDCredential,
               let tokenData = cred.identityToken,
               let token = String(data: tokenData, encoding: .utf8) else {
             throw URLError(.badServerResponse)
         }
-        try await supabaseClient.auth.signInWithIdToken(
-            credentials: .init(provider: .apple, idToken: token)
+        let session = try await supabaseClient.auth.signInWithIdToken(
+            credentials: .init(provider: .apple, idToken: token, nonce: currentNonce)
         )
+        currentNonce = nil
+        user = session.user
+    }
+
+    static func randomNonce(length: Int = 32) -> String {
+        let charset = Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
+        var bytes = [UInt8](repeating: 0, count: length)
+        // ponytail: SecRandomCopyBytes can fail; falling back to a plain random nonce is fine
+        // here because the nonce only needs to be unguessable-per-request, not key material.
+        if SecRandomCopyBytes(kSecRandomDefault, length, &bytes) != errSecSuccess {
+            bytes = (0..<length).map { _ in UInt8.random(in: 0...255) }
+        }
+        return String(bytes.map { charset[Int($0) % charset.count] })
     }
 
     func updatePassword(_ newPassword: String) async throws {

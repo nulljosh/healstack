@@ -52,6 +52,7 @@
 		36FBB04EAB0A907552454090 /* MacSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingsView.swift; sourceTree = "<group>"; };
 		3F6B3794F32F35EBBFDA89AE /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ExportOptions.plist; sourceTree = "<group>"; };
 		45D13B2BCE112D6A18E7751B /* BiometricEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricEntry.swift; sourceTree = "<group>"; };
+		48A15FAEF19FD6CF5A6549A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		529D4EBDA9DB5D0CFE8E3620 /* AcupunctureData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcupunctureData.swift; sourceTree = "<group>"; };
 		5913A272221D6000446F4512 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		658332455BF4468793E8E638 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
@@ -135,6 +136,7 @@
 			children = (
 				7B0ECAA0B1CA805B0957C54F /* DoseMacApp.swift */,
 				3F6B3794F32F35EBBFDA89AE /* ExportOptions.plist */,
+				48A15FAEF19FD6CF5A6549A1 /* Info.plist */,
 				DDF660EC3833FA9119E054FD /* Models */,
 				D3FA9DD9D4CC4CB1E262B4AB /* Views */,
 			);
@@ -365,14 +367,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Healstack;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose;
 				SDKROOT = macosx;
+				SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68;
+				SUPABASE_URL = "https://tjsxsqlxjmanwvmywwvw.supabase.co";
 			};
 			name = Release;
 		};
@@ -381,14 +384,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Healstack;
+				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose;
 				SDKROOT = macosx;
+				SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68;
+				SUPABASE_URL = "https://tjsxsqlxjmanwvmywwvw.supabase.co";
 			};
 			name = Debug;
 		};

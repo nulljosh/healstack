@@ -121,7 +121,7 @@ struct AuthView: View {
                 if tab == .signIn {
                     Divider()
                     SignInWithAppleButton(.signIn) { request in
-                        request.requestedScopes = [.email, .fullName]
+                        authService.prepareAppleRequest(request)
                     } onCompletion: { result in
                         Task {
                             loading = true

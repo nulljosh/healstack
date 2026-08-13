@@ -70,7 +70,7 @@ struct MacAuthView: View {
             if tab == .signIn {
                 try await authService.signIn(email: email, password: password)
             } else {
-                try await authService.signIn(email: email, password: password)
+                try await authService.signUp(email: email, password: password)
             }
         } catch {
             errorMessage = error.localizedDescription
