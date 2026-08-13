@@ -1,5 +1,41 @@
 # Healstack Roadmap
 
+## ASC state verified 2026-08-13 — three claims below this line are STALE, don't act on them
+
+Read this first; the sections further down contradict live state and each other.
+
+**Live state (`asc versions list` / `asc builds list` / `asc review doctor`, app 6785764864):**
+- Version row is **`2.3.4`, `PREPARE_FOR_SUBMISSION`** (`bdf10a5f-0d97-4c1e-9615-af49ca6eda8a`).
+  Not "1.0 REJECTED" — the version-string reconciliation was already resolved via option 1
+  (keep lineage). **That item is done; don't re-decide it.**
+- Build **`202608121022`** (`a934fdb2-b03d-445d-a527-b27e14a49aa4`) is uploaded and **`VALID`**,
+  from commit `109d3b1`. The "latest build is `202607261112`, older than the fix" /
+  "the fix was never built and uploaded" claim at the bottom of this file is **FALSE**.
+- Working tree is clean and in sync with `origin/main`. The "Resume note (2026-08-11): a wip
+  commit holds unfinished, unverified, unpushed changes" is **FALSE** — no such commit is at HEAD.
+  (Same stale-"unpushed" claim turned up in bookrank, talli and litigate the same week.)
+
+- [x] **FIXED 2026-08-13 — `build.encryption.missing` was blocking submission.** `asc review
+  doctor` reported 2 blocking errors; this was one, and nothing in the repo would ever have
+  cleared it. Neither `ios/Info.plist` nor `macos/project.yml` declared
+  `ITSAppUsesNonExemptEncryption`, so **every** build uploads without the declaration and ASC
+  blocks the submission pending a manual dashboard click. Declared `false` in both (exempt:
+  the only crypto in the app is `CryptoKit.SHA256` hashing the Sign in with Apple nonce in
+  `ios/Services/AuthService.swift:116`; everything else is HTTPS), and set it on the already
+  uploaded build via `asc builds update --build-id a934fdb2… --uses-non-exempt-encryption=false`.
+  Verified: `plutil` lints and shows the key on iOS, `xcodegen` regenerates it into the macOS
+  Info.plist, and `asc review doctor` blocking errors went **2 → 1**.
+
+**The one remaining blocker is dashboard-only:** submission
+`2636ad65-3154-47ba-9d91-d333e8adbffe` is still in `UNRESOLVED_ISSUES`, which blocks any new
+submission. Needs `asc-login` + a live 2FA code from Joshua. Submissions are frozen until
+2026-08-18 anyway.
+
+Remaining warning (non-blocking, and arguably N/A — this app has never been released):
+what's new is empty for `en-US`. `asc localizations update` has no `--whats-new` flag; use the
+`asc-whats-new-writer` skill if it's wanted before submission.
+
+
 ## App Review rejection reason — READ FROM RESOLUTION CENTER 2026-08-12
 
 **Guideline 2.1(a) — Performance — App Completeness.** Reviewed 2026-08-05 on iPhone 17 Pro

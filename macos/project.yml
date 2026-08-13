@@ -43,6 +43,7 @@ targets:
       path: Info.plist
       properties:
         CFBundleDisplayName: Healstack
+        ITSAppUsesNonExemptEncryption: false
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
         LSMinimumSystemVersion: $(MACOSX_DEPLOYMENT_TARGET)
