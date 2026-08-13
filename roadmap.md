@@ -7,8 +7,29 @@ Max, iOS 26.5.1, active internet, version 1.0 (202607211448).
 
 > Bug description: **Unable to log in**
 
-That is the entire defect. Same root cause as sparkjar and lexly Mac — sign-in is broken on
-all three. Fix auth, then this clears.
+That is the entire defect.
+
+**FIXED 2026-08-12 (commit `1cfba27`).** The "same root cause as sparkjar and lexly Mac" framing
+was wrong — the three apps failed for three unrelated reasons, and sparkjar doesn't even use
+Supabase Auth. Healstack's own causes, all fixed and build-verified:
+
+1. `macos/project.yml` never injected `SUPABASE_URL` / `SUPABASE_ANON_KEY`, and the global
+   client in `ios/Services/AuthService.swift` called `fatalError` on the missing key — the Mac
+   app died the moment auth loaded. Now generates a real Info.plist carrying both; verified the
+   values reach the built `DoseMac.app/Contents/Info.plist`, not just that it compiles.
+2. `macos/Views/AuthView.swift` called `signIn` in *both* branches, so "Create account" could
+   never create one.
+3. `signUp` didn't adopt the returned session, stranding the user on the auth screen.
+4. Sign in with Apple sent no nonce — Supabase rejects native id tokens without one.
+5. `.env.local` pointed the web app at `placeholder.supabase.co`.
+
+Backend was never the problem: the demo account is confirmed and unbanned (last signed in
+2026-08-11), `disable_signup: false`, `mailer_autoconfirm: true`.
+
+**Still required before this clears:** the Apple provider is **disabled** on the shared spark
+project (`GET /auth/v1/settings` → `"apple": false`, and `auth.identities` has never held a
+single non-email row). Enable it in the Supabase dashboard with `com.heyitsmejosh.dose` in the
+authorized client IDs — dashboard-only, no API path. Then build + upload.
 
 Source: `asc web review show --app 6785764864 --apple-id trommatic@icloud.com` (needs `asc-login`;
 the public API only returns a generic "unresolved issues" wrapper). Submissions frozen
