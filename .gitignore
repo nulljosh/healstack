@@ -9,3 +9,5 @@ ios/.asc/
 .env*
 .asc/artifacts/
 .asc/release/
+.asc/metadata/
+.asc/reports/

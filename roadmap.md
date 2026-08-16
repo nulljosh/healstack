@@ -20,9 +20,43 @@ Read this first; the sections further down contradict live state and each other.
 submission. Needs `asc-login` + a live 2FA code from Joshua. Submissions are frozen until
 2026-08-18 anyway.
 
-Remaining warning (non-blocking, and arguably N/A — this app has never been released):
-what's new is empty for `en-US`. `asc localizations update` has no `--whats-new` flag; use the
-`asc-whats-new-writer` skill if it's wanted before submission.
+Remaining warning (non-blocking) — **RESOLVED as a false positive 2026-08-15, stop trying to
+fix it**: `asc review doctor` reports "what's new is empty" for `en-US`. It cannot be filled.
+Apple rejects the write outright — `asc metadata apply` returns *"Attribute 'whatsNew' cannot
+be edited at this time"* — because What's New only exists for an **update**, and this app has
+never been released. The canonical `metadata/version/2.3.4/en-US.json` deliberately omits the
+field so future `metadata plan` runs don't retry a call that always fails. It will become
+editable on its own once 2.3.4 ships. Do not spend another session on this warning.
+
+## Auth re-verified live against production 2026-08-15 — backend is reviewable
+
+Independent re-check of the 08-10 fix, straight against the live Supabase backend. All green:
+
+- **Anon key still accepted** — `/auth/v1/health` with the exact `SUPABASE_ANON_KEY` baked
+  into the build returns 200. (A rotated JWT secret would silently break every sign-in with no
+  app-side change, so this is worth confirming before any resubmit.)
+- **A real account signs in** — `POST /auth/v1/token?grant_type=password` returns 200 with an
+  access token.
+- **The demo row is healthy** — `healstack.demo@heyitsmejosh.com` answers a wrong password with
+  a clean **400 invalid_credentials**, not the 500 that got the app rejected. The 08-10
+  `coalesce` fix is holding.
+- **Config wiring is correct** — `SUPABASE_URL`/`SUPABASE_ANON_KEY` are build settings in
+  `ios/project.yml` *and* referenced as `$(...)` in `ios/Info.plist`, so `infoPlistValue()`
+  resolves them and `supabaseConfigError` stays nil. Not the cause.
+- **Build is green** — `xcodebuild build -destination 'generic/platform=iOS Simulator'` exits 0.
+  Note it **requires `-skipPackagePluginValidation`**; without it the SwiftLint build-tool
+  plugin fails its trust prompt headlessly and the build dies with a bare exit 65 that looks
+  like a code error but isn't.
+
+Regression guard added: **`scripts/check-auth-live.sh`** (exit 0 = reviewable). Run it before
+any resubmit. It re-tests all of the above and prints the exact SQL to re-apply if the demo
+row ever falls back into the 500 state. Set `HEALSTACK_DEMO_PASSWORD` to also verify the real
+ASC credentials sign in end to end — that is the one thing this check cannot prove on its own,
+since the password isn't stored in the repo.
+
+**Nothing about this rejection needs an app code change.** The fix is server-side, verified,
+and already in a VALID uploaded build. The only thing standing between here and a resubmit is
+the dashboard-only `2636ad65` submission plus the 2026-08-18 freeze.
 
 ## App Review rejection reason — READ FROM RESOLUTION CENTER 2026-08-12
 
