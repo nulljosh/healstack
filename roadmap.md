@@ -148,7 +148,7 @@ v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). Infrastructure migrated from 
 
 ## App Store submission freeze — until 2026-08-18
 - [ ] **BLOCKED: no App Store submission on any app until 2026-08-18.** Account is under a Guideline 5.6 Developer Code of Conduct review suspension (Curvely, Transcriptly, Wiretext, NYC Survive). Apple warns that continued similar submissions may result in removal from the Apple Developer Program. Full detail: wiki `ship-plan.md` § "Guideline 5.6 suspension (2026-08-10)". TestFlight builds, pushes and web deploys are still fine.
-- [ ] Healstack iOS 1.0 REJECTED 2.1(a): "Unable to log in" (iPhone 17 Pro Max, iOS 26.5.1, build 202607211448). Production auth is broken — reproduce a real sign-in against the live backend and fix before any resubmit. Same root cause as Sparkjar and Lexly; see wiki `auth-email-audit`.
+- [x] Healstack iOS 1.0 REJECTED 2.1(a): "Unable to log in" (iPhone 17 Pro Max, iOS 26.5.1, build 202607211448). **Reproduced and closed 2026-08-16**: `scripts/check-auth-live.sh` with the real ASC demo password passes all three checks — anon key accepted (health 200), demo row healthy (400 on a wrong password, not the 500 that caused the rejection), and the demo credentials sign in with a live session (200). Cause was the demo account's corrupt `auth.users` row, fixed 08-10; it has not regressed. Note: the "same root cause as Sparkjar and Lexly" claim is wrong — the three rejections had three unrelated causes (see `~/Documents/Code/CLAUDE.md`). No app code change needed.
 
 ## Auth 2026-08-10 — not yet reproduced, do this first
 Rejected 2.1(a) "Unable to log in" on build 202607211448 (iPhone 17 Pro Max, iOS 26.5.1).
@@ -196,8 +196,11 @@ Most likely remaining explanation: at review time (08-05) the app was still poin
 **Vercel**; the Cloudflare Pages migration landed **08-06**, one day later. If the auth
 endpoint was the thing broken on Vercel, the migration may have already fixed it.
 
-- [ ] Verify login end to end against the current Cloudflare deployment with the demo
+- [x] Verify login end to end against the current Cloudflare deployment with the demo
       account before resubmitting. If it works, say so explicitly in the App Review notes.
+      **Done 2026-08-16** — `bash scripts/check-auth-live.sh` (with `HEALSTACK_DEMO_PASSWORD`
+      from `.env.local`) returns `PASS auth backend is in a reviewable state`, including a
+      real 200-with-session sign-in. Still TODO at submit time: say so in the review notes.
 - [ ] Do not rotate or recreate the demo account — it is working; changing it loses the one
       known-good credential.
 
