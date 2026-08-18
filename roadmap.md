@@ -296,3 +296,26 @@ Supabase project and is no longer reproducible; do not spend more time hunting i
 - [ ] Sign in with Apple stays gated off until the provider is enabled — needs an Apple Developer
       portal key **and** Supabase Auth → Providers on the *shared* spark project (diff before
       changing, other apps use it). Verified live as `400 provider_disabled`.
+
+## SUBMITTED 2026-08-18 — iOS 2.3.4 WAITING_FOR_REVIEW
+
+Submission `f5e9ce05-9bc0-443b-a360-3b25deb20107`, build `202608181252`
+(`092ba31b-70e7-4c92-9af4-b7cb968b3d16`). Verified by re-reading the version, not from command
+output. This is the first post-freeze submission, per `ship-plan.md` step 5 ("submit one app —
+Healstack or Sparkjar — confirm it passes, then the rest one at a time").
+
+Pre-submit verification that mattered: the demo credentials stored in the ASC review detail
+(`healstack.demo@heyitsmejosh.com`) were confirmed to match `.env.local` **and** to return a valid
+access token against production. Since the rejection was literally "Unable to log in", a stale demo
+credential would have reproduced it exactly.
+
+Review notes now name the original submission ID, state that the backend fault behind
+"Database error querying schema" is resolved and re-verified, and disclose that Sign in with Apple
+was removed from this build rather than left erroring.
+
+**`asc review submit` failed again with the false "does not contain target version" error** — third
+app today (also Wordroot, and BCGD has a stray submission waiting to do the same). `asc review
+items list --submission <id>` showed the item present all along. Workaround, now reliable:
+`asc review submissions-submit --id <id> --confirm`.
+
+- [ ] Do not submit Sparkjar / BCGD / Wordroot macOS until this clears — never a batch.
