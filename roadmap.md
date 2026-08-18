@@ -281,8 +281,6 @@ path" observation was true and yet the login really was broken.
 So the demo account works today. Root cause of the original outage was server-side on the shared
 Supabase project and is no longer reproducible; do not spend more time hunting it in Swift.
 
-- [x] Stuck submission `2636ad65` cleared — cancelled 2026-08-18, state `CANCELING`. It no longer
-      blocks a new submission. (This was the last item CLAUDE.md listed as dashboard/2FA-only.)
 - [ ] **Rebuild before resubmitting.** The staged build `202608121022` predates the 2026-08-18
       commit that gates off the Sign in with Apple button, so the button would still ship live and
       still error. Rebuild, re-upload, then submit version 2.3.4.
