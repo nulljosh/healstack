@@ -319,3 +319,29 @@ items list --submission <id>` showed the item present all along. Workaround, now
 `asc review submissions-submit --id <id> --confirm`.
 
 - [ ] Do not submit Sparkjar / BCGD / Wordroot macOS until this clears — never a batch.
+
+## Sign in with Apple — provider ENABLED 2026-08-18
+
+Done without the Apple Developer portal. **The `.p8` Sign in with Apple key is only needed for the
+web OAuth redirect flow.** Native iOS sign-in (`grant_type=id_token`) is verified by Supabase
+against Apple's *public* keys, matching the token's `aud` to the configured client IDs — no client
+secret participates. Supabase accepted the provider with `external_apple_secret` left null.
+
+Enabled via the Management API on the shared `spark` project (`tjsxsqlxjmanwvmywwvw`), token from
+the keychain (`security find-generic-password -s "Supabase CLI" -w`):
+
+`PATCH /v1/projects/{ref}/config/auth` with only `external_apple_enabled`,
+`external_apple_client_id`. Per the shared-config rule, `site_url` and `uri_allow_list` were NOT
+sent and were verified unchanged afterwards. Supabase merges multiple client IDs into
+`external_apple_client_id` as a comma-separated list. Pre-change config backed up.
+
+Client IDs registered: `com.heyitsmejosh.dose` (Healstack), plus `com.nulljosh.brief` and
+`com.nulljosh.brief-macos` (Litigate, blocked on the same step).
+
+Verified: the native endpoint moved from `400 provider_disabled` to
+`400 validation_failed "Unable to detect issuer in ID token"` — i.e. the provider is live and
+validating. Email/password sign-in re-checked and still returns a valid access token.
+
+- [ ] **Re-enable the button in the NEXT version, not this one.** `appleSignInEnabled` stays
+      `false` for 2.3.4, which is in review right now with review notes that explicitly tell Apple
+      the button was removed from this build. Flip it after 2.3.4 clears, then rebuild.
