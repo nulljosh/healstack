@@ -34,11 +34,20 @@ sign-in, so Sign in with Apple is not required. Build verified:
       `com.heyitsmejosh.dose` to the authorized client IDs. Note this is the **shared** spark
       project, so diff the auth config before changing it. When done, flip
       `appleSignInEnabled` to `true` in the same commit and re-probe with the curl above.
-- [ ] **Rebuild + re-upload before resubmitting.** The VALID build `202608121022` predates
-      today's change, so it still contains the dead Apple button.
-- [ ] Submission `2636ad65-3154-47ba-9d91-d333e8adbffe` is still stuck in `UNRESOLVED_ISSUES`
-      and blocks any new submission — dashboard-only, needs `asc-login` + live 2FA from Joshua.
-      (Unchanged from before; the 2026-08-18 freeze itself has now expired.)
+- [x] **Rebuild + re-upload — DONE 2026-08-18.** Build `202608181252`
+      (`092ba31b-70e7-4c92-9af4-b7cb968b3d16`) archived from HEAD (contains the
+      `appleSignInEnabled = false` gate), uploaded, verified `COMPLETE` via
+      `asc builds uploads list` and `VALID` via `asc builds list`, and attached to version
+      2.3.4. Version deliberately left in `PREPARE_FOR_SUBMISSION` — **not submitted**
+      (Curvely, Wiretext and Wordroot iOS are in review; ship-plan says one at a time).
+- [x] Submission `2636ad65-3154-47ba-9d91-d333e8adbffe` — **cleared 2026-08-18.** Cancelled
+      earlier today; `asc review doctor` now reports it `COMPLETE` and `reviewState: COMPLETE`,
+      so it no longer blocks a new submission.
+
+**Submission readiness 2026-08-18:** `asc review doctor` reports **0 errors, 0 blocking**. The
+only warning is the known false-positive empty `whatsNew` (see below — it cannot be written until
+the app has shipped once). The remaining pre-submit decision is Joshua's: submit as-is with Sign in
+with Apple hidden, or enable the Supabase Apple provider first and flip the flag back on.
 
 ## ASC state verified 2026-08-13 — three claims below this line are STALE, don't act on them
 
