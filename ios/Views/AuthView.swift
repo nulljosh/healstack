@@ -118,7 +118,7 @@ struct AuthView: View {
                 .buttonStyle(.borderedProminent)
                 .disabled(loading || email.isEmpty || (tab != .reset && password.isEmpty))
 
-                if tab == .signIn {
+                if tab == .signIn && appleSignInEnabled {
                     Divider()
                     SignInWithAppleButton(.signIn) { request in
                         authService.prepareAppleRequest(request)

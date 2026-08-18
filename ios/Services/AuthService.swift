@@ -19,6 +19,18 @@ let supabaseConfigError: String? = {
     return "App is misconfigured (missing \(missing.joined(separator: ", "))). Please reinstall or contact support."
 }()
 
+/// Sign in with Apple is OFF until the Apple provider is enabled on the shared `spark`
+/// Supabase project. Proven disabled 2026-08-18 by a live probe: posting an Apple-issued
+/// `iss` to `/auth/v1/token?grant_type=id_token` returns
+/// `provider_disabled — Provider (issuer "https://appleid.apple.com") is not enabled`.
+/// Shipping the button anyway means every reviewer who taps it gets an error, which is
+/// exactly the "Unable to log in" defect that got v1.0 rejected under 2.1(a).
+/// Enabling it is dashboard-only (Supabase -> Auth -> Providers -> Apple, authorized client
+/// ID `com.heyitsmejosh.dose`) and also needs a Sign in with Apple key from the Apple
+/// Developer portal. Flip this to `true` in the same commit that enables it.
+/// ponytail: a flag, not a build config — one edit to re-enable, and the code stays compiled.
+let appleSignInEnabled = false
+
 let supabaseClient = SupabaseClient(
     supabaseURL: URL(string: infoPlistValue("SUPABASE_URL") ?? "https://unconfigured.invalid")!,
     supabaseKey: infoPlistValue("SUPABASE_ANON_KEY") ?? "unconfigured"

@@ -1,5 +1,45 @@
 # Healstack Roadmap
 
+## Sign in with Apple was still guaranteed to fail — gated off 2026-08-18 (`/work start`)
+
+The 08-15 note below says the backend is reviewable, and for **email/password it is** —
+re-ran `scripts/check-auth-live.sh` today: anon key accepted, demo row answers a wrong
+password with a clean 400. But the app also shipped a **Sign in with Apple button that
+cannot work**, and a reviewer tapping it gets an error. That is the same user-visible
+symptom Apple wrote up as "Unable to log in".
+
+Proven live, not inferred:
+
+```
+POST /auth/v1/token?grant_type=id_token  {"provider":"apple", id_token with iss=https://appleid.apple.com}
+-> 400 {"error_code":"provider_disabled",
+        "msg":"Provider (issuer \"https://appleid.apple.com\") is not enabled"}
+```
+
+`GET /auth/v1/settings` agrees: `"apple": false`. (A bare dummy token returns a *parse*
+error instead, which is why this needs a token with a real Apple `iss` to probe — don't
+conclude "provider works" from the parse error.)
+
+**Fix applied:** `appleSignInEnabled = false` in `ios/Services/AuthService.swift`, checked
+by `ios/Views/AuthView.swift:123`. The button no longer renders; email/password sign-in is
+untouched and works. Guideline 4.8 is not a concern — the app offers no *other* third-party
+sign-in, so Sign in with Apple is not required. Build verified:
+`xcodebuild build -project Healstack.xcodeproj -scheme Dose -destination 'generic/platform=iOS Simulator' -skipPackagePluginValidation`
+-> BUILD SUCCEEDED (the `-skipPackagePluginValidation` flag is still load-bearing).
+
+- [ ] **Re-enable Sign in with Apple properly (blocked on Joshua, dashboard + portal).**
+      Two steps, neither has an API path: (1) Apple Developer portal — create a Sign in with
+      Apple key and Services ID for `com.heyitsmejosh.dose`; (2) Supabase dashboard on the
+      shared `spark` project — Auth -> Providers -> Apple, enable and add
+      `com.heyitsmejosh.dose` to the authorized client IDs. Note this is the **shared** spark
+      project, so diff the auth config before changing it. When done, flip
+      `appleSignInEnabled` to `true` in the same commit and re-probe with the curl above.
+- [ ] **Rebuild + re-upload before resubmitting.** The VALID build `202608121022` predates
+      today's change, so it still contains the dead Apple button.
+- [ ] Submission `2636ad65-3154-47ba-9d91-d333e8adbffe` is still stuck in `UNRESOLVED_ISSUES`
+      and blocks any new submission — dashboard-only, needs `asc-login` + live 2FA from Joshua.
+      (Unchanged from before; the 2026-08-18 freeze itself has now expired.)
+
 ## ASC state verified 2026-08-13 — three claims below this line are STALE, don't act on them
 
 Read this first; the sections further down contradict live state and each other.
