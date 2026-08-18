@@ -256,3 +256,36 @@ freeze; uploading a build is not a submission.
 
 ## Ingested 2026-08-18
 - [ ] Landing page: white nav — fix it.
+
+## Rejection cause CONFIRMED from Apple's screenshot — 2026-08-18
+
+Pulled the Resolution Center thread + attachment for the first time (`asc web review show --app
+6785764864`; needed a live 2FA web session). Screenshot saved at
+`.asc/web-review/6785764864/2636ad65-3154-47ba-9d91-d333e8adbffe/Screenshot-0805-102925.png`.
+
+**The reviewer's failure was email/password sign-in, not Sign in with Apple.** The screenshot shows
+the demo account `healstack.demo@heyitsmejosh.com` filled in and a red error under the password
+field:
+
+> **Database error querying schema**
+
+That is a GoTrue/Supabase *server-side* fault, not a client bug — which is why no amount of reading
+`AuthView.swift` / `AuthService.swift` ever explained it, and why the "no commit touched the login
+path" observation was true and yet the login really was broken.
+
+**Verified 2026-08-18: the fault is gone.** Against the live shared `spark` project
+(`tjsxsqlxjmanwvmywwvw`):
+- bad password → `400 invalid_credentials` (correct)
+- real demo credentials → `200` with a valid `access_token` (correct)
+
+So the demo account works today. Root cause of the original outage was server-side on the shared
+Supabase project and is no longer reproducible; do not spend more time hunting it in Swift.
+
+- [x] Stuck submission `2636ad65` cleared — cancelled 2026-08-18, state `CANCELING`. It no longer
+      blocks a new submission. (This was the last item CLAUDE.md listed as dashboard/2FA-only.)
+- [ ] **Rebuild before resubmitting.** The staged build `202608121022` predates the 2026-08-18
+      commit that gates off the Sign in with Apple button, so the button would still ship live and
+      still error. Rebuild, re-upload, then submit version 2.3.4.
+- [ ] Sign in with Apple stays gated off until the provider is enabled — needs an Apple Developer
+      portal key **and** Supabase Auth → Providers on the *shared* spark project (diff before
+      changing, other apps use it). Verified live as `400 provider_disabled`.
