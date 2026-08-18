@@ -49,9 +49,36 @@ struct LabResult: Codable, Identifiable {
 }
 
 // Common panel templates
+/// One editable row in the add-lab-result sheets.
+///
+/// This exists so the sheets can bind straight to `$entry.value`. It used to be a tuple, which
+/// has no key paths, so each row needed a hand-written `Binding(get:set:)` closing over its
+/// index — and those closures outlive a panel switch, so moving from CBC (6 markers) to HbA1c
+/// (1) could read `markers[5]` on a one-element array.
+struct MarkerEntry: Identifiable {
+    let id = UUID()
+    let name: String
+    var value: String = ""
+    let unit: String
+    let refLow: String
+    let refHigh: String
+}
+
 struct LabPanel {
     let name: String
     let markers: [(name: String, unit: String, refLow: Double?, refHigh: Double?)]
+
+    /// Blank entry rows for this panel, shared by the iOS and macOS sheets.
+    var entries: [MarkerEntry] {
+        markers.map { marker in
+            MarkerEntry(
+                name: marker.name,
+                unit: marker.unit,
+                refLow: marker.refLow.map { String($0) } ?? "",
+                refHigh: marker.refHigh.map { String($0) } ?? ""
+            )
+        }
+    }
 
     static let all: [LabPanel] = [
         LabPanel(name: "CBC", markers: [

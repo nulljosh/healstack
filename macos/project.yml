@@ -24,6 +24,7 @@ targets:
           - '*.yml'
           - README.md
           - CLAUDE.md
+          - Checks
           - icon.svg
           - architecture.svg
       - path: ../ios/Models/BiometricEntry.swift

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Bindable var dataStore: DataStore
-    var syncService: SyncService
+    @Bindable var syncService: SyncService
     var authService: AuthService
     @State private var nameField = ""
     @State private var showAddMedication = false
@@ -74,10 +74,7 @@ struct SettingsView: View {
                 }
 
                 Section {
-                    Toggle("Sync with healstack.heyitsmejosh.com", isOn: Binding(
-                        get: { syncService.syncEnabled },
-                        set: { syncService.syncEnabled = $0 }
-                    ))
+                    Toggle("Sync with healstack.heyitsmejosh.com", isOn: $syncService.syncEnabled)
 
                     if syncService.syncEnabled {
                         HStack {

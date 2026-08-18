@@ -274,7 +274,7 @@ struct AddLabResultSheet: View {
     @State private var date = Date()
     @State private var lab = "LifeLabs"
     @State private var selectedPanel = "Thyroid"
-    @State private var markers: [(name: String, value: String, unit: String, refLow: String, refHigh: String)] = []
+    @State private var markers: [MarkerEntry] = []
 
     var body: some View {
         NavigationStack {
@@ -296,17 +296,15 @@ struct AddLabResultSheet: View {
                 }
 
                 Section("Markers") {
-                    ForEach(markers.indices, id: \.self) { i in
+                    ForEach($markers) { $marker in
                         VStack(alignment: .leading, spacing: 6) {
-                            Text(markers[i].name).fontWeight(.medium)
+                            Text(marker.name).fontWeight(.medium)
                             HStack {
-                                TextField("Value", text: Binding(
-                                    get: { markers[i].value },
-                                    set: { markers[i].value = $0 }
-                                ))
-                                .keyboardType(.decimalPad)
-                                .textFieldStyle(.roundedBorder)
-                                Text(markers[i].unit)
+                                TextField("Value", text: $marker.value)
+                                    .keyboardType(.decimalPad)
+                                    .textFieldStyle(.roundedBorder)
+                                    .accessibilityLabel("\(marker.name) value in \(marker.unit)")
+                                Text(marker.unit)
                                     .foregroundStyle(.secondary)
                                     .font(.caption)
                             }
@@ -330,13 +328,7 @@ struct AddLabResultSheet: View {
 
     func loadPanel(_ name: String) {
         guard let panel = LabPanel.all.first(where: { $0.name == name }) else { return }
-        markers = panel.markers.map { (
-            name: $0.name,
-            value: "",
-            unit: $0.unit,
-            refLow: $0.refLow.map { String($0) } ?? "",
-            refHigh: $0.refHigh.map { String($0) } ?? ""
-        )}
+        markers = panel.entries
     }
 
     func save() {

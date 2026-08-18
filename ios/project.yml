@@ -33,6 +33,7 @@ targets:
           - '*.entitlements'
           - Tests
           - UITests
+          - Checks
           - DoseWidget
           - watchos
           - scripts

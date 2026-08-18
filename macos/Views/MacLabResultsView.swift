@@ -21,7 +21,7 @@ struct MacAddLabResultSheet: View {
     @State private var date = Date()
     @State private var lab = "LifeLabs"
     @State private var selectedPanel = "Thyroid"
-    @State private var markers: [(name: String, value: String, unit: String, refLow: String, refHigh: String)] = []
+    @State private var markers: [MarkerEntry] = []
 
     var body: some View {
         Form {
@@ -36,12 +36,13 @@ struct MacAddLabResultSheet: View {
                 .onChange(of: selectedPanel) { _, name in loadPanel(name) }
             }
             Section("Markers") {
-                ForEach(markers.indices, id: \.self) { i in
+                ForEach($markers) { $marker in
                     HStack {
-                        Text(markers[i].name).frame(width: 140, alignment: .leading)
-                        TextField("Value", text: Binding(get: { markers[i].value }, set: { markers[i].value = $0 }))
+                        Text(marker.name).frame(width: 140, alignment: .leading)
+                        TextField("Value", text: $marker.value)
                             .textFieldStyle(.roundedBorder).frame(width: 80)
-                        Text(markers[i].unit).foregroundStyle(.secondary).font(.caption)
+                            .accessibilityLabel("\(marker.name) value in \(marker.unit)")
+                        Text(marker.unit).foregroundStyle(.secondary).font(.caption)
                     }
                 }
             }
@@ -59,11 +60,7 @@ struct MacAddLabResultSheet: View {
 
     func loadPanel(_ name: String) {
         guard let panel = LabPanel.all.first(where: { $0.name == name }) else { return }
-        markers = panel.markers.map { m in
-            (name: m.name, value: "", unit: m.unit,
-             refLow: m.refLow.map { String($0) } ?? "",
-             refHigh: m.refHigh.map { String($0) } ?? "")
-        }
+        markers = panel.entries
     }
 
     func save() {
