@@ -219,3 +219,6 @@ with an access token**. Build settings were also checked: `SUPABASE_URL` and
 **The only thing left is that the fix was never built and uploaded.** Latest build on ASC is
 `202607261112` (2026-07-26) — older than the fix. Nothing about this is blocked by the 5.6
 freeze; uploading a build is not a submission.
+
+## Ingested 2026-08-18
+- [ ] Landing page: white nav — fix it.
