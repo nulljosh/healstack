@@ -1,5 +1,13 @@
 # Healstack Roadmap
 
+
+## Done 2026-08-18 — resubmitted
+iOS 2.3.4 **submitted** 20:07 UTC (review submission `f5e9ce05-9bc0-443b-a360-3b25deb20107`).
+Build `202608181252` was uploaded the same day, so the "rebuild before resubmitting" condition
+recorded against the staged `202608121022` build is satisfied — that build was not the one shipped.
+
+Sign in with Apple stays gated off in this version by design; re-enabling it is next-version work.
+
 ## Sign in with Apple was still guaranteed to fail — gated off 2026-08-18 (`/work start`)
 
 The 08-15 note below says the backend is reviewable, and for **email/password it is** —
@@ -140,7 +148,7 @@ authorized client IDs — dashboard-only, no API path. Then build + upload.
 
 Source: `asc web review show --app 6785764864 --apple-id trommatic@icloud.com` (needs `asc-login`;
 the public API only returns a generic "unresolved issues" wrapper). Submissions frozen
-until 2026-08-18 regardless — fix and stage, do not submit.
+The freeze lifted 2026-08-18; submission is now gated only on the four in-flight review verdicts.
 
 ## Status (corrected 2026-08-10) — v1.0 is REJECTED, not waiting for review
 
@@ -195,8 +203,12 @@ v1.0 is WAITING_FOR_REVIEW (submitted 2026-07-21). Infrastructure migrated from 
   2. **Match the store:** set `MARKETING_VERSION: '1.0'` to match the existing row. Simpler, but the in-app changelog then contradicts the store version.
   Deliberately not chosen unilaterally — `asc review doctor` does not currently flag the mismatch, so nothing is blocked on it *except* the next archive.
 
-## App Store submission freeze — until 2026-08-18
-- [ ] **BLOCKED: no App Store submission on any app until 2026-08-18.** Account is under a Guideline 5.6 Developer Code of Conduct review suspension (Curvely, Transcriptly, Wiretext, NYC Survive). Apple warns that continued similar submissions may result in removal from the Apple Developer Program. Full detail: wiki `ship-plan.md` § "Guideline 5.6 suspension (2026-08-10)". TestFlight builds, pushes and web deploys are still fine.
+## App Store submission freeze — LIFTED 2026-08-18
+Freeze lifted 2026-08-18 (Guideline 5.6 suspension expired). Submitted that day and now
+WAITING_FOR_REVIEW: Curvely iOS 1.2.0, Wiretext iOS 1.1.0, Wordroot iOS 1.0, Healstack iOS 2.3.4.
+**Held pending those four verdicts — never a batch:** Sparkjar iOS+Mac, BCGD iOS+Mac, Wordroot Mac,
+Lexly Mac. All six are `asc validate` clean (0 errors, 0 blocking) with a VALID build attached, so
+each is one `asc review submit` away. Do not submit until the in-flight verdicts land.
 
 ## Auth 2026-08-10 — not yet reproduced, do this first
 Rejected 2.1(a) "Unable to log in" on build 202607211448 (iPhone 17 Pro Max, iOS 26.5.1).
