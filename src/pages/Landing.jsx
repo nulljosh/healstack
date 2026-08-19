@@ -75,7 +75,7 @@ export default function Landing({ onGetStarted }) {
           <button
             onClick={onGetStarted}
             style={{
-              background: 'var(--text-primary)', color: '#fff', fontSize: '0.875rem', fontWeight: 500,
+              background: 'var(--text-primary)', color: 'var(--bg)', fontSize: '0.875rem', fontWeight: 500,
               padding: '0.55rem 1.25rem', borderRadius: 999, border: 'none', cursor: 'pointer',
             }}
           >
@@ -100,7 +100,7 @@ export default function Landing({ onGetStarted }) {
               style={{
                 textDecoration: 'none', fontSize: '0.9375rem', fontWeight: 500, padding: '0.875rem 1.75rem',
                 borderRadius: 999, display: 'inline-block', cursor: 'pointer', border: 'none',
-                background: 'var(--text-primary)', color: '#fff', transition: 'transform 0.2s',
+                background: 'var(--text-primary)', color: 'var(--bg)', transition: 'transform 0.2s',
               }}
             >
               Start tracking →
