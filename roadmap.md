@@ -1,6 +1,5 @@
 # Healstack Roadmap
 
-
 ## Done 2026-08-18 — resubmitted
 iOS 2.3.4 **submitted** 20:07 UTC (review submission `f5e9ce05-9bc0-443b-a360-3b25deb20107`).
 Build `202608181252` was uploaded the same day, so the "rebuild before resubmitting" condition
@@ -42,15 +41,6 @@ sign-in, so Sign in with Apple is not required. Build verified:
       `com.heyitsmejosh.dose` to the authorized client IDs. Note this is the **shared** spark
       project, so diff the auth config before changing it. When done, flip
       `appleSignInEnabled` to `true` in the same commit and re-probe with the curl above.
-- [x] **Rebuild + re-upload — DONE 2026-08-18.** Build `202608181252`
-      (`092ba31b-70e7-4c92-9af4-b7cb968b3d16`) archived from HEAD (contains the
-      `appleSignInEnabled = false` gate), uploaded, verified `COMPLETE` via
-      `asc builds uploads list` and `VALID` via `asc builds list`, and attached to version
-      2.3.4. Version deliberately left in `PREPARE_FOR_SUBMISSION` — **not submitted**
-      (Curvely, Wiretext and Wordroot iOS are in review; ship-plan says one at a time).
-- [x] Submission `2636ad65-3154-47ba-9d91-d333e8adbffe` — **cleared 2026-08-18.** Cancelled
-      earlier today; `asc review doctor` now reports it `COMPLETE` and `reviewState: COMPLETE`,
-      so it no longer blocks a new submission.
 
 **Submission readiness 2026-08-18:** `asc review doctor` reports **0 errors, 0 blocking**. The
 only warning is the known false-positive empty `whatsNew` (see below — it cannot be written until
