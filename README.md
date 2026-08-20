@@ -47,3 +47,7 @@ v1.1.0
 
 ## License
 MIT 2026 Joshua Trommel
+
+## Whitepaper
+
+[Technical whitepaper](WHITEPAPER.md)
