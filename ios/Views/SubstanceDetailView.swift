@@ -85,6 +85,28 @@ struct SubstanceDetailView: View {
                         .font(.body)
                 }
             }
+
+            Section {
+                ForEach(substance.sources) { source in
+                    Link(destination: source.url) {
+                        VStack(alignment: .leading, spacing: 2) {
+                            HStack(spacing: 6) {
+                                Text(source.title)
+                                    .font(.subheadline.weight(.semibold))
+                                Image(systemName: "arrow.up.right")
+                                    .font(.caption2)
+                            }
+                            Text(source.detail)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                }
+            } header: {
+                Text("Sources")
+            } footer: {
+                Text("This entry is a summary compiled from the references above. It is not medical advice \u{2014} consult a qualified clinician before making decisions about any substance or medication.")
+            }
         }
         .navigationTitle(substance.name)
     }

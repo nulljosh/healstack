@@ -80,4 +80,42 @@ final class SubstanceDatabaseTests: XCTestCase {
         XCTAssertEqual(upper.count, mixed.count)
         XCTAssertEqual(upper.first?.id, lower.first?.id)
     }
+
+    // Guideline 1.4.1: every substance shown in the library must carry
+    // citations, so a missing or malformed source is a submission blocker.
+    func testEverySubstanceHasAtLeastTwoSources() {
+        for substance in SubstanceDatabase.allSubstances {
+            XCTAssertGreaterThanOrEqual(
+                substance.sources.count, 2,
+                "\(substance.name) has fewer than two citations"
+            )
+        }
+    }
+
+    func testEverySourceURLIsHTTPSAndNamesTheSubstance() {
+        for substance in SubstanceDatabase.allSubstances {
+            for source in substance.sources {
+                XCTAssertEqual(source.url.scheme, "https", "\(source.title) for \(substance.name) is not HTTPS")
+                XCTAssertFalse(source.title.isEmpty)
+                XCTAssertFalse(source.detail.isEmpty)
+                let encoded = substance.name.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+                XCTAssertTrue(
+                    source.url.absoluteString.contains(encoded),
+                    "\(source.title) for \(substance.name) does not cite that substance"
+                )
+            }
+        }
+    }
+
+    func testPrescriptionCategoriesCiteDailyMed() {
+        let prescription: Set<BuiltInSubstance.Category> = [.medication, .benzodiazepine, .opioid, .opioidAdjacent]
+        let subjects = SubstanceDatabase.allSubstances.filter { prescription.contains($0.category) }
+        XCTAssertFalse(subjects.isEmpty)
+        for substance in subjects {
+            XCTAssertTrue(
+                substance.sources.contains { $0.title == "DailyMed" },
+                "\(substance.name) is a prescription-class entry with no FDA label citation"
+            )
+        }
+    }
 }
