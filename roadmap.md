@@ -347,3 +347,8 @@ validating. Email/password sign-in re-checked and still returns a valid access t
 - [ ] **Re-enable the button in the NEXT version, not this one.** `appleSignInEnabled` stays
       `false` for 2.3.4, which is in review right now with review notes that explicitly tell Apple
       the button was removed from this build. Flip it after 2.3.4 clears, then rebuild.
+
+## Ingested 2026-08-22
+- [ ] **App Store rejection — Guideline 1.4.1 Safety/Physical Harm** (submission f5e9ce05-9bc0-443b-a360-3b25deb20107, reviewed 2026-08-21, iPad Air 11" M3, v2.3.4 build 202608181252). "The app includes medical information but does not include citations... the app provides health or medical references in the library without citations, such as links to sources." Next steps per Apple: include in-app citations / source links for every recommendation or piece of medical info in the library. Status: UNRESOLVED_ISSUES, version REJECTED. This is the only blocking check.
+- [ ] What's New (en-US) is empty on v2.3.4 — `asc review doctor` warning; fill before resubmit.
+- [ ] Verify App Store Regulations and Permits declarations (web-only, not checked by `asc review doctor`).
