@@ -205,7 +205,7 @@ private struct DoseFloatingTabBar: View {
         .padding(.horizontal, 10)
         .padding(.vertical, 10)
         .frame(maxWidth: 360)
-        .background(.regularMaterial, in: Capsule())
+        .liquidGlass(in: Capsule(), interactive: true)
         .overlay(Capsule().stroke(Color.primary.opacity(0.08), lineWidth: 1))
     }
 }

@@ -46,7 +46,7 @@ struct SymptomFinderView: View {
                     }
                     .padding(.horizontal, 16)
                     .padding(.vertical, 12)
-                    .background(.ultraThinMaterial, in: Capsule())
+                    .liquidGlass(in: Capsule(), interactive: true, fallback: .ultraThinMaterial)
                     .padding(.horizontal)
 
                     if let s = selected {
