@@ -224,7 +224,7 @@ Fix applied 2026-08-10: `update auth.users set email_change = coalesce(email_cha
 email_change_token_new = coalesce(email_change_token_new, '')` for the affected row.
 Verified after: the same login now returns a clean **400 invalid_credentials** instead of 500.
 
-- [ ] Then rebuild and resubmit — after 2026-08-18 per the submission freeze. No app code change is required for this rejection. Build number already bumped off the rejected one (see version item below); the only pre-archive decision left is the 1.0-vs-2.3.x version-string reconciliation.
+- [ ] Then rebuild and resubmit — after 2026-08-18 per the submission freeze. No app code change is required for this rejection. Build number already bumped off the rejected one (see version item below); the only pre-archive decision left is the 1.0-vs-2.3.x version-string reconciliation. — submitted; iOS 2.3.5 WAITING_FOR_REVIEW as of 2026-08-24.
 
 ## From Apple Notes (imported 2026-08-10)
 - [ ] Re-shoot the iOS fastlane screenshot set — the run is off by one step: `iPhone 17 Pro Max-0Home.png` caught the "What's New in v2.3.2" sheet, `-1Library.png` is actually Home, etc. Same stale set feeds the App Store screenshots, so the What's New sheet is likely in the store listing too. Fix = dismiss the changelog sheet (or set its seen-version default) in the snapshot launch args before capture.
