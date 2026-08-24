@@ -8,6 +8,21 @@ const PillMark = ({ size = 18 }) => (
   </svg>
 );
 
+// 8 columns of pill marks, alternating drift direction; each column's list is
+// doubled so the translateY(-50%) loop is seamless.
+const HeroWall = () => (
+  <div className="hero-wall" aria-hidden="true">
+    {Array.from({ length: 8 }, (_, c) => {
+      const marks = Array.from({ length: 7 }, (_, i) => <PillMark key={i} size={34} />);
+      return (
+        <div key={c} className={'wall-col ' + (c % 2 ? 'down' : 'up')} style={{ '--dur': (46 + c * 9) + 's' }}>
+          {marks}{marks}
+        </div>
+      );
+    })}
+  </div>
+);
+
 const SECTION_PAD = 'clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 1.5rem)';
 
 const FEATURES = [
@@ -85,8 +100,10 @@ export default function Landing({ onGetStarted }) {
       </header>
 
       {/* Hero */}
-      <section style={{ maxWidth: 1080, margin: '0 auto', padding: 'clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 1.5rem) 4rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(2rem, 5vw, 3rem)', alignItems: 'center' }}>
-        <div>
+      <section style={{ position: 'relative', isolation: 'isolate', overflow: 'hidden', maxWidth: 1080, margin: '0 auto', padding: 'clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 1.5rem) 4rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(2rem, 5vw, 3rem)', alignItems: 'center' }}>
+        <HeroWall />
+        <div className="hero-scrim" />
+        <div style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-secondary)', marginBottom: '0.75rem' }}>Health tracking</div>
           <h1 style={{ fontSize: 'clamp(2.125rem, 5.5vw, 4.25rem)', lineHeight: 1.05, margin: '0 0 1.25rem', fontWeight: 600, letterSpacing: '-0.01em' }}>
             Track what you take, and what it does.
@@ -121,7 +138,7 @@ export default function Landing({ onGetStarted }) {
             Web + iOS app · private
           </div>
         </div>
-        <div style={{ display: 'flex', justifyContent: 'center', minWidth: 0 }}>
+        <div style={{ position: 'relative', zIndex: 2, display: 'flex', justifyContent: 'center', minWidth: 0 }}>
           <div style={{ display: 'flex', gap: 'clamp(0.5rem, 2vw, 1rem)', width: '100%', maxWidth: 376, justifyContent: 'center' }}>
             <img
               src="/screenshots/iPhone-home.png"

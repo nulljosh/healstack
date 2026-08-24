@@ -1673,3 +1673,28 @@ button { user-select: none; font-family: inherit; }
 .active-pill:hover {
   transform: translateY(-2px);
 }
+
+/* --- Landing hero: slow-drifting wall of pill marks (Bookrank hero pattern) --- */
+
+.hero-wall {
+  position: absolute; inset: -8%; z-index: 0;
+  display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 28px;
+  opacity: 0.5; color: var(--accent);
+  pointer-events: none; user-select: none;
+}
+.wall-col { display: flex; min-width: 0; flex-direction: column; gap: 28px; align-items: center; }
+.wall-col svg { width: 34px; height: 34px; flex-shrink: 0; }
+.wall-col.up   { animation: wall-up   var(--dur) linear infinite; }
+.wall-col.down { animation: wall-down var(--dur) linear infinite; }
+@keyframes wall-up   { from { transform: translateY(0); }    to { transform: translateY(-50%); } }
+@keyframes wall-down { from { transform: translateY(-50%); } to { transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .wall-col { animation: none; } }
+
+/* scrim: keeps the headline readable over the wall, in either theme */
+.hero-scrim {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 65% at 50% 45%, var(--bg) 25%, transparent 80%),
+    linear-gradient(var(--bg), transparent 28%, transparent 64%, var(--bg) 96%),
+    color-mix(in srgb, var(--bg) 45%, transparent);
+}
