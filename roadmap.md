@@ -354,3 +354,11 @@ validating. Email/password sign-in re-checked and still returns a valid access t
 - [ ] Verify App Store Regulations and Permits declarations (web-only, not checked by `asc review doctor`).
 - [ ] The in-app "What's New" sheet is hardcoded to **v2.3.2** — it still says "New floating tab bar with haptics" while the app ships 2.3.5. Wire it to the real version or retire it.
 - [ ] On the substance detail screen the Sources footer (the not-medical-advice disclaimer) sits behind the floating tab bar and is partly unreadable. Add bottom content inset so the last section clears the bar. Citations themselves render fine — verified on iPhone 17 Pro simulator 2026-08-22.
+
+## Ingested 2026-08-24
+
+- [ ] **Breath — a breathing exercise feature.** From Notes ("work on breath app"); confirmed
+      2026-08-24 that this belongs inside Healstack rather than being its own app. Scope is
+      undefined beyond the name — needs a decision on what it actually does (timed box-breathing
+      / 4-7-8 patterns? logged as a health entry alongside the existing markers? a Live Activity
+      or just an in-app timer?) before any build.
