@@ -322,6 +322,9 @@ items list --submission <id>` showed the item present all along. Workaround, now
 
 - [ ] Do not submit Sparkjar / BCGD / Wordroot macOS until this clears — never a batch.
 
+## OAuth rollout (2026-08-24)
+- [ ] Add GitHub/Google sign-in alongside existing Sign in with Apple (which is now enabled in Supabase). Also add forgot-password flow to iOS (web has none, is email-only signup). Web pattern proven in litigate/web/auth.js; iOS needs native SDK flows. Google credentials already in Cloudflare secrets.
+
 ## Sign in with Apple — provider ENABLED 2026-08-18
 
 Done without the Apple Developer portal. **The `.p8` Sign in with Apple key is only needed for the
