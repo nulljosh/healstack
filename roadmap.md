@@ -230,7 +230,6 @@ Verified after: the same login now returns a clean **400 invalid_credentials** i
 - [ ] Re-shoot the iOS fastlane screenshot set — the run is off by one step: `iPhone 17 Pro Max-0Home.png` caught the "What's New in v2.3.2" sheet, `-1Library.png` is actually Home, etc. Same stale set feeds the App Store screenshots, so the What's New sheet is likely in the store listing too. Fix = dismiss the changelog sheet (or set its seen-version default) in the snapshot launch args before capture.
 
 ## From Apple Notes (imported 2026-08-11)
-- [x] Web landing page responsiveness — re-checked 2026-08-24, **already done**, no change needed. `src/pages/Landing.jsx` uses `clamp()` for every font/pad, `repeat(auto-fit, minmax(min(100%, Npx), 1fr))` grids (cannot overflow), `minWidth: 0` on the flexed screenshots, `flexWrap` on the footer, and `overflowX: hidden` on the root. Verified by inspection at ~390px and ~768px reasoning; likely fixed during the 2026-08-24 landing hero rework.
 - [ ] Bump the top-left project icon — consider a pill/medicine mark, or keep the happy face but stronger
 
 > Resume note (2026-08-11): a `wip: partial work from /work notes ingest` commit holds unfinished, unverified changes for the items above. Review `git show HEAD` before building on it — it was committed mid-flight, not reviewed, and is unpushed.
@@ -264,9 +263,6 @@ with an access token**. Build settings were also checked: `SUPABASE_URL` and
 **The only thing left is that the fix was never built and uploaded.** Latest build on ASC is
 `202607261112` (2026-07-26) — older than the fix. Nothing about this is blocked by the 5.6
 freeze; uploading a build is not a submission.
-
-## Ingested 2026-08-18
-- [x] Landing page: white nav — FIXED 2026-08-24. Cause: dark tokens live only under `[data-theme="dark"]` (`src/index.css:54`) and `App.jsx` sets that attribute on mount, one frame after first paint, so the sticky landing header painted with the light `--glass-bg` on dark-mode devices. Fix: inline pre-paint script in `index.html` using the same `dose:theme` key and `prefers-color-scheme` fallback as `App.jsx`.
 
 ## Rejection cause CONFIRMED from Apple's screenshot — 2026-08-18
 
@@ -355,7 +351,6 @@ validating. Email/password sign-in re-checked and still returns a valid access t
 - [ ] **App Store rejection — Guideline 1.4.1 Safety/Physical Harm** (submission f5e9ce05-9bc0-443b-a360-3b25deb20107, reviewed 2026-08-21, iPad Air 11" M3, v2.3.4 build 202608181252). "The app includes medical information but does not include citations... the app provides health or medical references in the library without citations, such as links to sources." Next steps per Apple: include in-app citations / source links for every recommendation or piece of medical info in the library. Status: UNRESOLVED_ISSUES, version REJECTED. This is the only blocking check.
 - [ ] What's New (en-US) is empty on v2.3.4 — `asc review doctor` warning; fill before resubmit.
 - [ ] Verify App Store Regulations and Permits declarations (web-only, not checked by `asc review doctor`).
-- [x] The in-app "What's New" sheet is hardcoded to **v2.3.2**. DONE 2026-08-24: `ios/WhatsNewSheet.swift` now reads `CFBundleShortVersionString` from the bundle and only presents when the notes' version matches the shipping one — a marketing-version bump without new notes shows nothing instead of the previous release's copy. Notes updated to 2.3.4 (sources cited in library, sign-in fixes). Note: the app ships **2.3.4** (`ios/project.yml:15`), not 2.3.5 as this line claimed. macOS has no What's New sheet, so nothing to mirror.
 - [ ] On the substance detail screen the Sources footer (the not-medical-advice disclaimer) sits behind the floating tab bar and is partly unreadable. Add bottom content inset so the last section clears the bar. Citations themselves render fine — verified on iPhone 17 Pro simulator 2026-08-22.
 
 ## Ingested 2026-08-24
