@@ -1,9 +1,13 @@
 import SwiftUI
 
-private let whatsNewVersion = "2.3.2"
+private let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+
+// ponytail: the sheet only appears when these notes match the shipping version. Bumping the
+// marketing version without updating them shows nothing, never the previous release's copy.
+private let whatsNewVersion = "2.3.4"
 private let whatsNewBullets = [
-    "New floating tab bar with haptics and bounce animations",
-    "Fixed unselected tab icons showing the filled variant",
+    "Every substance in the library now cites its sources",
+    "Fixed sign-in failures",
 ]
 
 struct WhatsNewSheet: View {
@@ -13,7 +17,7 @@ struct WhatsNewSheet: View {
 
     var body: some View {
         Color.clear
-            .onAppear { isPresented = seenVersion != whatsNewVersion }
+            .onAppear { isPresented = whatsNewVersion == appVersion && seenVersion != whatsNewVersion }
             .sheet(isPresented: $isPresented) {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("What's New in v\(whatsNewVersion)")
