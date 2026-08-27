@@ -459,23 +459,40 @@ Ran it 2026-08-27. It launches and works. Fixed on the spot:
       mac idiom entries (1x/2x for 16/32/128/256/512). Note the Dock caches the old iconless
       bundle: `touch` the app, `lsregister -f`, `killall Dock`.
 
-## The iOS test suite hangs — found 2026-08-27, NOT investigated
+## The iOS test suite was hanging — FIXED 2026-08-27
 
-`xcodebuild test -scheme Dose -destination 'platform=iOS Simulator,id=<iPhone 17>'` runs
-indefinitely and never emits an `Executed N tests` line. Killed after ~15 minutes twice, and again
-with an explicit `timeout 600` on a three-class subset
-(`HealthScoringServiceTests`, `CSVExporterTests`, `InteractionEngineTests`) — still nothing.
+`xcodebuild test -scheme Dose` used to run forever and never emit a result line. Now:
+**Executed 77 tests, 0 failures, 2 skipped, in 0.22s.**
 
-**This is pre-existing, not caused by the cross-platform work**: the first hang was observed on a
-run started before most of those edits landed. There are 78 `func test` across 9 files, so this is
-a suite that stopped running, not an empty suite — per
-`feedback_zero_tests_is_not_a_failing_suite` that is a hard stop, and the macOS/iOS work above was
-verified by **build only**, never by a green test run. Do not read "BUILD SUCCEEDED" as "tests pass"
-anywhere in this file.
+**Root cause:** `NotificationServiceTests` called `NotificationService.requestAuthorization()`,
+which calls `UNUserNotificationCenter.requestAuthorization` — that presents a system permission
+alert, and under `xcodebuild test` nothing ever dismisses it. `DoseTests` is a *hosted* bundle
+(`TEST_HOST = Dose.app/Dose`) so the alert belongs to the launched host app. Everything before it
+ran in milliseconds; the suite simply stopped there forever.
 
-- [ ] Find out why. First suspects: `AuthConfigTests` and anything touching Supabase or the network
-      from a test, and `@MainActor` deadlocks in the `@Observable` services. Try
-      `-only-testing` one class at a time to find which one blocks.
+Ruled out along the way, so nobody re-investigates them: it is **not** resource contention, **not**
+the `LAContext` lock screen in `DoseApp.unlock()` (biometry is not enrolled on the sim, so
+`requiresUnlock` is false), and **not** the HealthKit permission `.task`.
+
+Fixes:
+- Deleted `testRequestAuthorizationReturnsBool` — it asserted `XCTAssertTrue(result || !result)`,
+  a tautology that could never fail, and it was the call that blocked.
+- Dropped the incidental `requestAuthorization()` calls from the other tests.
+- The two tests that assert a request is *pending* genuinely need authorization
+  (`UNUserNotificationCenter.add` silently drops requests when unauthorized), so they now skip via
+  `notificationSettings()`, which reads status **without** prompting. They run for real on a
+  machine where permission was granted, and skip headlessly instead of failing.
+
+**One real app bug the hang was hiding:** `HealthScoringService.supplementAdherence` computed
+`(uniqueDays * 100) / 14` — integer division, so 5-of-14 days displayed as **35%** instead of 36%.
+Now rounds properly. Every adherence percentage in the app was biased low.
+
+Two other failures were bad tests, not bad code:
+- `testConfidenceFullData` passed `moodScore: 8` and called it "all optimal", but moodScore is a
+  scale metric out of 10 worth 13 points, so 8 scores 10 — exactly the missing 3 points. Now 10.
+- `testCSVEscapeWithQuotesCommasAndNewlines` split the CSV on `\n` while deliberately embedding a
+  newline inside a quoted field, and expected a space where its own input had a newline. The
+  production escaping is correct RFC 4180; the test now asserts against the whole file.
 
 Remaining before the Mac app can ship:
 

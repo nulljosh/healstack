@@ -94,9 +94,11 @@ final class CSVExporterTests: XCTestCase {
 
         let url = try CSVExporter.export(entries: [entry], dataStore: store).get()
         let csv = try String(contentsOf: url, encoding: .utf8)
-        let line = csv.components(separatedBy: "\n")[1]
 
-        XCTAssertTrue(line.contains("\"My, \"\"Complex\"\" Name\""))
-        XCTAssertTrue(line.contains("\"Line 1, \"\"quoted\"\"\""))
+        // Assert against the whole file, not a "\n"-split line: the notes field
+        // deliberately embeds a newline, and RFC 4180 keeps that inside the quotes,
+        // so one record legitimately spans two physical lines.
+        XCTAssertTrue(csv.contains("\"My, \"\"Complex\"\" Name\""))
+        XCTAssertTrue(csv.contains("\"Line 1,\n\"\"quoted\"\"\""))
     }
 }

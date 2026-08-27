@@ -85,10 +85,11 @@ final class HealthScoringServiceTests: XCTestCase {
             "steps": 10000,
             "heartRate": 70,
             "bloodPressureSys": 115,
-            "moodScore": 8,
+            "moodScore": 10,
         ])
         XCTAssertEqual(breakdown.confidence, 100)
-        // All optimal: total should be 100
+        // All optimal: total should be 100. moodScore is a scale metric out of 10,
+        // so it has to be 10 here - 8 scores 13 * 0.8 = 10 of 13 and totals 97.
         XCTAssertEqual(breakdown.total, 100)
     }
 

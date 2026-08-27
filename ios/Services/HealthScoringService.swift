@@ -230,7 +230,7 @@ enum HealthScoringService {
         return grouped.compactMap { id, entries in
             let name = SubstanceDatabase.find(id: id)?.name ?? id
             let uniqueDays = Set(entries.map { calendar.startOfDay(for: $0.timestamp) }).count
-            let rate = (uniqueDays * 100) / 14
+            let rate = Int((Double(uniqueDays) * 100.0 / 14.0).rounded())
             return AdherenceItem(name: name, taken: uniqueDays, total: 14, rate: rate)
         }
         .sorted { $0.name < $1.name }

@@ -1,18 +1,27 @@
 import XCTest
+import UserNotifications
 @testable import Dose
 
+/// These never call `requestAuthorization()`. It presents a system permission alert that
+/// nothing dismisses under `xcodebuild test`, which hung the whole suite indefinitely.
+/// Scheduling and cancelling work without authorization, which is what these actually test.
 @MainActor
 final class NotificationServiceTests: XCTestCase {
-    func testRequestAuthorizationReturnsBool() async {
-        let service = NotificationService()
-        let result = await service.requestAuthorization()
-        // Simulator may return true or false depending on state
-        XCTAssertTrue(result || !result)
+    /// `UNUserNotificationCenter.add` silently drops requests when the app is not
+    /// authorized, so any test asserting a request is *pending* needs real permission.
+    /// `notificationSettings()` reads the status without prompting, unlike
+    /// `requestAuthorization()`, which blocks forever on a headless simulator.
+    private func skipUnlessNotificationsAuthorized() async throws {
+        let settings = await UNUserNotificationCenter.current().notificationSettings()
+        try XCTSkipUnless(
+            settings.authorizationStatus == .authorized,
+            "Notification authorization not granted on this simulator"
+        )
     }
 
-    func testScheduleReminderCreatesRequest() async {
+    func testScheduleReminderCreatesRequest() async throws {
+        try await skipUnlessNotificationsAuthorized()
         let service = NotificationService()
-        _ = await service.requestAuthorization()
 
         service.scheduleDoseReminder(substanceName: "TestVitamin", at: Date(), repeats: false)
 
@@ -26,7 +35,6 @@ final class NotificationServiceTests: XCTestCase {
 
     func testCancelRemovesNotification() async {
         let service = NotificationService()
-        _ = await service.requestAuthorization()
 
         let date = Calendar.current.date(bySettingHour: 9, minute: 0, second: 0, of: Date()) ?? Date()
         service.scheduleDoseReminder(substanceName: "CancelTest", at: date, repeats: false)
@@ -44,9 +52,9 @@ final class NotificationServiceTests: XCTestCase {
         service.cancelAll()
     }
 
-    func testScheduleWithEmptyNameUsesEmptyId() async {
+    func testScheduleWithEmptyNameUsesEmptyId() async throws {
+        try await skipUnlessNotificationsAuthorized()
         let service = NotificationService()
-        _ = await service.requestAuthorization()
 
         service.scheduleDoseReminder(substanceName: "", at: Date(), repeats: false)
 
