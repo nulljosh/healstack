@@ -360,3 +360,55 @@ validating. Email/password sign-in re-checked and still returns a valid access t
       undefined beyond the name — needs a decision on what it actually does (timed box-breathing
       / 4-7-8 patterns? logged as a health entry alongside the existing markers? a Live Activity
       or just an in-app timer?) before any build.
+
+## Rejected 2.5.1 — HealthKit not identified in the UI — fixed 2026-08-27
+
+iOS 2.3.5 (build `202608222219`) rejected **2026-08-25**, reviewed on iPad Air 11-inch (M4).
+Submission `53f3ef57-6942-4b3e-8d51-d77e5aa45f29`, state `UNRESOLVED_ISSUES`.
+
+> Guideline 2.5.1 — the app uses the HealthKit or CareKit APIs but does not clearly identify
+> the HealthKit and CareKit functionality in the app's user interface.
+
+Not the auth rejection — that one stayed fixed. Root cause: the only HealthKit marker was a bare
+`Section("Apple Health")` in `ios/Views/BodyView.swift`, above a grid that shows `--` for all
+fifteen metrics when the review device has no Health data and no permission granted. On a fresh
+device that screen is an anonymous empty grid.
+
+**Fix applied:** explicit section header `Label("Apple Health", systemImage: "heart.text.square.fill")`,
+a footer naming HealthKit outright and stating the app never writes to Apple Health, and a
+`Connect Apple Health` button shown when `HealthKitService.isAvailable && !isAuthorized`.
+No new service or view — reuses the existing `requestAuthorization()` / `fetchAll()`.
+Build verified: `xcodebuild build -project ios/Healstack.xcodeproj -scheme Dose
+-destination 'generic/platform=iOS Simulator' -skipPackagePluginValidation` -> BUILD SUCCEEDED.
+
+Resubmitting under **2.3.5**, not 2.3.6 — a REJECTED version row still accepts a new build, so
+only the build number changes. No lineage gap for a fix no user ever saw.
+
+- [ ] Healstack accepted to the App Store.
+
+## macOS companion — decided 2026-08-27, do after 2.3.5 is approved
+
+Every iOS app here gets a Mac companion. Earlier read that a Mac port guts Healstack was **wrong**:
+of 63 Swift files only three touch iOS-only API — `DoseApp.swift` (UIKit, feedback generators,
+`LAContext`), `Views/BodyView.swift` (feedback generators), `Services/HealthKitService.swift`
+(HealthKit, no macOS equivalent). Of five tabs only **Body** depends on HealthKit, and only its
+Apple Health grid; manual BP entry, notes and the health grade still work. `LAContext` exists on
+macOS.
+
+Follow the `lexly/ios/project.yml` pattern: one project file, two application targets, same bundle
+ID `com.heyitsmejosh.dose` as a Universal Purchase on the existing record 6785764864. Keep the flat
+source layout — no `Sources/Shared|iOS|macOS` restructure.
+
+- [ ] `#if canImport(HealthKit)` around the HealthKit internals of `HealthKitService` so it
+      compiles on Mac as an all-nil stub with `isAvailable = false`. No call-site changes needed —
+      the UI already renders `--` for nil and the new `isAvailable` guard hides the Connect button.
+- [ ] `ios/Haptics.swift` — one `#if canImport(UIKit)` shim replacing the six feedback-generator
+      call sites in `DoseApp.swift` (70, 186) and `BodyView.swift` (108, 151, 276, 304).
+- [ ] `Healstack-macOS` target + scheme: `platform: macOS`, `MACOSX_DEPLOYMENT_TARGET: "14.0"`,
+      `ENABLE_HARDENED_RUNTIME: YES`, no `TARGETED_DEVICE_FAMILY`, no widget dependency, own
+      Info.plist and entitlements (sandbox + app group, **no** healthkit entitlement).
+- [ ] Mac App Distribution cert + profile (`asc-signing-setup`).
+- [ ] `asc xcode export` is iOS-only — raw `xcodebuild` + `ExportOptionsMac.plist`, then
+      `asc builds upload --pkg`.
+- [ ] **Blocked on Joshua (maybe):** adding the macOS platform to app record 6785764864 may be
+      dashboard-only. Check for a CLI path first.

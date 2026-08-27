@@ -54,8 +54,20 @@ private struct BiometricsTab: View {
 
     var body: some View {
         Form {
-            Section("Apple Health") {
+            Section {
+                if HealthKitService.isAvailable && !healthKitService.isAuthorized {
+                    Button("Connect Apple Health") {
+                        Task {
+                            await healthKitService.requestAuthorization()
+                            await healthKitService.fetchAll()
+                        }
+                    }
+                }
                 healthDataGrid
+            } header: {
+                Label("Apple Health", systemImage: "heart.text.square.fill")
+            } footer: {
+                Text("Heart rate, sleep, steps, weight, and blood pressure below are read from Apple Health via HealthKit. Healstack never writes to Apple Health.")
             }
 
             Section("Notes") {
