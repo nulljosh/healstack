@@ -494,11 +494,42 @@ Two other failures were bad tests, not bad code:
   newline inside a quoted field, and expected a space where its own input had a newline. The
   production escaping is correct RFC 4180; the test now asserts against the whole file.
 
+## macOS: UITEST_SNAPSHOT produces no window — found 2026-08-27, PRE-EXISTING
+
+`open Healstack.app --args UITEST_SNAPSHOT` leaves the app running with **no on-screen window**.
+`CGWindowListCopyWindowInfo` finds Healstack windows under `.optionAll` but zero under
+`.optionOnScreenOnly`. Without the flag the window appears normally at 1000x700 and shows the
+sign-in screen, so screenshots themselves work fine.
+
+Confirmed pre-existing, **not** caused by the sidebar work: stashing the `DoseApp.swift` changes,
+rebuilding, and relaunching with the flag reproduces it identically.
+
+`sample <pid>` shows the main thread **idle in the normal AppKit run loop** — not deadlocked, not
+spinning. So this is not a hang, and there is no evidence real users are affected. What it does
+block is Mac screenshot automation, since `UITEST_SNAPSHOT` is the only auth bypass
+(`DoseApp.swift:35`).
+
+- [ ] Work out why SwiftUI never shows the window on that path, so Mac screenshots can be
+      automated the way the iOS ones are.
+- [ ] **Open question worth one manual check:** does the Mac app show its window once *actually*
+      signed in? The flag path and the authenticated path render the same shell, so a single
+      sign-in on a real Mac would confirm the uploaded MAC_OS build is usable. Do this before
+      submitting the Mac version for review.
+
 Remaining before the Mac app can ship:
 
-- [ ] **The UI is basic at desktop size.** It is an iPhone layout stretched into a window. Works,
-      but it is not a Mac app yet. A sidebar (`NavigationSplitView`) instead of a five-tab
-      `TabView` is the obvious next step. Not urgent, not blocking the build.
+- [x] **Sidebar shell, 2026-08-27.** macOS now uses `NavigationSplitView` with a five-row
+      `.sidebar` list instead of the phone `TabView` chrome. The tab metadata was duplicated twice
+      (once in `DoseFloatingTabBar`, once in the `TabView`'s `.tabItem` modifiers), so it was
+      hoisted to one file-scope `doseTabs`, and the five destinations were extracted into a single
+      `destination(for:)` builder that both the iOS `TabView` and the macOS sidebar call.
+      Note `#if` does not chain modifiers: the branch needs wrapping in a `Group` or the
+      `.onChange`/`.task` that follow fail to compile.
+      **Build-verified only — see the visual-verification gap below.**
+      Screens themselves are unchanged; making them feel native at desktop width is separate work.
+
+- [ ] **Nobody has actually seen the macOS sidebar.** It renders only once signed in, and the Mac
+      app cannot be driven to a signed-in state headlessly here.
 - [x] **Archived and uploaded 2026-08-27.** MAC_OS build `202608271405` (2.3.5) is in App Store
       Connect, state PROCESSING. Not submitted for review yet — iOS 2.3.5 is mid-review on the same
       record, and a second submission risks tangling it the way `53f3ef57` did earlier today.

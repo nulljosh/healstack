@@ -1,6 +1,16 @@
 import SwiftUI
 import LocalAuthentication
 
+/// The five destinations, in order. `selectedTab` indexes into this.
+/// Shared by the iOS floating tab bar, the iOS TabView, and the macOS sidebar.
+private let doseTabs: [(icon: String, fill: String, label: String)] = [
+    ("house", "house.fill", "Home"),
+    ("books.vertical", "books.vertical.fill", "Library"),
+    ("chart.line.uptrend.xyaxis.circle", "chart.line.uptrend.xyaxis.circle.fill", "Insights"),
+    ("figure.mind.and.body", "figure.mind.and.body", "Body"),
+    ("cross.vial", "cross.vial.fill", "Labs"),
+]
+
 @main
 struct DoseApp: App {
     @Environment(\.scenePhase) private var scenePhase
@@ -37,34 +47,31 @@ struct DoseApp: App {
                 NewPasswordView(authService: authService)
             } else {
             ZStack {
+                // Group so the shared modifiers below chain onto whichever shell is compiled.
+                Group {
+                #if os(macOS)
+                NavigationSplitView {
+                    List(doseTabs.indices, id: \.self, selection: sidebarSelection) { index in
+                        Label(doseTabs[index].label, systemImage: doseTabs[index].fill)
+                            .tag(index)
+                    }
+                    .listStyle(.sidebar)
+                    .navigationSplitViewColumnWidth(min: 180, ideal: 200, max: 260)
+                } detail: {
+                    destination(for: selectedTab)
+                }
+                #else
                 TabView(selection: $selectedTab) {
-                    DashboardView(dataStore: dataStore, notificationService: notificationService, syncService: syncService, authService: authService)
-                        .tabItem { Label("Home", systemImage: "house.fill") }
-                        .tag(0)
-                        .hideSystemTabBar()
-
-                    LibraryView(dataStore: dataStore)
-                        .tabItem { Label("Library", systemImage: "books.vertical.fill") }
-                        .tag(1)
-                        .hideSystemTabBar()
-
-                    InsightsView(dataStore: dataStore)
-                        .tabItem { Label("Insights", systemImage: "chart.line.uptrend.xyaxis.circle.fill") }
-                        .tag(2)
-                        .hideSystemTabBar()
-
-                    CombinedBodyView(dataStore: dataStore, healthKitService: healthKitService)
-                        .environment(bodyworkStore)
-                        .tabItem { Label("Body", systemImage: "figure.mind.and.body") }
-                        .tag(3)
-                        .hideSystemTabBar()
-
-                    LabResultsView(dataStore: dataStore)
-                        .tabItem { Label("Labs", systemImage: "cross.vial.fill") }
-                        .tag(4)
-                        .hideSystemTabBar()
+                    ForEach(doseTabs.indices, id: \.self) { index in
+                        destination(for: index)
+                            .tabItem { Label(doseTabs[index].label, systemImage: doseTabs[index].fill) }
+                            .tag(index)
+                            .hideSystemTabBar()
+                    }
                 }
                 .hideSystemTabBar()
+                #endif
+                }
                 .onChange(of: selectedTab) { _, _ in
                     Haptics.impact(.light)
                 }
@@ -147,6 +154,30 @@ struct DoseApp: App {
         #endif
     }
 
+    /// One construction of each destination, used by both the iOS TabView and the macOS sidebar.
+    @ViewBuilder
+    private func destination(for index: Int) -> some View {
+        switch index {
+        case 0:
+            DashboardView(dataStore: dataStore, notificationService: notificationService, syncService: syncService, authService: authService)
+        case 1:
+            LibraryView(dataStore: dataStore)
+        case 2:
+            InsightsView(dataStore: dataStore)
+        case 3:
+            CombinedBodyView(dataStore: dataStore, healthKitService: healthKitService)
+                .environment(bodyworkStore)
+        default:
+            LabResultsView(dataStore: dataStore)
+        }
+    }
+
+    /// `List` single-selection binds an optional; `selectedTab` is not. Ignore deselection
+    /// so the detail column always has something to show.
+    private var sidebarSelection: Binding<Int?> {
+        Binding(get: { selectedTab }, set: { if let new = $0 { selectedTab = new } })
+    }
+
     private func availableBiometryType() -> LABiometryType {
         let context = LAContext()
         guard context.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) else {
@@ -176,13 +207,7 @@ struct DoseApp: App {
 private struct DoseFloatingTabBar: View {
     @Binding var selectedTab: Int
 
-    private let tabs: [(icon: String, fill: String, label: String)] = [
-        ("house", "house.fill", "Home"),
-        ("books.vertical", "books.vertical.fill", "Library"),
-        ("chart.line.uptrend.xyaxis.circle", "chart.line.uptrend.xyaxis.circle.fill", "Insights"),
-        ("figure.mind.and.body", "figure.mind.and.body", "Body"),
-        ("cross.vial", "cross.vial.fill", "Labs"),
-    ]
+    private let tabs = doseTabs
 
     var body: some View {
         HStack(spacing: 0) {
