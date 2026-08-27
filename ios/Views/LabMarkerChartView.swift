@@ -70,7 +70,7 @@ struct LabMarkerChartView: View {
             .frame(height: 200)
         }
         .padding()
-        .background(Color(.secondarySystemBackground))
+        .background(Color.secondaryBackground)
         .clipShape(RoundedRectangle(cornerRadius: 14))
     }
 

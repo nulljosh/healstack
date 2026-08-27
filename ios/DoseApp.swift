@@ -1,6 +1,5 @@
 import SwiftUI
 import LocalAuthentication
-import UIKit
 
 @main
 struct DoseApp: App {
@@ -42,32 +41,32 @@ struct DoseApp: App {
                     DashboardView(dataStore: dataStore, notificationService: notificationService, syncService: syncService, authService: authService)
                         .tabItem { Label("Home", systemImage: "house.fill") }
                         .tag(0)
-                        .toolbar(.hidden, for: .tabBar)
+                        .hideSystemTabBar()
 
                     LibraryView(dataStore: dataStore)
                         .tabItem { Label("Library", systemImage: "books.vertical.fill") }
                         .tag(1)
-                        .toolbar(.hidden, for: .tabBar)
+                        .hideSystemTabBar()
 
                     InsightsView(dataStore: dataStore)
                         .tabItem { Label("Insights", systemImage: "chart.line.uptrend.xyaxis.circle.fill") }
                         .tag(2)
-                        .toolbar(.hidden, for: .tabBar)
+                        .hideSystemTabBar()
 
                     CombinedBodyView(dataStore: dataStore, healthKitService: healthKitService)
                         .environment(bodyworkStore)
                         .tabItem { Label("Body", systemImage: "figure.mind.and.body") }
                         .tag(3)
-                        .toolbar(.hidden, for: .tabBar)
+                        .hideSystemTabBar()
 
                     LabResultsView(dataStore: dataStore)
                         .tabItem { Label("Labs", systemImage: "cross.vial.fill") }
                         .tag(4)
-                        .toolbar(.hidden, for: .tabBar)
+                        .hideSystemTabBar()
                 }
-                .toolbar(.hidden, for: .tabBar)
+                .hideSystemTabBar()
                 .onChange(of: selectedTab) { _, _ in
-                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    Haptics.impact(.light)
                 }
                 .task {
                     if HealthKitService.isAvailable && !isUITestSnapshot {
@@ -76,10 +75,14 @@ struct DoseApp: App {
                 }
 
                 if !requiresUnlock || isUnlocked {
+                    #if os(iOS)
+                    // macOS draws TabView's own tab strip, so the floating bar
+                    // would be a second, redundant tab bar on top of it.
                     DoseFloatingTabBar(selectedTab: $selectedTab)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                         .padding(.bottom, 8)
                         .zIndex(1)
+                    #endif
 
                     WhatsNewSheet()
                 }
@@ -139,6 +142,9 @@ struct DoseApp: App {
                 Task { try? await supabaseClient.auth.session(from: url) }
             }
         }
+        #if os(macOS)
+        .defaultSize(width: 1000, height: 700)
+        #endif
     }
 
     private func availableBiometryType() -> LABiometryType {
@@ -183,7 +189,7 @@ private struct DoseFloatingTabBar: View {
             ForEach(tabs.indices, id: \.self) { index in
                 Button {
                     selectedTab = index
-                    UIImpactFeedbackGenerator(style: .light).impactOccurred()
+                    Haptics.impact(.light)
                 } label: {
                     Image(systemName: selectedTab == index ? tabs[index].fill : tabs[index].icon)
                         .font(.system(size: 20, weight: .medium))

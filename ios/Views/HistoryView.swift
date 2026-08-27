@@ -63,7 +63,7 @@ struct HistoryView: View {
             .onDisappear { CSVExporter.cleanup() }
             .searchable(text: $searchText, prompt: "Search doses...")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     if !dataStore.doseEntries.isEmpty {
                         ShareLink(
                             item: csvExportURL,

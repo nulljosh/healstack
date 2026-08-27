@@ -10,10 +10,11 @@ options:
   bundleIdPrefix: com.heyitsmejosh
   deploymentTarget:
     iOS: '17.0'
+    macOS: '14.0'
 settings:
   SWIFT_VERSION: '6.0'
   MARKETING_VERSION: '2.3.5'
-  CURRENT_PROJECT_VERSION: '202608222219'
+  CURRENT_PROJECT_VERSION: '202608271405'
   DEVELOPMENT_TEAM: QMM486NPYC
   CODE_SIGN_STYLE: Automatic
 targets:
@@ -36,6 +37,7 @@ targets:
           - Checks
           - DoseWidget
           - watchos
+          - macOS
           - scripts
           - .asc
           - fastlane
@@ -61,6 +63,48 @@ targets:
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose
       INFOPLIST_KEY_CFBundleDisplayName: Healstack
       CODE_SIGN_ENTITLEMENTS: Dose.entitlements
+      SUPABASE_URL: https://tjsxsqlxjmanwvmywwvw.supabase.co
+      SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68
+
+  Healstack-macOS:
+    type: application
+    platform: macOS
+    sources:
+      - path: .
+        excludes:
+          - '*.xcodeproj'
+          - '*.yml'
+          - .git
+          - .gitignore
+          - README.md
+          - CLAUDE.md
+          - architecture.svg
+          - '*.entitlements'
+          - '*.plist'
+          - Tests
+          - UITests
+          - Checks
+          - DoseWidget
+          - watchos
+          - macOS
+          - scripts
+          - .asc
+          - fastlane
+    dependencies:
+      - package: Supabase
+        product: Supabase
+    buildToolPlugins:
+      - plugin: SwiftLintBuildToolPlugin
+        package: SwiftLint
+    settings:
+      INFOPLIST_FILE: macOS/Info.plist
+      GENERATE_INFOPLIST_FILE: NO
+      PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose
+      PRODUCT_NAME: Healstack
+      MACOSX_DEPLOYMENT_TARGET: '14.0'
+      ENABLE_HARDENED_RUNTIME: YES
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      CODE_SIGN_ENTITLEMENTS: macOS/Healstack-macOS.entitlements
       SUPABASE_URL: https://tjsxsqlxjmanwvmywwvw.supabase.co
       SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68
 
@@ -104,6 +148,12 @@ targets:
       - sdk: SwiftUI.framework
 
 schemes:
+  Healstack-macOS:
+    build:
+      targets:
+        Healstack-macOS: all
+    run:
+      config: Debug
   Dose:
     build:
       targets:

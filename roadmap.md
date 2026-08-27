@@ -381,12 +381,27 @@ No new service or view — reuses the existing `requestAuthorization()` / `fetch
 Build verified: `xcodebuild build -project ios/Healstack.xcodeproj -scheme Dose
 -destination 'generic/platform=iOS Simulator' -skipPackagePluginValidation` -> BUILD SUCCEEDED.
 
-Resubmitting under **2.3.5**, not 2.3.6 — a REJECTED version row still accepts a new build, so
-only the build number changes. No lineage gap for a fix no user ever saw.
+Resubmitted under **2.3.5** (build `202608271405`), not 2.3.6 — a REJECTED version row still accepts
+a new build, so only the build number changed. No lineage gap for a fix no user ever saw.
+**Submitted 2026-08-27 21:12 UTC, submission `26e3f066-3572-4409-a386-1b14825a1eea`,
+state WAITING_FOR_REVIEW.** Reviewer notes updated to point at Body -> Biometrics -> Apple Health.
+
+Two traps hit on the way, both worth remembering:
+
+- `asc xcode version edit` writes **only the pbxproj**, not `project.yml`. The next `xcodegen
+  generate` silently reverts the build number. This is the same version drift as commit `eeae544`.
+  Always `sed` `project.yml` to match after a version edit.
+- The rejected submission `53f3ef57` sat in `UNRESOLVED_ISSUES` and **held the version row hostage** —
+  `asc publish ... --submit` failed with "could not be safely reused", and `review items add` failed
+  with "already added to another reviewSubmission". Fix: `asc review submissions-update --id <old>
+  --canceled=true --confirm`, wait for it to leave CANCELING, then `review items add` the version to
+  the new draft, `versions attach-build`, and `review submissions-submit --id <new> --confirm`.
+  Note `asc review doctor` reports `version.state.editable` as **blocking** at that point; it is a
+  false negative once the version is already staged on a submission.
 
 - [ ] Healstack accepted to the App Store.
 
-## macOS companion — decided 2026-08-27, do after 2.3.5 is approved
+## macOS companion — target builds 2026-08-27
 
 Every iOS app here gets a Mac companion. Earlier read that a Mac port guts Healstack was **wrong**:
 of 63 Swift files only three touch iOS-only API — `DoseApp.swift` (UIKit, feedback generators,
@@ -399,16 +414,54 @@ Follow the `lexly/ios/project.yml` pattern: one project file, two application ta
 ID `com.heyitsmejosh.dose` as a Universal Purchase on the existing record 6785764864. Keep the flat
 source layout — no `Sources/Shared|iOS|macOS` restructure.
 
-- [ ] `#if canImport(HealthKit)` around the HealthKit internals of `HealthKitService` so it
-      compiles on Mac as an all-nil stub with `isAvailable = false`. No call-site changes needed —
-      the UI already renders `--` for nil and the new `isAvailable` guard hides the Connect button.
-- [ ] `ios/Haptics.swift` — one `#if canImport(UIKit)` shim replacing the six feedback-generator
-      call sites in `DoseApp.swift` (70, 186) and `BodyView.swift` (108, 151, 276, 304).
-- [ ] `Healstack-macOS` target + scheme: `platform: macOS`, `MACOSX_DEPLOYMENT_TARGET: "14.0"`,
-      `ENABLE_HARDENED_RUNTIME: YES`, no `TARGETED_DEVICE_FAMILY`, no widget dependency, own
-      Info.plist and entitlements (sandbox + app group, **no** healthkit entitlement).
-- [ ] Mac App Distribution cert + profile (`asc-signing-setup`).
-- [ ] `asc xcode export` is iOS-only — raw `xcodebuild` + `ExportOptionsMac.plist`, then
-      `asc builds upload --pkg`.
+**`xcodebuild -scheme Healstack-macOS -destination 'platform=macOS'` -> BUILD SUCCEEDED.** The whole
+port was seven compile errors across 63 files.
+
+- [x] `#if os(iOS)` around the HealthKit internals of `HealthKitService`, so it compiles on Mac as an
+      all-nil stub with `isAvailable = false`. **`canImport(HealthKit)` was the wrong predicate** —
+      HealthKit *does* import on macOS, it just has no usable data and gates `stateOfMindType()`
+      behind macOS 15. `os(iOS)` is what was actually meant. No call-site changes needed anywhere:
+      the UI already renders `--` for nil, and the `isAvailable` guard added for the 2.5.1 fix hides
+      the Connect button on Mac for free.
+- [x] `ios/CrossPlatform.swift` — one file holding every portability shim, so no view file needed a
+      platform conditional: `Haptics.impact/.warning` (replacing six feedback-generator call sites),
+      no-op `keyboardType` / `autocapitalization` / `navigationBarTitleDisplayMode`,
+      `Color.secondaryBackground`, and `hideSystemTabBar()`.
+- [x] Toolbar placements: `.topBarTrailing` -> `.primaryAction`, `.topBarLeading` -> `.navigation`
+      (both cross-platform, and `.navigation` keeps the settings gear leading).
+- [x] `Healstack-macOS` target + scheme, `macOS/Info.plist` (with `LSApplicationCategoryType`, per
+      the ITMS-90242 note), `macOS/Healstack-macOS.entitlements` (sandbox + app group, no healthkit).
+- [x] `ExportOptionsMac.plist`.
+- [x] Mac App Store provisioning profile `HS3A2S4K8B` created against bundle `2H6YYH82B9`
+      (already `UNIVERSAL`, so no bundle-ID change was needed) with cert `BG5Z7ZHTHT`.
+      Mac certs were already on file and are valid to 2027-06-24.
+- [x] Add `macOS` to the **iOS** target's excludes — otherwise `macOS/Info.plist` collides with the
+      root one and the iOS build dies with "Multiple commands produce ... Info.plist".
+
+Ran it 2026-08-27. It launches and works. Fixed on the spot:
+
+- [x] **Double tab bar.** `hideSystemTabBar()` is a no-op on macOS, so `TabView`'s native tab strip
+      rendered *and* `DoseFloatingTabBar` drew on top of it. The floating bar is now `#if os(iOS)`
+      and macOS uses its native tab chrome.
+- [x] `.defaultSize(width: 1000, height: 700)` — the layout was built for a 390pt iPhone.
+- [x] Apple Health section hidden on macOS. Gated `#if !os(macOS)`, deliberately **not** on
+      `HealthKitService.isAvailable`: `isAvailable` can be false on iPad, and that would strip the
+      exact 2.5.1 fix Apple is reviewing right now. Compile-time gate, zero iOS risk.
+- [x] **No app icon.** `Assets.xcassets/AppIcon.appiconset` only had a single
+      `"platform": "ios"` entry — no `mac` idiom at all, so no `.icns` was produced. Generated
+      `mac-{16,32,64,128,256,512,1024}.png` with `sips` from the 1024 source and added the ten
+      mac idiom entries (1x/2x for 16/32/128/256/512). Note the Dock caches the old iconless
+      bundle: `touch` the app, `lsregister -f`, `killall Dock`.
+
+Remaining before the Mac app can ship:
+
+- [ ] **The UI is basic at desktop size.** It is an iPhone layout stretched into a window. Works,
+      but it is not a Mac app yet. A sidebar (`NavigationSplitView`) instead of a five-tab
+      `TabView` is the obvious next step. Not urgent, not blocking the build.
+- [ ] Archive and upload: `asc xcode export` is iOS-only — raw `xcodebuild` +
+      `ExportOptionsMac.plist`, then `asc builds upload --pkg`.
 - [ ] **Blocked on Joshua (maybe):** adding the macOS platform to app record 6785764864 may be
       dashboard-only. Check for a CLI path first.
+- [ ] Decide what the Body tab shows on Mac. Right now the Apple Health section renders an all-`--`
+      grid with no Connect button, which is honest but pointless — it should probably hide entirely
+      when `!HealthKitService.isAvailable`.

@@ -1,5 +1,7 @@
 import Foundation
+#if os(iOS)
 import HealthKit
+#endif
 import Observation
 
 @MainActor
@@ -26,6 +28,7 @@ final class HealthKitService {
     var isAuthorized = false
     var lastError: String?
 
+#if os(iOS)
     private let store: HKHealthStore?
 
     static var isAvailable: Bool {
@@ -185,4 +188,12 @@ final class HealthKitService {
             store.execute(query)
         }
     }
+#else
+    // ponytail: HealthKit does not exist on macOS. Stub out the whole surface so
+    // every call site compiles unchanged; the UI already renders "--" for nil and
+    // hides the Connect button on `isAvailable == false`.
+    static var isAvailable: Bool { false }
+    func requestAuthorization() async {}
+    func fetchAll() async {}
+#endif
 }

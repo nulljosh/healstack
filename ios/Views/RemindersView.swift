@@ -35,7 +35,7 @@ struct RemindersView: View {
             }
             .navigationTitle("Reminders")
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     Button {
                         showingAddSheet = true
                     } label: {

@@ -91,7 +91,7 @@ struct LibraryView: View {
             .navigationTitle("Library")
             .searchable(text: $searchText)
             .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     NavigationLink {
                         InteractionCheckerView()
                     } label: {

@@ -54,6 +54,10 @@ private struct BiometricsTab: View {
 
     var body: some View {
         Form {
+            #if !os(macOS)
+            // HealthKit has no macOS counterpart, so this section could only ever
+            // render fifteen empty cards there. Compile-time, not `isAvailable`:
+            // the iOS rendering must stay byte-for-byte what App Review is looking at.
             Section {
                 if HealthKitService.isAvailable && !healthKitService.isAuthorized {
                     Button("Connect Apple Health") {
@@ -69,6 +73,7 @@ private struct BiometricsTab: View {
             } footer: {
                 Text("Heart rate, sleep, steps, weight, and blood pressure below are read from Apple Health via HealthKit. Healstack never writes to Apple Health.")
             }
+            #endif
 
             Section("Notes") {
                 TextField("Daily notes...", text: $notes, axis: .vertical)
@@ -105,7 +110,7 @@ private struct BiometricsTab: View {
                         notes: String(notes.trimmingCharacters(in: .whitespacesAndNewlines).prefix(500))
                     )
                     dataStore.addBiometricEntry(entry)
-                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    Haptics.impact(.medium)
                     notes = ""
                     bpSystolic = ""
                     bpDiastolic = ""
@@ -148,7 +153,7 @@ private struct BiometricsTab: View {
                         for entry in toDelete {
                             dataStore.deleteBiometricEntry(entry)
                         }
-                        UINotificationFeedbackGenerator().notificationOccurred(.warning)
+                        Haptics.warning()
                     }
                 }
             }
@@ -273,7 +278,7 @@ private struct HealthTab: View {
                             notes: notes.trimmingCharacters(in: .whitespacesAndNewlines)
                         )
                     )
-                    UIImpactFeedbackGenerator(style: .medium).impactOccurred()
+                    Haptics.impact(.medium)
                     mood = 3.0
                     energy = 3.0
                     sleepHours = 8.0
@@ -301,7 +306,7 @@ private struct HealthTab: View {
                         for entry in toDelete {
                             dataStore.deleteHealthEntry(entry)
                         }
-                        UINotificationFeedbackGenerator().notificationOccurred(.warning)
+                        Haptics.warning()
                     }
                 }
             }

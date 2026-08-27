@@ -203,14 +203,14 @@ struct DashboardView: View {
             }
             .navigationTitle(greeting)
             .toolbar {
-                ToolbarItem(placement: .topBarLeading) {
+                ToolbarItem(placement: .navigation) {
                     Button {
                         showSettings = true
                     } label: {
                         Image(systemName: "gearshape")
                     }
                 }
-                ToolbarItem(placement: .topBarTrailing) {
+                ToolbarItem(placement: .primaryAction) {
                     Button {
                         showReminders = true
                     } label: {
