@@ -1,5 +1,11 @@
 # Healstack Roadmap
 
+## Open — iOS test suite hangs 2026-08-27
+`xcodebuild test` against the iOS target never emits a result line, even when running a subset of tests (e.g., three test classes) under a timeout. Hangs indefinitely. This is pre-existing, not caused by this session's changes (macOS port, HealthKit UI fix). Build verification passes; test verification is blocked. Needs investigation on next session. Recorded as blocker for comprehensive test coverage.
+
+## Done 2026-08-27 — 2.5.1 rejection fixed and resubmitted
+iOS v2.3.5 was rejected under Guideline 2.5.1: the health section displayed empty dashes when there was no data, making it unclear the app used Apple HealthKit at all. Fixed by adding an Apple Health icon header to the section, a footer that names HealthKit and explains the app never writes to it, and a "Connect" button that appears when permission is not yet granted. Resubmitted 2026-08-27, now WAITING_FOR_REVIEW. Also built and uploaded a macOS companion (v1.0) concurrently; only three of the sixty-some files touched iOS-only APIs, so the entire port fit into one CrossPlatform.swift file with portability shims. macOS build uploaded but deliberately NOT submitted yet (iOS 2.3.5 is mid-review on the same version record). 
+
 ## Done 2026-08-18 — resubmitted
 iOS 2.3.4 **submitted** 20:07 UTC (review submission `f5e9ce05-9bc0-443b-a360-3b25deb20107`).
 Build `202608181252` was uploaded the same day, so the "rebuild before resubmitting" condition
