@@ -453,6 +453,24 @@ Ran it 2026-08-27. It launches and works. Fixed on the spot:
       mac idiom entries (1x/2x for 16/32/128/256/512). Note the Dock caches the old iconless
       bundle: `touch` the app, `lsregister -f`, `killall Dock`.
 
+## The iOS test suite hangs — found 2026-08-27, NOT investigated
+
+`xcodebuild test -scheme Dose -destination 'platform=iOS Simulator,id=<iPhone 17>'` runs
+indefinitely and never emits an `Executed N tests` line. Killed after ~15 minutes twice, and again
+with an explicit `timeout 600` on a three-class subset
+(`HealthScoringServiceTests`, `CSVExporterTests`, `InteractionEngineTests`) — still nothing.
+
+**This is pre-existing, not caused by the cross-platform work**: the first hang was observed on a
+run started before most of those edits landed. There are 78 `func test` across 9 files, so this is
+a suite that stopped running, not an empty suite — per
+`feedback_zero_tests_is_not_a_failing_suite` that is a hard stop, and the macOS/iOS work above was
+verified by **build only**, never by a green test run. Do not read "BUILD SUCCEEDED" as "tests pass"
+anywhere in this file.
+
+- [ ] Find out why. First suspects: `AuthConfigTests` and anything touching Supabase or the network
+      from a test, and `@MainActor` deadlocks in the `@Observable` services. Try
+      `-only-testing` one class at a time to find which one blocks.
+
 Remaining before the Mac app can ship:
 
 - [ ] **The UI is basic at desktop size.** It is an iPhone layout stretched into a window. Works,
