@@ -1,6 +1,6 @@
 # Healstack Technical Whitepaper
 
-**v2.2.0** | July 2026
+**v2.3.4** | August 2026
 
 Healstack is a supplement/substance stack tracker with a built-in interaction
 checker. Log what you take, see what's currently active, and get warned before
@@ -41,7 +41,7 @@ support. OS-aware theme (auto dark/light + manual override).
 
 | Platform | Framework | Notes |
 |----------|-----------|-------|
-| iOS | SwiftUI, xcodegen | iOS 17+ |
+| iOS | SwiftUI, xcodegen | iOS 17+, v2.3.4 in review |
 
 ## Security / Privacy
 

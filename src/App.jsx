@@ -24,6 +24,7 @@ import LabResults from './pages/LabResults';
 import Routine from './pages/Routine';
 import Profile from './pages/Profile';
 import WhatsNew from './components/WhatsNew';
+import { WebMCP } from './lib/webmcp';
 
 function ThemeToggle({ theme, setTheme }) {
   return (
@@ -80,6 +81,7 @@ function AppShell({ theme, setTheme }) {
         </Routes>
         <Nav />
         <WhatsNew />
+        <WebMCP />
       </div>
     </SessionProvider>
   );
