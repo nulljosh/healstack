@@ -519,7 +519,30 @@ block is Mac screenshot automation, since `UITEST_SNAPSHOT` is the only auth byp
 Local testing credentials now live in `.env.accounts.local` (gitignored via `.env*`), matching the
 `DEV_EMAIL`/`DEV_PASSWORD` convention used for screenshot automation elsewhere.
 
-Remaining before the Mac app can ship:
+## macOS SUBMITTED 2026-08-27
+
+Healstack for Mac 2.3.5 (build `202608271405`) is **WAITING_FOR_REVIEW**, submission
+`54e8a1a2-b94c-455f-a64c-0c34c4a2c9f4`, macOS version record `b6e6605e-7b26-45ea-940b-6f8f2f27e240`.
+`asc review doctor --platform MAC_OS` reported 0 errors, 0 blocking before submitting. Both
+platforms are now in review at once on the same record, which App Store Connect handles fine.
+
+Submitting needed three things beyond the build, none obvious from the iOS flow:
+1. A **separate `MAC_OS` version record** — `asc versions create --platform MAC_OS`. Uploading a
+   Mac build does not create one. This was the step wrongly recorded as "maybe dashboard-only".
+2. **Its own metadata.** The macOS localization starts empty; description does not inherit from
+   iOS. Copied `metadata/version/2.3.4/en-US.json` to `2.3.5/` and ran
+   `asc metadata apply --platform MAC_OS`.
+3. **macOS screenshots**, device type `APP_DESKTOP`, minimum 1280x800.
+
+Screenshot capture, without any UI automation (`screenshots/macos/*.png`, 1440x900):
+temporarily set `.defaultSize` to 1440x900 and drove `selectedTab` 0-4 by `sed` + rebuild, one
+build per tab, restoring `DoseApp.swift` from git afterwards. Capture the window alone with
+`screencapture -o -l <windowID>`, taking the id from `CGWindowListCopyWindowInfo` — a plain
+`screencapture -x` grabs the whole desktop, terminal included. The app stays signed in across
+relaunches, so the shots show real data. `scripts/` has no wrapper for this yet; the loop lived in
+the session scratchpad.
+
+Remaining:
 
 - [x] **Sidebar shell, 2026-08-27.** macOS now uses `NavigationSplitView` with a five-row
       `.sidebar` list instead of the phone `TabView` chrome. The tab metadata was duplicated twice
