@@ -458,10 +458,25 @@ Remaining before the Mac app can ship:
 - [ ] **The UI is basic at desktop size.** It is an iPhone layout stretched into a window. Works,
       but it is not a Mac app yet. A sidebar (`NavigationSplitView`) instead of a five-tab
       `TabView` is the obvious next step. Not urgent, not blocking the build.
-- [ ] Archive and upload: `asc xcode export` is iOS-only — raw `xcodebuild` +
-      `ExportOptionsMac.plist`, then `asc builds upload --pkg`.
-- [ ] **Blocked on Joshua (maybe):** adding the macOS platform to app record 6785764864 may be
-      dashboard-only. Check for a CLI path first.
-- [ ] Decide what the Body tab shows on Mac. Right now the Apple Health section renders an all-`--`
-      grid with no Connect button, which is honest but pointless — it should probably hide entirely
-      when `!HealthKitService.isAvailable`.
+- [x] **Archived and uploaded 2026-08-27.** MAC_OS build `202608271405` (2.3.5) is in App Store
+      Connect, state PROCESSING. Not submitted for review yet — iOS 2.3.5 is mid-review on the same
+      record, and a second submission risks tangling it the way `53f3ef57` did earlier today.
+      Submit the Mac version once iOS clears.
+- [x] Not blocked on Joshua after all: the bundle ID was already `UNIVERSAL`, and uploading a
+      MAC_OS build is what puts macOS on the record. No dashboard step was needed.
+- [x] Apple Health section hidden on Mac (see above).
+
+Signing notes, because this took three tries:
+
+- `xcodebuild archive` with `CODE_SIGN_STYLE=Manual` + `PROVISIONING_PROFILE_SPECIFIER` on the
+  command line **leaks the setting into every SPM package target**, and swift-crypto/SwiftLint then
+  fail with "does not support provisioning profiles". Use `-allowProvisioningUpdates` and leave
+  signing to the project.
+- A profile created through the API is **not installed locally**. `asc profiles download --id
+  HS3A2S4K8B --output ~/Library/Developer/Xcode/UserData/Provisioning\ Profiles/*.provisionprofile`
+  (note: macOS profiles live there, not in `~/Library/MobileDevice/Provisioning Profiles`).
+- Manual `signingStyle` in `ExportOptionsMac.plist` then failed on the *installer* certificate.
+  The working config is lexly's: `method: app-store-connect`, `destination: upload`,
+  `signingStyle: automatic`. `destination: upload` does the upload itself, so no separate
+  `asc builds upload --pkg` step is needed — and it writes no pkg on disk, per
+  `feedback_asc_export_upload_no_ipa`.
