@@ -511,10 +511,13 @@ block is Mac screenshot automation, since `UITEST_SNAPSHOT` is the only auth byp
 
 - [ ] Work out why SwiftUI never shows the window on that path, so Mac screenshots can be
       automated the way the iOS ones are.
-- [ ] **Open question worth one manual check:** does the Mac app show its window once *actually*
-      signed in? The flag path and the authenticated path render the same shell, so a single
-      sign-in on a real Mac would confirm the uploaded MAC_OS build is usable. Do this before
-      submitting the Mac version for review.
+- [x] **Answered 2026-08-27: the signed-in Mac app is fine.** Joshua signed in on a real Mac; the
+      window renders and the app works. So the missing window is specific to the `UITEST_SNAPSHOT`
+      bypass and does **not** affect users — it only blocks Mac screenshot automation.
+      The uploaded MAC_OS build is usable.
+
+Local testing credentials now live in `.env.accounts.local` (gitignored via `.env*`), matching the
+`DEV_EMAIL`/`DEV_PASSWORD` convention used for screenshot automation elsewhere.
 
 Remaining before the Mac app can ship:
 
@@ -525,11 +528,13 @@ Remaining before the Mac app can ship:
       `destination(for:)` builder that both the iOS `TabView` and the macOS sidebar call.
       Note `#if` does not chain modifiers: the branch needs wrapping in a `Group` or the
       `.onChange`/`.task` that follow fail to compile.
-      **Build-verified only — see the visual-verification gap below.**
+      **Verified on screen 2026-08-27:** five labelled rows with icons, Home selected, sidebar
+      toggle in the titlebar, session persisting across relaunch.
       Screens themselves are unchanged; making them feel native at desktop width is separate work.
 
-- [ ] **Nobody has actually seen the macOS sidebar.** It renders only once signed in, and the Mac
-      app cannot be driven to a signed-in state headlessly here.
+Screenshot tip: capture the window alone with
+`screencapture -o -l <windowID>`, getting the id from `CGWindowListCopyWindowInfo`. A plain
+`screencapture -x` grabs the whole desktop, terminal included.
 - [x] **Archived and uploaded 2026-08-27.** MAC_OS build `202608271405` (2.3.5) is in App Store
       Connect, state PROCESSING. Not submitted for review yet — iOS 2.3.5 is mid-review on the same
       record, and a second submission risks tangling it the way `53f3ef57` did earlier today.
