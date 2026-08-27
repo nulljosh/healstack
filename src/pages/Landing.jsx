@@ -203,6 +203,7 @@ export default function Landing({ onGetStarted }) {
         <div style={{ display: 'flex', gap: '1.5rem' }}>
           <a href="/privacy.html" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Privacy</a>
           <a href="/tos.html" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Terms</a>
+          <a href="https://github.com/nulljosh/healstack/blob/main/docs/API.md" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>API</a>
         </div>
       </footer>
     </div>
