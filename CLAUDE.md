@@ -45,3 +45,20 @@ Migrated from Vercel to Cloudflare Pages 2026-08-06. Direct-upload via `wrangler
 - Supabase anon key no longer hardcoded in `ios/Services/AuthService.swift` — now read via `infoPlistValue("SUPABASE_ANON_KEY")` from Info.plist (fixed 2026-06-23).
 - Web UI refresh, landing page, and iOS ship are tracked in README Roadmap (Declutter UI, Vibe clone portfolio aesthetic, iOS companion app) — not new asks, no changes applied yet.
 - Stripe secrets (STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, real STRIPE_PRICE_ID) not set on Cloudflare — deliberately deferred 2026-08-06 (app is free/personal, $1 CSV-export gate isn't load-bearing). `functions/api/stripe.js`/`stripe-webhook.js` are deployed and respond correctly (400s on missing config, no crashes) but the Pro-unlock flow won't work until these are set.
+
+## project.yml generates files — never edit the generated file
+
+Where a `project.yml` declares an `entitlements:` or `info:` block with `properties:`,
+xcodegen **regenerates** that file on every `xcodegen generate`. Editing
+`Info.plist` or `*.entitlements` directly there is silently reverted on the next
+generate — the build still succeeds, so nothing tells you. This is the mechanism
+behind Sign in with Apple repeatedly "disappearing". Put the key in `project.yml`,
+then verify against the built artifact, not the source:
+`codesign -d --entitlements - <app>` and the app's `Contents/Info.plist`.
+
+Lexly is the exception: it uses explicit `INFOPLIST_FILE` paths with
+`GENERATE_INFOPLIST_FILE: NO`, so editing those plists directly is correct there.
+
+Also: a duplicate `entitlements:` key in one target silently drops the first block's
+keys (last wins in YAML). That is how litigate briefly lost `app-sandbox` and
+`network.client` on macOS.

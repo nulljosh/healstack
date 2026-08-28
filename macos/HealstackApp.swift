@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct DoseMacApp: App {
+struct HealstackApp: App {
     @State private var authService = AuthService()
     @State private var store = BodyworkSessionStore()
     @State private var dataStore = DataStore()

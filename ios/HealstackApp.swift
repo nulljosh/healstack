@@ -12,7 +12,7 @@ private let doseTabs: [(icon: String, fill: String, label: String)] = [
 ]
 
 @main
-struct DoseApp: App {
+struct HealstackApp: App {
     @Environment(\.scenePhase) private var scenePhase
     @State private var authService = AuthService()
     @State private var dataStore = DataStore()
@@ -85,7 +85,7 @@ struct DoseApp: App {
                     #if os(iOS)
                     // macOS draws TabView's own tab strip, so the floating bar
                     // would be a second, redundant tab bar on top of it.
-                    DoseFloatingTabBar(selectedTab: $selectedTab)
+                    HealstackFloatingTabBar(selectedTab: $selectedTab)
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                         .padding(.bottom, 8)
                         .zIndex(1)
@@ -95,7 +95,7 @@ struct DoseApp: App {
                 }
 
                 if !showSplash, requiresUnlock, !isUnlocked {
-                    DoseLockView(
+                    HealstackLockView(
                         biometryType: biometryType,
                         isUnlocking: isUnlocking,
                         errorMessage: unlockError
@@ -194,7 +194,7 @@ struct DoseApp: App {
 
         let context = LAContext()
         do {
-            try await context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Unlock Dose")
+            try await context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: "Unlock Healstack")
             isUnlocked = true
         } catch let error as LAError where error.code == .userCancel || error.code == .systemCancel || error.code == .appCancel {
             unlockError = nil
@@ -204,7 +204,7 @@ struct DoseApp: App {
     }
 }
 
-private struct DoseFloatingTabBar: View {
+private struct HealstackFloatingTabBar: View {
     @Binding var selectedTab: Int
 
     private let tabs = doseTabs
@@ -241,7 +241,7 @@ private struct DoseFloatingTabBar: View {
     }
 }
 
-private struct DoseLockView: View {
+private struct HealstackLockView: View {
     let biometryType: LABiometryType
     let isUnlocking: Bool
     let errorMessage: String?

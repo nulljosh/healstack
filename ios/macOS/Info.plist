@@ -25,6 +25,7 @@
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>healstack</string>
 				<string>dose</string>
 			</array>
 		</dict>

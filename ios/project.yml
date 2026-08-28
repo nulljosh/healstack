@@ -18,7 +18,7 @@ settings:
   DEVELOPMENT_TEAM: QMM486NPYC
   CODE_SIGN_STYLE: Automatic
 targets:
-  Dose:
+  Healstack:
     type: application
     platform: iOS
     sources:
@@ -50,7 +50,7 @@ targets:
       - plugin: SwiftLintBuildToolPlugin
         package: SwiftLint
     entitlements:
-      path: Dose.entitlements
+      path: Healstack.entitlements
       properties:
         com.apple.developer.healthkit: true
         com.apple.security.application-groups:
@@ -62,7 +62,7 @@ targets:
       INFOPLIST_FILE: Info.plist
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose
       INFOPLIST_KEY_CFBundleDisplayName: Healstack
-      CODE_SIGN_ENTITLEMENTS: Dose.entitlements
+      CODE_SIGN_ENTITLEMENTS: Healstack.entitlements
       SUPABASE_URL: https://tjsxsqlxjmanwvmywwvw.supabase.co
       SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68
 
@@ -108,13 +108,13 @@ targets:
       SUPABASE_URL: https://tjsxsqlxjmanwvmywwvw.supabase.co
       SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68
 
-  DoseTests:
+  HealstackTests:
     type: bundle.unit-test
     platform: iOS
     sources:
       - path: Tests
     dependencies:
-      - target: Dose
+      - target: Healstack
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose.tests
       GENERATE_INFOPLIST_FILE: YES
@@ -125,7 +125,7 @@ targets:
     sources:
       - path: UITests
     dependencies:
-      - target: Dose
+      - target: Healstack
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose.uitests
       GENERATE_INFOPLIST_FILE: YES
@@ -154,20 +154,20 @@ schemes:
         Healstack-macOS: all
     run:
       config: Debug
-  Dose:
+  Healstack:
     build:
       targets:
-        Dose: all
+        Healstack: all
     run:
       config: Debug
     test:
       config: Debug
       targets:
-        - DoseTests
+        - HealstackTests
   HealstackUITests:
     build:
       targets:
-        Dose: all
+        Healstack: all
         HealstackUITests: all
     test:
       config: Debug

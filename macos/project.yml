@@ -14,7 +14,7 @@ settings:
   DEVELOPMENT_TEAM: QMM486NPYC
   CODE_SIGN_STYLE: Automatic
 targets:
-  DoseMac:
+  Healstack:
     type: application
     platform: macOS
     sources:
@@ -45,6 +45,11 @@ targets:
       path: Info.plist
       properties:
         CFBundleDisplayName: Healstack
+        CFBundleURLTypes:
+          - CFBundleURLName: com.heyitsmejosh.dose
+            CFBundleURLSchemes:
+              - healstack
+              - dose
         ITSAppUsesNonExemptEncryption: false
         CFBundleShortVersionString: $(MARKETING_VERSION)
         CFBundleVersion: $(CURRENT_PROJECT_VERSION)
@@ -65,9 +70,9 @@ targets:
       SUPABASE_URL: https://tjsxsqlxjmanwvmywwvw.supabase.co
       SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68
 schemes:
-  DoseMac:
+  Healstack:
     build:
       targets:
-        DoseMac: all
+        Healstack: all
     run:
       config: Debug

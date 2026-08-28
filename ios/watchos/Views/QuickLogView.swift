@@ -62,7 +62,7 @@ struct QuickLogView: View {
             Text("No substances")
                 .font(.caption)
                 .foregroundStyle(.secondary)
-            Text("Add substances in the Dose app")
+            Text("Add substances in the Healstack app")
                 .font(.caption2)
                 .foregroundStyle(.tertiary)
         }

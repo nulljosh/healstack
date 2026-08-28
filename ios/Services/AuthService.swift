@@ -115,7 +115,7 @@ final class AuthService {
     func resetPassword(email: String) async throws {
         try await supabaseClient.auth.resetPasswordForEmail(
             email,
-            redirectTo: URL(string: "dose://")!
+            redirectTo: URL(string: "healstack://")!
         )
     }
 
@@ -152,7 +152,7 @@ final class AuthService {
         try requireConfig()
         try await supabaseClient.auth.signInWithOAuth(
             provider: .google,
-            redirectTo: URL(string: "dose://")
+            redirectTo: URL(string: "healstack://")
         )
         user = try await supabaseClient.auth.session.user
     }
