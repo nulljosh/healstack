@@ -451,41 +451,7 @@ source layout — no `Sources/Shared|iOS|macOS` restructure.
 **`xcodebuild -scheme Healstack-macOS -destination 'platform=macOS'` -> BUILD SUCCEEDED.** The whole
 port was seven compile errors across 63 files.
 
-- [x] `#if os(iOS)` around the HealthKit internals of `HealthKitService`, so it compiles on Mac as an
-      all-nil stub with `isAvailable = false`. **`canImport(HealthKit)` was the wrong predicate** —
-      HealthKit *does* import on macOS, it just has no usable data and gates `stateOfMindType()`
-      behind macOS 15. `os(iOS)` is what was actually meant. No call-site changes needed anywhere:
-      the UI already renders `--` for nil, and the `isAvailable` guard added for the 2.5.1 fix hides
-      the Connect button on Mac for free.
-- [x] `ios/CrossPlatform.swift` — one file holding every portability shim, so no view file needed a
-      platform conditional: `Haptics.impact/.warning` (replacing six feedback-generator call sites),
-      no-op `keyboardType` / `autocapitalization` / `navigationBarTitleDisplayMode`,
-      `Color.secondaryBackground`, and `hideSystemTabBar()`.
-- [x] Toolbar placements: `.topBarTrailing` -> `.primaryAction`, `.topBarLeading` -> `.navigation`
-      (both cross-platform, and `.navigation` keeps the settings gear leading).
-- [x] `Healstack-macOS` target + scheme, `macOS/Info.plist` (with `LSApplicationCategoryType`, per
-      the ITMS-90242 note), `macOS/Healstack-macOS.entitlements` (sandbox + app group, no healthkit).
-- [x] `ExportOptionsMac.plist`.
-- [x] Mac App Store provisioning profile `HS3A2S4K8B` created against bundle `2H6YYH82B9`
-      (already `UNIVERSAL`, so no bundle-ID change was needed) with cert `BG5Z7ZHTHT`.
-      Mac certs were already on file and are valid to 2027-06-24.
-- [x] Add `macOS` to the **iOS** target's excludes — otherwise `macOS/Info.plist` collides with the
-      root one and the iOS build dies with "Multiple commands produce ... Info.plist".
-
 Ran it 2026-08-27. It launches and works. Fixed on the spot:
-
-- [x] **Double tab bar.** `hideSystemTabBar()` is a no-op on macOS, so `TabView`'s native tab strip
-      rendered *and* `DoseFloatingTabBar` drew on top of it. The floating bar is now `#if os(iOS)`
-      and macOS uses its native tab chrome.
-- [x] `.defaultSize(width: 1000, height: 700)` — the layout was built for a 390pt iPhone.
-- [x] Apple Health section hidden on macOS. Gated `#if !os(macOS)`, deliberately **not** on
-      `HealthKitService.isAvailable`: `isAvailable` can be false on iPad, and that would strip the
-      exact 2.5.1 fix Apple is reviewing right now. Compile-time gate, zero iOS risk.
-- [x] **No app icon.** `Assets.xcassets/AppIcon.appiconset` only had a single
-      `"platform": "ios"` entry — no `mac` idiom at all, so no `.icns` was produced. Generated
-      `mac-{16,32,64,128,256,512,1024}.png` with `sips` from the 1024 source and added the ten
-      mac idiom entries (1x/2x for 16/32/128/256/512). Note the Dock caches the old iconless
-      bundle: `touch` the app, `lsregister -f`, `killall Dock`.
 
 ## The iOS test suite was hanging — FIXED 2026-08-27
 
@@ -539,10 +505,6 @@ block is Mac screenshot automation, since `UITEST_SNAPSHOT` is the only auth byp
 
 - [ ] Work out why SwiftUI never shows the window on that path, so Mac screenshots can be
       automated the way the iOS ones are.
-- [x] **Answered 2026-08-27: the signed-in Mac app is fine.** Joshua signed in on a real Mac; the
-      window renders and the app works. So the missing window is specific to the `UITEST_SNAPSHOT`
-      bypass and does **not** affect users — it only blocks Mac screenshot automation.
-      The uploaded MAC_OS build is usable.
 
 Local testing credentials now live in `.env.accounts.local` (gitignored via `.env*`), matching the
 `DEV_EMAIL`/`DEV_PASSWORD` convention used for screenshot automation elsewhere.
@@ -572,27 +534,9 @@ the session scratchpad.
 
 Remaining:
 
-- [x] **Sidebar shell, 2026-08-27.** macOS now uses `NavigationSplitView` with a five-row
-      `.sidebar` list instead of the phone `TabView` chrome. The tab metadata was duplicated twice
-      (once in `DoseFloatingTabBar`, once in the `TabView`'s `.tabItem` modifiers), so it was
-      hoisted to one file-scope `doseTabs`, and the five destinations were extracted into a single
-      `destination(for:)` builder that both the iOS `TabView` and the macOS sidebar call.
-      Note `#if` does not chain modifiers: the branch needs wrapping in a `Group` or the
-      `.onChange`/`.task` that follow fail to compile.
-      **Verified on screen 2026-08-27:** five labelled rows with icons, Home selected, sidebar
-      toggle in the titlebar, session persisting across relaunch.
-      Screens themselves are unchanged; making them feel native at desktop width is separate work.
-
 Screenshot tip: capture the window alone with
 `screencapture -o -l <windowID>`, getting the id from `CGWindowListCopyWindowInfo`. A plain
 `screencapture -x` grabs the whole desktop, terminal included.
-- [x] **Archived and uploaded 2026-08-27.** MAC_OS build `202608271405` (2.3.5) is in App Store
-      Connect, state PROCESSING. Not submitted for review yet — iOS 2.3.5 is mid-review on the same
-      record, and a second submission risks tangling it the way `53f3ef57` did earlier today.
-      Submit the Mac version once iOS clears.
-- [x] Not blocked on Joshua after all: the bundle ID was already `UNIVERSAL`, and uploading a
-      MAC_OS build is what puts macOS on the record. No dashboard step was needed.
-- [x] Apple Health section hidden on Mac (see above).
 
 Signing notes, because this took three tries:
 
