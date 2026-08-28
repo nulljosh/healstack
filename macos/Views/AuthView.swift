@@ -71,6 +71,16 @@ struct MacAuthView: View {
             .signInWithAppleButtonStyle(.black)
             .frame(height: 40)
 
+            Button {
+                Task { await completeGoogleSignIn() }
+            } label: {
+                Text("Continue with Google")
+                    .fontWeight(.medium)
+                    .frame(maxWidth: .infinity)
+            }
+            .controlSize(.large)
+            .disabled(loading)
+
             Spacer()
         }
         .padding(32)
@@ -87,6 +97,17 @@ struct MacAuthView: View {
             } else {
                 try await authService.signUp(email: email, password: password)
             }
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func completeGoogleSignIn() async {
+        errorMessage = nil
+        loading = true
+        defer { loading = false }
+        do {
+            try await authService.signInWithGoogle()
         } catch {
             errorMessage = error.localizedDescription
         }

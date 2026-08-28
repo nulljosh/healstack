@@ -145,6 +145,18 @@ final class AuthService {
         user = session.user
     }
 
+    /// Google has no native ID-token path here, so this uses the OAuth browser flow.
+    /// `dose://` must stay in the Supabase project's uri_allow_list and in CFBundleURLSchemes
+    /// on both platforms, or the callback lands nowhere and the session never arrives.
+    func signInWithGoogle() async throws {
+        try requireConfig()
+        try await supabaseClient.auth.signInWithOAuth(
+            provider: .google,
+            redirectTo: URL(string: "dose://")
+        )
+        user = try await supabaseClient.auth.session.user
+    }
+
     static func randomNonce(length: Int = 32) -> String {
         let charset = Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
         var bytes = [UInt8](repeating: 0, count: length)
