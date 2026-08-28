@@ -1,5 +1,28 @@
 # Healstack Roadmap
 
+## 2026-08-28 — iOS 2.3.5 REJECTED under 4.3(a) spam; appeal drafted, do NOT resubmit
+Apple rejected iOS 2.3.5 at 15:14 UTC under Guideline 4.3(a) Design: Spam (submission
+`26e3f066-3572-4409-a386-1b14825a1eea`, thread `eecf3184-0467-32af-8c0a-3bf0ba28ea27`). This is
+the same byte-identical boilerplate letter that hit Talli, Curvely, Doorstock, Sparkjar and NYC
+Survive on 08-26/27 — one account-level wave, no named comparison app, no reviewer specifics.
+Healstack is the sixth app in it.
+
+**Do not fix code and do not resubmit.** Verified today: of 95 Swift files, exactly one is
+byte-identical to any other app in the account — `ios/UITests/SnapshotHelper.swift`, Apple's own
+fastlane helper, in the test target, not in the shipped binary. Zero shipped files are shared.
+The substance database is 2,688 hand-written lines / 200 entries. There is nothing to fix.
+
+The reply is drafted at `~/Documents/Code/notes/appeal-4-3-spam.md` under "Healstack iOS". Filing
+happens in Resolution Center, which is browser-only (`asc web review` is read-only).
+
+**macOS 2.3.5 is IN_REVIEW on the same version record — leave it there, do not withdraw.**
+Sparkjar is the precedent: macOS approved while iOS was rejected in the same wave. If Mac clears,
+"the same codebase was just approved on macOS" is the strongest fact in the iOS appeal.
+
+Listing de-templating (subtitle "Supplement & Symptom Tracker", the "Healstack is a personal X, Y
+and Z" opener, the FEATURES block, ten generic single-word keywords) is real and shared across all
+19 listings — but it is after-the-appeal work, not the answer to this letter.
+
 ## Done 2026-08-27 (delta) — iOS test suite fixed, Mac sidebar added
 The test suite had been silently not running at all: a permission prompt in one test popped a system dialog that automation couldn't dismiss, halting the entire run. Fixed the test and the suite now runs green (77 tests, no failures). Tests surfaced a real rounding bug in supplement adherence percentages (showing slightly low). Also added a proper sidebar to the macOS companion (was stretching the phone-style tab bar), and verified the uploaded Mac build works correctly when signed in. iOS 2.3.5 still awaiting Apple's verdict on the 2.5.1 rejection fix; Mac build deliberately held from submit pending iOS review completion.
 
