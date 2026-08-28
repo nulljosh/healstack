@@ -15,6 +15,11 @@ The substance database is 2,688 hand-written lines / 200 entries. There is nothi
 The reply is drafted at `~/Documents/Code/notes/appeal-4-3-spam.md` under "Healstack iOS". Filing
 happens in Resolution Center, which is browser-only (`asc web review` is read-only).
 
+**HELD, deliberately, until the macOS verdict lands.** Decided 2026-08-28. Add the Mac outcome to
+the reply, then file. Check with `asc versions list --app 6785764864`; when MAC_OS 2.3.5 leaves
+IN_REVIEW, file the same day. Nothing is lost by waiting — the iOS rejection sits either way, and
+an approval on the same codebase is the strongest sentence the appeal can carry.
+
 **macOS 2.3.5 is IN_REVIEW on the same version record — leave it there, do not withdraw.**
 Sparkjar is the precedent: macOS approved while iOS was rejected in the same wave. If Mac clears,
 "the same codebase was just approved on macOS" is the strongest fact in the iOS appeal.
