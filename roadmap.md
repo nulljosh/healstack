@@ -378,6 +378,10 @@ validating. Email/password sign-in re-checked and still returns a valid access t
       `false` for 2.3.4, which is in review right now with review notes that explicitly tell Apple
       the button was removed from this build. Flip it after 2.3.4 clears, then rebuild.
 
+## Sign-in preflight check (shipped 2026-08-28)
+
+Built `scripts/check-signin-config.sh` to guard the seven static things that actually broke during sign-in work: entitlements present in the SIGNED binary, app-sandbox + network.client entitlements on macOS, URL scheme in Info.plist, bundle ID in Supabase `external_apple_client_id`, redirect scheme in `uri_allow_list`, `site_url` still points to `https://spark.heyitsmejosh.com`, and Google OAuth endpoint returns 302. The script reads built artifacts and live config, never source — every sign-in failure this session came from stale `.plist` or config, not code. Run this before trusting a sign-in change. All apps currently pass.
+
 ## Ingested 2026-08-22
 - **CLOSED 2026-08-25** (fixed — commit 01cb371 'cite sources for every substance (App Review 1.4.1)' added the sources plus an explicit 'not medical advice, consult a qualified clinician' line; shipped in 2.3.5, now in review). Was: **App Store rejection — Guideline 1.4.1 Safety/Physical Harm** (submission f5e9ce05-9bc0-443b-a360-3b25deb20107, reviewed 2026-08-21, iPad Air 11" M3, v2.3.4 build 202608181252). "The app includes medical information but does not include citations... the app provides health or medical references in the library without citations, such as links to sources." Next steps per Apple: include in-app citations / source links for every recommendation or piece of medical info in the library. Status: UNRESOLVED_ISSUES, version REJECTED. This is the only blocking check.
 - **CLOSED 2026-08-25** (moot — that was 2.3.4; 2.3.5 submitted successfully, so whatsNew did not block it). Was: What's New (en-US) is empty on v2.3.4 — `asc review doctor` warning; fill before resubmit.
