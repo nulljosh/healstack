@@ -1,3 +1,4 @@
+import AuthenticationServices
 import SwiftUI
 
 struct MacAuthView: View {
@@ -56,6 +57,20 @@ struct MacAuthView: View {
             .buttonStyle(.borderedProminent)
             .disabled(loading || email.isEmpty || password.isEmpty)
 
+            HStack {
+                Rectangle().frame(height: 1).foregroundStyle(.quaternary)
+                Text("or").font(.caption).foregroundStyle(.secondary)
+                Rectangle().frame(height: 1).foregroundStyle(.quaternary)
+            }
+
+            SignInWithAppleButton(.signIn) { request in
+                authService.prepareAppleRequest(request)
+            } onCompletion: { result in
+                Task { await completeAppleSignIn(result) }
+            }
+            .signInWithAppleButtonStyle(.black)
+            .frame(height: 40)
+
             Spacer()
         }
         .padding(32)
@@ -72,6 +87,17 @@ struct MacAuthView: View {
             } else {
                 try await authService.signUp(email: email, password: password)
             }
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func completeAppleSignIn(_ result: Result<ASAuthorization, Error>) async {
+        errorMessage = nil
+        loading = true
+        defer { loading = false }
+        do {
+            try await authService.signInWithApple(result: result)
         } catch {
             errorMessage = error.localizedDescription
         }
