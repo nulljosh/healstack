@@ -1,19 +1,37 @@
-// Matches icon.svg: capsule on the diagonal with a filled top half.
-const PillMark = ({ size = 18 }) => (
+// Health marks: the app icon's capsule plus the other things a stack tracks.
+const S = { fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' };
+const MARKS = [
+  // capsule on the diagonal, top half filled (matches icon.svg)
+  <g transform="rotate(45 12 12)"><rect x="7" y="2" width="10" height="20" rx="5" {...S} /><rect x="7" y="2" width="10" height="10" rx="5" fill="currentColor" /></g>,
+  // round tablet, scored
+  <g {...S}><circle cx="12" cy="12" r="9" /><path d="M5 12h14" /></g>,
+  // droplet
+  <path d="M12 3s6 6.5 6 10.5a6 6 0 0 1-12 0C6 9.5 12 3 12 3z" {...S} />,
+  // pulse line
+  <path d="M2 12h4l3-7 4 14 3-7h6" {...S} />,
+  // heart
+  <path d="M12 20s-7-4.6-7-9.5A3.9 3.9 0 0 1 12 8a3.9 3.9 0 0 1 7 2.5C19 15.4 12 20 12 20z" {...S} />,
+  // leaf
+  <g {...S}><path d="M20 4C10 4 4 9 4 16v4" /><path d="M20 4c0 9-5 13-11 13H4" /></g>,
+  // flask
+  <g {...S}><path d="M10 3v6L4 19a2 2 0 0 0 1.7 3h12.6A2 2 0 0 0 20 19l-6-10V3" /><path d="M9 3h6" /><path d="M7.5 14h9" /></g>,
+  // calendar tick
+  <g {...S}><rect x="3" y="5" width="18" height="16" rx="2" /><path d="M8 3v4M16 3v4M8 14l3 3 5-5" /></g>,
+];
+
+const Mark = ({ i, size = 34 }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-    <g transform="rotate(45 12 12)">
-      <rect x="7" y="2" width="10" height="20" rx="5" stroke="currentColor" strokeWidth="2" />
-      <rect x="7" y="2" width="10" height="10" rx="5" fill="currentColor" />
-    </g>
+    {MARKS[i % MARKS.length]}
   </svg>
 );
 
-// 8 columns of pill marks, alternating drift direction; each column's list is
-// doubled so the translateY(-50%) loop is seamless.
+// 8 columns of health marks, alternating drift direction; each column's list is
+// doubled so the translateY(-50%) loop is seamless. The prime-ish stride keeps
+// neighbouring columns from lining up on the same glyph.
 const HeroWall = () => (
   <div className="hero-wall" aria-hidden="true">
     {Array.from({ length: 8 }, (_, c) => {
-      const marks = Array.from({ length: 7 }, (_, i) => <PillMark key={i} size={34} />);
+      const marks = Array.from({ length: 7 }, (_, i) => <Mark key={i} i={c * 3 + i} />);
       return (
         <div key={c} className={'wall-col ' + (c % 2 ? 'down' : 'up')} style={{ '--dur': (46 + c * 9) + 's' }}>
           {marks}{marks}
@@ -83,7 +101,7 @@ export default function Landing({ onGetStarted }) {
               width: 32, height: 32, borderRadius: 8, background: 'var(--accent)', flexShrink: 0,
               display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
             }}>
-              <PillMark size={18} />
+              <Mark i={0} size={18} />
             </div>
             Healstack
           </div>
