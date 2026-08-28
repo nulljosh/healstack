@@ -37,6 +37,7 @@ targets:
       - path: ../ios/Services/DataStore.swift
       - path: ../ios/Services/InsightEngine.swift
       - path: ../ios/Services/AuthService.swift
+      - path: ../ios/Assets.xcassets
     dependencies:
       - package: Supabase
         product: Supabase
@@ -58,6 +59,8 @@ targets:
           - Default
     settings:
       CODE_SIGN_ENTITLEMENTS: HealstackMac.entitlements
+      PRODUCT_NAME: Healstack
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose
       SUPABASE_URL: https://tjsxsqlxjmanwvmywwvw.supabase.co
       SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68

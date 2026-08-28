@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct MacSettingsView: View {
+    @Environment(AuthService.self) private var authService
     @AppStorage("app_theme") private var rawTheme = "system"
+    @State private var signingOut = false
 
     var body: some View {
         ScrollView {
@@ -9,6 +11,29 @@ struct MacSettingsView: View {
                 Text("Appearance")
                     .font(.headline)
                 AppearancePicker(rawTheme: $rawTheme)
+
+                Divider()
+
+                Text("Account")
+                    .font(.headline)
+                if let email = authService.user?.email {
+                    Text(email)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+                Button {
+                    Task {
+                        signingOut = true
+                        defer { signingOut = false }
+                        try? await authService.signOut()
+                    }
+                } label: {
+                    HStack {
+                        if signingOut { ProgressView().controlSize(.small) }
+                        Text("Sign out")
+                    }
+                }
+                .disabled(signingOut)
             }
             .padding(24)
         }

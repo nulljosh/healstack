@@ -23,6 +23,7 @@ struct DoseMacApp: App {
                         MacDashboardView(dataStore: dataStore)
                     }
                     .environment(store)
+                    .environment(authService)
                     .frame(minWidth: 800, minHeight: 550)
                 }
             }

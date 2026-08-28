@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		004DFC93484C12C977FE86D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 15D372531B26CB8A81EFB52E /* Assets.xcassets */; };
 		0215C9C9BAF830E470EF0091 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D6AFDD3692AEE45F5B5E2E3 /* DataStore.swift */; };
 		0C159F83119742A88297C90E /* BodyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C45C3FD56F2975F384C1E3 /* BodyMapView.swift */; };
 		11EFE424307AA9C52CA66EB2 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5913A272221D6000446F4512 /* AuthView.swift */; };
@@ -44,6 +45,7 @@
 /* Begin PBXFileReference section */
 		12664FDBF1B0B853948B55D7 /* MacReflexologyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacReflexologyView.swift; sourceTree = "<group>"; };
 		14F5C511275324C6A1D22C87 /* MacSymptomFinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSymptomFinderView.swift; sourceTree = "<group>"; };
+		15D372531B26CB8A81EFB52E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		233AB9925563AD60206E2E90 /* HealthEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthEntry.swift; sourceTree = "<group>"; };
 		2560A79ADE4FA5FA4E09B4B7 /* ZoneDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoneDetailView.swift; sourceTree = "<group>"; };
 		2B8F17D45D138F3B85ADB441 /* MacDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacDashboardView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		C3B462277BFFEFFC04DDAAD2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D2AE1515600BD8158EC3AD89 /* SubstanceDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubstanceDatabase.swift; sourceTree = "<group>"; };
 		D72535493F0D0662D755B5AC /* MacAbdomenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacAbdomenView.swift; sourceTree = "<group>"; };
+		DB6678281207B0831D1BB89F /* HealstackMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HealstackMac.entitlements; sourceTree = "<group>"; };
 		DFA38C581C29F5406ED344E8 /* DoseMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DoseMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E670EC99285A09DF100E7DC9 /* MacMeridianListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacMeridianListView.swift; sourceTree = "<group>"; };
 		E97837BAE2FEFE28A049A07B /* InsightEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightEngine.swift; sourceTree = "<group>"; };
@@ -89,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031BD11A632B49ACA362D456 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				15D372531B26CB8A81EFB52E /* Assets.xcassets */,
+			);
+			name = ios;
+			path = ../ios;
+			sourceTree = "<group>";
+		};
 		73CF88F78792B10637183F1A /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +148,7 @@
 			children = (
 				7B0ECAA0B1CA805B0957C54F /* DoseMacApp.swift */,
 				3F6B3794F32F35EBBFDA89AE /* ExportOptions.plist */,
+				DB6678281207B0831D1BB89F /* HealstackMac.entitlements */,
 				48A15FAEF19FD6CF5A6549A1 /* Info.plist */,
 				DDF660EC3833FA9119E054FD /* Models */,
 				D3FA9DD9D4CC4CB1E262B4AB /* Views */,
@@ -181,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				73CF88F78792B10637183F1A /* Data */,
+				031BD11A632B49ACA362D456 /* ios */,
 				A6FEBCC0326A229912D41F56 /* macos */,
 				DDF660EC3833FA9119E054FD /* Models */,
 				7F859B2A8FF47F8DF97F371E /* Models */,
@@ -255,6 +269,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				004DFC93484C12C977FE86D6 /* Assets.xcassets in Resources */,
 				1720A546F328EEA2774817D4 /* ExportOptions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealstackMac.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -373,6 +389,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose;
+				PRODUCT_NAME = Healstack;
 				SDKROOT = macosx;
 				SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68;
 				SUPABASE_URL = "https://tjsxsqlxjmanwvmywwvw.supabase.co";
@@ -383,6 +400,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = HealstackMac.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -390,6 +408,7 @@
 					"@executable_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.heyitsmejosh.dose;
+				PRODUCT_NAME = Healstack;
 				SDKROOT = macosx;
 				SUPABASE_ANON_KEY = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRqc3hzcWx4am1hbnd2bXl3d3Z3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA0OTc0MDEsImV4cCI6MjA4NjA3MzQwMX0.LphLfho3wdQC20MhtcnBpzQUNuBoTOobrugQbNGxc68;
 				SUPABASE_URL = "https://tjsxsqlxjmanwvmywwvw.supabase.co";
