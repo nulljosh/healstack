@@ -15,9 +15,16 @@ struct WhatsNewSheet: View {
     @State private var isPresented = false
     @State private var contentHeight: CGFloat = 220
 
+    // ponytail: gated on the snapshot launch arg, not on a hardcoded seen-version value —
+    // a pinned version silently stops suppressing the sheet the next time whatsNewVersion is
+    // bumped, which is exactly how it leaked into the App Store screenshot set.
+    private var isUITestSnapshot: Bool {
+        CommandLine.arguments.contains("UITEST_SNAPSHOT")
+    }
+
     var body: some View {
         Color.clear
-            .onAppear { isPresented = whatsNewVersion == appVersion && seenVersion != whatsNewVersion }
+            .onAppear { isPresented = !isUITestSnapshot && whatsNewVersion == appVersion && seenVersion != whatsNewVersion }
             .sheet(isPresented: $isPresented) {
                 VStack(alignment: .leading, spacing: 20) {
                     Text("What's New in v\(whatsNewVersion)")

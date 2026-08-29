@@ -26,10 +26,21 @@ struct HealstackApp: App {
     @State private var isUnlocked = false
     @State private var isUnlocking = false
     @State private var unlockError: String?
-    @State private var selectedTab = 0
+    @State private var selectedTab = Self.initialTab
 
     private var isUITestSnapshot: Bool {
         CommandLine.arguments.contains("UITEST_SNAPSHOT")
+    }
+
+    // ponytail: screenshot capture selects the tab by launch argument instead of tapping the
+    // floating bar. The bar is drawn over scrollable content, so a tap can land on whatever
+    // card happens to sit under it — that is how the Library grid's Zinc card ended up in the
+    // Insights and Body screenshots. No coordinates, no hit-test race.
+    private static var initialTab: Int {
+        let args = CommandLine.arguments
+        guard let flag = args.firstIndex(of: "-UITEST_TAB"), flag + 1 < args.count,
+              let tab = Int(args[flag + 1]), doseTabs.indices.contains(tab) else { return 0 }
+        return tab
     }
 
     private var requiresUnlock: Bool {
