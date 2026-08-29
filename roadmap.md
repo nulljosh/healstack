@@ -556,3 +556,14 @@ Signing notes, because this took three tries:
   `signingStyle: automatic`. `destination: upload` does the upload itself, so no separate
   `asc builds upload --pkg` step is needed — and it writes no pkg on disk, per
   `feedback_asc_export_upload_no_ipa`.
+
+## Screenshot frames: floating tab bar clips the last row — found 2026-08-29
+- [ ] The re-shot set (`46dd672`) is correctly ordered, but `DoseFloatingTabBar` is drawn
+  over scrollable content, so the bottom row is half-hidden in every frame — Omega-3 on
+  Home, the Magnesium/Zinc cards on Library. Correct in-app behaviour, but it reads as
+  unfinished in a store listing, which matters while the 4.3(a) wave is open.
+  Fix in the snapshot path only (do NOT change the real layout): under `UITEST_SNAPSHOT`,
+  add bottom content padding equal to the tab bar's height so the last row clears it.
+  Same `isUITestSnapshot` idiom already used to suppress `WhatsNewSheet`.
+  Not urgent — iOS 2.3.5 is REJECTED and macOS 2.3.5 IN_REVIEW, so nothing uploads until
+  the next version anyway. Fold this into that capture run rather than re-shooting now.
