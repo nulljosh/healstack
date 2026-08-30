@@ -58,7 +58,8 @@ targets:
         com.apple.developer.applesignin:
           - Default
     settings:
-      TARGETED_DEVICE_FAMILY: "1"
+      # Universal: iPad was never excluded for a design reason, only never enabled.
+      TARGETED_DEVICE_FAMILY: "1,2"
       INFOPLIST_FILE: Info.plist
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose
       INFOPLIST_KEY_CFBundleDisplayName: Healstack
