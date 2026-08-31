@@ -80,6 +80,14 @@ export async function onRequest(context) {
     const userId = await callerId(request, env);
     if (!userId) return json(401, { error: 'unauthorized' });
 
+    // Without these the Stripe call fails deep inside the SDK and the user sees a dead
+    // button. Say so plainly instead -- this endpoint shipped for months with an unset key
+    // and a placeholder price id in wrangler.toml.
+    if (!env.STRIPE_SECRET_KEY || !env.STRIPE_PRICE_ID) {
+      console.error('[STRIPE/checkout] not configured');
+      return json(503, { error: 'Payments are not configured yet' });
+    }
+
     try {
       const session = await getStripe(env).checkout.sessions.create({
         mode: 'payment',
