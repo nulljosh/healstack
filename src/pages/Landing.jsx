@@ -1,3 +1,4 @@
+import InstallAnywhere from '../components/InstallAnywhere';
 // Health marks: the app icon's capsule plus the other things a stack tracks.
 const S = { fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' };
 const MARKS = [
@@ -214,6 +215,8 @@ export default function Landing({ onGetStarted }) {
           ))}
         </div>
       </section>
+
+      <InstallAnywhere name="Healstack" appUrl="https://healstack.heyitsmejosh.com" appStoreUrl="https://apps.apple.com/app/id6785764864" />
 
       {/* Footer */}
       <footer style={{ maxWidth: 1080, margin: '0 auto', padding: '2rem clamp(1.25rem, 4vw, 1.5rem)', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
