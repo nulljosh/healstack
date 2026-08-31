@@ -2,6 +2,8 @@
 
 # Healstack
 ![version](https://img.shields.io/badge/version-v2.3.4-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fhealstack-black?logo=github)](https://github.com/nulljosh/healstack)
+**Live:** https://healstack.heyitsmejosh.com
+
 Personal substance tracker, harm reduction wiki, and health dashboard.
 
 ## Features
