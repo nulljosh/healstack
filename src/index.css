@@ -28,6 +28,7 @@
   --border: rgba(26,26,26,0.1);
   --border-muted: rgba(26,26,26,0.06);
   --accent: #5B9BD5;
+  --link: #4779a6;
   --accent-muted: rgba(91, 155, 213, 0.1);
   --accent-border: rgba(91, 155, 213, 0.25);
   --danger: #dc2626;
@@ -53,6 +54,7 @@
 
 [data-theme="dark"] {
   --bg: #1A1A1A;
+    --link: #5B9BD5;
   --bg-secondary: #262626;
   --bg-tertiary: #303030;
   --text-primary: #fff8f0;
@@ -447,7 +449,7 @@ button { user-select: none; font-family: inherit; }
 .btn-link {
   background: none;
   border: none;
-  color: var(--accent);
+  color: var(--link, var(--accent));
   cursor: pointer;
   font-size: 0.875rem;
   padding: 0;
@@ -601,7 +603,7 @@ button { user-select: none; font-family: inherit; }
 .filter-pill.active {
   background: var(--accent-muted);
   border-color: var(--accent-border);
-  color: var(--accent);
+  color: var(--link, var(--accent));
 }
 
 /* --- Inputs --- */
@@ -620,7 +622,7 @@ button { user-select: none; font-family: inherit; }
 }
 
 .input:focus {
-  border-color: var(--accent);
+  border-color: var(--link, var(--accent));
 }
 
 .input-search {
@@ -777,7 +779,7 @@ button { user-select: none; font-family: inherit; }
 }
 
 .nav-sheet-item.active {
-  color: var(--accent);
+  color: var(--link, var(--accent));
   background: var(--accent-muted);
 }
 
@@ -956,7 +958,7 @@ button { user-select: none; font-family: inherit; }
 }
 
 .log-dose {
-  color: var(--accent);
+  color: var(--link, var(--accent));
   font-weight: 500;
 }
 
@@ -1124,7 +1126,7 @@ button { user-select: none; font-family: inherit; }
 .metric-cell .metric-value {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--accent);
+  color: var(--link, var(--accent));
 }
 
 /* --- Gallery --- */
@@ -1151,7 +1153,7 @@ button { user-select: none; font-family: inherit; }
 }
 
 .gallery-upload:hover {
-  border-color: var(--accent);
+  border-color: var(--link, var(--accent));
 }
 
 .gallery-thumb {
@@ -1455,7 +1457,7 @@ button { user-select: none; font-family: inherit; }
 }
 
 .interaction-result--minor .interaction-result-header {
-  color: var(--accent);
+  color: var(--link, var(--accent));
 }
 
 .interaction-result-note {
@@ -1508,7 +1510,7 @@ button { user-select: none; font-family: inherit; }
 
 .interaction-badge--minor {
   background: var(--accent-muted);
-  color: var(--accent);
+  color: var(--link, var(--accent));
   border: 1px solid var(--accent-border);
 }
 
@@ -1557,7 +1559,7 @@ button { user-select: none; font-family: inherit; }
 }
 
 .form-input:focus {
-  border-color: var(--accent);
+  border-color: var(--link, var(--accent));
 }
 
 .form-input:last-child {
@@ -1679,7 +1681,7 @@ button { user-select: none; font-family: inherit; }
 .hero-wall {
   position: absolute; inset: -8%; z-index: 0;
   display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 28px;
-  opacity: 0.5; color: var(--accent);
+  opacity: 0.5; color: var(--link, var(--accent));
   pointer-events: none; user-select: none;
 }
 .wall-col { display: flex; min-width: 0; flex-direction: column; gap: 28px; align-items: center; }
