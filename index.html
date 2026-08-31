@@ -20,9 +20,38 @@
   <link rel="preload" href="/fonts/Geist-Medium.woff2" as="font" type="font/woff2" crossorigin>
   <title>Healstack</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0a'/><g transform='rotate(45 16 16)'><rect x='10' y='5' width='12' height='22' rx='6' fill='none' stroke='%235B9BD5' stroke-width='2.4'/><rect x='10' y='5' width='12' height='11' rx='6' fill='%235B9BD5'/></g></svg>" />
-</head>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Healstack">
+    <meta property="og:title" content="Healstack">
+    <meta property="og:description" content="Personal substance tracker and educational wiki. Log doses, browse harm reduction info, and track patterns over time.">
+    <meta property="og:url" content="https://healstack.heyitsmejosh.com/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Healstack">
+    <meta name="twitter:description" content="Personal substance tracker and educational wiki. Log doses, browse harm reduction info, and track patterns over time.">
+  </head>
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+
+<!-- share -->
+<style>
+#share-btn{position:fixed;right:16px;bottom:16px;z-index:9999;border:1px solid rgba(128,128,128,.35);
+background:Canvas;color:CanvasText;font:inherit;font-size:14px;padding:8px 14px;border-radius:999px;
+cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.12)}
+#share-btn:hover{border-color:rgba(128,128,128,.6)}
+@media print{#share-btn{display:none}}
+</style>
+<button id="share-btn" type="button">Share</button>
+<script>
+(function(){
+  var b=document.getElementById('share-btn');
+  b.addEventListener('click',function(){
+    var d={title:document.title,text:(document.querySelector('meta[name=description]')||{}).content||'',url:location.href};
+    if(navigator.share)navigator.share(d).catch(function(){});
+    else if(navigator.clipboard)navigator.clipboard.writeText(location.href).then(function(){
+      b.textContent='Link copied';setTimeout(function(){b.textContent='Share'},1600);});
+  });
+})();
+</script>
 </body>
 </html>
