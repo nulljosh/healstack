@@ -12,6 +12,33 @@ function getStripe(env) {
 
 const ALLOWED_ORIGIN = 'https://healstack.heyitsmejosh.com';
 
+// Identity comes from the caller's Supabase access token, never from a body/query field.
+// A client-supplied userId let anyone read another account's pro status and open a
+// checkout session against it.
+// ponytail: one /auth/v1/user round-trip per call rather than local JWT verification --
+// no JWKS fetch, no crypto, and Supabase is already a hard dependency of every request.
+// Verify the signature locally only if this endpoint ever gets hot enough to care.
+const SUPABASE_URL = 'https://tjsxsqlxjmanwvmywwvw.supabase.co';
+
+async function callerId(request, env) {
+  const auth = request.headers.get('authorization') || '';
+  if (!auth.startsWith('Bearer ')) return null;
+  let res;
+  try {
+    res = await fetch(`${SUPABASE_URL}/auth/v1/user`, {
+      headers: { Authorization: auth, apikey: env.SUPABASE_ANON_KEY || '' },
+      signal: AbortSignal.timeout(5000),
+    });
+  } catch {
+    return null;
+  }
+  if (!res.ok) return null;
+  const user = await res.json().catch(() => null);
+  return user?.id || null;
+}
+
+
+
 function json(status, body, extraHeaders = {}) {
   return new Response(JSON.stringify(body), {
     status,
@@ -19,7 +46,7 @@ function json(status, body, extraHeaders = {}) {
       'content-type': 'application/json',
       'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
       'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
       ...extraHeaders,
     },
   });
@@ -34,7 +61,7 @@ export async function onRequest(context) {
       headers: {
         'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
         'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
       },
     });
   }
@@ -43,24 +70,17 @@ export async function onRequest(context) {
   const action = url.searchParams.get('action');
 
   if (request.method === 'GET' && action === 'status') {
-    const userId = url.searchParams.get('userId');
-    if (!userId) return json(400, { error: 'userId required' });
+    const userId = await callerId(request, env);
+    if (!userId) return json(401, { error: 'unauthorized' });
     const isPro = await env.DOSE_KV.get(`pro:${userId}`);
     return json(200, { isPro: Boolean(isPro) });
   }
 
   if (request.method === 'POST' && action === 'checkout') {
+    const userId = await callerId(request, env);
+    if (!userId) return json(401, { error: 'unauthorized' });
+
     try {
-      let body;
-      try {
-        body = await request.json();
-      } catch {
-        return json(400, { error: 'invalid body' });
-      }
-
-      const { userId } = body;
-      if (!userId) return json(400, { error: 'userId required' });
-
       const session = await getStripe(env).checkout.sessions.create({
         mode: 'payment',
         payment_method_types: ['card'],

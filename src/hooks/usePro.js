@@ -1,5 +1,13 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { supabase } from '../lib/supabase';
+
+// The server derives the user id from this token; it no longer trusts a userId we send.
+async function authHeader() {
+  const { data } = await supabase.auth.getSession();
+  const token = data?.session?.access_token;
+  return token ? { Authorization: `Bearer ${token}` } : null;
+}
 
 export function usePro() {
   const { user } = useAuth();
@@ -8,9 +16,10 @@ export function usePro() {
 
   useEffect(() => {
     if (!user) return;
-    fetch(`/api/stripe?action=status&userId=${user.id}`)
-      .then(r => r.json())
-      .then(d => setIsPro(Boolean(d.isPro)))
+    authHeader()
+      .then(h => (h ? fetch('/api/stripe?action=status', { headers: h }) : null))
+      .then(r => (r && r.ok ? r.json() : null))
+      .then(d => setIsPro(Boolean(d?.isPro)))
       .catch(() => {});
   }, [user]);
 
@@ -18,11 +27,10 @@ export function usePro() {
     if (!user) return;
     setLoading(true);
     try {
-      const res = await fetch('/api/stripe?action=checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId: user.id }),
-      });
+      const h = await authHeader();
+      if (!h) return;
+      const res = await fetch('/api/stripe?action=checkout', { method: 'POST', headers: h });
+      if (!res.ok) return;
       const { url } = await res.json();
       if (url) window.location.href = url;
     } finally {
