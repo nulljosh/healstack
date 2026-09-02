@@ -347,6 +347,7 @@ app today (also Wordroot, and BCGD has a stray submission waiting to do the same
 items list --submission <id>` showed the item present all along. Workaround, now reliable:
 `asc review submissions-submit --id <id> --confirm`.
 
+- macOS 2.3.5 REJECTED 2026-08-31, Guideline 4.3(a) Design: Spam (same wave as iOS). Never resubmit; wait for the appeal verdicts.
 - [ ] Do not submit Sparkjar / BCGD / Wordroot macOS until this clears, never a batch.
 
 ## Sign in with Apple, provider ENABLED 2026-08-18
