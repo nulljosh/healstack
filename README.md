@@ -4,16 +4,18 @@
 ![version](https://img.shields.io/badge/version-v2.3.4-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fhealstack-black?logo=github)](https://github.com/nulljosh/healstack)
 **Live:** https://healstack.heyitsmejosh.com
 
-Personal substance tracker, harm reduction wiki, and health dashboard.
+Know what you took, when, and what it does with everything else you're on.
+
+A dose log, a harm reduction wiki, and a health dashboard. All of it stays on your device.
 
 ## Features
-- Dose logging with journal, filters, search
-- 200+ substance wiki with harm reduction data
-- Drug interaction checker against active stack
-- Tolerance tracking with washout period alerts
-- Daily health check-ins and biometrics
-- Usage heatmap, frequency stats, insights
-- CSV export, fully offline (localStorage)
+- Log a dose. Journal it, filter it, search it
+- A wiki of 200+ substances with harm reduction data
+- Interaction checks against what you're already on
+- Tolerance tracking with washout alerts
+- Daily check-ins and biometrics
+- Heatmap, frequency, insights
+- CSV export. Fully offline, in localStorage
 
 ## Run
 ```bash
@@ -56,10 +58,9 @@ MIT 2026 Joshua Trommel
 
 ## API and agent tools
 
-[`docs/API.md`](docs/API.md) documents the HTTP surface (where there is one) and
-the WebMCP tools this app registers on `document.modelContext`, so an in-browser
-agent can drive it. Tools are split into read-only, reversible writes, and the
-few that require human confirmation.
+An agent can drive this app. [`docs/API.md`](docs/API.md) lists the HTTP surface, where there
+is one, and the WebMCP tools registered on `document.modelContext`. Tools come in three kinds:
+read-only, writes you can undo, and the few that ask a human first.
 
 ## Architecture
 
