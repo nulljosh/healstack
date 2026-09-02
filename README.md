@@ -32,13 +32,13 @@ vercel --prod
 - [ ] Custom substance creation
 - [ ] Mood and sleep correlation with Apple Health sync
 - [ ] OCR pill identification
-- [ ] Lab PDF parsing — import bloodwork PDFs, parse values, flag out-of-range
-- [ ] iOS companion app — log doses, view active stack, interaction warnings natively
+- [ ] Lab PDF parsing, import bloodwork PDFs, parse values, flag out-of-range
+- [ ] iOS companion app, log doses, view active stack, interaction warnings natively
 - [ ] Reflexology and breathing modules (expansion from harm reduction into general wellness)
-- [ ] Declutter UI — reduce visual noise, simplify navigation
+- [ ] Declutter UI, reduce visual noise, simplify navigation
 - [ ] Claude/Apple Liquid Glass redesign (backdrop-filter blur, -apple-system font, #0071e3)
 - [ ] Vibe clone portfolio aesthetic
-- [ ] Multi-profile support — create profiles, transfer personal data between them
+- [ ] Multi-profile support, create profiles, transfer personal data between them
 
 ## Changelog
 v1.3.0

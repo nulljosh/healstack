@@ -2,9 +2,10 @@
 
 **v2.3.4** | August 2026
 
-Healstack is a supplement/substance stack tracker with a built-in interaction
-checker. Log what you take, see what's currently active, and get warned before
-you combine things that interact. Web at
+Know what you took, and what it does with everything else you're on.
+
+Healstack logs doses, shows what's still active, and warns you before you combine
+two things that interact. Web at
 [healstack.heyitsmejosh.com](https://healstack.heyitsmejosh.com), companion
 iOS app (bundle ID and `dose://` URL scheme intentionally kept from the app's
 former name, Dose, to avoid re-provisioning).
@@ -15,12 +16,12 @@ The core mechanic. `src/data/substances.js` holds a curated dataset of
 substances with known interactions and harm-reduction notes. When a dose is
 logged, `InteractionChecker` cross-references it against every substance
 currently "active" (dosed within its known duration window) and surfaces a
-warning if any pair is flagged — before the entry is saved, not after.
+warning if any pair is flagged, before the entry is saved, not after.
 
 ## Data Model
 
 - **Dose entry**: substance, amount, timestamp, notes
-- **Active stack**: derived, not stored — any dose whose substance duration
+- **Active stack**: derived, not stored, any dose whose substance duration
   window still covers "now" counts as active
 - **Dashboard** (`src/pages/Dashboard.jsx`): renders the active stack and
   recent entries from that derived state
@@ -29,7 +30,7 @@ warning if any pair is flagged — before the entry is saved, not after.
 
 Supabase: email/password login, registration, and password reset (listens for
 the `PASSWORD_RECOVERY` event to route into the reset flow). No custom
-backend — Supabase is the only server dependency.
+backend, Supabase is the only server dependency.
 
 ## Design
 

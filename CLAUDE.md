@@ -1,10 +1,10 @@
 # Healstack
 v2.2.0
 
-Renamed from Dose 2026-07-01 (Dose, Balm, Tonic, and several others all taken on the App Store — Healstack cleared). GitHub repo renamed to nulljosh/healstack, domain moved to healstack.heyitsmejosh.com. Bundle IDs, App Group, and URL scheme (dose://) intentionally left as `dose` to avoid re-provisioning/App Store relinking.
+Renamed from Dose 2026-07-01 (Dose, Balm, Tonic, and several others all taken on the App Store, Healstack cleared). GitHub repo renamed to nulljosh/healstack, domain moved to healstack.heyitsmejosh.com. Bundle IDs, App Group, and URL scheme (dose://) intentionally left as `dose` to avoid re-provisioning/App Store relinking.
 
 ## Shipped (2026-06-28)
-- [x] ToS checkbox required on register tab — `src/pages/Auth.jsx`, `/tos.html`
+- [x] ToS checkbox required on register tab, `src/pages/Auth.jsx`, `/tos.html`
 - [x] GitHub Sign In button via Supabase OAuth
 - [x] GitHub provider enabled in Supabase (spark project) via management API
 
@@ -24,7 +24,7 @@ npm run build     # Production build
 ```
 
 ## Deploy
-Migrated from Vercel to Cloudflare Pages 2026-08-06. Direct-upload via `wrangler pages deploy` (not git-connected, to avoid staleness). Serverless functions ported to Cloudflare Pages Functions (`functions/api/stripe.js`, `functions/api/stripe-webhook.js`, `functions/api/sync.js`). KV namespace binding for sync data (`DOSE_KV`, id `933180aeff6b45e58e39b258b2fbe25b`). Secrets managed via `wrangler pages secret put`; run locally via `wrangler pages dev dist`. Custom domain must be explicitly attached via Pages API (`POST .../pages/projects/healstack/domains`) — a DNS CNAME alone is not enough, causes 522 until the domain is registered on the Pages project itself. `DOSE_SYNC_TOKEN` secret set fresh 2026-08-06 (Cloudflare KV was empty pre-migration — Vercel used a separate `@vercel/kv` store, no data migration needed); real app users need this token in their browser's `dose:sync_token` localStorage key. Cloudflare secret updates take ~1-2 min to propagate across all edge PoPs — expect transient 401s on `/api/sync` right after a `wrangler pages secret put`, not a bug.
+Migrated from Vercel to Cloudflare Pages 2026-08-06. Direct-upload via `wrangler pages deploy` (not git-connected, to avoid staleness). Serverless functions ported to Cloudflare Pages Functions (`functions/api/stripe.js`, `functions/api/stripe-webhook.js`, `functions/api/sync.js`). KV namespace binding for sync data (`DOSE_KV`, id `933180aeff6b45e58e39b258b2fbe25b`). Secrets managed via `wrangler pages secret put`; run locally via `wrangler pages dev dist`. Custom domain must be explicitly attached via Pages API (`POST .../pages/projects/healstack/domains`), a DNS CNAME alone is not enough, causes 522 until the domain is registered on the Pages project itself. `DOSE_SYNC_TOKEN` secret set fresh 2026-08-06 (Cloudflare KV was empty pre-migration, Vercel used a separate `@vercel/kv` store, no data migration needed); real app users need this token in their browser's `dose:sync_token` localStorage key. Cloudflare secret updates take ~1-2 min to propagate across all edge PoPs, expect transient 401s on `/api/sync` right after a `wrangler pages secret put`, not a bug.
 
 ## Key Files
 - src/App.jsx: App shell with routing, OS-aware theme (auto dark/light + manual toggle), nav.
@@ -40,18 +40,18 @@ Migrated from Vercel to Cloudflare Pages 2026-08-06. Direct-upload via `wrangler
 - xcodegen generate && xcodebuild build -scheme Dose -project Dose.xcodeproj -destination "platform=iOS Simulator,name=iPhone 17 Pro"
 
 ## Pending
-- .env.local recreated 2026-06-12 (VITE_SUPABASE_* + HEALSTACK_EMAIL/HEALSTACK_PASSWORD) — file is gone again as of 2026-06-20, needs recreating.
+- .env.local recreated 2026-06-12 (VITE_SUPABASE_* + HEALSTACK_EMAIL/HEALSTACK_PASSWORD), file is gone again as of 2026-06-20, needs recreating.
 - Account recovery: real account email is jatrommel@gmail.com (not trommatic@icloud.com). Reset password to that address rather than chasing the icloud reset email further.
-- Supabase anon key no longer hardcoded in `ios/Services/AuthService.swift` — now read via `infoPlistValue("SUPABASE_ANON_KEY")` from Info.plist (fixed 2026-06-23).
-- Web UI refresh, landing page, and iOS ship are tracked in README Roadmap (Declutter UI, Vibe clone portfolio aesthetic, iOS companion app) — not new asks, no changes applied yet.
-- Stripe secrets (STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, real STRIPE_PRICE_ID) not set on Cloudflare — deliberately deferred 2026-08-06 (app is free/personal, $1 CSV-export gate isn't load-bearing). `functions/api/stripe.js`/`stripe-webhook.js` are deployed and respond correctly (400s on missing config, no crashes) but the Pro-unlock flow won't work until these are set.
+- Supabase anon key no longer hardcoded in `ios/Services/AuthService.swift`, now read via `infoPlistValue("SUPABASE_ANON_KEY")` from Info.plist (fixed 2026-06-23).
+- Web UI refresh, landing page, and iOS ship are tracked in README Roadmap (Declutter UI, Vibe clone portfolio aesthetic, iOS companion app), not new asks, no changes applied yet.
+- Stripe secrets (STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, real STRIPE_PRICE_ID) not set on Cloudflare, deliberately deferred 2026-08-06 (app is free/personal, $1 CSV-export gate isn't load-bearing). `functions/api/stripe.js`/`stripe-webhook.js` are deployed and respond correctly (400s on missing config, no crashes) but the Pro-unlock flow won't work until these are set.
 
-## project.yml generates files — never edit the generated file
+## project.yml generates files, never edit the generated file
 
 Where a `project.yml` declares an `entitlements:` or `info:` block with `properties:`,
 xcodegen **regenerates** that file on every `xcodegen generate`. Editing
 `Info.plist` or `*.entitlements` directly there is silently reverted on the next
-generate — the build still succeeds, so nothing tells you. This is the mechanism
+generate, the build still succeeds, so nothing tells you. This is the mechanism
 behind Sign in with Apple repeatedly "disappearing". Put the key in `project.yml`,
 then verify against the built artifact, not the source:
 `codesign -d --entitlements - <app>` and the app's `Contents/Info.plist`.
