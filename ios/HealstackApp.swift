@@ -81,6 +81,14 @@ struct HealstackApp: App {
                     }
                 }
                 .hideSystemTabBar()
+                // Inset, not overlay: every scrolling screen then clears the bar
+                // (the substance-detail Sources footer used to sit behind it).
+                .safeAreaInset(edge: .bottom) {
+                    if !requiresUnlock || isUnlocked {
+                        HealstackFloatingTabBar(selectedTab: $selectedTab)
+                            .padding(.bottom, 8)
+                    }
+                }
                 #endif
                 }
                 .onChange(of: selectedTab) { _, _ in
@@ -93,15 +101,6 @@ struct HealstackApp: App {
                 }
 
                 if !requiresUnlock || isUnlocked {
-                    #if os(iOS)
-                    // macOS draws TabView's own tab strip, so the floating bar
-                    // would be a second, redundant tab bar on top of it.
-                    HealstackFloatingTabBar(selectedTab: $selectedTab)
-                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                        .padding(.bottom, 8)
-                        .zIndex(1)
-                    #endif
-
                     WhatsNewSheet()
                 }
 
