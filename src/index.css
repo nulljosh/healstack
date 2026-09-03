@@ -19,7 +19,7 @@
   font-display: swap;
 }
 
-:root{--bg-secondary:var(--bg2);--bg-tertiary:var(--color-code-bg);--text-primary:var(--text);--text-secondary:var(--text2);--text-tertiary:var(--text3);--border-muted:var(--border2);--link:var(--bulb-deep);--accent-muted:rgba(255,202,48,0.15);--accent-border:rgba(255,202,48,0.4);--modal-bg:var(--bg);--glass-bg:var(--bg);--spring:cubic-bezier(0.34,1.56,0.64,1);--font:var(--font-body);--font-heading:var(--font-body);
+:root{--bulb:#5B9BD5;--bulb-deep:#4779a6;--accent:#5B9BD5;--accent-dot:#5B9BD5;--bg-secondary:var(--bg2);--bg-tertiary:var(--color-code-bg);--text-primary:var(--text);--text-secondary:var(--text2);--text-tertiary:var(--text3);--border-muted:var(--border2);--link:var(--bulb-deep);--accent-muted:rgba(91,155,213,0.12);--accent-border:rgba(91,155,213,0.3);--modal-bg:var(--bg);--glass-bg:var(--bg);--spring:cubic-bezier(0.34,1.56,0.64,1);--font:var(--font-body);--font-heading:var(--font-body);
   --danger: #dc2626;
   --danger-muted: rgba(220, 38, 38, 0.08);
   --danger-border: rgba(220, 38, 38, 0.18);
@@ -35,6 +35,8 @@
   --nav-blur: 16px;
 }
 [data-theme="dark"]{
+  --bulb-deep: #5B9BD5;
+  --link: #5B9BD5;
   --success: #26a641;
   --success-muted: rgba(38, 166, 65, 0.08);
   --success-border: rgba(38, 166, 65, 0.18);
