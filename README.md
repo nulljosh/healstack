@@ -11,6 +11,8 @@ A dose log, a harm reduction library, and a health dashboard. Web, iOS and macOS
 
 ## Screenshots
 
+<img src="screenshots/macos/home.png" width="800">
+
 <img src="screenshots/macos/library.png" width="800">
 
 <p>

@@ -13,7 +13,7 @@ struct HealstackApp: App {
                 if authService.isLoading {
                     ProgressView()
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                } else if authService.user == nil {
+                } else if authService.user == nil && !CommandLine.arguments.contains("UITEST_SNAPSHOT") {
                     MacAuthView(authService: authService)
                         .frame(width: 400, height: 480)
                 } else {
