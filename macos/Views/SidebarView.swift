@@ -32,7 +32,7 @@ enum SidebarItem: String, CaseIterable, Identifiable {
 
 struct SidebarView: View {
     @Bindable var dataStore: DataStore
-    @State private var selection: SidebarItem? = .dashboard
+    @Binding var selection: SidebarItem?
 
     var body: some View {
         List(SidebarItem.allCases, selection: $selection) { item in
@@ -42,19 +42,5 @@ struct SidebarView: View {
         }
         .navigationSplitViewColumnWidth(min: 180, ideal: 220)
         .navigationTitle("Healstack")
-        .navigationDestination(for: SidebarItem.self) { item in
-            switch item {
-            case .dashboard: MacDashboardView(dataStore: dataStore)
-            case .labs: MacLabResultsView(dataStore: dataStore)
-            case .feet: MacReflexologyView(mode: .feet)
-            case .hands: MacReflexologyView(mode: .hands)
-            case .abdomen: MacAbdomenView()
-            case .meridians: MacMeridianListView()
-            case .symptoms: MacSymptomFinderView()
-            case .facemaxxing: MacFacemaxxingView()
-            case .sessions: MacSessionHistoryView()
-            case .settings: MacSettingsView()
-            }
-        }
     }
 }

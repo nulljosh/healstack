@@ -561,3 +561,6 @@ Signing notes, because this took three tries:
   Same `isUITestSnapshot` idiom already used to suppress `WhatsNewSheet`.
   Not urgent, iOS 2.3.5 is REJECTED and macOS 2.3.5 IN_REVIEW, so nothing uploads until
   the next version anyway. Fold this into that capture run rather than re-shooting now.
+
+## 2026-09-02, Mac screenshots
+Sidebar routing on macOS was broken (navigationDestination in the sidebar column never swapped the hardcoded Dashboard detail). Fixed. Recapture Lab Results / Feet / Meridians / Symptoms at 1440x900: build Debug, launch with `UITEST_SNAPSHOT -app_theme light -UITEST_TAB "<Sidebar name>"`, temporarily set defaultSize to 1440x900. Old library/insights/body shots were from a pre-reflexology build and were removed from the README.

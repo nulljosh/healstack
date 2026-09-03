@@ -13,15 +13,11 @@ A dose log, a harm reduction library, and a health dashboard. Web, iOS and macOS
 
 <img src="screenshots/macos/home.png" width="800">
 
-<img src="screenshots/macos/library.png" width="800">
-
 <p>
 <img src="screenshots/ios/library.png" width="240">
 <img src="screenshots/ios/insights.png" width="240">
 <img src="screenshots/ios/body.png" width="240">
 </p>
-
-<img src="screenshots/macos/insights.png" width="800">
 
 ## Features
 - Log a dose in two taps. Journal, filter, search.
