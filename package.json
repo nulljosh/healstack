@@ -1,8 +1,14 @@
 {
   "name": "healstack",
+  "license": "MIT",
   "version": "2.3.5",
   "description": "A dose log, harm reduction library, and health dashboard. Your data stays on your device.",
-  "keywords": ["harm-reduction", "health-dashboard", "dose-log", "local-storage"],
+  "keywords": [
+    "harm-reduction",
+    "health-dashboard",
+    "dose-log",
+    "local-storage"
+  ],
   "private": true,
   "type": "module",
   "scripts": {
