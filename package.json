@@ -1,6 +1,7 @@
 {
   "name": "healstack",
   "version": "2.2.0",
+  "description": "A dose log, harm reduction library, and health dashboard. Your data stays on your device.",
   "private": true,
   "type": "module",
   "scripts": {
