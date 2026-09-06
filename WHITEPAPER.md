@@ -1,6 +1,6 @@
 # Healstack Technical Whitepaper
 
-**v2.3.4** | August 2026
+**v2.3.5** | August 2026
 
 Know what you took, and what it does with everything else you're on.
 
