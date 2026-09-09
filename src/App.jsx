@@ -22,6 +22,7 @@ import Sessions from './pages/Sessions';
 import Facemaxxing from './pages/Facemaxxing';
 import LabResults from './pages/LabResults';
 import Routine from './pages/Routine';
+import Supplements from './pages/Supplements';
 import Profile from './pages/Profile';
 import WhatsNew from './components/WhatsNew';
 import { WebMCP } from './lib/webmcp';
@@ -75,6 +76,7 @@ function AppShell({ theme, setTheme }) {
           <Route path="/sessions" element={<Sessions />} />
           <Route path="/facemaxxing" element={<Facemaxxing />} />
           <Route path="/routine" element={<Routine />} />
+          <Route path="/supplements" element={<Supplements />} />
           <Route path="/lab-results" element={<LabResults />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="*" element={<Dashboard />} />

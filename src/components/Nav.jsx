@@ -70,6 +70,15 @@ const secondaryLinks = [
       </svg>
     ),
   },
+  {
+    to: '/supplements',
+    label: 'Supplements',
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10.5 20.5 3.5 13.5a4.95 4.95 0 0 1 7-7l7 7a4.95 4.95 0 0 1-7 7z"/><line x1="8.5" y1="8.5" x2="15.5" y2="15.5"/>
+      </svg>
+    ),
+  },
 ];
 
 const moreIcon = (
