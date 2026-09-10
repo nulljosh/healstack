@@ -1,4 +1,32 @@
+import { useEffect, useRef, useState } from 'react';
 import InstallAnywhere from '../components/InstallAnywhere';
+
+const prefersReducedMotion = () =>
+  typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Reveals a section once it scrolls into view (skipped, always-visible, under
+// reduced motion). No new deps: useRef + IntersectionObserver.
+function useRevealOnScroll() {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(prefersReducedMotion());
+
+  useEffect(() => {
+    if (prefersReducedMotion() || !ref.current || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          io.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.15 }
+    );
+    io.observe(ref.current);
+    return () => io.disconnect();
+  }, []);
+
+  return [ref, inView];
+}
 // Health marks: the app icon's capsule plus the other things a stack tracks.
 const S = { fill: 'none', stroke: 'currentColor', strokeWidth: 2, strokeLinecap: 'round', strokeLinejoin: 'round' };
 const MARKS = [
@@ -29,8 +57,8 @@ const Mark = ({ i, size = 34 }) => (
 // 8 columns of health marks, alternating drift direction; each column's list is
 // doubled so the translateY(-50%) loop is seamless. The prime-ish stride keeps
 // neighbouring columns from lining up on the same glyph.
-const HeroWall = () => (
-  <div className="hero-wall" aria-hidden="true">
+const HeroWall = ({ wallRef }) => (
+  <div className="hero-wall" aria-hidden="true" ref={wallRef}>
     {Array.from({ length: 8 }, (_, c) => {
       const marks = Array.from({ length: 7 }, (_, i) => <Mark key={i} i={c * 3 + i} />);
       return (
@@ -85,8 +113,35 @@ const FEATURES = [
 ];
 
 export default function Landing({ onGetStarted }) {
+  const wallRef = useRef(null);
+  const [featuresRef, featuresIn] = useRevealOnScroll();
+  const [platformsRef, platformsIn] = useRevealOnScroll();
+
+  // Parallax: the hero wall of health marks drifts slower than the page scrolls.
+  useEffect(() => {
+    if (prefersReducedMotion() || !wallRef.current) return;
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        if (wallRef.current) wallRef.current.style.transform = `translateY(${window.scrollY * 0.1}px)`;
+        ticking = false;
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
     <div style={{ minHeight: '100dvh', background: 'var(--bg)', color: 'var(--text-primary)', overflowX: 'hidden' }}>
+      <style>{`
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+        .reveal.in-view { opacity: 1; transform: none; }
+        @media (prefers-reduced-motion: reduce) {
+          .reveal { opacity: 1; transform: none; transition: none; }
+        }
+      `}</style>
       {/* Header */}
       <header style={{
         position: 'sticky',
@@ -120,7 +175,7 @@ export default function Landing({ onGetStarted }) {
 
       {/* Hero */}
       <section style={{ position: 'relative', isolation: 'isolate', overflow: 'hidden', maxWidth: 1080, margin: '0 auto', padding: 'clamp(3rem, 8vw, 5rem) clamp(1.25rem, 4vw, 1.5rem) 4rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: 'clamp(2rem, 5vw, 3rem)', alignItems: 'center' }}>
-        <HeroWall />
+        <HeroWall wallRef={wallRef} />
         <div className="hero-scrim" />
         <div style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-secondary)', marginBottom: '0.75rem' }}>Health tracking</div>
@@ -174,7 +229,11 @@ export default function Landing({ onGetStarted }) {
       </section>
 
       {/* Features */}
-      <section style={{ maxWidth: 1080, margin: '0 auto', padding: SECTION_PAD }}>
+      <section
+        ref={featuresRef}
+        className={`reveal${featuresIn ? ' in-view' : ''}`}
+        style={{ maxWidth: 1080, margin: '0 auto', padding: SECTION_PAD }}
+      >
         <div style={{ maxWidth: 480, margin: '0 auto 3rem', textAlign: 'center' }}>
           <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-secondary)', marginBottom: '0.75rem' }}>Core features</div>
           <h2 style={{ fontSize: 'clamp(1.625rem, 4vw, 2rem)', fontWeight: 600, margin: 0, letterSpacing: '-0.01em' }}>Everything you need to track smart</h2>
@@ -193,7 +252,11 @@ export default function Landing({ onGetStarted }) {
       </section>
 
       {/* Platforms */}
-      <section style={{ maxWidth: 1080, margin: '0 auto', padding: SECTION_PAD }}>
+      <section
+        ref={platformsRef}
+        className={`reveal${platformsIn ? ' in-view' : ''}`}
+        style={{ maxWidth: 1080, margin: '0 auto', padding: SECTION_PAD }}
+      >
         <div style={{ maxWidth: 480, margin: '0 auto 3rem', textAlign: 'center' }}>
           <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--text-secondary)', marginBottom: '0.75rem' }}>Available now</div>
           <h2 style={{ fontSize: 'clamp(1.625rem, 4vw, 2rem)', fontWeight: 600, margin: 0, letterSpacing: '-0.01em' }}>Use it everywhere</h2>
