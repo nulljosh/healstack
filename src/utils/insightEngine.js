@@ -82,6 +82,8 @@ export function computeCorrelations(doseLog, biometrics) {
     }
   }
 
+  // Rank by confidence*pct jointly -- a huge swing on thin data and a tiny
+  // swing on solid data should both lose to a strong signal backed by enough samples.
   return insights.sort((a, b) => b.confidence * b.pct - a.confidence * a.pct);
 }
 
@@ -158,6 +160,8 @@ export function detectLabTrends(labResults) {
     // Only flag if trending toward out-of-range
     const hi = latest.refHigh;
     const lo = latest.refLow;
+    // 80%-of-high / 120%-of-low: arbitrary but deliberate margin so a trend
+    // alert fires before the marker actually crosses out of range, not after.
     const nearHigh = hi != null && rising && latest.value > hi * 0.8;
     const nearLow = lo != null && falling && latest.value < lo * 1.2;
     if (!nearHigh && !nearLow) continue;
