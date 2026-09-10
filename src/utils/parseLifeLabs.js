@@ -73,6 +73,9 @@ function detectPanel(line) {
 // "TSH   2.45   mIU/L   0.35 - 5.00   N"
 // or columnar PDF extraction produces something like:
 // "TSH 2.45 mIU/L 0.35 5.00"
+// Name is matched non-greedily up to the first double-space gap (PDF.js
+// preserves column gaps as runs of spaces), so a name containing a single
+// space (e.g. "White Blood Cells") still stops at the right boundary.
 const MARKER_ROW = /^([A-Za-z][A-Za-z0-9 /()\-]{1,40}?)\s{2,}([\d.]+)\s+([\w/%*^]+)\s+([\d.]+)?\s*[-–]?\s*([\d.]+)?/;
 
 function parseMarkerLine(line) {
