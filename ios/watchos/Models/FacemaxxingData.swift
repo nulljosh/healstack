@@ -166,6 +166,17 @@ enum FacemaxxingData {
               ],
               notes: "Orthodontics is the only intervention here that moves actual bone and teeth.",
               psl: ["Harmony", "Angularity"]),
+        .init(id: "overbite", title: "Overbite Prevention", category: "Posture", difficulty: "Daily habit",
+              summary: "Stop the habits that push the upper jaw forward and the lower jaw back, and catch a growing overbite early.",
+              steps: [
+                "Breathe through the nose, not the mouth",
+                "Rest the tongue on the palate, not against the back of the front teeth",
+                "Stop thumb-sucking, lip-sucking, pencil-chewing, resting your jaw on your hand",
+                "Chew evenly on both sides so the lower jaw isn't pulled off-center",
+                "See an orthodontist early, growing jaws respond to expanders, adult correction is slower",
+              ],
+              notes: "An overbite is a skeletal jaw-position issue, not a muscle one. Posture habits slow it, they do not reverse bone already grown.",
+              psl: ["Harmony", "Angularity"]),
         .init(id: "neck", title: "Neck Training", category: "Muscle", difficulty: "10 min, 3x/week",
               summary: "A thicker neck squares the jaw-to-shoulder transition.",
               steps: [

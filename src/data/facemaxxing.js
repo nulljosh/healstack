@@ -214,6 +214,21 @@ export const protocols = [
     notes: 'Orthodontics is the only intervention here that changes actual bone and tooth position. Everything else is soft tissue and habit.',
   },
   {
+    id: 'overbite',
+    title: 'Overbite Prevention',
+    category: 'Posture',
+    difficulty: 'Daily habit',
+    summary: 'Stop the habits that push the upper jaw forward and the lower jaw back, and catch a growing overbite early.',
+    steps: [
+      'Breathe through the nose, not the mouth -- see the nasal breathing protocol',
+      'Rest the tongue on the palate, not against the back of the front teeth (see mewing)',
+      'Stop thumb-sucking, lip-sucking, pencil-chewing, and resting your jaw on your hand',
+      'Chew evenly on both sides so the lower jaw isn\'t pulled off-center',
+      'See an orthodontist early if you notice one -- growing jaws respond to expanders and guided eruption, adult correction is slower and often surgical',
+    ],
+    notes: 'An overbite is a skeletal jaw-position issue, not a muscle one -- posture habits slow it from getting worse, they do not reverse bone that has already grown. Mouth breathing and low tongue posture are the two biggest drivers in children; in adults, an orthodontist is the only real fix.',
+  },
+  {
     id: 'neck',
     title: 'Neck Training',
     category: 'Muscle',
