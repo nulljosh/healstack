@@ -57,19 +57,21 @@ struct MacAuthView: View {
             .buttonStyle(.borderedProminent)
             .disabled(loading || email.isEmpty || password.isEmpty)
 
-            HStack {
-                Rectangle().frame(height: 1).foregroundStyle(.quaternary)
-                Text("or").font(.caption).foregroundStyle(.secondary)
-                Rectangle().frame(height: 1).foregroundStyle(.quaternary)
-            }
+            if appleSignInEnabled {
+                HStack {
+                    Rectangle().frame(height: 1).foregroundStyle(.quaternary)
+                    Text("or").font(.caption).foregroundStyle(.secondary)
+                    Rectangle().frame(height: 1).foregroundStyle(.quaternary)
+                }
 
-            SignInWithAppleButton(.signIn) { request in
-                authService.prepareAppleRequest(request)
-            } onCompletion: { result in
-                Task { await completeAppleSignIn(result) }
+                SignInWithAppleButton(.signIn) { request in
+                    authService.prepareAppleRequest(request)
+                } onCompletion: { result in
+                    Task { await completeAppleSignIn(result) }
+                }
+                .signInWithAppleButtonStyle(.black)
+                .frame(height: 40)
             }
-            .signInWithAppleButtonStyle(.black)
-            .frame(height: 40)
 
             Button {
                 Task { await completeGoogleSignIn() }
