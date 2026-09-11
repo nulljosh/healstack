@@ -25,7 +25,7 @@ xcodebuild test -scheme Dose -project Healstack.xcodeproj -destination 'generic/
 ## Key Files
 
 - DoseApp.swift: app entry point with tab layout, splash, biometric lock, and auth/recovery gating
-- Services/AuthService.swift: Supabase auth — sign in, sign up, sign out, password reset, recovery flow
+- Services/AuthService.swift: Supabase auth — sign in, sign up, sign out, password reset, recovery flow, Google sign-in (OAuth browser flow, wired into AuthView). Apple sign-in stays behind `appleSignInEnabled = false` until the Apple provider is enabled on spark; macOS's button is now gated by the same flag (was previously unguarded and would have errored on tap)
 - Services/DataStore.swift: UserDefaults persistence, widget sync, and import/export bundle
 - Services/SyncService.swift: push/pull sync to web API using Supabase JWT
 - Services/HealthKitService.swift: HealthKit authorization and metric fetching
