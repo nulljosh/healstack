@@ -118,20 +118,38 @@ struct AuthView: View {
                 .buttonStyle(.borderedProminent)
                 .disabled(loading || email.isEmpty || (tab != .reset && password.isEmpty))
 
-                if tab == .signIn && appleSignInEnabled {
+                if tab == .signIn {
                     Divider()
-                    SignInWithAppleButton(.signIn) { request in
-                        authService.prepareAppleRequest(request)
-                    } onCompletion: { result in
+
+                    if appleSignInEnabled {
+                        SignInWithAppleButton(.signIn) { request in
+                            authService.prepareAppleRequest(request)
+                        } onCompletion: { result in
+                            Task {
+                                loading = true
+                                defer { loading = false }
+                                do { try await authService.signInWithApple(result: result) }
+                                catch { errorMessage = error.localizedDescription }
+                            }
+                        }
+                        .signInWithAppleButtonStyle(.black)
+                        .frame(height: 50)
+                    }
+
+                    Button {
                         Task {
                             loading = true
                             defer { loading = false }
-                            do { try await authService.signInWithApple(result: result) }
+                            do { try await authService.signInWithGoogle() }
                             catch { errorMessage = error.localizedDescription }
                         }
+                    } label: {
+                        Text("Continue with Google")
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity)
+                            .padding(.vertical, 14)
                     }
-                    .signInWithAppleButtonStyle(.black)
-                    .frame(height: 50)
+                    .buttonStyle(.bordered)
                 }
             }
             .padding(28)
