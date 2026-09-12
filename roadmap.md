@@ -564,3 +564,7 @@ Signing notes, because this took three tries:
 
 ## 2026-09-02, Mac screenshots
 Sidebar routing on macOS was broken (navigationDestination in the sidebar column never swapped the hardcoded Dashboard detail). Fixed. Recapture Lab Results / Feet / Meridians / Symptoms at 1440x900: build Debug, launch with `UITEST_SNAPSHOT -app_theme light -UITEST_TAB "<Sidebar name>"`, temporarily set defaultSize to 1440x900. Old library/insights/body shots were from a pre-reflexology build and were removed from the README.
+
+## From Notes (2026-09-12)
+- [ ] iOS nav bar unreliable with taps (custom nav bar) — consider reverting to native nav bar
+- [ ] Face ID required every app open — scope to login only, not every launch
