@@ -13,7 +13,6 @@ private let doseTabs: [(icon: String, fill: String, label: String)] = [
 
 @main
 struct HealstackApp: App {
-    @Environment(\.scenePhase) private var scenePhase
     @State private var authService = AuthService()
     @State private var dataStore = DataStore()
     @State private var healthKitService = HealthKitService()
@@ -23,7 +22,9 @@ struct HealstackApp: App {
     @State private var showSplash = true
     @State private var biometryType: LABiometryType = .none
     @AppStorage("app_theme") private var rawTheme = "system"
-    @State private var isUnlocked = false
+    // ponytail: persists across launches so Face ID gates login, not every cold start
+    // (per notes 2026-09-12: "required every app open" was the complaint). Cleared on sign-out.
+    @AppStorage("dose_biometric_verified") private var isUnlocked = false
     @State private var isUnlocking = false
     @State private var unlockError: String?
     @State private var selectedTab = Self.initialTab
@@ -126,31 +127,19 @@ struct HealstackApp: App {
             }
             .onAppear {
                 biometryType = availableBiometryType()
-                isUnlocked = !requiresUnlock
+                if !requiresUnlock { isUnlocked = true }
                 Task {
                     try? await Task.sleep(for: .seconds(1.5))
                     withAnimation(.easeOut(duration: 0.5)) {
                         showSplash = false
                     }
-                    if requiresUnlock {
+                    if requiresUnlock, !isUnlocked {
                         await unlock()
                     }
                 }
             }
-            .onChange(of: scenePhase) { _, newPhase in
-                guard requiresUnlock else { return }
-                switch newPhase {
-                case .background, .inactive:
-                    isUnlocked = false
-                case .active:
-                    if !showSplash, !isUnlocked, !isUnlocking {
-                        Task {
-                            await unlock()
-                        }
-                    }
-                @unknown default:
-                    break
-                }
+            .onChange(of: authService.user == nil) { _, signedOut in
+                if signedOut { isUnlocked = false }
             }
             } // end auth check
             } // end Group

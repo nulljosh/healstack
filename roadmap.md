@@ -567,4 +567,6 @@ Sidebar routing on macOS was broken (navigationDestination in the sidebar column
 
 ## From Notes (2026-09-12)
 - [ ] iOS nav bar unreliable with taps (custom nav bar) — consider reverting to native nav bar
-- [ ] Face ID required every app open — scope to login only, not every launch
+- [x] Face ID required every app open — fixed: `isUnlocked` now persists via `@AppStorage`
+      across launches instead of resetting on every cold start/foreground, only clears on
+      sign-out. Face ID gates login, not launch. Build verified (`xcodebuild -scheme Healstack`).
