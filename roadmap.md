@@ -570,3 +570,14 @@ Sidebar routing on macOS was broken (navigationDestination in the sidebar column
 - [x] Face ID required every app open — fixed: `isUnlocked` now persists via `@AppStorage`
       across launches instead of resetting on every cold start/foreground, only clears on
       sign-out. Face ID gates login, not launch. Build verified (`xcodebuild -scheme Healstack`).
+      **Shipping this needs a decision first**: 2.3.6 is bumped, archived, uploaded
+      (build 202609121048), and whatsNew is set, but `asc review submit` is blocked —
+      ASC requires an iPad Pro 12.9" screenshot because `project.yml`'s
+      `TARGETED_DEVICE_FAMILY: "1,2"` declares Universal (iPhone+iPad), and no iPad
+      screenshots exist (the app's own comment there says iPad "was never excluded
+      for a design reason, only never enabled"). Two ways to unblock: shoot real iPad
+      screenshots, or narrow to iPhone-only (`"1"`) since the UI was never designed
+      for iPad anyway. Not decided here, it changes the public listing. Once decided:
+      `asc review submit --app 6785764864 --version 2.3.6 --build-id
+      a34fca1c-e2ef-4600-bb69-bef30531c230 --confirm` (build's encryption declaration
+      is already set).
