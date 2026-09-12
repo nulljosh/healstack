@@ -58,8 +58,9 @@ targets:
         com.apple.developer.applesignin:
           - Default
     settings:
-      # Universal: iPad was never excluded for a design reason, only never enabled.
-      TARGETED_DEVICE_FAMILY: "1,2"
+      # iPhone only: was Universal but iPad UI was never actually designed for iPad Pro
+      # (blocked App Store submission needing iPad Pro 12.9" screenshots, 2026-09-12).
+      TARGETED_DEVICE_FAMILY: "1"
       INFOPLIST_FILE: Info.plist
       PRODUCT_BUNDLE_IDENTIFIER: com.heyitsmejosh.dose
       INFOPLIST_KEY_CFBundleDisplayName: Healstack
