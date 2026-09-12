@@ -18,8 +18,8 @@ Display name renamed from Dose 2026-07-01. Bundle ID, App Group (group.com.heyit
 
 ```bash
 xcodegen generate && open Healstack.xcodeproj   # project is Healstack.xcodeproj; scheme/target are still Dose
-xcodebuild build -scheme Dose -project Healstack.xcodeproj -destination 'generic/platform=iOS Simulator' -skipPackagePluginValidation
-xcodebuild test -scheme Dose -project Healstack.xcodeproj -destination 'generic/platform=iOS Simulator' -skipPackagePluginValidation
+xcodebuild build -scheme Healstack -project Healstack.xcodeproj -destination 'generic/platform=iOS Simulator' -skipPackagePluginValidation
+xcodebuild test -scheme Healstack -project Healstack.xcodeproj -destination 'generic/platform=iOS Simulator' -skipPackagePluginValidation
 ```
 
 ## Key Files

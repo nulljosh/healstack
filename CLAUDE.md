@@ -37,7 +37,7 @@ Migrated from Vercel to Cloudflare Pages 2026-08-06. Direct-upload via `wrangler
 
 ## iOS
 - ios/: SwiftUI iOS app. xcodegen (project.yml). iOS 17+.
-- xcodegen generate && xcodebuild build -scheme Dose -project Dose.xcodeproj -destination "platform=iOS Simulator,name=iPhone 17 Pro"
+- xcodegen generate && xcodebuild build -scheme Healstack -project Healstack.xcodeproj -destination "platform=iOS Simulator,name=iPhone 17 Pro"
 
 ## Pending
 - .env.local recreated 2026-06-12 (VITE_SUPABASE_* + HEALSTACK_EMAIL/HEALSTACK_PASSWORD), file is gone again as of 2026-06-20, needs recreating.
