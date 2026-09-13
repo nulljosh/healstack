@@ -4,25 +4,33 @@
 
 Know what you took, and what it does with everything else you're on.
 
-Healstack logs doses, shows what's still active, and warns you before you combine
-two things that interact. Web at
+People on more than one supplement or medication rarely track how they
+overlap in time, and the interactions that matter are exactly the ones that
+depend on timing: two things active in the body at once, not two things
+taken on the same calendar day. Healstack exists to hold that timeline so
+nobody has to keep it in their head. It logs doses, shows what's still
+active, and warns before you combine two things that interact. Web at
 [healstack.heyitsmejosh.com](https://healstack.heyitsmejosh.com), companion
 iOS app (bundle ID and `dose://` URL scheme intentionally kept from the app's
-former name, Dose, to avoid re-provisioning).
+former name, Dose, to avoid re-provisioning, since a new scheme would mean
+relinking the App Store record for no user-facing gain).
 
 ## Interaction Checking
 
-The core mechanic. `src/data/substances.js` holds a curated dataset of
-substances with known interactions and harm-reduction notes. When a dose is
-logged, `InteractionChecker` cross-references it against every substance
-currently "active" (dosed within its known duration window) and surfaces a
-warning if any pair is flagged, before the entry is saved, not after.
+The core mechanic, and the reason the app exists at all. `src/data/substances.js`
+holds a curated dataset of substances with known interactions and
+harm-reduction notes. When a dose is logged, `InteractionChecker`
+cross-references it against every substance currently "active" (dosed within
+its known duration window) and surfaces a warning if any pair is flagged,
+before the entry is saved rather than after, because a warning shown after
+the dose is already taken cannot change anything.
 
 ## Data Model
 
 - **Dose entry**: substance, amount, timestamp, notes
 - **Active stack**: derived, not stored, any dose whose substance duration
-  window still covers "now" counts as active
+  window still covers "now" counts as active, so the stack is always
+  correct for the current moment without a background job to expire entries
 - **Dashboard** (`src/pages/Dashboard.jsx`): renders the active stack and
   recent entries from that derived state
 
@@ -30,7 +38,8 @@ warning if any pair is flagged, before the entry is saved, not after.
 
 Supabase: email/password login, registration, and password reset (listens for
 the `PASSWORD_RECOVERY` event to route into the reset flow). No custom
-backend, Supabase is the only server dependency.
+backend, Supabase is the only server dependency, because dose history is
+sensitive enough that the fewer systems that touch it, the better.
 
 ## Design
 
