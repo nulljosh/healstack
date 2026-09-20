@@ -148,6 +148,9 @@ struct HealstackApp: App {
                 Task { try? await supabaseClient.auth.session(from: url) }
             }
             .shareApp("https://healstack.heyitsmejosh.com")
+            .onboarding(key: "healstack",
+                        signedIn: authService.user != nil,
+                        slides: healstackOnboardingSlides)
         }
         #if os(macOS)
         .defaultSize(width: 1000, height: 700)

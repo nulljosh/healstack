@@ -46,6 +46,9 @@ struct HealstackApp: App {
             }
             .preferredColorScheme(rawTheme == "dark" ? .dark : rawTheme == "light" ? .light : nil)
             .shareApp("https://healstack.heyitsmejosh.com")
+            .onboarding(key: "healstack",
+                        signedIn: authService.user != nil,
+                        slides: healstackOnboardingSlides)
         }
         .defaultSize(width: 1050, height: 680)
         .windowStyle(.titleBar)
