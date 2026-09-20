@@ -53,5 +53,24 @@ cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.12)}
   });
 })();
 </script>
+<script src="/onboarding.js"></script>
+<script>
+    // First-run onboarding. Signed-out newcomers only, once per browser.
+    Onboarding.start({
+        key: "healstack",
+        finishLabel: "Get started",
+        slides: [
+                { title: "Track what you take",
+                  body: "Log supplements and medications with the dose and timing you actually follow, not an idealised version.",
+                  art: "<svg width=\"120\" height=\"120\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M10.5 20.5a5 5 0 0 1-7-7l6-6a5 5 0 0 1 7 7zM8 8l8 8\"/></svg>" },
+                { title: "Tick it off daily",
+                  body: "A single daily list keeps the routine honest, and the streak shows where it slipped.",
+                  art: "<svg width=\"120\" height=\"120\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M20 6 9 17l-5-5\"/></svg>" },
+                { title: "See what is working",
+                  body: "Stack your notes and symptoms against the schedule to find out which additions earned their place.",
+                  art: "<svg width=\"120\" height=\"120\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M19 5.6a5 5 0 0 0-7 0l-.9.9-1-.9A5 5 0 0 0 3 12.7l8 8 8-8a5 5 0 0 0 0-7z\"/></svg>" }
+        ]
+    });
+</script>
 </body>
 </html>
