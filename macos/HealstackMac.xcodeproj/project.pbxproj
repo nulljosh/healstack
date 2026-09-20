@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		163C7267711F5AF9BCA8EC21 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 65F69D6D5A5D766469BBE46E /* Supabase */; };
 		1D6E445A3EC0E25BDAE0B03B /* ReflexologyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9EA544E564F9BC9C78A43BC /* ReflexologyData.swift */; };
+		23C82A20932DBAAA9DB89E3D /* OnboardingSlides.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963C62021C31B245B9B6EA08 /* OnboardingSlides.swift */; };
 		2A8A8036E49BAB222F7CB449 /* MacSessionHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77E049B81C19DA4F1FE959B /* MacSessionHistoryView.swift */; };
 		2CF5BD1155808ABB31356D8D /* MacSymptomFinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14F5C511275324C6A1D22C87 /* MacSymptomFinderView.swift */; };
 		2E159960DC1BDEB7280CC5EA /* FacemaxxingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A726D1CEE1BF121384FF782 /* FacemaxxingData.swift */; };
@@ -24,6 +25,7 @@
 		86B0A360292A2B1F01CE83CF /* SubstanceDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AE1515600BD8158EC3AD89 /* SubstanceDatabase.swift */; };
 		8AD76ADBC95EAA4700B29251 /* BodyMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C45C3FD56F2975F384C1E3 /* BodyMapView.swift */; };
 		9163F6E9760E5C19B97434B5 /* BodyworkSessionStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8339AA4634B1EE775A24B13B /* BodyworkSessionStore.swift */; };
+		94A241276C003923E90427CE /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7DB927E38FCB3CD91D0BD5 /* OnboardingView.swift */; };
 		AB6A5928CAC074ADA8A51A22 /* MacSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36FBB04EAB0A907552454090 /* MacSettingsView.swift */; };
 		B4CC8FD7B4475496063ACE00 /* SymptomData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED70A58D3463009B435631 /* SymptomData.swift */; };
 		B6A2F8EAC44D13A95ED8A4A0 /* MacDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8F17D45D138F3B85ADB441 /* MacDashboardView.swift */; };
@@ -52,6 +54,7 @@
 		2C780039566502D611CDB696 /* Substance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Substance.swift; sourceTree = "<group>"; };
 		325F038875E9F50100570F10 /* AbdomenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbdomenData.swift; sourceTree = "<group>"; };
 		36FBB04EAB0A907552454090 /* MacSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacSettingsView.swift; sourceTree = "<group>"; };
+		3B7DB927E38FCB3CD91D0BD5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		3F5F39D7F3A6909F3A9C7B2D /* Healstack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Healstack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F6B3794F32F35EBBFDA89AE /* ExportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = ExportOptions.plist; sourceTree = "<group>"; };
 		45D13B2BCE112D6A18E7751B /* BiometricEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricEntry.swift; sourceTree = "<group>"; };
@@ -64,6 +67,7 @@
 		86C45C3FD56F2975F384C1E3 /* BodyMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyMapView.swift; sourceTree = "<group>"; };
 		8D6AFDD3692AEE45F5B5E2E3 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		92562854A3DE6250B1AE6C8C /* LabResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabResult.swift; sourceTree = "<group>"; };
+		963C62021C31B245B9B6EA08 /* OnboardingSlides.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlides.swift; sourceTree = "<group>"; };
 		9A726D1CEE1BF121384FF782 /* FacemaxxingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacemaxxingData.swift; sourceTree = "<group>"; };
 		A47F51C766D75EFC37CDB9AC /* MyMedication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMedication.swift; sourceTree = "<group>"; };
 		A9EA544E564F9BC9C78A43BC /* ReflexologyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReflexologyData.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				7839514FF89F16800F36C523 /* HealstackApp.swift */,
 				DB6678281207B0831D1BB89F /* HealstackMac.entitlements */,
 				48A15FAEF19FD6CF5A6549A1 /* Info.plist */,
+				963C62021C31B245B9B6EA08 /* OnboardingSlides.swift */,
+				3B7DB927E38FCB3CD91D0BD5 /* OnboardingView.swift */,
 				DDF660EC3833FA9119E054FD /* Models */,
 				D3FA9DD9D4CC4CB1E262B4AB /* Views */,
 			);
@@ -305,6 +311,8 @@
 				AB6A5928CAC074ADA8A51A22 /* MacSettingsView.swift in Sources */,
 				2CF5BD1155808ABB31356D8D /* MacSymptomFinderView.swift in Sources */,
 				E49853A24ADD6A8F2E553228 /* MyMedication.swift in Sources */,
+				23C82A20932DBAAA9DB89E3D /* OnboardingSlides.swift in Sources */,
+				94A241276C003923E90427CE /* OnboardingView.swift in Sources */,
 				1D6E445A3EC0E25BDAE0B03B /* ReflexologyData.swift in Sources */,
 				4F48385CC41626B62530D330 /* SidebarView.swift in Sources */,
 				EBCF2C4B8AF3A6546064DA4D /* Substance.swift in Sources */,
