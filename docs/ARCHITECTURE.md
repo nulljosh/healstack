@@ -1,6 +1,6 @@
 # Architecture
 
-Healstack is a health and supplement tracker, web and iOS. Users log doses, substances, biometrics and lab results, get interaction warnings between active substances, and track bodywork routines. Web is React on Vite deployed to Cloudflare Pages; iOS is SwiftUI. Auth is Supabase email+password+OAuth. Sync and Pro features use Cloudflare Functions and KV.
+Healstack helps someone track what they take and how their body is doing. Users log doses and substances, biometrics, and lab results, and get a warning if two things they take are known to interact badly, plus track bodywork routines like acupuncture or reflexology. It runs as a web app and an iOS app, both built from the same code where possible. Sign-in is through Supabase (email/password or OAuth). Paying users get cross-device sync and other extras, handled by small Cloudflare-hosted functions and a key-value store.
 
 ## How it runs
 
