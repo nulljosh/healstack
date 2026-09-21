@@ -1,4 +1,4 @@
-# Product Hunt — Healstack
+# Product Hunt, Healstack
 
 ## Name
 Healstack

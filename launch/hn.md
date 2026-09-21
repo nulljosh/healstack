@@ -1,3 +1,5 @@
+Skip: no technical hook
+
 # Show HN
 
 ## Title (80 max)

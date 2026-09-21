@@ -1,4 +1,4 @@
-# X thread — Healstack
+# X thread, Healstack
 
 ## Post 1
 Built Healstack: a dose log that shows what's still active in your body, not just what you took today. Logs a dose in two taps and warns you before you combine two things that interact, before you log, not after. https://healstack.heyitsmejosh.com

@@ -1,4 +1,4 @@
-# Launch checklist — Healstack
+# Launch checklist, Healstack
 
 This kit is web-first: every public link (PH, HN, Reddit, X) points only to
 https://healstack.heyitsmejosh.com, no App Store link anywhere in the copy.
