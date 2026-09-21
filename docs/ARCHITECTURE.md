@@ -103,6 +103,26 @@ Data syncs via `functions/api/sync.js` only for Pro users; free users stay local
 | `ios/OnboardingView.swift` | Shared first-run onboarding carousel (copy verbatim into any app that needs it), triggers signup flow on completion |
 | `ios/WhatsNewSheet.swift` | Release notes sheet, appears only when shipping version matches bundled notes version (avoids stale prompts) |
 | `ios/CrossPlatform.swift` | Haptics wrapper (iOS only, no-op on macOS), keyboard type and navigation bar style cross-platform shims |
+| `macos/OnboardingSlides.swift` | First-run carousel slides shared by macOS and iOS, hardcoded slide titles/body/symbols for app intro |
+| `macos/Views/AuthView.swift` | macOS login and signup form with email/password fields, tab toggle, GitHub OAuth button |
+| `macos/Views/BodyMapView.swift` | Interactive SVG renderer for reflexology zone maps, scales to viewport, highlights selected zone, renders outlines and zone paths |
+| `macos/Views/MacAbdomenView.swift` | Abdominal reflexology zones in 3x3 grid layout, tap to select and show zone details, log-session button |
+| `macos/Views/MacDashboardView.swift` | macOS home view showing active pills from past 24 hours, recent dose log entries, top health insight, greeting header |
+| `macos/Views/MacFacemaxxingView.swift` | Skincare and fitness protocol tracker with sidebar protocol list and detail pane showing steps and progress count |
+| `macos/Views/MacLabResultsView.swift` | Lab result panel viewer with marker entry form, date picker, lab name input, flag badges for abnormal values |
+| `macos/Views/MacMeridianListView.swift` | Expandable acupuncture meridian list showing 12 meridians, each with 10-14 points, point details on expand, log-session button |
+| `macos/Views/MacReflexologyView.swift` | Foot and hand reflexology map selector, swaps between modes, renders BodyMapView with zone outline and selected zone detail |
+| `macos/Views/MacSessionHistoryView.swift` | List of logged bodywork sessions with type (reflexology/acupuncture), area, date, swipe-to-delete support |
+| `macos/Views/MacSettingsView.swift` | Account and appearance settings panel, theme picker (light/dark/system), sign-out button, displays current email |
+| `macos/Views/MacSymptomFinderView.swift` | Symptom search with grid layout and filtering, selected symptom shows reflex zones and acupuncture points that address it |
+| `macos/Views/SidebarView.swift` | NavigationSplitView sidebar with navigation links to all main views (dashboard, labs, bodywork, symptoms, settings), labeled with SF icons |
+| `macos/Views/ZoneDetailView.swift` | Reflexology zone detail card showing organ, body system, location, technique, duration, benefits list, log-session button |
+| `public/onboarding.js` | Shared first-run carousel UI component, vanilla JS with CSS animations, auto-detects signed-in state, customizable slides, fires onDone callback |
+| `public/privacy.html` | Privacy policy page describing data collection (email, health logs), storage in Supabase with RLS, no advertising or selling |
+| `public/tos.html` | Terms of Service page with health disclaimer, data ownership rights, account security responsibility, abuse policy |
+| `scripts/check-auth-live.sh` | Validates Supabase anon key liveness by testing health endpoint and demo account auth, guards against review rejection via auth 500 errors |
+| `scripts/check-signin-config.sh` | Verifies Sign in with Apple/Google configuration in built app binaries (bundle ID, URL scheme, entitlements match Supabase config) |
+| `scripts/simplify.sh` | Ensures standard project folder structure (docs/, scripts/, src/, tests/, assets/) exists |
 | `functions/api/stripe.js` (110L) | Cloudflare Worker: Stripe client init, getStripe() singleton, ALLOWED_ORIGIN check, create Stripe checkout session endpoint, verifies caller's Supabase access token (bearer auth), reads isPro flag from KV, responds with session ID for client redirect |
 | `functions/api/stripe-webhook.js` (41L) | Cloudflare Worker: Stripe webhook receiver, verifies webhook signature using STRIPE_WEBHOOK_SECRET, extracts client_reference_id (Supabase userId), writes `pro:<userId>` flag to DOSE_KV on successful payment |
 | `functions/api/sync.js` (125L) | Cloudflare Worker: authenticated data sync endpoint for Pro users, rate-limited (10 req/min per token), token verified via timing-safe SHA-256 hash comparison against stored hash, accepts POST with dose log JSON, stores/retrieves from DOSE_KV namespace |
