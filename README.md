@@ -9,6 +9,8 @@ Know what you took, when, and what it does with everything else you're on.
 
 A dose log, a harm reduction library, and a health dashboard. Web, iOS and macOS. Your data stays on your device.
 
+<img src="progress.svg" width="460">
+
 ## Screenshots
 
 <img src="screenshots/macos/home.png" width="800">
