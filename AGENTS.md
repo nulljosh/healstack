@@ -1,1 +1,1 @@
-/Users/joshua/Documents/Code/healstack/CLAUDE.md
+CLAUDE.md
