@@ -97,6 +97,7 @@ export async function onRequest(context) {
         cancel_url: `${ALLOWED_ORIGIN}/journal`,
         client_reference_id: userId,
         customer_creation: 'always',
+        allow_promotion_codes: true,
       });
 
       return json(200, { url: session.url });
