@@ -56,7 +56,7 @@ function AppShell({ theme, setTheme }) {
 
   return (
     <SessionProvider>
-      <div style={{ minHeight: '100dvh' }}>
+      <main style={{ minHeight: '100dvh' }}>
         <ThemeToggle theme={theme} setTheme={setTheme} />
         <Routes>
           <Route path="/" element={<Dashboard />} />
@@ -84,7 +84,7 @@ function AppShell({ theme, setTheme }) {
         <Nav />
         <WhatsNew />
         <WebMCP />
-      </div>
+      </main>
     </SessionProvider>
   );
 }
