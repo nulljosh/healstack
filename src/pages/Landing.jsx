@@ -134,7 +134,7 @@ export default function Landing({ onGetStarted }) {
   }, []);
 
   return (
-    <div style={{ minHeight: '100dvh', background: 'var(--bg)', color: 'var(--text-primary)', overflowX: 'hidden' }}>
+    <main style={{ minHeight: '100dvh', background: 'var(--bg)', color: 'var(--text-primary)', overflowX: 'hidden' }}>
       <style>{`
         .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
         .reveal.in-view { opacity: 1; transform: none; }
@@ -290,6 +290,6 @@ export default function Landing({ onGetStarted }) {
           <a href="https://github.com/nulljosh/healstack/blob/main/docs/API.md" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>API</a>
         </div>
       </footer>
-    </div>
+    </main>
   );
 }
