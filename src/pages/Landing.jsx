@@ -134,7 +134,7 @@ export default function Landing({ onGetStarted }) {
   }, []);
 
   return (
-    <main style={{ minHeight: '100dvh', background: 'var(--bg)', color: 'var(--text-primary)', overflowX: 'hidden' }}>
+    <main id="top" style={{ minHeight: '100dvh', background: 'var(--bg)', color: 'var(--text-primary)', overflowX: 'hidden' }}>
       <style>{`
         .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
         .reveal.in-view { opacity: 1; transform: none; }
@@ -282,14 +282,50 @@ export default function Landing({ onGetStarted }) {
       <InstallAnywhere name="Healstack" appUrl="https://healstack.heyitsmejosh.com" appStoreUrl="https://apps.apple.com/app/id6785764864" />
 
       {/* Footer */}
-      <footer style={{ maxWidth: 1080, margin: '0 auto', padding: '2rem clamp(1.25rem, 4vw, 1.5rem)', borderTop: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', fontSize: '0.8125rem', color: 'var(--text-secondary)' }}>
-        <span>&copy; 2026 Joshua Trommel</span>
-        <div style={{ display: 'flex', gap: '1.5rem' }}>
-          <a href="/privacy.html" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Privacy</a>
-          <a href="/tos.html" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>Terms</a>
-          <a href="https://github.com/nulljosh/healstack/blob/main/docs/API.md" target="_blank" rel="noreferrer" style={{ textDecoration: 'none', color: 'var(--text-secondary)' }}>API</a>
-        </div>
-      </footer>
+      <footer className="lp-foot">
+  <div className="foot-rule" aria-hidden="true"><span>Healstack</span><span>Track what works</span></div>
+  <nav className="foot-dir" aria-label="Footer">
+    <div className="foot-col">
+      <h3>Healstack</h3>
+      <ul>
+        <li><a href="https://apps.apple.com/app/id6785764864">App Store</a></li>
+        <li><a href="/">Open the web app</a></li>
+        <li><a href="https://github.com/nulljosh/healstack/blob/main/WHITEPAPER.md">Whitepaper</a></li>
+      </ul>
+    </div>
+    <div className="foot-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#install-anywhere">Install anywhere</a></li>
+        <li><a href="https://heyitsmejosh.com/docs.html#healstack">Docs</a></li>
+      </ul>
+    </div>
+    <div className="foot-col">
+      <h3>Developers</h3>
+      <ul>
+        <li><a href="https://github.com/nulljosh/healstack">Source</a></li>
+        <li><a href="https://github.com/nulljosh/healstack/blob/main/docs/API.md">API reference</a></li>
+        <li><a href="https://github.com/nulljosh/healstack/blob/main/docs/ARCHITECTURE.md">Architecture</a></li>
+        <li><a href="https://github.com/nulljosh/healstack/issues">Report a bug</a></li>
+        <li><a href="https://github.com/nulljosh/healstack/blob/main/CONTRIBUTING.md">Contributing</a></li>
+      </ul>
+    </div>
+    <div className="foot-col">
+      <h3>Project</h3>
+      <ul>
+        <li><a href="/privacy.html">Privacy</a></li>
+        <li><a href="/tos.html">Terms</a></li>
+        <li><a href="https://github.com/nulljosh/healstack/blob/main/SECURITY.md">Security</a></li>
+        <li><a href="https://github.com/nulljosh/healstack/blob/main/LICENSE">License (MIT)</a></li>
+        <li><a href="https://heyitsmejosh.com">Portfolio</a></li>
+        <li><a href="#top">Back to top</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div className="foot-bar">
+    <p className="foot-meta">Healstack{typeof __APP_VERSION__ !== 'undefined' ? ` v${__APP_VERSION__}` : ''} · MIT License · © 2026 Joshua Trommel · Made with <span aria-hidden="true">♥</span> in Vancouver, BC</p>
+  </div>
+</footer>
     </main>
   );
 }

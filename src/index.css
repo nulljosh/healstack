@@ -1669,3 +1669,22 @@ button { user-select: none; font-family: inherit; }
     linear-gradient(var(--bg), transparent 28%, transparent 64%, var(--bg) 96%),
     color-mix(in srgb, var(--bg) 45%, transparent);
 }
+
+
+/* footer directory, ported from Joshua Tree */
+footer.lp-foot { margin: 0; padding: 56px 0 40px; border-top: 1px solid var(--border); text-align: left; font-size: 13px; }
+footer.lp-foot .foot-rule { display: flex; align-items: center; gap: 16px; max-width: 880px; margin: 0 auto; padding: 0 20px 28px; font-size: 13px; letter-spacing: .06em; font-weight: 500; color: var(--text-secondary); }
+footer.lp-foot .foot-rule::before { content: ""; order: 1; flex: 1; height: 1px; background: var(--border); }
+footer.lp-foot .foot-rule > :first-child { order: 0; }
+footer.lp-foot .foot-rule > :last-child { order: 2; }
+@media (max-width: 520px) { footer.lp-foot .foot-rule { flex-wrap: wrap; justify-content: center; gap: 10px 16px; } footer.lp-foot .foot-rule::before { order: -1; flex-basis: 100%; } }
+.foot-dir { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 24px; max-width: 880px; margin: 0 auto; padding: 0 20px 28px; text-align: left; }
+.foot-col h3 { margin: 0 0 8px; font-size: 12px; font-weight: 600; color: var(--text-primary); letter-spacing: 0.02em; }
+.foot-col ul { list-style: none; margin: 0; padding: 0; }
+.foot-col a { position: relative; display: inline-block; padding: 5px 0; margin: 0; color: var(--text-secondary); text-decoration: none; font-size: 13px; line-height: 1.35; }
+.foot-col a::after { content: ""; position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 100%; height: 44px; min-width: 44px; }
+.foot-col a:hover { color: var(--text-primary); text-decoration: underline; }
+.foot-bar { max-width: 880px; margin: 0 auto; padding: 18px 20px 0; border-top: 1px solid var(--border); }
+.foot-bar .foot-meta { margin: 0; text-align: left; color: var(--text-secondary); font-size: 12.5px; line-height: 1.9; }
+.foot-bar .foot-meta a { color: var(--text-secondary); }
+@media (max-width: 700px) { .foot-dir { grid-template-columns: repeat(2, 1fr); } }
