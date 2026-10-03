@@ -25,11 +25,11 @@ let supabaseConfigError: String? = {
 /// `provider_disabled — Provider (issuer "https://appleid.apple.com") is not enabled`.
 /// Shipping the button anyway means every reviewer who taps it gets an error, which is
 /// exactly the "Unable to log in" defect that got v1.0 rejected under 2.1(a).
-/// Enabling it is dashboard-only (Supabase -> Auth -> Providers -> Apple, authorized client
-/// ID `com.heyitsmejosh.dose`) and also needs a Sign in with Apple key from the Apple
-/// Developer portal. Flip this to `true` in the same commit that enables it.
-/// ponytail: a flag, not a build config — one edit to re-enable, and the code stays compiled.
-let appleSignInEnabled = false
+/// Enabled 2026-10-03: the shared Supabase project has the Apple provider on and
+/// `com.heyitsmejosh.dose` in its client ID list. Native needs no Apple key. It also keeps
+/// Guideline 4.8 satisfied now that Google sign-in is offered on iOS.
+/// ponytail: a flag, not a build config. One edit turns it off, and the code stays compiled.
+let appleSignInEnabled = true
 
 let supabaseClient = SupabaseClient(
     supabaseURL: URL(string: infoPlistValue("SUPABASE_URL") ?? "https://unconfigured.invalid")!,
