@@ -129,6 +129,12 @@ struct AuthView: View {
                                 loading = true
                                 defer { loading = false }
                                 do { try await authService.signInWithApple(result: result) }
+                                // A dismissed sheet is not an error. A device with no Apple ID signed in (typical
+                                // of a review device) used to surface Apple's raw error text.
+                                catch let error as ASAuthorizationError where error.code == .canceled { }
+                                catch is ASAuthorizationError {
+                                    errorMessage = "Sign in with Apple isn't available on this device right now. Use email or Google instead."
+                                }
                                 catch { errorMessage = error.localizedDescription }
                             }
                         }
