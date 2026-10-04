@@ -84,7 +84,7 @@ export const footZones = [
     organ: 'Heart',
     system: 'circulatory',
     location: 'Upper ball of the left foot only',
-    technique: 'Gentle circular pressure -- never press too hard',
+    technique: 'Gentle circular pressure, never press too hard',
     duration: '1 minute, left foot only',
     benefits: ['Circulation support', 'Blood pressure regulation', 'Stress reduction'],
     path: 'M 140,80 C 143,75 155,74 158,80 C 161,86 145,90 140,80 Z'

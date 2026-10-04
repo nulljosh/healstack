@@ -43,7 +43,7 @@ export default function Bodywork() {
               <div className="log-dot" style={{ background: 'var(--accent)' }} />
               <div style={{ flex: 1 }}>
                 <div className="log-name">{s.type === 'reflexology' ? s.zone : s.point}</div>
-                <div className="log-meta">{s.type} -- {s.area || s.meridian || ''}</div>
+                <div className="log-meta">{s.type}, {s.area || s.meridian || ''}</div>
               </div>
               <div className="log-time">{shortDate(s.date)}</div>
             </div>

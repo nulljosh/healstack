@@ -11,7 +11,7 @@ export default function ZoneDetail({ zone, onLogSession }) {
         <div className="zone-dot" style={{ background: color }} />
         <div>
           <h3 style={{ fontSize: '1.125rem', marginBottom: 2 }}>{zone.name}</h3>
-          <span className="section-label" style={{ marginBottom: 0 }}>{zone.organ} -- {zone.system}</span>
+          <span className="section-label" style={{ marginBottom: 0 }}>{zone.organ}, {zone.system}</span>
         </div>
       </div>
       <div className="zone-detail-body">

@@ -1694,3 +1694,6 @@ footer.lp-foot .foot-rule > :last-child { order: 2; }
 .profile-link { right: 56px; }
 .summary-head { padding-right: 84px; }
 .browse-row + .browse-row { border-top: 1px solid var(--border); }
+
+/* Light theme is white, not the portfolio cream. Dark keeps the shared tokens. */
+:root:not([data-theme="dark"]) { --bg: #ffffff; --bg2: #f5f5f7; --color-code-bg: #ececef; --border: #e5e5ea; --border2: #ededf0; }

@@ -56,7 +56,7 @@ function persistEntries(entries) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
   } catch (err) {
     console.warn('dose: failed to persist biometrics', err);
-    throw new Error('Storage full -- could not save entry');
+    throw new Error('Storage full, could not save entry');
   }
 }
 

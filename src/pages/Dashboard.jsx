@@ -1,5 +1,4 @@
 import { useState, useMemo } from 'react';
-import { longDate } from '../utils/date';
 import { useDoseLog } from '../hooks/useDoseLog';
 import { useSubstances } from '../hooks/useSubstances';
 import { useBiometrics } from '../hooks/useBiometrics';
@@ -113,7 +112,7 @@ export default function Dashboard() {
       <div className="summary-head" style={{ marginBottom: 28, display: 'flex', alignItems: 'flex-start', gap: 16 }}>
         <div style={{ flex: 1 }}>
           <h1 className="page-title" style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: 6 }}>
-            {longDate(new Date())}
+            Summary
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: 0 }}>
             {active.length === 0

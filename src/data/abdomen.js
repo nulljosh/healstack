@@ -87,7 +87,7 @@ export const abdomenZones = [
     duration: '1-2 minutes indirect',
     benefits: ['Appendicitis awareness', 'Cecal health', 'Intestinal support'],
     conditions: 'Appendicitis',
-    referral: 'Classic progression: periumbilical pain migrating to RLQ with rebound tenderness. McBurney point is 1/3 from ASIS to navel. This is a surgical emergency -- seek immediate care.',
+    referral: 'Classic progression: periumbilical pain migrating to RLQ with rebound tenderness. McBurney point is 1/3 from ASIS to navel. This is a surgical emergency, seek immediate care.',
     path: 'M 30,200 L 93,200 L 93,270 L 30,270 Z'
   },
   {
@@ -126,7 +126,7 @@ export const abdomenZones = [
     duration: 'Indirect only',
     benefits: ['Vascular awareness', 'Back pain differentiation', 'Circulation support'],
     conditions: 'Aortic aneurysm (back pain)',
-    referral: 'Deep, boring abdominal pain radiating to the back with a pulsatile mass is a red flag for aortic aneurysm. This is a life-threatening emergency -- call 911 immediately.',
+    referral: 'Deep, boring abdominal pain radiating to the back with a pulsatile mass is a red flag for aortic aneurysm. This is a life-threatening emergency, call 911 immediately.',
     path: 'M 105,90 L 135,90 L 135,230 L 105,230 Z'
   }
 ]

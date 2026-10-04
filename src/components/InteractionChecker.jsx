@@ -193,7 +193,7 @@ export default function InteractionChecker() {
           </div>
           <p className="interaction-result-note">
             No direct interactions found between {substanceA.name} and {substanceB.name}.
-            This does not guarantee safety -- always consult a healthcare provider.
+            This does not guarantee safety, always consult a healthcare provider.
           </p>
         </div>
       )}

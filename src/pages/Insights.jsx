@@ -91,7 +91,7 @@ export default function Insights() {
       <div className="flex-center" style={{ gap: 12, marginBottom: 6 }}>
         <h1 className="page-title">Insights</h1>
       </div>
-      <p className="page-subtitle">Pattern analysis -- {windowLabel}</p>
+      <p className="page-subtitle">Pattern analysis, {windowLabel}</p>
 
       {!hasData ? (
         <div className="card-empty" style={{ padding: '60px 20px' }}>
@@ -101,7 +101,7 @@ export default function Insights() {
       ) : (
         <>
           <section style={{ marginBottom: 32 }}>
-            <div className="section-label">Usage Heatmap -- by day &amp; hour</div>
+            <div className="section-label">Usage Heatmap, by day &amp; hour</div>
             <div style={{ overflowX: 'auto', paddingBottom: 4 }}>
               <div className="heatmap-grid" style={{ gridTemplateColumns: `auto repeat(24, 1fr)` }}>
                 <div />
@@ -139,7 +139,7 @@ export default function Insights() {
 
           {topSubs.length > 0 && (
             <section style={{ marginBottom: 28 }}>
-              <div className="section-label">Most Used -- last 30 days</div>
+              <div className="section-label">Most Used, last 30 days</div>
               <div className="entry-list" style={{ gap: 8 }}>
                 {topSubs.map(([id, count]) => {
                   const sub = getById(id);

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
-import { Chart, RadialLinearScale, PointElement, LineElement, Filler, Tooltip } from 'chart.js';
+import { Chart, RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip } from 'chart.js';
 
-Chart.register(RadialLinearScale, PointElement, LineElement, Filler, Tooltip);
+Chart.register(RadarController, RadialLinearScale, PointElement, LineElement, Filler, Tooltip);
 
 export default function RadarChart({ labels, values, size = 320 }) {
   const canvasRef = useRef(null);
