@@ -56,7 +56,7 @@ function buildTools(get) {
     },
     {
       name: 'get_active_doses',
-      description: 'List doses logged in the last 24 hours — what is likely still active.',
+      description: 'List doses logged in the last 24 hours, what is likely still active.',
       inputSchema: { type: 'object', properties: {} },
       execute: async () => ({ entries: get().doseLog.getActive() }),
     },

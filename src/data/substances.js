@@ -7,7 +7,7 @@ export const SUBSTANCES = [
     effects: ['Euphoria', 'Relaxation', 'Altered perception', 'Increased appetite', 'Creativity', 'Anxiety (high doses)'],
     interactions: ['Alcohol (potentiates)', 'CNS depressants', 'Benzodiazepines', 'SSRIs (mild interaction)'],
     harmReduction: [
-      'Start low, go slow — especially with edibles',
+      'Start low, go slow, especially with edibles',
       'Avoid mixing with alcohol',
       'Set and setting matter',
       'CBD can blunt THC anxiety',
@@ -23,7 +23,7 @@ export const SUBSTANCES = [
     category: 'psychedelic',
     halfLife: '1–3 hours (converted to psilocin)',
     effects: ['Visual distortions', 'Emotional amplification', 'Ego dissolution (high doses)', 'Mystical states', 'Neuroplasticity'],
-    interactions: ['SSRIs (reduce effects)', 'Lithium (seizure risk — avoid)', 'MAOIs (dangerous)', 'Cannabis (potentiates)'],
+    interactions: ['SSRIs (reduce effects)', 'Lithium (seizure risk, avoid)', 'MAOIs (dangerous)', 'Cannabis (potentiates)'],
     harmReduction: [
       'Test your substance (reagent kits)',
       'Have a sober trip sitter',
@@ -41,9 +41,9 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '26 hours',
     effects: ['Antidepressant', 'Anti-anxiety', 'Emotional blunting (possible)', 'Delayed effect onset (2–4 weeks)'],
-    interactions: ['MAOIs (serotonin syndrome — fatal)', 'Tramadol', 'St. John\'s Wort', 'Psilocybin (blunted effects)', 'Alcohol (worsens depression)'],
+    interactions: ['MAOIs (serotonin syndrome, fatal)', 'Tramadol', 'St. John\'s Wort', 'Psilocybin (blunted effects)', 'Alcohol (worsens depression)'],
     harmReduction: [
-      'Never stop abruptly — taper with prescriber guidance',
+      'Never stop abruptly, taper with prescriber guidance',
       'Take at same time daily',
       'Allow 4–6 weeks before judging efficacy',
       'Monitor for increased suicidal ideation in early weeks'
@@ -61,7 +61,7 @@ export const SUBSTANCES = [
     interactions: ['L-theanine (smooths effects)', 'Adenosine antagonism', 'MAOIs (mild interaction)', 'Lithium (reduces levels)'],
     harmReduction: [
       'Cut off by 2 PM for sleep quality',
-      'Stay hydrated — caffeine is mildly diuretic',
+      'Stay hydrated, caffeine is mildly diuretic',
       'Tolerance builds quickly; cycle off periodically',
       'Pair with L-theanine (200mg) to reduce jitteriness'
     ],
@@ -93,7 +93,7 @@ export const SUBSTANCES = [
     effects: ['Sleep onset', 'Circadian rhythm regulation', 'Antioxidant (secondary)'],
     interactions: ['CNS depressants (additive)', 'Blood thinners', 'Immunosuppressants', 'Contraceptives'],
     harmReduction: [
-      'Less is more — 0.5–1mg is often sufficient',
+      'Less is more, 0.5–1mg is often sufficient',
       'Take 30–60 min before target sleep time',
       'Dim screens and lights for best effect',
       'Not for long-term nightly use without breaks'
@@ -117,7 +117,7 @@ export const SUBSTANCES = [
     ],
     routes: ['oral'],
     unit: 'IU',
-    notes: 'Most people in northern latitudes are deficient. Fat-soluble — stores in tissue.'
+    notes: 'Most people in northern latitudes are deficient. Fat-soluble, stores in tissue.'
   },
   {
     id: 'vitamin-c',
@@ -127,7 +127,7 @@ export const SUBSTANCES = [
     effects: ['Antioxidant', 'Immune support', 'Collagen synthesis', 'Iron absorption'],
     interactions: ['Warfarin (high doses)', 'Chemotherapy (controversial)', 'Aluminum antacids'],
     harmReduction: [
-      'Excess excreted in urine — excess generally harmless',
+      'Excess excreted in urine, excess generally harmless',
       'High doses may cause GI distress',
       'Liposomal form for better absorption',
       'Bowel tolerance dosing for acute illness'
@@ -159,7 +159,7 @@ export const SUBSTANCES = [
     category: 'mineral',
     halfLife: 'N/A (mineral)',
     effects: ['Immune support', 'Testosterone regulation', 'Wound healing', 'Taste/smell function'],
-    interactions: ['Copper (antagonistic — supplement copper with zinc)', 'Iron (competes)', 'Antibiotics'],
+    interactions: ['Copper (antagonistic, supplement copper with zinc)', 'Iron (competes)', 'Antibiotics'],
     harmReduction: [
       'Take with copper (2mg) if supplementing long-term',
       'Don\'t exceed 40mg/day without testing',
@@ -185,7 +185,7 @@ export const SUBSTANCES = [
     ],
     routes: ['oral'],
     unit: 'g',
-    notes: 'EPA + DHA are the active forms. ALA (flax) must be converted — poor conversion rate.'
+    notes: 'EPA + DHA are the active forms. ALA (flax) must be converted, poor conversion rate.'
   },
   {
     id: 'b12',
@@ -215,7 +215,7 @@ export const SUBSTANCES = [
       'Never mix with opioids or benzos',
       'One standard drink = 14g ethanol',
       'Eat before drinking; pace with water',
-      'Withdrawal can be fatal — taper or seek medical help'
+      'Withdrawal can be fatal, taper or seek medical help'
     ],
     routes: ['oral'],
     unit: 'mL',
@@ -229,7 +229,7 @@ export const SUBSTANCES = [
     effects: ['Euphoria', 'Empathy', 'Increased sociability', 'Sensory enhancement', 'Energy'],
     interactions: ['SSRIs (serotonin syndrome risk, reduces effects)', 'MAOIs (potentially fatal)', 'Lithium (seizure risk)', 'Stimulants'],
     harmReduction: [
-      'Test your substance — fentanyl and other adulterants common',
+      'Test your substance, fentanyl and other adulterants common',
       '3-month rule: no more than once every 3 months',
       'Dose: 75–125mg; redose once at most (half dose)',
       'Stay hydrated but don\'t overdrink (hyponatremia risk)',
@@ -245,7 +245,7 @@ export const SUBSTANCES = [
     category: 'psychedelic',
     halfLife: '3–5 hours (effects last 8–12 hours)',
     effects: ['Visual hallucinations', 'Time distortion', 'Ego dissolution', 'Emotional amplification', 'Synesthesia'],
-    interactions: ['Lithium (seizure/cardiac risk — avoid)', 'SSRIs (reduce effects)', 'MAOIs', 'Cannabis (potentiates)'],
+    interactions: ['Lithium (seizure/cardiac risk, avoid)', 'SSRIs (reduce effects)', 'MAOIs', 'Cannabis (potentiates)'],
     harmReduction: [
       'Test with Ehrlich reagent (turns purple for LSD)',
       'Never take alone for first time',
@@ -265,7 +265,7 @@ export const SUBSTANCES = [
     effects: ['Focus', 'Alertness', 'Reduced appetite', 'Motivation', 'Cardiovascular stimulation'],
     interactions: ['MAOIs (fatal)', 'SSRIs (serotonin syndrome risk)', 'Alcohol (masks intoxication)', 'Acid (reduces effects)', 'Antacids (increases effects)'],
     harmReduction: [
-      'Prescription only — do not share',
+      'Prescription only, do not share',
       'Monitor blood pressure and heart rate',
       'Avoid late-day dosing for sleep',
       'Drug holidays to reset tolerance',
@@ -281,10 +281,10 @@ export const SUBSTANCES = [
     category: 'opioid-adjacent',
     halfLife: '9 hours',
     effects: ['Stimulant (low dose)', 'Sedation (high dose)', 'Pain relief', 'Euphoria', 'Anti-withdrawal aid'],
-    interactions: ['Opioids (dangerous — CNS depression)', 'Benzodiazepines', 'Alcohol', 'CYP2D6 substrates'],
+    interactions: ['Opioids (dangerous, CNS depression)', 'Benzodiazepines', 'Alcohol', 'CYP2D6 substrates'],
     harmReduction: [
       'Low dose (1–5g) for stimulant effects; high dose (5–15g) sedating',
-      'Not for daily use — physical dependence develops',
+      'Not for daily use, physical dependence develops',
       'Liver toxicity reported with heavy use',
       'Taper to discontinue; withdrawal similar to opioids',
       'Avoid mixing with other CNS depressants'
@@ -316,9 +316,9 @@ export const SUBSTANCES = [
     category: 'psychedelic',
     halfLife: '15 minutes (smoked/vaped)',
     effects: ['Intense visual hallucinations', 'Entity encounters', 'Ego death', 'Spiritual experiences', 'Rapid onset/offset'],
-    interactions: ['MAOIs (prolonged experience — ayahuasca; requires medical supervision)', 'SSRIs (may reduce effects)', 'Lithium'],
+    interactions: ['MAOIs (prolonged experience, ayahuasca; requires medical supervision)', 'SSRIs (may reduce effects)', 'Lithium'],
     harmReduction: [
-      'Short duration means setting is critical — be seated',
+      'Short duration means setting is critical, be seated',
       'Have a sober sitter',
       'Do not use with MAOIs without medical supervision',
       'Breakthrough doses can be overwhelming',
@@ -337,9 +337,9 @@ export const SUBSTANCES = [
     interactions: ['CNS depressants (respiratory depression)', 'Stimulants (cardiovascular strain)', 'Alcohol'],
     harmReduction: [
       'Never use alone at dissociative doses',
-      'Bladder damage with chronic use — cystitis is permanent',
+      'Bladder damage with chronic use, cystitis is permanent',
       'Infusion therapy is clinical gold standard for depression',
-      'K-hole is a dissociative state — be seated/lying',
+      'K-hole is a dissociative state, be seated/lying',
       'Addictive potential is real'
     ],
     routes: ['IM', 'IV', 'insufflated', 'oral'],
@@ -356,10 +356,10 @@ export const SUBSTANCES = [
     category: 'psychedelic',
     halfLife: '6 hours',
     effects: ['Visual enhancement', 'Color saturation', 'Euphoria', 'Body load', 'Spiritual experiences', 'Nausea (onset)'],
-    interactions: ['SSRIs (reduced effects)', 'MAOIs (potentiates — dangerous)', 'Lithium (seizure risk)', 'Cannabis (intensifies)'],
+    interactions: ['SSRIs (reduced effects)', 'MAOIs (potentiates, dangerous)', 'Lithium (seizure risk)', 'Cannabis (intensifies)'],
     harmReduction: [
       'Nausea is common in the first 1–2 hours; ginger helps',
-      'Duration is 8–12 hours — clear your schedule',
+      'Duration is 8–12 hours, clear your schedule',
       'Peyote is sacred to Native American tribes; consider ethics of sourcing',
       'San Pedro is more accessible and legal in some jurisdictions',
       'Test with Marquis and Mecke reagents'
@@ -377,7 +377,7 @@ export const SUBSTANCES = [
     interactions: ['SSRIs (reduced effects)', 'MAOIs (dangerous potentiation)', 'Lithium (seizure risk)', 'Stimulants (cardiovascular strain)'],
     harmReduction: [
       'Dose-dependent: 10–15mg is empathogenic, 25mg+ is strongly psychedelic',
-      'Insufflation is extremely painful and hits much harder — oral preferred',
+      'Insufflation is extremely painful and hits much harder, oral preferred',
       'Test with Marquis reagent (yellow-green reaction)',
       'Nausea common on come-up; eat lightly beforehand'
     ],
@@ -391,10 +391,10 @@ export const SUBSTANCES = [
     category: 'psychedelic',
     halfLife: '12–20 minutes (smoked)',
     effects: ['Ego dissolution', 'Non-dual awareness', 'Intense body sensations', 'Emotional release', 'White-out (high doses)'],
-    interactions: ['SSRIs (serotonin syndrome — potentially fatal)', 'MAOIs (extremely dangerous)', 'Stimulants', 'Lithium (seizure risk)'],
+    interactions: ['SSRIs (serotonin syndrome, potentially fatal)', 'MAOIs (extremely dangerous)', 'Stimulants', 'Lithium (seizure risk)'],
     harmReduction: [
-      'Completely different from N,N-DMT — do not conflate doses',
-      'Sitter is mandatory — seizure-like activity and loss of motor control common',
+      'Completely different from N,N-DMT, do not conflate doses',
+      'Sitter is mandatory, seizure-like activity and loss of motor control common',
       'Bufo toad secretion carries additional risks from other alkaloids',
       'Synthetic 5-MeO-DMT is purer and more predictable than toad venom',
       'Contraindicated with any serotonergic medication'
@@ -411,7 +411,7 @@ export const SUBSTANCES = [
     effects: ['Intense dissociation', 'Reality distortion', 'Uncontrollable laughter', 'Dysphoria (common)', 'Loss of identity', 'Gravity distortion'],
     interactions: ['CNS depressants (compounding)', 'Cannabis (unpredictable)', 'Alcohol (dangerous disorientation)'],
     harmReduction: [
-      'Have a sitter — complete loss of motor control is common',
+      'Have a sitter, complete loss of motor control is common',
       'Sit or lie down before onset; falling injuries are the main risk',
       'Plain leaf (1x) is far milder than extracts (20x, 60x, etc.)',
       'Most people do not find the experience pleasant',
@@ -419,7 +419,7 @@ export const SUBSTANCES = [
     ],
     routes: ['smoked', 'sublingual'],
     unit: 'mg',
-    notes: 'Kappa opioid receptor agonist — unique mechanism unlike classical psychedelics. Legal in many jurisdictions. Salvinorin A is the active compound.'
+    notes: 'Kappa opioid receptor agonist, unique mechanism unlike classical psychedelics. Legal in many jurisdictions. Salvinorin A is the active compound.'
   },
   {
     id: 'ibogaine',
@@ -427,13 +427,13 @@ export const SUBSTANCES = [
     category: 'psychedelic',
     halfLife: '24–48 hours (noribogaine metabolite persists longer)',
     effects: ['Introspective visions', 'Addiction interruption', 'Opioid withdrawal reduction', 'Intense nausea', 'Ataxia', 'Dream-like states'],
-    interactions: ['Opioids (must be cleared first — fatal interaction)', 'SSRIs (serotonin syndrome risk)', 'QT-prolonging drugs (cardiac arrest)', 'Stimulants'],
+    interactions: ['Opioids (must be cleared first, fatal interaction)', 'SSRIs (serotonin syndrome risk)', 'QT-prolonging drugs (cardiac arrest)', 'Stimulants'],
     harmReduction: [
-      'Cardiotoxicity is the primary lethal risk — EKG screening mandatory',
+      'Cardiotoxicity is the primary lethal risk, EKG screening mandatory',
       'Only under medical supervision at licensed clinics',
       'Must be opioid-free for 12–72 hours before dosing depending on half-life',
       'Liver function tests required beforehand',
-      'Experience lasts 24–36 hours — requires clinical setting'
+      'Experience lasts 24–36 hours, requires clinical setting'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -445,11 +445,11 @@ export const SUBSTANCES = [
     category: 'psychedelic',
     halfLife: '2–3 hours (DMT component)',
     effects: ['Intense visual hallucinations', 'Purging (vomiting/diarrhea)', 'Emotional processing', 'Spiritual experiences', 'Entity contact'],
-    interactions: ['SSRIs (serotonin syndrome — potentially fatal)', 'MAOIs (already contains MAOI — no additional)', 'Tyramine-rich foods (hypertensive crisis)', 'Stimulants', 'Tramadol (fatal risk)'],
+    interactions: ['SSRIs (serotonin syndrome, potentially fatal)', 'MAOIs (already contains MAOI, no additional)', 'Tyramine-rich foods (hypertensive crisis)', 'Stimulants', 'Tramadol (fatal risk)'],
     harmReduction: [
       'MAOI dietary restrictions for 24 hours before: no aged cheese, cured meats, fermented foods, tap beer',
       'Discontinue SSRIs 2–6 weeks before (5 weeks for fluoxetine) under medical guidance',
-      'Purging is expected — not a side effect but part of the experience',
+      'Purging is expected, not a side effect but part of the experience',
       'Vet your facilitator/shaman carefully; sexual abuse reports exist',
       'Stay hydrated; bring electrolytes for after ceremony'
     ],
@@ -465,7 +465,7 @@ export const SUBSTANCES = [
     effects: ['Visual distortions', 'Emotional depth', 'Body high', 'Mystical experiences', 'Giggles'],
     interactions: ['SSRIs (reduced effects)', 'Lithium (seizure risk)', 'MAOIs (potentiation)', 'Cannabis (intensifies)'],
     harmReduction: [
-      'Metabolized to psilocin — treat as equivalent to psilocybin mushrooms',
+      'Metabolized to psilocin, treat as equivalent to psilocybin mushrooms',
       'Weigh doses precisely with a milligram scale; powder form requires accuracy',
       'Common dose: 15–25mg oral, equivalent to ~2.5–3.5g dried mushrooms',
       'Onset faster than mushrooms (20–30 min vs 45–60 min)'
@@ -482,10 +482,10 @@ export const SUBSTANCES = [
     effects: ['Dreamy psychedelia', 'Sedation', 'Visual distortions (mild)', 'Body load', 'Vasoconstriction', 'Nausea'],
     interactions: ['SSRIs (reduced effects)', 'Vasoconstrictors (dangerous)', 'Lithium (seizure risk)'],
     harmReduction: [
-      'Nausea is the main obstacle — cold water extraction reduces it',
+      'Nausea is the main obstacle, cold water extraction reduces it',
       'Hawaiian Baby Woodrose seeds: 4–8 seeds; Morning Glory: 150–300 seeds',
       'Vasoconstriction can cause leg cramps; ginger and magnesium may help',
-      'Commercially sold seeds may be coated with pesticides/emetics — source carefully',
+      'Commercially sold seeds may be coated with pesticides/emetics, source carefully',
       'Much more sedating and less visual than LSD'
     ],
     routes: ['oral', 'sublingual'],
@@ -500,10 +500,10 @@ export const SUBSTANCES = [
     category: 'stimulant',
     halfLife: '1 hour',
     effects: ['Intense euphoria', 'Confidence', 'Energy', 'Numbness (local anesthetic)', 'Appetite suppression', 'Vasoconstriction'],
-    interactions: ['Alcohol (forms cocaethylene — cardiotoxic)', 'MAOIs (hypertensive crisis)', 'SSRIs (serotonin effects)', 'Opioids (speedball — respiratory depression masked)', 'Stimulants (cardiovascular overload)'],
+    interactions: ['Alcohol (forms cocaethylene, cardiotoxic)', 'MAOIs (hypertensive crisis)', 'SSRIs (serotonin effects)', 'Opioids (speedball, respiratory depression masked)', 'Stimulants (cardiovascular overload)'],
     harmReduction: [
-      'Test for fentanyl contamination — fentanyl strips are cheap and save lives',
-      'Avoid mixing with alcohol — cocaethylene has 18–25x higher sudden death risk',
+      'Test for fentanyl contamination, fentanyl strips are cheap and save lives',
+      'Avoid mixing with alcohol, cocaethylene has 18–25x higher sudden death risk',
       'Alternate nostrils; rinse with saline after use to prevent septal damage',
       'Crack cocaine carries higher addiction risk than powder',
       'Cardiovascular events are the leading cause of cocaine-related death'
@@ -518,11 +518,11 @@ export const SUBSTANCES = [
     category: 'stimulant',
     halfLife: '10–12 hours',
     effects: ['Intense euphoria', 'Extreme wakefulness', 'Appetite suppression', 'Hyperfocus', 'Hyperthermia', 'Neurotoxicity'],
-    interactions: ['MAOIs (hypertensive crisis — fatal)', 'SSRIs (serotonin syndrome)', 'Other stimulants', 'Alcohol (masks intoxication)'],
+    interactions: ['MAOIs (hypertensive crisis, fatal)', 'SSRIs (serotonin syndrome)', 'Other stimulants', 'Alcohol (masks intoxication)'],
     harmReduction: [
-      'Neurotoxic — causes dopamine receptor downregulation with repeated use',
+      'Neurotoxic, causes dopamine receptor downregulation with repeated use',
       'Forced eating and hydration on a schedule since appetite is suppressed',
-      'Sleep deprivation is a major risk — stimulant psychosis begins around 48–72 hours',
+      'Sleep deprivation is a major risk, stimulant psychosis begins around 48–72 hours',
       'Dental hygiene critically important (dry mouth + bruxism = meth mouth)',
       'If injecting: use clean needles, rotate sites, never share equipment'
     ],
@@ -538,7 +538,7 @@ export const SUBSTANCES = [
     effects: ['Alertness', 'Relaxation (paradoxical)', 'Appetite suppression', 'Cognitive enhancement (acute)', 'Dependence (rapid)'],
     interactions: ['Caffeine (metabolism increased in smokers)', 'SSRIs (some interactions via CYP1A2)', 'MAOIs (tobacco smoke contains MAOIs)', 'Theophylline'],
     harmReduction: [
-      'Combustion is the harm — nicotine alone is relatively benign',
+      'Combustion is the harm, nicotine alone is relatively benign',
       'Nicotine replacement (patches, gum, lozenges) far safer than smoking',
       'Vaping is harm reduction over cigarettes, but not risk-free',
       'Dependence develops within days of regular use',
@@ -554,10 +554,10 @@ export const SUBSTANCES = [
     category: 'stimulant',
     halfLife: '10–13 hours',
     effects: ['Focus', 'Euphoria', 'Increased energy', 'Appetite suppression', 'Wakefulness', 'Cardiovascular stimulation'],
-    interactions: ['MAOIs (hypertensive crisis — fatal)', 'SSRIs (serotonin syndrome risk)', 'Alcohol (masked intoxication)', 'Acidic foods/drinks (reduce absorption)', 'Antacids (increase absorption)'],
+    interactions: ['MAOIs (hypertensive crisis, fatal)', 'SSRIs (serotonin syndrome risk)', 'Alcohol (masked intoxication)', 'Acidic foods/drinks (reduce absorption)', 'Antacids (increase absorption)'],
     harmReduction: [
       'Prescription forms (Dexedrine, Vyvanse) are dose-controlled and safer than street speed',
-      'Eat meals on schedule — appetite suppression leads to malnutrition',
+      'Eat meals on schedule, appetite suppression leads to malnutrition',
       'Magnesium supplementation reduces jaw clenching and tolerance buildup',
       'Sleep is non-negotiable; do not skip nights',
       'Drug holidays help prevent tolerance'
@@ -574,7 +574,7 @@ export const SUBSTANCES = [
     effects: ['Head rush', 'Vasodilation', 'Muscle relaxation', 'Dizziness', 'Brief euphoria'],
     interactions: ['PDE5 inhibitors like Viagra/Cialis (fatal blood pressure drop)', 'Blood pressure medications', 'Stimulants (cardiovascular strain)'],
     harmReduction: [
-      'Never swallow the liquid — chemical burns and methemoglobinemia can be fatal',
+      'Never swallow the liquid, chemical burns and methemoglobinemia can be fatal',
       'Absolutely never combine with erectile dysfunction medications',
       'Use in well-ventilated area',
       'Skin contact with liquid causes chemical burns',
@@ -592,7 +592,7 @@ export const SUBSTANCES = [
     effects: ['Mild euphoria', 'Increased alertness', 'Talkativeness', 'Appetite suppression', 'Insomnia'],
     interactions: ['MAOIs (avoid)', 'Stimulants (additive)', 'Alcohol (mixed effects)', 'SSRIs (theoretical serotonin interaction)'],
     harmReduction: [
-      'Leaves must be fresh — cathinone degrades to cathine within 48 hours',
+      'Leaves must be fresh, cathinone degrades to cathine within 48 hours',
       'Dental damage from prolonged chewing is common',
       'Psychological dependence develops with daily use',
       'Insomnia is the most common adverse effect'
@@ -609,12 +609,12 @@ export const SUBSTANCES = [
     category: 'depressant',
     halfLife: '30–50 minutes',
     effects: ['Euphoria', 'Disinhibition', 'Relaxation', 'Increased sociability', 'Sedation (dose-dependent)', 'Unconsciousness (overdose)'],
-    interactions: ['Alcohol (potentially fatal — respiratory depression)', 'Opioids (fatal)', 'Benzodiazepines (fatal)', 'Ketamine (dangerous CNS depression)'],
+    interactions: ['Alcohol (potentially fatal, respiratory depression)', 'Opioids (fatal)', 'Benzodiazepines (fatal)', 'Ketamine (dangerous CNS depression)'],
     harmReduction: [
-      'Dose-response curve is extremely steep — 0.5g can be the difference between euphoria and unconsciousness',
+      'Dose-response curve is extremely steep, 0.5g can be the difference between euphoria and unconsciousness',
       'Always measure with a syringe or graduated pipette; never eyeball doses',
       'Never combine with any other depressant including alcohol',
-      'Set timers for redosing — compulsive redosing while impaired causes most overdoses',
+      'Set timers for redosing, compulsive redosing while impaired causes most overdoses',
       'Physical dependence develops quickly with daily use; withdrawal can be fatal like alcohol'
     ],
     routes: ['oral'],
@@ -632,7 +632,7 @@ export const SUBSTANCES = [
       'Tolerance develops within 3–5 days of daily use',
       'Do not use more than twice per week',
       'Withdrawal can cause severe anxiety, insomnia, and psychosis',
-      'Taper slowly if physically dependent — abrupt cessation is dangerous',
+      'Taper slowly if physically dependent, abrupt cessation is dangerous',
       'Sold as a supplement but acts like a benzodiazepine'
     ],
     routes: ['oral'],
@@ -647,7 +647,7 @@ export const SUBSTANCES = [
     effects: ['Mild stimulation', 'Warm body sensation', 'Euphoria', 'Increased salivation', 'Reduced fatigue'],
     interactions: ['Anticholinergic medications', 'Alcohol (increased oral cancer risk)', 'Asthma medications (bronchoconstriction)'],
     harmReduction: [
-      'Classified as Group 1 carcinogen by WHO — causes oral and esophageal cancer',
+      'Classified as Group 1 carcinogen by WHO, causes oral and esophageal cancer',
       'Stains teeth red/black permanently with chronic use',
       'Oral submucous fibrosis is irreversible',
       'Dependence develops with regular use'
@@ -664,12 +664,12 @@ export const SUBSTANCES = [
     category: 'opioid',
     halfLife: '2–6 minutes (rapidly metabolized to morphine; morphine t1/2: 2–3 hours)',
     effects: ['Intense euphoria', 'Warmth', 'Pain relief', 'Nodding', 'Respiratory depression', 'Nausea'],
-    interactions: ['Benzodiazepines (fatal respiratory depression)', 'Alcohol (fatal)', 'Other opioids', 'Gabapentin/pregabalin (respiratory depression)', 'Stimulants (speedball — masks overdose warning signs)'],
+    interactions: ['Benzodiazepines (fatal respiratory depression)', 'Alcohol (fatal)', 'Other opioids', 'Gabapentin/pregabalin (respiratory depression)', 'Stimulants (speedball, masks overdose warning signs)'],
     harmReduction: [
-      'Fentanyl contamination is ubiquitous — test every batch with fentanyl strips',
+      'Fentanyl contamination is ubiquitous, test every batch with fentanyl strips',
       'Never use alone; carry naloxone (Narcan) and teach others to use it',
-      'Start with a fraction of a dose from a new batch — potency varies wildly',
-      'Tolerance drops fast after breaks — most fatal ODs happen after a period of abstinence',
+      'Start with a fraction of a dose from a new batch, potency varies wildly',
+      'Tolerance drops fast after breaks, most fatal ODs happen after a period of abstinence',
       'Needle exchange programs reduce disease transmission if injecting'
     ],
     routes: ['IV', 'smoked', 'insufflated'],
@@ -684,11 +684,11 @@ export const SUBSTANCES = [
     effects: ['Powerful analgesia', 'Euphoria', 'Respiratory depression', 'Sedation', 'Nausea', 'Muscle rigidity (chest wall, high doses)'],
     interactions: ['All CNS depressants (fatal)', 'Benzodiazepines (most common co-cause of opioid death)', 'Alcohol (fatal)', 'MAOIs (serotonin syndrome)', 'CYP3A4 inhibitors (increase levels)'],
     harmReduction: [
-      '50–100x more potent than morphine — active doses measured in micrograms',
-      'Illicit fentanyl is mixed unevenly (hot spots) — even testing one part of a batch does not guarantee safety',
+      '50–100x more potent than morphine, active doses measured in micrograms',
+      'Illicit fentanyl is mixed unevenly (hot spots), even testing one part of a batch does not guarantee safety',
       'Naloxone may require multiple doses to reverse fentanyl overdose',
       'Fentanyl test strips are necessary but cannot detect all analogs (carfentanil, etc.)',
-      'Transdermal patches must never be cut, heated, or chewed — fatal dose release'
+      'Transdermal patches must never be cut, heated, or chewed, fatal dose release'
     ],
     routes: ['IV', 'IM', 'transdermal', 'oral', 'insufflated'],
     unit: 'ug',
@@ -702,7 +702,7 @@ export const SUBSTANCES = [
     effects: ['Euphoria', 'Pain relief', 'Relaxation', 'Dreamlike states', 'Constipation', 'Respiratory depression'],
     interactions: ['Alcohol (respiratory depression)', 'Benzodiazepines (fatal)', 'Other opioids (additive)', 'MAOIs (hypertensive crisis)'],
     harmReduction: [
-      'Contains morphine (10–15%), codeine, thebaine, and papaverine — variable alkaloid ratios',
+      'Contains morphine (10–15%), codeine, thebaine, and papaverine, variable alkaloid ratios',
       'Smoked opium delivers dose more predictably than oral use',
       'Physical dependence develops with regular use over 1–2 weeks',
       'Withdrawal is severely uncomfortable but rarely fatal (unlike alcohol/benzo withdrawal)'
@@ -717,12 +717,12 @@ export const SUBSTANCES = [
     category: 'opioid',
     halfLife: '5–7 hours',
     effects: ['Mild pain relief', 'Mood elevation', 'Nausea', 'Dizziness', 'Seizure risk (dose-dependent)'],
-    interactions: ['SSRIs/SNRIs (serotonin syndrome — potentially fatal)', 'MAOIs (fatal)', 'Benzodiazepines (respiratory depression)', 'Alcohol', 'Sertraline (specific serotonin syndrome risk)'],
+    interactions: ['SSRIs/SNRIs (serotonin syndrome, potentially fatal)', 'MAOIs (fatal)', 'Benzodiazepines (respiratory depression)', 'Alcohol', 'Sertraline (specific serotonin syndrome risk)'],
     harmReduction: [
-      'Seizure threshold lowers above 400mg/day — never exceed',
+      'Seizure threshold lowers above 400mg/day, never exceed',
       'Serotonin syndrome risk is real, especially combined with SSRIs like sertraline',
       'CYP2D6 poor metabolizers get less pain relief; ultrarapid metabolizers get too much',
-      'Taper to discontinue — has both opioid and SSRI-like withdrawal components'
+      'Taper to discontinue, has both opioid and SSRI-like withdrawal components'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -736,8 +736,8 @@ export const SUBSTANCES = [
     effects: ['Mild pain relief', 'Cough suppression', 'Drowsiness', 'Euphoria (mild)', 'Constipation', 'Nausea'],
     interactions: ['Alcohol (respiratory depression)', 'Benzodiazepines (fatal)', 'Other opioids', 'CYP2D6 inhibitors (block conversion to morphine)'],
     harmReduction: [
-      'Prodrug — must be converted to morphine by CYP2D6; ~10% of people are poor metabolizers and get no effect',
-      'CYP2D6 ultrarapid metabolizers produce too much morphine — fatal cases reported, especially in children',
+      'Prodrug, must be converted to morphine by CYP2D6; ~10% of people are poor metabolizers and get no effect',
+      'CYP2D6 ultrarapid metabolizers produce too much morphine, fatal cases reported, especially in children',
       'Purple drank (codeine + promethazine) is particularly dangerous due to dual CNS depression',
       'Physical dependence develops with daily use over 1–2 weeks'
     ],
@@ -751,12 +751,12 @@ export const SUBSTANCES = [
     category: 'opioid',
     halfLife: '3–5 hours (immediate release)',
     effects: ['Strong pain relief', 'Euphoria', 'Sedation', 'Respiratory depression', 'Constipation', 'Nausea'],
-    interactions: ['Benzodiazepines (fatal respiratory depression)', 'Alcohol (fatal — especially with extended-release forms)', 'Other opioids', 'CYP3A4 inhibitors (increase blood levels)', 'MAOIs'],
+    interactions: ['Benzodiazepines (fatal respiratory depression)', 'Alcohol (fatal, especially with extended-release forms)', 'Other opioids', 'CYP3A4 inhibitors (increase blood levels)', 'MAOIs'],
     harmReduction: [
-      'Never crush or chew extended-release formulations (OxyContin) — dumps entire dose at once',
+      'Never crush or chew extended-release formulations (OxyContin), dumps entire dose at once',
       'Tolerance develops rapidly with daily use; dose escalation is expected',
-      'Cross-tolerance with other opioids is incomplete — dose conversion requires caution',
-      'Constipation does not develop tolerance — use stool softeners proactively',
+      'Cross-tolerance with other opioids is incomplete, dose conversion requires caution',
+      'Constipation does not develop tolerance, use stool softeners proactively',
       'Naloxone should be on hand for anyone using opioids regularly'
     ],
     routes: ['oral', 'insufflated'],
@@ -771,10 +771,10 @@ export const SUBSTANCES = [
     category: 'dissociative',
     halfLife: '2–4 hours (active metabolite dextrorphan: 3–6 hours)',
     effects: ['Dissociation', 'Euphoria', 'Music enhancement', 'Robo-walking', 'Nausea', 'Plateau-dependent intensity'],
-    interactions: ['SSRIs (serotonin syndrome — potentially fatal)', 'MAOIs (fatal)', 'Sertraline (serotonin syndrome)', 'Opioids', 'Alcohol'],
+    interactions: ['SSRIs (serotonin syndrome, potentially fatal)', 'MAOIs (fatal)', 'Sertraline (serotonin syndrome)', 'Opioids', 'Alcohol'],
     harmReduction: [
-      'Only use products containing DXM as the sole active ingredient — acetaminophen, guaifenesin, and chlorpheniramine in combo products are toxic at recreational DXM doses',
-      'Plateau system: P1 (100–200mg), P2 (200–400mg), P3 (400–600mg), P4 (600mg+) — severity increases dramatically',
+      'Only use products containing DXM as the sole active ingredient, acetaminophen, guaifenesin, and chlorpheniramine in combo products are toxic at recreational DXM doses',
+      'Plateau system: P1 (100–200mg), P2 (200–400mg), P3 (400–600mg), P4 (600mg+), severity increases dramatically',
       'CYP2D6 poor metabolizers experience much stronger effects at the same dose',
       'Do not use with any serotonergic medication including SSRIs',
       'Sigma (DXM + DPH) combinations are particularly dangerous'
@@ -809,10 +809,10 @@ export const SUBSTANCES = [
     effects: ['Brief euphoria', 'Dissociation', 'Sound distortion (wah-wah)', 'Tingling', 'Laughter', 'Loss of motor control'],
     interactions: ['Psychedelics (dramatically intensifies effects)', 'Vitamin B12 (depletes and inactivates)', 'Alcohol (additive impairment)'],
     harmReduction: [
-      'B12 depletion is the primary chronic risk — supplement B12 with regular use',
-      'Never inhale directly from a pressurized tank — frostbite and barotrauma risk',
+      'B12 depletion is the primary chronic risk, supplement B12 with regular use',
+      'Never inhale directly from a pressurized tank, frostbite and barotrauma risk',
       'Always use with adequate oxygen; never use with a bag over the head',
-      'Sit down — brief loss of consciousness means falling injuries are common',
+      'Sit down, brief loss of consciousness means falling injuries are common',
       'Peripheral neuropathy from chronic use (subacute combined degeneration) can be permanent'
     ],
     routes: ['inhaled'],
@@ -825,13 +825,13 @@ export const SUBSTANCES = [
     category: 'dissociative',
     halfLife: '3–6 hours',
     effects: ['Dissociation', 'Euphoria', 'Warm body high', 'Mania (some users)', 'Hole (high doses)', 'Anti-depressant afterglow'],
-    interactions: ['SSRIs (serotonin syndrome risk — SNRI properties)', 'MAOIs (dangerous)', 'Alcohol (respiratory depression)', 'Other dissociatives (compounding)'],
+    interactions: ['SSRIs (serotonin syndrome risk, SNRI properties)', 'MAOIs (dangerous)', 'Alcohol (respiratory depression)', 'Other dissociatives (compounding)'],
     harmReduction: [
-      'Longer duration than ketamine (3–5 hours vs 1–2 hours) — dose accordingly',
-      'Insufflated onset: 15–30 min; oral: 30–60 min — do not redose too early',
+      'Longer duration than ketamine (3–5 hours vs 1–2 hours), dose accordingly',
+      'Insufflated onset: 15–30 min; oral: 30–60 min, do not redose too early',
       'Mania-like states reported at higher doses; set limits before dosing',
       'Bladder toxicity likely similar to ketamine with chronic use',
-      'Quality and purity vary wildly in current market — test before use'
+      'Quality and purity vary wildly in current market, test before use'
     ],
     routes: ['insufflated', 'oral', 'IM'],
     unit: 'mg',
@@ -847,10 +847,10 @@ export const SUBSTANCES = [
     effects: ['Mild euphoria', 'Relaxation', 'Reduced anxiety (vs delta-9)', 'Appetite stimulation', 'Clear-headed high'],
     interactions: ['Alcohol (potentiates)', 'CNS depressants', 'Benzodiazepines', 'SSRIs (mild)'],
     harmReduction: [
-      'Typically synthesized from CBD via acid isomerization — byproducts may be present',
+      'Typically synthesized from CBD via acid isomerization, byproducts may be present',
       'Third-party lab testing essential; look for residual solvents and heavy metals',
       'Roughly 50–75% the potency of delta-9 THC',
-      'Legal status varies by state/country — hemp farm bill loophole in the US',
+      'Legal status varies by state/country, hemp farm bill loophole in the US',
       'Will trigger positive THC drug tests'
     ],
     routes: ['vaped', 'oral', 'smoked'],
@@ -865,14 +865,14 @@ export const SUBSTANCES = [
     effects: ['Mild sedation', 'Sleep promotion', 'Anti-inflammatory', 'Appetite stimulation'],
     interactions: ['THC (potentiates sedation)', 'CNS depressants (additive)', 'Melatonin (additive sedation)'],
     harmReduction: [
-      'Very mildly psychoactive — about 10% the potency of THC',
+      'Very mildly psychoactive, about 10% the potency of THC',
       'Sleep claims are largely anecdotal; limited clinical evidence',
       'Often sold in combination with THC or CBD for sleep formulations',
-      'Lab testing important — verify actual CBN content'
+      'Lab testing important, verify actual CBN content'
     ],
     routes: ['oral', 'sublingual'],
     unit: 'mg',
-    notes: 'Cannabinol. Oxidation product of THC — found in aged cannabis. Marketed as a sleep aid. Minimal intoxicating effects. Research is still early.'
+    notes: 'Cannabinol. Oxidation product of THC, found in aged cannabis. Marketed as a sleep aid. Minimal intoxicating effects. Research is still early.'
   },
   {
     id: 'thc-edibles',
@@ -883,7 +883,7 @@ export const SUBSTANCES = [
     interactions: ['Alcohol (potentiates significantly)', 'CNS depressants', 'Benzodiazepines', 'SSRIs (mild interaction)'],
     harmReduction: [
       'Start with 2.5–5mg THC for first-timers; 10mg is a standard dose for experienced users',
-      'Onset takes 1–3 hours — do not redose within 2 hours',
+      'Onset takes 1–3 hours, do not redose within 2 hours',
       '11-hydroxy-THC (liver metabolite) is 2–3x more psychoactive than inhaled THC',
       'Fat-containing food increases absorption',
       'CBD can modulate excessive THC effects if overconsumption occurs'
@@ -902,7 +902,7 @@ export const SUBSTANCES = [
     effects: ['Empathy', 'Psychedelic visuals', 'Euphoria', 'Stimulation', 'Body high', 'Jaw clenching'],
     interactions: ['SSRIs (serotonin syndrome risk)', 'MAOIs (potentially fatal)', 'Stimulants (cardiovascular overload)', 'Lithium (seizure risk)'],
     harmReduction: [
-      'More neurotoxic than MDMA — produces more toxic metabolites',
+      'More neurotoxic than MDMA, produces more toxic metabolites',
       'More psychedelic and less empathogenic than MDMA at equivalent doses',
       'Active dose: 80–120mg; lower than MDMA',
       'Same 3-month rule as MDMA; arguably should be even less frequent',
@@ -920,11 +920,11 @@ export const SUBSTANCES = [
     effects: ['Empathy', 'Euphoria', 'Visual enhancement', 'Stimulation', 'Music appreciation', 'Nausea (come-up)'],
     interactions: ['SSRIs (serotonin syndrome)', 'MAOIs (fatal)', 'Stimulants (cardiovascular strain)', 'Alcohol (unpredictable)'],
     harmReduction: [
-      'Long come-up (1–2 hours) — do not redose prematurely',
+      'Long come-up (1–2 hours), do not redose prematurely',
       'Succinate salt requires higher dose than HCl salt; know which form you have',
       'Typical dose: 80–120mg (HCl) or 100–150mg (succinate)',
       'Cardiovascular effects may be more pronounced than MDMA',
-      'Apply same spacing rules as MDMA — minimum 6 weeks, ideally 3 months'
+      'Apply same spacing rules as MDMA, minimum 6 weeks, ideally 3 months'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -956,12 +956,12 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '2–3 hours',
     effects: ['Pain relief', 'Fever reduction', 'No anti-inflammatory effect'],
-    interactions: ['Alcohol (liver toxicity — even moderate drinking)', 'Warfarin (increased anticoagulation)', 'Isoniazid (increased hepatotoxicity)', 'CYP2E1 inducers'],
+    interactions: ['Alcohol (liver toxicity, even moderate drinking)', 'Warfarin (increased anticoagulation)', 'Isoniazid (increased hepatotoxicity)', 'CYP2E1 inducers'],
     harmReduction: [
       'Max 4g/day (2g/day if drinking alcohol regularly)',
-      'Leading cause of acute liver failure in the US — often accidental from combination products',
+      'Leading cause of acute liver failure in the US, often accidental from combination products',
       'Check all cold/flu medications for hidden acetaminophen',
-      'NAC (N-acetyl cysteine) is the antidote for overdose — effective within 8 hours',
+      'NAC (N-acetyl cysteine) is the antidote for overdose, effective within 8 hours',
       'Liver damage is silent for 24–72 hours after overdose'
     ],
     routes: ['oral', 'IV', 'rectal'],
@@ -976,7 +976,7 @@ export const SUBSTANCES = [
     effects: ['Pain relief', 'Anti-inflammatory', 'Fever reduction', 'Antiplatelet (irreversible)', 'GI irritation'],
     interactions: ['Blood thinners (major bleeding risk)', 'Ibuprofen (blocks antiplatelet effect)', 'Methotrexate (increased toxicity)', 'SSRIs (increased bleeding risk)'],
     harmReduction: [
-      'Irreversibly inhibits platelets for their 7–10 day lifespan — stop 7 days before surgery',
+      'Irreversibly inhibits platelets for their 7–10 day lifespan, stop 7 days before surgery',
       'Enteric-coated reduces GI irritation but may reduce absorption',
       'Reye syndrome risk in children under 18 with viral illness',
       'Low-dose aspirin (81mg) for cardiovascular prevention is now more selective in guidelines'
@@ -993,10 +993,10 @@ export const SUBSTANCES = [
     effects: ['Sedation', 'Antihistamine', 'Anticholinergic', 'Dry mouth', 'Delirium (high doses)', 'Restless legs (paradoxical)'],
     interactions: ['Alcohol (dangerous sedation)', 'Other anticholinergics (additive toxicity)', 'MAOIs (hypertensive crisis)', 'CNS depressants'],
     harmReduction: [
-      'Not recommended as a sleep aid — tolerance develops within days and long-term use linked to dementia',
+      'Not recommended as a sleep aid, tolerance develops within days and long-term use linked to dementia',
       'Recreational use at high doses produces dysphoric delirium, not euphoria',
       'Anticholinergic toxicity: hot as a hare, blind as a bat, dry as a bone, red as a beet, mad as a hatter',
-      'Elderly should avoid entirely — high falls and cognitive impairment risk'
+      'Elderly should avoid entirely, high falls and cognitive impairment risk'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -1013,7 +1013,7 @@ export const SUBSTANCES = [
       'Designed for 2–8 week courses; long-term use requires periodic review',
       'Chronic use depletes magnesium, B12, calcium, and iron',
       'Increased C. difficile infection risk with prolonged use',
-      'Rebound acid hypersecretion on discontinuation — taper off gradually'
+      'Rebound acid hypersecretion on discontinuation, taper off gradually'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -1029,8 +1029,8 @@ export const SUBSTANCES = [
     harmReduction: [
       'GI side effects (diarrhea, nausea) improve over weeks; extended-release formulation helps',
       'Take with meals to reduce GI effects',
-      'Lactic acidosis is rare but serious — hold before surgery and contrast procedures',
-      'Depletes B12 with long-term use — supplement and monitor levels',
+      'Lactic acidosis is rare but serious, hold before surgery and contrast procedures',
+      'Depletes B12 with long-term use, supplement and monitor levels',
       'Longevity community uses off-label; evidence is from the TAME trial (ongoing)'
     ],
     routes: ['oral'],
@@ -1045,10 +1045,10 @@ export const SUBSTANCES = [
     effects: ['Blood pressure reduction', 'Cardiac protection', 'Renal protection (diabetic nephropathy)', 'Dry cough (common side effect)'],
     interactions: ['Potassium supplements (hyperkalemia)', 'NSAIDs (reduced efficacy + renal risk)', 'Lithium (increased levels)', 'Aliskiren (avoid combination)'],
     harmReduction: [
-      'Dry cough occurs in ~10% of patients — switch to ARB if intolerable',
+      'Dry cough occurs in ~10% of patients, switch to ARB if intolerable',
       'Monitor potassium levels, especially if also taking potassium-sparing diuretics',
-      'Angioedema is rare but potentially fatal — seek emergency care for facial/tongue swelling',
-      'Contraindicated in pregnancy — causes fetal renal damage'
+      'Angioedema is rare but potentially fatal, seek emergency care for facial/tongue swelling',
+      'Contraindicated in pregnancy, causes fetal renal damage'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -1062,9 +1062,9 @@ export const SUBSTANCES = [
     effects: ['LDL cholesterol reduction', 'Cardiovascular risk reduction', 'Mild HDL increase', 'Triglyceride reduction'],
     interactions: ['Grapefruit juice (CYP3A4 inhibition, increases levels)', 'Gemfibrozil (rhabdomyolysis risk)', 'Cyclosporine', 'Warfarin (monitor INR)', 'Niacin (additive myopathy risk)'],
     harmReduction: [
-      'Muscle pain/weakness (myalgia) occurs in 5–10% — report to prescriber',
+      'Muscle pain/weakness (myalgia) occurs in 5–10%, report to prescriber',
       'Rhabdomyolysis is rare but serious; watch for dark urine + severe muscle pain',
-      'CoQ10 depletion is theoretical — many prescribers recommend supplementing',
+      'CoQ10 depletion is theoretical, many prescribers recommend supplementing',
       'Liver function tests recommended at baseline and if symptoms arise',
       'Take at night for optimal LDL reduction (cholesterol synthesis peaks overnight)'
     ],
@@ -1078,11 +1078,11 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '1–4 days (norfluoxetine metabolite: 4–16 days)',
     effects: ['Antidepressant', 'Anti-anxiety', 'OCD treatment', 'Emotional blunting (possible)', 'Sexual dysfunction'],
-    interactions: ['MAOIs (serotonin syndrome — fatal; 5-week washout required)', 'Tramadol (serotonin syndrome)', 'Psilocybin (blunted effects)', 'Thioridazine (fatal arrhythmia)', 'MDMA (serotonin syndrome + blocks effects)'],
+    interactions: ['MAOIs (serotonin syndrome, fatal; 5-week washout required)', 'Tramadol (serotonin syndrome)', 'Psilocybin (blunted effects)', 'Thioridazine (fatal arrhythmia)', 'MDMA (serotonin syndrome + blocks effects)'],
     harmReduction: [
       'Extremely long half-life means 5-week washout before MAOIs or switching to other SSRIs',
       'Takes 4–6 weeks for full antidepressant effect',
-      'Most activating SSRI — take in the morning to avoid insomnia',
+      'Most activating SSRI, take in the morning to avoid insomnia',
       'Discontinuation syndrome is milder than other SSRIs due to long half-life',
       'Monitor for suicidal ideation in the first weeks, especially in under-25s'
     ],
@@ -1098,11 +1098,11 @@ export const SUBSTANCES = [
     effects: ['Antidepressant', 'Smoking cessation aid', 'Mild stimulation', 'Appetite suppression', 'Seizure risk (dose-dependent)'],
     interactions: ['MAOIs (hypertensive crisis)', 'Alcohol (seizure threshold lowered)', 'Medications that lower seizure threshold', 'CYP2D6 substrates (bupropion is a strong inhibitor)'],
     harmReduction: [
-      'Seizure risk increases above 450mg/day — never exceed',
+      'Seizure risk increases above 450mg/day, never exceed',
       'Contraindicated in eating disorders (bulimia, anorexia) due to seizure risk',
       'One of few antidepressants that does not cause sexual dysfunction or weight gain',
       'Do not crush or chew extended-release formulations',
-      'Alcohol should be minimized or avoided — lowers seizure threshold'
+      'Alcohol should be minimized or avoided, lowers seizure threshold'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -1114,12 +1114,12 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '5–7 hours',
     effects: ['Pain relief (neuropathic)', 'Anxiety reduction', 'Sedation', 'Dizziness', 'Mild euphoria (some users)'],
-    interactions: ['Opioids (respiratory depression — FDA black box warning)', 'Alcohol (increased CNS depression)', 'Antacids (reduced absorption)', 'Pregabalin (redundant, do not combine)'],
+    interactions: ['Opioids (respiratory depression, FDA black box warning)', 'Alcohol (increased CNS depression)', 'Antacids (reduced absorption)', 'Pregabalin (redundant, do not combine)'],
     harmReduction: [
-      'Absorption is saturable — bioavailability decreases at higher single doses; stagger doses',
+      'Absorption is saturable, bioavailability decreases at higher single doses; stagger doses',
       'Physical dependence develops with chronic use; taper over 1–2 weeks minimum',
       'FDA boxed warning for respiratory depression when combined with opioids',
-      'Abuse potential is increasingly recognized — now Schedule V in several US states',
+      'Abuse potential is increasingly recognized, now Schedule V in several US states',
       'Take at least 2 hours apart from antacids'
     ],
     routes: ['oral'],
@@ -1132,9 +1132,9 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '6 hours',
     effects: ['Anxiety reduction', 'Pain relief (neuropathic)', 'Sedation', 'Euphoria', 'Dizziness', 'Weight gain'],
-    interactions: ['Opioids (respiratory depression)', 'Alcohol (dangerous CNS depression)', 'Benzodiazepines (additive sedation)', 'Gabapentin (do not combine — same mechanism)'],
+    interactions: ['Opioids (respiratory depression)', 'Alcohol (dangerous CNS depression)', 'Benzodiazepines (additive sedation)', 'Gabapentin (do not combine, same mechanism)'],
     harmReduction: [
-      'Schedule V controlled substance — higher abuse potential than gabapentin',
+      'Schedule V controlled substance, higher abuse potential than gabapentin',
       'Linear absorption (unlike gabapentin) makes dose-response more predictable',
       'Taper over at least 1 week to avoid withdrawal seizures',
       'Weight gain is common with chronic use',
@@ -1153,7 +1153,7 @@ export const SUBSTANCES = [
     interactions: ['Alcohol (potentiates sedation)', 'CNS depressants (additive)', 'Anticholinergic drugs (additive dry mouth, constipation)', 'QT-prolonging medications'],
     harmReduction: [
       'Non-addictive alternative to benzodiazepines for anxiety',
-      'Sedation is the main side effect — avoid operating machinery',
+      'Sedation is the main side effect, avoid operating machinery',
       'QT prolongation possible at high doses; use caution in cardiac patients',
       'Tolerance to sedation develops but anxiolytic effect persists'
     ],
@@ -1167,10 +1167,10 @@ export const SUBSTANCES = [
     category: 'stimulant',
     halfLife: '2–3 hours (IR); 3–4 hours (ER formulations vary)',
     effects: ['Focus', 'Alertness', 'Reduced appetite', 'Increased heart rate', 'Anxiety (possible)', 'Insomnia'],
-    interactions: ['MAOIs (hypertensive crisis — contraindicated)', 'SSRIs (mild serotonin interaction)', 'Alcohol (increased side effects)', 'Clonidine (additive cardiovascular effects)', 'Anticonvulsants (altered levels)'],
+    interactions: ['MAOIs (hypertensive crisis, contraindicated)', 'SSRIs (mild serotonin interaction)', 'Alcohol (increased side effects)', 'Clonidine (additive cardiovascular effects)', 'Anticonvulsants (altered levels)'],
     harmReduction: [
-      'Shorter duration than amphetamine — may need multiple daily doses (IR) or extended-release',
-      'Monitor growth in children — appetite suppression affects weight and height',
+      'Shorter duration than amphetamine, may need multiple daily doses (IR) or extended-release',
+      'Monitor growth in children, appetite suppression affects weight and height',
       'Drug holidays on weekends/vacations help manage tolerance and growth effects',
       'Concerta/Ritalin/Focalin are different formulations with different release profiles',
       'Cardiovascular screening recommended before starting'
@@ -1187,11 +1187,11 @@ export const SUBSTANCES = [
     category: 'benzodiazepine',
     halfLife: '6–12 hours',
     effects: ['Anxiety relief', 'Sedation', 'Muscle relaxation', 'Euphoria', 'Disinhibition', 'Amnesia'],
-    interactions: ['Opioids (fatal respiratory depression)', 'Alcohol (fatal)', 'Other benzodiazepines', 'CYP3A4 inhibitors (ketoconazole, grapefruit — increase levels)', 'CNS depressants'],
+    interactions: ['Opioids (fatal respiratory depression)', 'Alcohol (fatal)', 'Other benzodiazepines', 'CYP3A4 inhibitors (ketoconazole, grapefruit, increase levels)', 'CNS depressants'],
     harmReduction: [
-      'Most prescribed and most abused benzodiazepine — high addiction potential',
+      'Most prescribed and most abused benzodiazepine, high addiction potential',
       'Short half-life means interdose withdrawal and rebound anxiety',
-      'Never stop abruptly after regular use — withdrawal seizures can be fatal',
+      'Never stop abruptly after regular use, withdrawal seizures can be fatal',
       'Taper must be slow (10% reduction every 1–2 weeks) under medical supervision',
       'Pressed counterfeit Xanax bars frequently contain fentanyl or flualprazolam'
     ],
@@ -1209,7 +1209,7 @@ export const SUBSTANCES = [
     harmReduction: [
       'Extremely long half-life (with metabolites) means accumulation over days',
       'Often used as tapering agent for other benzo withdrawal due to long half-life',
-      'Elderly are more sensitive — lower doses required',
+      'Elderly are more sensitive, lower doses required',
       'First-line for alcohol withdrawal and seizures in emergency settings',
       'Do not combine with any other CNS depressant'
     ],
@@ -1227,7 +1227,7 @@ export const SUBSTANCES = [
     harmReduction: [
       'Intermediate half-life provides more stable blood levels than alprazolam',
       'Commonly prescribed for panic disorder and seizure disorders',
-      'Taper slowly — 10% reduction every 2 weeks minimum',
+      'Taper slowly, 10% reduction every 2 weeks minimum',
       'Cognitive impairment and emotional blunting with chronic use',
       'Dependence develops within 2–4 weeks of daily use'
     ],
@@ -1243,11 +1243,11 @@ export const SUBSTANCES = [
     effects: ['Anxiety relief', 'Sedation', 'Amnesia (procedural)', 'Anticonvulsant', 'Anti-nausea (chemotherapy)'],
     interactions: ['Opioids (fatal)', 'Alcohol (fatal)', 'CNS depressants', 'Probenecid (increased levels)'],
     harmReduction: [
-      'No active metabolites — preferred in liver impairment over diazepam',
+      'No active metabolites, preferred in liver impairment over diazepam',
       'IV formulation widely used in hospitals for status epilepticus and acute agitation',
       'Pre-procedural amnesia is intentional in medical settings',
-      'Same addiction/withdrawal risks as all benzodiazepines — taper required',
-      'Avoid in elderly when possible — falls and confusion risk'
+      'Same addiction/withdrawal risks as all benzodiazepines, taper required',
+      'Avoid in elderly when possible, falls and confusion risk'
     ],
     routes: ['oral', 'IV', 'IM', 'sublingual'],
     unit: 'mg',
@@ -1263,9 +1263,9 @@ export const SUBSTANCES = [
     effects: ['Wakefulness', 'Improved focus', 'Reduced fatigue', 'Mild mood elevation', 'Appetite reduction'],
     interactions: ['Hormonal contraceptives (reduces efficacy via CYP3A4 induction)', 'CYP2C19 substrates', 'Caffeine (additive but usually well tolerated)', 'Warfarin (monitor INR)'],
     harmReduction: [
-      'Use backup contraception — modafinil induces CYP3A4 and reduces hormonal contraceptive efficacy',
-      'Stevens-Johnson syndrome is rare but serious — stop immediately if rash develops',
-      'Not a substitute for sleep — sleep debt still accumulates',
+      'Use backup contraception, modafinil induces CYP3A4 and reduces hormonal contraceptive efficacy',
+      'Stevens-Johnson syndrome is rare but serious, stop immediately if rash develops',
+      'Not a substitute for sleep, sleep debt still accumulates',
       'Tolerance is minimal compared to traditional stimulants',
       'Take early in the day; half-life means afternoon dosing disrupts sleep'
     ],
@@ -1281,9 +1281,9 @@ export const SUBSTANCES = [
     effects: ['Mild cognitive enhancement', 'Verbal fluency (reported)', 'Neuroprotection (theoretical)', 'Improved memory (some evidence)'],
     interactions: ['Blood thinners (antiplatelet effect)', 'Thyroid hormones (tremor reported)', 'Stimulants (mild additive effects)'],
     harmReduction: [
-      'Effects are subtle — do not expect dramatic cognitive gains',
+      'Effects are subtle, do not expect dramatic cognitive gains',
       'Typical dose: 1200–4800mg/day in divided doses',
-      'May cause headaches — choline supplementation (alpha-GPC or citicoline) often helps',
+      'May cause headaches, choline supplementation (alpha-GPC or citicoline) often helps',
       'Very low toxicity profile; no known lethal dose in humans',
       'Not approved by FDA; sold as supplement or research chemical'
     ],
@@ -1302,9 +1302,9 @@ export const SUBSTANCES = [
     interactions: ['Thyroid medications (may increase thyroid hormone levels)', 'Immunosuppressants (stimulates immune system)', 'Sedatives (additive sedation)', 'Diabetes medications (may lower blood sugar)'],
     harmReduction: [
       'KSM-66 and Sensoril are the most studied extracts',
-      'Cycle on/off (8 weeks on, 2 weeks off) — long-term continuous safety data is limited',
-      'Rare liver injury cases reported — discontinue if upper abdominal pain or jaundice develops',
-      'Can increase thyroid hormones — caution if hyperthyroid or on thyroid medication',
+      'Cycle on/off (8 weeks on, 2 weeks off), long-term continuous safety data is limited',
+      'Rare liver injury cases reported, discontinue if upper abdominal pain or jaundice develops',
+      'Can increase thyroid hormones, caution if hyperthyroid or on thyroid medication',
       'Take with meals to reduce GI upset'
     ],
     routes: ['oral'],
@@ -1320,8 +1320,8 @@ export const SUBSTANCES = [
     interactions: ['SSRIs (theoretical serotonin interaction)', 'Stimulants (additive)', 'Immunosuppressants', 'Diabetes medications (may affect blood sugar)'],
     harmReduction: [
       'Standardized to 3% rosavins and 1% salidroside is the research standard',
-      'Take early in the day — can cause insomnia if taken too late',
-      'More stimulating than ashwagandha — not ideal for those with anxiety',
+      'Take early in the day, can cause insomnia if taken too late',
+      'More stimulating than ashwagandha, not ideal for those with anxiety',
       'Typical dose: 200–600mg/day',
       'Effects noticeable within days, unlike ashwagandha'
     ],
@@ -1353,13 +1353,13 @@ export const SUBSTANCES = [
     category: 'supplement',
     halfLife: '5.6 hours',
     effects: ['Glutathione precursor', 'Mucolytic', 'Antioxidant', 'Liver protection', 'Psychiatric applications (emerging)'],
-    interactions: ['Nitroglycerin (potentiates — headache and hypotension)', 'Activated charcoal (reduces NAC absorption)', 'Acetaminophen (NAC is the antidote for overdose)'],
+    interactions: ['Nitroglycerin (potentiates, headache and hypotension)', 'Activated charcoal (reduces NAC absorption)', 'Acetaminophen (NAC is the antidote for overdose)'],
     harmReduction: [
       'Standard dose: 600–1200mg/day',
-      'Can cause nausea and GI upset — take with food',
-      'FDA attempted to ban as supplement in 2022 (drug precursor argument) — status varies',
-      'Acetaminophen overdose antidote — hospital protocol uses IV NAC',
-      'May reduce efficacy of some chemotherapy drugs — consult oncologist'
+      'Can cause nausea and GI upset, take with food',
+      'FDA attempted to ban as supplement in 2022 (drug precursor argument), status varies',
+      'Acetaminophen overdose antidote, hospital protocol uses IV NAC',
+      'May reduce efficacy of some chemotherapy drugs, consult oncologist'
     ],
     routes: ['oral', 'IV'],
     unit: 'mg',
@@ -1373,11 +1373,11 @@ export const SUBSTANCES = [
     effects: ['ATP regeneration', 'Muscle strength', 'Muscle hydration', 'Cognitive enhancement', 'Recovery improvement'],
     interactions: ['Caffeine (theoretical interference, but practically fine)', 'Nephrotoxic drugs (monitor kidney function)', 'NSAIDs (theoretical kidney concern at high doses)'],
     harmReduction: [
-      'Creatine monohydrate is the most studied form — no need for fancy versions',
+      'Creatine monohydrate is the most studied form, no need for fancy versions',
       '3–5g/day is sufficient; loading phases (20g/day) are unnecessary',
-      'Increases water retention in muscle — drink adequate water',
+      'Increases water retention in muscle, drink adequate water',
       'Does NOT cause kidney damage in healthy individuals; decades of evidence',
-      'May increase DHT/dihydrotestosterone — relevance to hair loss debated'
+      'May increase DHT/dihydrotestosterone, relevance to hair loss debated'
     ],
     routes: ['oral'],
     unit: 'g',
@@ -1389,10 +1389,10 @@ export const SUBSTANCES = [
     category: 'supplement',
     halfLife: '33 hours (ubiquinol form)',
     effects: ['Mitochondrial support', 'Antioxidant', 'Statin side effect reduction', 'Energy production', 'Cardiovascular support'],
-    interactions: ['Statins (statins deplete CoQ10; supplementation recommended)', 'Blood thinners (may reduce warfarin efficacy)', 'Blood pressure medications (additive reduction)', 'Chemotherapy (may reduce efficacy — consult oncologist)'],
+    interactions: ['Statins (statins deplete CoQ10; supplementation recommended)', 'Blood thinners (may reduce warfarin efficacy)', 'Blood pressure medications (additive reduction)', 'Chemotherapy (may reduce efficacy, consult oncologist)'],
     harmReduction: [
       'Ubiquinol form is better absorbed than ubiquinone, especially over age 40',
-      'Take with fat-containing meal — fat-soluble',
+      'Take with fat-containing meal, fat-soluble',
       'Typical dose: 100–300mg/day',
       'Statin users have the strongest rationale for supplementation',
       'Very safe; no serious adverse effects reported in clinical trials'
@@ -1425,9 +1425,9 @@ export const SUBSTANCES = [
     category: 'supplement',
     halfLife: '2–7 hours',
     effects: ['Serotonin precursor', 'Mood elevation', 'Sleep improvement', 'Appetite suppression', 'Anxiety reduction'],
-    interactions: ['SSRIs (serotonin syndrome — do not combine)', 'MAOIs (serotonin syndrome — fatal)', 'Tramadol (serotonin syndrome)', 'Sertraline (serotonin syndrome)', 'Carbidopa (increased 5-HTP absorption — dangerous)'],
+    interactions: ['SSRIs (serotonin syndrome, do not combine)', 'MAOIs (serotonin syndrome, fatal)', 'Tramadol (serotonin syndrome)', 'Sertraline (serotonin syndrome)', 'Carbidopa (increased 5-HTP absorption, dangerous)'],
     harmReduction: [
-      'Do NOT combine with any serotonergic medication — serotonin syndrome risk is real',
+      'Do NOT combine with any serotonergic medication, serotonin syndrome risk is real',
       'Commonly used for MDMA recovery (3 days after, not before or during)',
       'Long-term use without EGCG or green tea extract may deplete dopamine and catecholamines',
       'Typical dose: 50–200mg before bed',
@@ -1445,9 +1445,9 @@ export const SUBSTANCES = [
     effects: ['Cardiovascular support', 'Antioxidant', 'Electrolyte regulation', 'Mild calming effect', 'Exercise performance'],
     interactions: ['Lithium (taurine may affect renal lithium clearance)', 'Blood pressure medications (additive BP reduction)', 'Stimulants (modulates stimulant effects)'],
     harmReduction: [
-      'Found in energy drinks (Red Bull, Monster) at 1000mg — the safe, boring ingredient',
+      'Found in energy drinks (Red Bull, Monster) at 1000mg, the safe, boring ingredient',
       'Typical supplemental dose: 500–2000mg/day',
-      'Very high safety margin — no toxicity reported up to 3g/day in studies',
+      'Very high safety margin, no toxicity reported up to 3g/day in studies',
       'Not an amino acid despite common labeling; technically an amino sulfonic acid'
     ],
     routes: ['oral'],
@@ -1463,8 +1463,8 @@ export const SUBSTANCES = [
     interactions: ['Clozapine (may reduce efficacy)', 'Antipsychotics (variable interactions)', 'Magnesium (synergistic for sleep)'],
     harmReduction: [
       '3g before bed is the standard sleep dose (lowers core body temperature)',
-      'Extremely safe — naturally present in collagen and gelatin',
-      'Sweet tasting — dissolves easily in water',
+      'Extremely safe, naturally present in collagen and gelatin',
+      'Sweet tasting, dissolves easily in water',
       'Benefits collagen production when combined with vitamin C',
       'May cause mild GI effects at very high doses (>15g)'
     ],
@@ -1480,8 +1480,8 @@ export const SUBSTANCES = [
     effects: ['Memory enhancement', 'Learning improvement', 'Anxiolytic', 'Antioxidant', 'Neuroprotective'],
     interactions: ['Thyroid medications (may increase thyroid hormones)', 'Cholinergic drugs (additive)', 'Calcium channel blockers (additive hypotension)', 'Sedatives (mild additive sedation)'],
     harmReduction: [
-      'Takes 8–12 weeks of daily use to see cognitive benefits — not acute',
-      'Can cause GI upset — take with fat-containing food (bacosides are fat-soluble)',
+      'Takes 8–12 weeks of daily use to see cognitive benefits, not acute',
+      'Can cause GI upset, take with fat-containing food (bacosides are fat-soluble)',
       'May cause fatigue/lethargy initially; some take at night',
       'Standardized to 50% bacosides or Synapsa/BacoMind extract',
       'Typical dose: 300–600mg/day of standardized extract'
@@ -1498,7 +1498,7 @@ export const SUBSTANCES = [
     effects: ['Anti-inflammatory', 'Antioxidant', 'Antihistamine (natural)', 'Senolytic (with dasatinib)', 'Immune modulation'],
     interactions: ['Cyclosporine (increased levels)', 'Blood thinners (additive antiplatelet)', 'Antibiotics (may interact with fluoroquinolones)', 'Digoxin (may increase levels)'],
     harmReduction: [
-      'Poor bioavailability — phytosomal form or combination with bromelain/vitamin C improves absorption',
+      'Poor bioavailability, phytosomal form or combination with bromelain/vitamin C improves absorption',
       'Typical dose: 500–1000mg/day',
       'Found naturally in onions, apples, and berries',
       'Longevity interest as a senolytic (clears senescent cells) when paired with dasatinib',
@@ -1514,9 +1514,9 @@ export const SUBSTANCES = [
     category: 'supplement',
     halfLife: 'N/A (live organisms; transit time 12–72 hours)',
     effects: ['Gut microbiome modulation', 'Digestive support', 'Immune regulation', 'Mood effects (gut-brain axis)', 'Reduced antibiotic-associated diarrhea'],
-    interactions: ['Antibiotics (reduce probiotic viability — space apart)', 'Immunosuppressants (theoretical risk of infection in immunocompromised)', 'Antifungals (may affect yeast-based probiotics)'],
+    interactions: ['Antibiotics (reduce probiotic viability, space apart)', 'Immunosuppressants (theoretical risk of infection in immunocompromised)', 'Antifungals (may affect yeast-based probiotics)'],
     harmReduction: [
-      'Strain-specific effects — Lactobacillus rhamnosus GG is not the same as any other strain',
+      'Strain-specific effects, Lactobacillus rhamnosus GG is not the same as any other strain',
       'Refrigerated products tend to have better viability but shelf-stable forms exist',
       'CFU count matters less than strain selection and viability',
       'Gas and bloating are common initially; usually resolves in 1–2 weeks',
@@ -1536,11 +1536,11 @@ export const SUBSTANCES = [
     effects: ['Vision support', 'Immune function', 'Skin health', 'Cell differentiation', 'Reproductive health'],
     interactions: ['Retinoids/Accutane (hypervitaminosis A)', 'Blood thinners (high doses)', 'Orlistat (reduces absorption)', 'Alcohol (increases hepatotoxicity)'],
     harmReduction: [
-      'Fat-soluble — accumulates in liver; toxicity is real above 10,000 IU/day preformed retinol',
-      'Beta-carotene (provitamin A) does not cause toxicity — body regulates conversion',
-      'Teratogenic — absolutely contraindicated in pregnancy at high doses',
+      'Fat-soluble, accumulates in liver; toxicity is real above 10,000 IU/day preformed retinol',
+      'Beta-carotene (provitamin A) does not cause toxicity, body regulates conversion',
+      'Teratogenic, absolutely contraindicated in pregnancy at high doses',
       'Acute toxicity symptoms: headache, nausea, blurred vision, liver pain',
-      'Do not take with isotretinoin (Accutane) — additive toxicity'
+      'Do not take with isotretinoin (Accutane), additive toxicity'
     ],
     routes: ['oral'],
     unit: 'IU',
@@ -1558,7 +1558,7 @@ export const SUBSTANCES = [
       'High-dose alpha-tocopherol alone may increase all-cause mortality (>400 IU/day)',
       'High-dose supplementation in SELECT trial increased prostate cancer risk',
       'Natural form (d-alpha) is twice as bioactive as synthetic (dl-alpha)',
-      'Fat-soluble — take with meals containing fat'
+      'Fat-soluble, take with meals containing fat'
     ],
     routes: ['oral', 'topical'],
     unit: 'IU',
@@ -1570,10 +1570,10 @@ export const SUBSTANCES = [
     category: 'vitamin',
     halfLife: '6–8 hours (MK-4); 72 hours (MK-7)',
     effects: ['Calcium metabolism direction', 'Bone mineralization', 'Arterial calcification prevention', 'Carboxylation of vitamin K-dependent proteins'],
-    interactions: ['Warfarin (directly opposes — must maintain consistent intake)', 'Vitamin D3 (synergistic — take together)', 'Antibiotics (reduce gut synthesis of K2)', 'Orlistat (reduces absorption)'],
+    interactions: ['Warfarin (directly opposes, must maintain consistent intake)', 'Vitamin D3 (synergistic, take together)', 'Antibiotics (reduce gut synthesis of K2)', 'Orlistat (reduces absorption)'],
     harmReduction: [
       'MK-7 form (from natto) has longer half-life and better tissue distribution than MK-4',
-      'Critical pairing with vitamin D3 — directs calcium to bones instead of arteries',
+      'Critical pairing with vitamin D3, directs calcium to bones instead of arteries',
       'If on warfarin/Coumadin, do NOT start K2 without physician approval',
       'Typical dose: 100–200mcg MK-7 per day',
       'No known toxicity even at high doses'
@@ -1588,12 +1588,12 @@ export const SUBSTANCES = [
     category: 'vitamin',
     halfLife: '3–4 hours (plasma folate)',
     effects: ['DNA synthesis', 'Methylation support', 'Neural tube defect prevention', 'Red blood cell formation', 'Homocysteine reduction'],
-    interactions: ['Methotrexate (folate antagonist — folinic acid may be used as rescue)', 'Phenytoin (mutual reduction)', 'Sulfasalazine (reduces folate absorption)', 'B12 (masks B12 deficiency anemia)'],
+    interactions: ['Methotrexate (folate antagonist, folinic acid may be used as rescue)', 'Phenytoin (mutual reduction)', 'Sulfasalazine (reduces folate absorption)', 'B12 (masks B12 deficiency anemia)'],
     harmReduction: [
       'Methylfolate (5-MTHF) preferred over folic acid, especially with MTHFR variants',
-      'Folic acid (synthetic) requires conversion via MTHFR — 40% of population has reduced activity',
+      'Folic acid (synthetic) requires conversion via MTHFR, 40% of population has reduced activity',
       'Critical to supplement before and during early pregnancy (400–800mcg/day)',
-      'High-dose folic acid may mask B12 deficiency — always take with B12',
+      'High-dose folic acid may mask B12 deficiency, always take with B12',
       'Folinic acid is another bioavailable form that bypasses MTHFR'
     ],
     routes: ['oral'],
@@ -1608,7 +1608,7 @@ export const SUBSTANCES = [
     effects: ['HDL increase', 'Triglyceride reduction', 'Vasodilation (flush)', 'Energy metabolism', 'Skin flushing'],
     interactions: ['Statins (additive myopathy risk at high doses)', 'Blood pressure medications (additive hypotension)', 'Alcohol (worsens flush and liver risk)', 'Aspirin (reduces flush)'],
     harmReduction: [
-      'Flush (face/body redness, warmth, tingling) is harmless but uncomfortable — starts 15–30 min after dosing',
+      'Flush (face/body redness, warmth, tingling) is harmless but uncomfortable, starts 15–30 min after dosing',
       'Take aspirin (81mg) or ibuprofen 30 min before to reduce flush',
       'Flush-free niacin (inositol hexanicotinate) does not work for lipid benefits',
       'Niacinamide (nicotinamide) does not cause flush but also has no lipid effects',
@@ -1629,7 +1629,7 @@ export const SUBSTANCES = [
       'High-dose biotin (5000–10000mcg) interferes with lab tests including troponin, thyroid, and hormone panels',
       'Stop biotin supplementation 48–72 hours before blood work',
       'Evidence for hair/nail benefits in non-deficient individuals is weak',
-      'Deficiency is rare — gut bacteria produce biotin',
+      'Deficiency is rare, gut bacteria produce biotin',
       'RDA is only 30mcg; supplement doses are typically 100–1000x this'
     ],
     routes: ['oral'],
@@ -1644,13 +1644,13 @@ export const SUBSTANCES = [
     category: 'mineral',
     halfLife: 'N/A (mineral; ferritin half-life ~30 hours)',
     effects: ['Oxygen transport', 'Energy production', 'Cognitive function', 'Immune support'],
-    interactions: ['Calcium (reduces absorption — separate by 2 hours)', 'Zinc (competitive absorption)', 'Vitamin C (enhances absorption)', 'PPIs/antacids (reduce absorption)', 'Tetracycline antibiotics (mutual reduction)'],
+    interactions: ['Calcium (reduces absorption, separate by 2 hours)', 'Zinc (competitive absorption)', 'Vitamin C (enhances absorption)', 'PPIs/antacids (reduce absorption)', 'Tetracycline antibiotics (mutual reduction)'],
     harmReduction: [
-      'Do not supplement without blood test confirming deficiency — iron overload causes organ damage',
+      'Do not supplement without blood test confirming deficiency, iron overload causes organ damage',
       'Ferritin is the best measure of iron stores; serum iron alone is unreliable',
       'Take with vitamin C on empty stomach for best absorption',
       'Separate from calcium, zinc, coffee, and tea by 2 hours',
-      'Constipation and nausea are common — iron bisglycinate is gentlest on the gut'
+      'Constipation and nausea are common, iron bisglycinate is gentlest on the gut'
     ],
     routes: ['oral', 'IV'],
     unit: 'mg',
@@ -1662,9 +1662,9 @@ export const SUBSTANCES = [
     category: 'mineral',
     halfLife: 'N/A (mineral; tightly regulated by kidneys)',
     effects: ['Electrolyte balance', 'Cardiac rhythm regulation', 'Muscle contraction', 'Blood pressure regulation', 'Nerve conduction'],
-    interactions: ['ACE inhibitors (hyperkalemia risk)', 'Potassium-sparing diuretics (hyperkalemia — fatal)', 'NSAIDs (increase potassium retention)', 'Trimethoprim (hyperkalemia)'],
+    interactions: ['ACE inhibitors (hyperkalemia risk)', 'Potassium-sparing diuretics (hyperkalemia, fatal)', 'NSAIDs (increase potassium retention)', 'Trimethoprim (hyperkalemia)'],
     harmReduction: [
-      'Hyperkalemia causes fatal cardiac arrhythmia — supplementation requires caution',
+      'Hyperkalemia causes fatal cardiac arrhythmia, supplementation requires caution',
       'OTC supplements limited to 99mg per unit (FDA regulation) due to cardiac risk',
       'Food sources are safer: bananas, potatoes, avocados, spinach',
       'Kidney disease patients must monitor potassium carefully',
@@ -1682,10 +1682,10 @@ export const SUBSTANCES = [
     effects: ['Thyroid function support', 'Antioxidant (selenoproteins)', 'Immune regulation', 'DNA synthesis'],
     interactions: ['Statins (may affect selenium status)', 'Chemotherapy (may reduce efficacy or enhance depending on agent)', 'Vitamin C (high doses can reduce selenium absorption in some forms)'],
     harmReduction: [
-      'Narrow therapeutic window — toxicity (selenosis) starts above 400mcg/day',
+      'Narrow therapeutic window, toxicity (selenosis) starts above 400mcg/day',
       'Selenosis symptoms: garlic breath, brittle nails, hair loss, GI distress',
       'RDA is 55mcg; most supplements contain 100–200mcg',
-      'Brazil nuts are the richest food source — 1–2 nuts per day provides RDA',
+      'Brazil nuts are the richest food source, 1–2 nuts per day provides RDA',
       'Selenomethionine is the most bioavailable supplemental form'
     ],
     routes: ['oral'],
@@ -1698,13 +1698,13 @@ export const SUBSTANCES = [
     category: 'mineral',
     halfLife: 'N/A (mineral; ceruloplasmin half-life ~5 days)',
     effects: ['Iron metabolism', 'Connective tissue formation', 'Antioxidant enzyme function (SOD)', 'Melanin production', 'Nerve function'],
-    interactions: ['Zinc (antagonistic — high zinc depletes copper)', 'Iron (copper required for iron utilization)', 'Vitamin C (high doses reduce copper absorption)', 'Molybdenum (antagonistic)'],
+    interactions: ['Zinc (antagonistic, high zinc depletes copper)', 'Iron (copper required for iron utilization)', 'Vitamin C (high doses reduce copper absorption)', 'Molybdenum (antagonistic)'],
     harmReduction: [
       'Supplement copper (1–2mg) when taking zinc above 30mg/day',
-      'Copper toxicity causes liver damage — do not exceed 10mg/day',
+      'Copper toxicity causes liver damage, do not exceed 10mg/day',
       'Wilson disease patients must avoid all copper supplementation',
-      'Copper IUDs release copper locally — no systemic supplementation needed',
-      'Most multivitamins contain adequate copper — check before adding standalone'
+      'Copper IUDs release copper locally, no systemic supplementation needed',
+      'Most multivitamins contain adequate copper, check before adding standalone'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -1718,12 +1718,12 @@ export const SUBSTANCES = [
     category: 'herb',
     halfLife: '24–48 hours (hyperforin)',
     effects: ['Antidepressant', 'Anti-anxiety', 'Anti-inflammatory', 'Photosensitivity'],
-    interactions: ['SSRIs (serotonin syndrome — potentially fatal)', 'Sertraline (serotonin syndrome)', 'Oral contraceptives (reduces efficacy — breakthrough bleeding and pregnancy)', 'HIV medications (reduces levels dramatically)', 'Immunosuppressants (organ rejection risk)'],
+    interactions: ['SSRIs (serotonin syndrome, potentially fatal)', 'Sertraline (serotonin syndrome)', 'Oral contraceptives (reduces efficacy, breakthrough bleeding and pregnancy)', 'HIV medications (reduces levels dramatically)', 'Immunosuppressants (organ rejection risk)'],
     harmReduction: [
-      'One of the most dangerous herbs for drug interactions — induces CYP3A4, 2C9, 1A2 and P-glycoprotein',
+      'One of the most dangerous herbs for drug interactions, induces CYP3A4, 2C9, 1A2 and P-glycoprotein',
       'Can render birth control, HIV meds, transplant drugs, and blood thinners ineffective',
       'Do NOT combine with any serotonergic drug (SSRIs, tramadol, triptans)',
-      'Photosensitivity — increased sunburn risk',
+      'Photosensitivity, increased sunburn risk',
       'Efficacy for mild-moderate depression is well-evidenced in trials; not for severe depression'
     ],
     routes: ['oral'],
@@ -1739,7 +1739,7 @@ export const SUBSTANCES = [
     interactions: ['Alcohol (additive sedation)', 'Benzodiazepines (additive CNS depression)', 'Other sedatives', 'Anesthetics (prolonged sedation)'],
     harmReduction: [
       'Takes 2–4 weeks of nightly use before full sleep benefit appears',
-      'Smells terrible (isovaleric acid) — capsules are preferred over tea',
+      'Smells terrible (isovaleric acid), capsules are preferred over tea',
       'Standardized to 0.8% valerenic acid for consistency',
       'Discontinue 2 weeks before surgery (anesthesia interaction)',
       'Typical dose: 300–600mg extract, 30–60 min before bed'
@@ -1756,10 +1756,10 @@ export const SUBSTANCES = [
     effects: ['Anxiolytic', 'Muscle relaxation', 'Mild euphoria', 'Sociability', 'Numbness (oral)'],
     interactions: ['Alcohol (potentiates and increases liver stress)', 'Benzodiazepines (additive sedation)', 'Hepatotoxic drugs (additive liver risk)', 'Dopaminergic medications (may reduce efficacy)'],
     harmReduction: [
-      'Noble cultivars only — tudei (two-day) kava causes more side effects and liver stress',
+      'Noble cultivars only, tudei (two-day) kava causes more side effects and liver stress',
       'Liver toxicity debate: likely caused by non-root parts, tudei cultivars, or solvent extracts',
       'Traditional water extraction from root (peeled) has centuries of safe use',
-      'Dermopathy (scaly skin) develops with chronic heavy use — reversible on cessation',
+      'Dermopathy (scaly skin) develops with chronic heavy use, reversible on cessation',
       'Typical dose: 150–300mg kavalactones'
     ],
     routes: ['oral'],
@@ -1775,7 +1775,7 @@ export const SUBSTANCES = [
     interactions: ['Sedatives (additive)', 'Benzodiazepines (additive CNS depression)', 'Blood thinners (theoretical)', 'MAOIs (contains trace harmala alkaloids)'],
     harmReduction: [
       'Generally very safe; one of the mildest herbal anxiolytics',
-      'Contains trace harmala alkaloids (MAOIs) — clinically insignificant at normal doses',
+      'Contains trace harmala alkaloids (MAOIs), clinically insignificant at normal doses',
       'Often combined with valerian and hops for sleep formulations',
       'Typical dose: 250–500mg extract or 1–2 cups tea'
     ],
@@ -1812,7 +1812,7 @@ export const SUBSTANCES = [
     effects: ['Muscle relaxation', 'Sleep quality', 'Anxiety reduction', 'Calming (glycine component)', 'Less GI distress than other forms'],
     interactions: ['Antibiotics (reduces absorption)', 'Bisphosphonates', 'Levodopa', 'Diuretics'],
     harmReduction: [
-      'Best tolerated magnesium form — minimal laxative effect',
+      'Best tolerated magnesium form, minimal laxative effect',
       'Glycine component provides additional calming effects',
       'Take at bedtime for sleep benefit',
       'Typical dose: 200–400mg elemental magnesium',
@@ -1828,7 +1828,7 @@ export const SUBSTANCES = [
     category: 'supplement',
     halfLife: 'N/A (mineral; picolinate form)',
     effects: ['Immune support', 'Testosterone regulation', 'Wound healing', 'Skin health', 'Taste/smell function'],
-    interactions: ['Copper (antagonistic — always co-supplement)', 'Iron (competes for absorption)', 'Antibiotics (quinolones, tetracyclines)'],
+    interactions: ['Copper (antagonistic, always co-supplement)', 'Iron (competes for absorption)', 'Antibiotics (quinolones, tetracyclines)'],
     harmReduction: [
       'Picolinate form has high bioavailability',
       'Always take with 1–2mg copper if using daily',
@@ -1864,7 +1864,7 @@ export const SUBSTANCES = [
     category: 'supplement',
     halfLife: '25 minutes (plasma clearance; carnosine stores persist)',
     effects: ['Muscular endurance', 'Carnosine buffering', 'Delayed fatigue', 'Paresthesia (tingling)'],
-    interactions: ['Taurine (competes for uptake — stagger dosing)', 'No major drug interactions known'],
+    interactions: ['Taurine (competes for uptake, stagger dosing)', 'No major drug interactions known'],
     harmReduction: [
       'Tingling (paresthesia) is harmless and dose-dependent',
       'Split doses throughout day to reduce tingling (800mg per dose)',
@@ -1882,7 +1882,7 @@ export const SUBSTANCES = [
     category: 'supplement',
     halfLife: '1 hour (converted to arginine in kidneys)',
     effects: ['Nitric oxide production', 'Blood flow enhancement', 'Exercise performance', 'Reduced muscle soreness', 'Blood pressure reduction'],
-    interactions: ['PDE5 inhibitors (sildenafil — additive hypotension)', 'Nitrates (additive hypotension)', 'Blood pressure medications'],
+    interactions: ['PDE5 inhibitors (sildenafil, additive hypotension)', 'Nitrates (additive hypotension)', 'Blood pressure medications'],
     harmReduction: [
       'Citrulline malate (2:1) is common for exercise; pure L-citrulline for NO support',
       'More effective at raising arginine levels than supplemental arginine',
@@ -1910,7 +1910,7 @@ export const SUBSTANCES = [
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'Combined B1, B2, B3, B5, B6, B7, B9, B12. Water-soluble — excess excreted. MTHFR gene variants affect folate/B12 metabolism; methylated forms bypass this.'
+    notes: 'Combined B1, B2, B3, B5, B6, B7, B9, B12. Water-soluble, excess excreted. MTHFR gene variants affect folate/B12 metabolism; methylated forms bypass this.'
   },
   {
     id: 'alpha-gpc',
@@ -1918,9 +1918,9 @@ export const SUBSTANCES = [
     category: 'nootropic',
     halfLife: '4–6 hours',
     effects: ['Choline supply (acetylcholine precursor)', 'Cognitive enhancement', 'Growth hormone support', 'Power output (athletes)', 'Memory support'],
-    interactions: ['Acetylcholinesterase inhibitors (additive — excess acetylcholine)', 'Scopolamine (opposing mechanisms)', 'Anticholinergics (opposing mechanisms)'],
+    interactions: ['Acetylcholinesterase inhibitors (additive, excess acetylcholine)', 'Scopolamine (opposing mechanisms)', 'Anticholinergics (opposing mechanisms)'],
     harmReduction: [
-      'Most bioavailable choline source — crosses BBB effectively',
+      'Most bioavailable choline source, crosses BBB effectively',
       'Can cause headaches if acetylcholine is already high',
       'Fishy body odor at high doses (trimethylamine)',
       'Typical dose: 300–600mg daily',
@@ -1941,7 +1941,7 @@ export const SUBSTANCES = [
       'Well-tolerated at standard doses; fewer side effects than Alpha-GPC',
       'Provides both choline and uridine (via cytidine conversion)',
       'Typical dose: 250–500mg daily',
-      'Can be stimulating — take in morning',
+      'Can be stimulating, take in morning',
       'Prescription drug in many countries; OTC in US/Canada'
     ],
     routes: ['oral'],
@@ -1959,7 +1959,7 @@ export const SUBSTANCES = [
     effects: ['Cognitive enhancement', 'Physical stamina', 'Cold tolerance', 'Anxiolytic', 'Stimulant-like motivation', 'Memory enhancement'],
     interactions: ['Stimulants (additive)', 'Racetams (stacking common but unresearched)', 'Blood thinners (theoretical)'],
     harmReduction: [
-      'Tolerance builds very quickly — cycle 2–3 times per week maximum',
+      'Tolerance builds very quickly, cycle 2–3 times per week maximum',
       'Banned by WADA (World Anti-Doping Agency) as a stimulant',
       'Typical dose: 100–200mg, 1–2 times daily',
       'Stack with choline source to prevent headaches',
@@ -1975,9 +1975,9 @@ export const SUBSTANCES = [
     category: 'nootropic',
     halfLife: '1–2.5 hours',
     effects: ['Anxiolytic', 'Creativity enhancement', 'Verbal fluency', 'AMPA receptor modulation', 'Holistic thinking'],
-    interactions: ['Cholinergics (synergistic)', 'Racetams (commonly stacked)', 'Alcohol (may reduce impairment — theoretical)'],
+    interactions: ['Cholinergics (synergistic)', 'Racetams (commonly stacked)', 'Alcohol (may reduce impairment, theoretical)'],
     harmReduction: [
-      'Fat-soluble — take with a fat-containing meal for absorption',
+      'Fat-soluble, take with a fat-containing meal for absorption',
       'Very short half-life; split doses 2–3 times daily',
       'Stack with choline source (Alpha-GPC or CDP-choline)',
       'Typical dose: 750–1500mg daily in divided doses',
@@ -1995,11 +1995,11 @@ export const SUBSTANCES = [
     effects: ['Memory enhancement', 'Neuroprotection', 'BDNF/NGF upregulation', 'Anxiolytic (mild)', 'Focus'],
     interactions: ['Racetams (commonly stacked)', 'Cholinergics (synergistic)', 'Stimulants (additive)'],
     harmReduction: [
-      'Active at very low doses — do not compare to piracetam dosing',
+      'Active at very low doses, do not compare to piracetam dosing',
       'Typical dose: 10–30mg, 2–3 times daily',
       'Sublingual absorption is faster and bypasses first-pass metabolism',
       'Stack with choline source to avoid headaches',
-      'Effects are subtle and cumulative — not acutely noticeable for most'
+      'Effects are subtle and cumulative, not acutely noticeable for most'
     ],
     routes: ['oral', 'sublingual'],
     unit: 'mg',
@@ -2011,10 +2011,10 @@ export const SUBSTANCES = [
     category: 'nootropic',
     halfLife: 'Unknown (limited pharmacokinetic data)',
     effects: ['Short-term memory enhancement', 'Word recall improvement', 'Possible learning enhancement'],
-    interactions: ['Unknown — extremely limited research', 'MAOIs (theoretical concern — dopaminergic/cholinergic activity)'],
+    interactions: ['Unknown, extremely limited research', 'MAOIs (theoretical concern, dopaminergic/cholinergic activity)'],
     harmReduction: [
       'Only one human study exists (1978, Dr. Nikolaus Hansl)',
-      'Essentially zero safety data — use at own risk',
+      'Essentially zero safety data, use at own risk',
       'Typical dose: 5–10mg (based on single study)',
       'Do not combine with other experimental compounds',
       'Not available commercially from reputable sources'
@@ -2031,7 +2031,7 @@ export const SUBSTANCES = [
     effects: ['Motivation', 'Fatigue reduction', 'Thiamine (B1) supply to brain', 'Mood elevation', 'Memory consolidation'],
     interactions: ['Stimulants (additive)', 'Dopaminergic drugs (may potentiate)', 'Alcohol (may reduce chronic fatigue effects)'],
     harmReduction: [
-      'Fat-soluble thiamine derivative — crosses BBB better than thiamine',
+      'Fat-soluble thiamine derivative, crosses BBB better than thiamine',
       'Tolerance develops with daily use; cycle 5 days on, 2 off',
       'Typical dose: 400–600mg daily',
       'Take with food (fat-soluble)',
@@ -2047,7 +2047,7 @@ export const SUBSTANCES = [
     category: 'nootropic',
     halfLife: '2–5 hours',
     effects: ['Synaptogenesis', 'Dopamine receptor upregulation', 'CDP-choline precursor', 'Mood enhancement', 'Mitochondrial support'],
-    interactions: ['CDP-choline (provides uridine — redundant)', 'Omega-3 (synergistic for synaptogenesis)', 'Lithium (may enhance effects)'],
+    interactions: ['CDP-choline (provides uridine, redundant)', 'Omega-3 (synergistic for synaptogenesis)', 'Lithium (may enhance effects)'],
     harmReduction: [
       'Part of the "Mr. Happy Stack" (uridine + omega-3 + choline)',
       'Sublingual absorption avoids GI breakdown',
@@ -2103,7 +2103,7 @@ export const SUBSTANCES = [
     effects: ['Mitochondrial biogenesis', 'Neuroprotection', 'Antioxidant (redox cycling)', 'Sleep quality', 'Energy metabolism'],
     interactions: ['No significant drug interactions known', 'CoQ10 (synergistic for mitochondrial function)'],
     harmReduction: [
-      'Active at very low doses — more is not better',
+      'Active at very low doses, more is not better',
       'Typical dose: 10–20mg daily',
       'Often stacked with CoQ10 for mitochondrial support',
       'Generally very safe; GI discomfort rare',
@@ -2143,10 +2143,10 @@ export const SUBSTANCES = [
     interactions: ['Sedatives (additive)', 'Thyroid medications (may affect thyroid function)', 'GABAergic drugs (additive)'],
     harmReduction: [
       'One of the safest herbal anxiolytics available',
-      'GABA transaminase inhibitor — increases GABA levels',
+      'GABA transaminase inhibitor, increases GABA levels',
       'Typical dose: 300–600mg extract or 1.5–4.5g dried herb as tea',
       'Higher doses are more sedating; lower doses improve focus',
-      'May reduce thyroid function — caution in hypothyroidism'
+      'May reduce thyroid function, caution in hypothyroidism'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -2161,9 +2161,9 @@ export const SUBSTANCES = [
     interactions: ['Blood thinners (anticoagulant properties)', 'Diabetes medications (may lower blood sugar)', 'Pentobarbital (may prolong effect)'],
     harmReduction: [
       'Sacred in Hindu tradition (Tulsi = "the incomparable one")',
-      'Adaptogen — normalizes stress response rather than sedating',
+      'Adaptogen, normalizes stress response rather than sedating',
       'Typical dose: 300–600mg extract or 2–3 cups tea daily',
-      'May reduce fertility in high doses (animal studies) — avoid if trying to conceive',
+      'May reduce fertility in high doses (animal studies), avoid if trying to conceive',
       'Generally very safe for daily use'
     ],
     routes: ['oral'],
@@ -2179,7 +2179,7 @@ export const SUBSTANCES = [
     interactions: ['Immunosuppressants (may counteract)', 'CYP3A4 substrates (may inhibit)', 'Caffeine (may slow metabolism)'],
     harmReduction: [
       'Most effective when taken at first sign of cold symptoms',
-      'Not for daily long-term use — cycle 8 weeks on, 1 week off',
+      'Not for daily long-term use, cycle 8 weeks on, 1 week off',
       'E. purpurea most studied; E. angustifolia also used',
       'Typical dose: 300–500mg extract, 3 times daily during illness',
       'Avoid in autoimmune conditions (immune stimulation may worsen)'
@@ -2196,7 +2196,7 @@ export const SUBSTANCES = [
     effects: ['Antiviral', 'Immune support', 'Antioxidant', 'Cold and flu duration reduction'],
     interactions: ['Immunosuppressants (may counteract)', 'Diabetes medications (may lower blood sugar)', 'Diuretics (additive)'],
     harmReduction: [
-      'Only use commercially prepared extracts — raw elderberry is toxic',
+      'Only use commercially prepared extracts, raw elderberry is toxic',
       'Raw berries, bark, and leaves contain cyanogenic glycosides',
       'Typical dose: 15mL syrup or 175–600mg extract daily during illness',
       'Avoid in autoimmune conditions',
@@ -2204,7 +2204,7 @@ export const SUBSTANCES = [
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'Sambucus nigra. Rich in anthocyanins and flavonoids. Multiple RCTs show reduced duration and severity of colds and flu. Must be cooked/processed — raw berries are toxic.'
+    notes: 'Sambucus nigra. Rich in anthocyanins and flavonoids. Multiple RCTs show reduced duration and severity of colds and flu. Must be cooked/processed, raw berries are toxic.'
   },
   {
     id: 'black-seed-oil',
@@ -2217,7 +2217,7 @@ export const SUBSTANCES = [
       'Thymoquinone is the primary active compound',
       'Cold-pressed oil preserves active compounds better',
       'Typical dose: 1–3g oil or 200–500mg extract daily',
-      'Strong taste — can mix with honey or take in capsules',
+      'Strong taste, can mix with honey or take in capsules',
       'Generally well-tolerated; contact dermatitis possible topically'
     ],
     routes: ['oral'],
@@ -2248,7 +2248,7 @@ export const SUBSTANCES = [
     category: 'herb',
     halfLife: '5–7 hours (fatty acids)',
     effects: ['5-alpha-reductase inhibition', 'BPH symptom relief', 'Urinary flow improvement', 'Anti-androgenic (mild)', 'Anti-inflammatory'],
-    interactions: ['Finasteride/dutasteride (additive — redundant mechanism)', 'Blood thinners (theoretical)', 'Oral contraceptives (theoretical anti-androgenic)'],
+    interactions: ['Finasteride/dutasteride (additive, redundant mechanism)', 'Blood thinners (theoretical)', 'Oral contraceptives (theoretical anti-androgenic)'],
     harmReduction: [
       'Primarily used for benign prostatic hyperplasia (BPH)',
       'Evidence is mixed; Cochrane review found no benefit over placebo for BPH',
@@ -2287,7 +2287,7 @@ export const SUBSTANCES = [
     interactions: ['Diabetes medications (may lower blood sugar)', 'Iron supplements (tannin content reduces absorption)', 'Sedatives (mild additive)'],
     harmReduction: [
       'Traditionally used as aphrodisiac in Mexican folk medicine',
-      'Mild psychoactive effects — sometimes smoked as cannabis substitute',
+      'Mild psychoactive effects, sometimes smoked as cannabis substitute',
       'Typical dose: 2–4g dried herb as tea or 400–800mg extract',
       'Arbutin content may affect liver at very high doses',
       'Generally safe for occasional use'
@@ -2307,7 +2307,7 @@ export const SUBSTANCES = [
     effects: ['Anti-inflammatory', 'Analgesic', 'Antipyretic', 'Longer duration than ibuprofen'],
     interactions: ['Blood thinners (bleeding risk)', 'SSRIs (GI bleeding risk)', 'Lithium (increases levels)', 'Methotrexate (increases toxicity)', 'ACE inhibitors (reduces efficacy)'],
     harmReduction: [
-      'Longer half-life than ibuprofen — twice daily dosing sufficient',
+      'Longer half-life than ibuprofen, twice daily dosing sufficient',
       'Take with food to reduce GI irritation',
       'Max OTC dose: 660mg/day; prescription up to 1500mg/day',
       'Avoid long-term use without GI protection (PPI)',
@@ -2325,11 +2325,11 @@ export const SUBSTANCES = [
     effects: ['Antihistamine (H1)', 'Allergy relief', 'Non-sedating', 'Hives treatment'],
     interactions: ['CYP3A4 inhibitors (ketoconazole, erythromycin)', 'CYP2D6 inhibitors', 'Amiodarone'],
     harmReduction: [
-      'Second-generation antihistamine — minimal sedation',
+      'Second-generation antihistamine, minimal sedation',
       'Standard dose: 10mg once daily',
       'Does not significantly cross blood-brain barrier',
       'Safe for long-term daily use during allergy seasons',
-      'Desloratadine (Clarinex) is the active metabolite — slightly more potent'
+      'Desloratadine (Clarinex) is the active metabolite, slightly more potent'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -2346,8 +2346,8 @@ export const SUBSTANCES = [
       'Second-generation but slightly more sedating than loratadine',
       'Standard dose: 10mg once daily',
       'Withdrawal itching reported with long-term use (controversial)',
-      'Do not exceed recommended dose — more is not more effective',
-      'Levocetirizine (Xyzal) is the active enantiomer — 5mg equivalent'
+      'Do not exceed recommended dose, more is not more effective',
+      'Levocetirizine (Xyzal) is the active enantiomer, 5mg equivalent'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -2359,9 +2359,9 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '2.5–3.5 hours',
     effects: ['Acid reduction (H2 blocker)', 'Heartburn relief', 'GERD treatment', 'Ulcer healing'],
-    interactions: ['Ketoconazole (reduced absorption — needs acid)', 'Atazanavir (reduced absorption)', 'Iron supplements (reduced absorption)'],
+    interactions: ['Ketoconazole (reduced absorption, needs acid)', 'Atazanavir (reduced absorption)', 'Iron supplements (reduced absorption)'],
     harmReduction: [
-      'H2 blocker — less potent acid suppression than PPIs but fewer long-term risks',
+      'H2 blocker, less potent acid suppression than PPIs but fewer long-term risks',
       'Standard dose: 20mg twice daily or 40mg at bedtime',
       'Tolerance can develop with chronic use (acid rebound)',
       'Preferred over PPIs for intermittent/short-term use',
@@ -2377,11 +2377,11 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '7–15 hours',
     effects: ['Anti-diarrheal', 'Slows GI motility', 'Increases water absorption in gut'],
-    interactions: ['P-glycoprotein inhibitors (may allow CNS penetration — dangerous)', 'QT-prolonging drugs (high-dose arrhythmia risk)', 'Opioids (additive constipation)'],
+    interactions: ['P-glycoprotein inhibitors (may allow CNS penetration, dangerous)', 'QT-prolonging drugs (high-dose arrhythmia risk)', 'Opioids (additive constipation)'],
     harmReduction: [
-      'Peripheral mu-opioid agonist — does not cross BBB at normal doses',
+      'Peripheral mu-opioid agonist, does not cross BBB at normal doses',
       'Standard dose: 4mg initial, then 2mg after each loose stool (max 16mg/day)',
-      'Abuse at massive doses (50–300mg) for opioid effects is extremely dangerous — cardiac arrest',
+      'Abuse at massive doses (50–300mg) for opioid effects is extremely dangerous, cardiac arrest',
       'Do not use for bloody diarrhea or C. diff infection',
       'FDA warning: high doses cause fatal cardiac arrhythmias'
     ],
@@ -2397,8 +2397,8 @@ export const SUBSTANCES = [
     effects: ['Anti-diarrheal', 'Anti-nausea', 'Antacid', 'Antimicrobial (mild)', 'H. pylori adjunct'],
     interactions: ['Blood thinners (salicylate component)', 'Aspirin (additive salicylate)', 'Tetracycline antibiotics (reduced absorption)', 'Methotrexate (salicylate interaction)'],
     harmReduction: [
-      'Black tongue and black stool are harmless — normal bismuth reaction with sulfur',
-      'Contains salicylate — avoid in aspirin allergy or Reye syndrome risk (children)',
+      'Black tongue and black stool are harmless, normal bismuth reaction with sulfur',
+      'Contains salicylate, avoid in aspirin allergy or Reye syndrome risk (children)',
       'Standard dose: 525mg every 30 min to 1 hour as needed (max 4.2g/day)',
       'Do not use for more than 2 days for diarrhea without medical consultation',
       'Avoid in renal impairment (bismuth accumulation)'
@@ -2415,7 +2415,7 @@ export const SUBSTANCES = [
     effects: ['Expectorant', 'Mucus thinning', 'Productive cough facilitation', 'Cervical mucus thinning (off-label)'],
     interactions: ['No significant drug interactions', 'May interfere with uric acid lab tests'],
     harmReduction: [
-      'Drink plenty of water — guaifenesin works by hydrating mucus',
+      'Drink plenty of water, guaifenesin works by hydrating mucus',
       'Extended-release: 600–1200mg every 12 hours',
       'Immediate-release: 200–400mg every 4 hours',
       'Max: 2400mg/day',
@@ -2431,11 +2431,11 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '3–6 hours (extensive metabolizers); up to 24 hours (poor metabolizers)',
     effects: ['Cough suppression', 'NMDA antagonism (high doses)', 'Sigma-1 agonism', 'Serotonin reuptake inhibition (mild)'],
-    interactions: ['SSRIs (serotonin syndrome at any dose)', 'MAOIs (serotonin syndrome — potentially fatal)', 'CYP2D6 inhibitors (greatly increase levels)', 'Bupropion (CYP2D6 inhibitor — Nuedexta uses this interaction)'],
+    interactions: ['SSRIs (serotonin syndrome at any dose)', 'MAOIs (serotonin syndrome, potentially fatal)', 'CYP2D6 inhibitors (greatly increase levels)', 'Bupropion (CYP2D6 inhibitor, Nuedexta uses this interaction)'],
     harmReduction: [
       'Standard antitussive dose: 10–30mg every 4–6 hours',
       'Recreational doses covered under separate DXM entry',
-      'Check for acetaminophen in combination products — liver damage risk',
+      'Check for acetaminophen in combination products, liver damage risk',
       'CYP2D6 poor metabolizers (~7% of Caucasians) get much stronger effects',
       'Avoid all serotonergic drugs including SSRIs and tramadol'
     ],
@@ -2449,17 +2449,17 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '5–8 hours',
     effects: ['Nasal decongestant', 'Sympathomimetic', 'Vasoconstriction', 'Mild stimulant', 'Increased blood pressure'],
-    interactions: ['MAOIs (hypertensive crisis — potentially fatal)', 'Stimulants (additive cardiovascular effects)', 'Antihypertensives (reduces efficacy)', 'Beta-blockers (hypertensive reaction)'],
+    interactions: ['MAOIs (hypertensive crisis, potentially fatal)', 'Stimulants (additive cardiovascular effects)', 'Antihypertensives (reduces efficacy)', 'Beta-blockers (hypertensive reaction)'],
     harmReduction: [
       'Behind-the-counter in US (Combat Methamphetamine Epidemic Act)',
       'Standard dose: 30–60mg every 4–6 hours (max 240mg/day)',
       'Do not use with MAOIs or within 14 days of stopping an MAOI',
       'Avoid in uncontrolled hypertension, cardiovascular disease',
-      'Not for long-term use — rebound congestion possible'
+      'Not for long-term use, rebound congestion possible'
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'Alpha and beta adrenergic agonist. Sudafed brand. Precursor to methamphetamine synthesis — purchase restricted. Phenylephrine (PE) is the less-effective OTC alternative.'
+    notes: 'Alpha and beta adrenergic agonist. Sudafed brand. Precursor to methamphetamine synthesis, purchase restricted. Phenylephrine (PE) is the less-effective OTC alternative.'
   },
   {
     id: 'meclizine',
@@ -2473,7 +2473,7 @@ export const SUBSTANCES = [
       'Standard dose: 25–50mg, 1 hour before travel (motion sickness)',
       'For vertigo: 25–100mg/day in divided doses',
       'Less sedating than dimenhydrinate (Dramamine)',
-      'Anticholinergic — dry mouth, blurred vision possible'
+      'Anticholinergic, dry mouth, blurred vision possible'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -2485,13 +2485,13 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: 'N/A (acts locally in GI tract)',
     effects: ['Stool softener', 'Surfactant (reduces surface tension of stool)', 'Gentle laxative'],
-    interactions: ['Mineral oil (increases absorption — avoid combination)', 'Dantron (increased absorption)'],
+    interactions: ['Mineral oil (increases absorption, avoid combination)', 'Dantron (increased absorption)'],
     harmReduction: [
-      'Stool softener, not a stimulant laxative — works gently',
+      'Stool softener, not a stimulant laxative, works gently',
       'Standard dose: 100mg twice daily',
-      'Takes 1–3 days to work — not for acute relief',
+      'Takes 1–3 days to work, not for acute relief',
       'Often used perioperatively and with opioid therapy',
-      'Evidence for efficacy is actually quite weak — fiber and hydration more effective'
+      'Evidence for efficacy is actually quite weak, fiber and hydration more effective'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -2506,13 +2506,13 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '27–32 hours',
     effects: ['Antidepressant', 'Anti-anxiety (GAD)', 'Emotional blunting (possible)', 'Delayed onset (2–4 weeks)'],
-    interactions: ['MAOIs (serotonin syndrome — fatal)', 'Pimozide (QT prolongation)', 'Tramadol (serotonin syndrome)', 'St. John\'s Wort', 'Other serotonergic drugs'],
+    interactions: ['MAOIs (serotonin syndrome, fatal)', 'Pimozide (QT prolongation)', 'Tramadol (serotonin syndrome)', 'St. John\'s Wort', 'Other serotonergic drugs'],
     harmReduction: [
-      'S-enantiomer of citalopram — twice as potent by weight',
+      'S-enantiomer of citalopram, twice as potent by weight',
       'Standard dose: 10–20mg daily',
-      'Never stop abruptly — taper over 2–4 weeks minimum',
-      'Sexual dysfunction is common — discuss with prescriber',
-      'QT prolongation at higher doses — avoid exceeding 20mg/day'
+      'Never stop abruptly, taper over 2–4 weeks minimum',
+      'Sexual dysfunction is common, discuss with prescriber',
+      'QT prolongation at higher doses, avoid exceeding 20mg/day'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -2524,12 +2524,12 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '5 hours (active metabolite desvenlafaxine: 11 hours)',
     effects: ['Antidepressant', 'Anti-anxiety', 'Pain modulation (neuropathic)', 'Norepinephrine effects at higher doses', 'Hot flash reduction'],
-    interactions: ['MAOIs (serotonin syndrome — fatal)', 'SSRIs (serotonin excess)', 'Tramadol', 'Triptans (serotonin syndrome risk)', 'CYP2D6 inhibitors'],
+    interactions: ['MAOIs (serotonin syndrome, fatal)', 'SSRIs (serotonin excess)', 'Tramadol', 'Triptans (serotonin syndrome risk)', 'CYP2D6 inhibitors'],
     harmReduction: [
-      'SNRI — serotonin at low doses, norepinephrine at 150mg+',
-      'Notorious for withdrawal ("brain zaps") — very slow taper required',
+      'SNRI, serotonin at low doses, norepinephrine at 150mg+',
+      'Notorious for withdrawal ("brain zaps"), very slow taper required',
       'XR formulation must not be crushed or chewed',
-      'May increase blood pressure — monitor especially at higher doses',
+      'May increase blood pressure, monitor especially at higher doses',
       'Missed doses cause rapid withdrawal symptoms due to short half-life'
     ],
     routes: ['oral'],
@@ -2542,12 +2542,12 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '12 hours',
     effects: ['Antidepressant', 'Anti-anxiety', 'Neuropathic pain relief', 'Fibromyalgia treatment', 'Stress urinary incontinence'],
-    interactions: ['MAOIs (serotonin syndrome — fatal)', 'CYP1A2 inhibitors (fluvoxamine, ciprofloxacin)', 'Thioridazine', 'Heavy alcohol use (hepatotoxicity)', 'CYP2D6 substrates'],
+    interactions: ['MAOIs (serotonin syndrome, fatal)', 'CYP1A2 inhibitors (fluvoxamine, ciprofloxacin)', 'Thioridazine', 'Heavy alcohol use (hepatotoxicity)', 'CYP2D6 substrates'],
     harmReduction: [
-      'SNRI — balanced serotonin and norepinephrine reuptake inhibition',
+      'SNRI, balanced serotonin and norepinephrine reuptake inhibition',
       'Standard dose: 60mg daily (20–30mg starting dose)',
-      'Do not open capsules — enteric coating prevents GI degradation',
-      'Avoid in heavy drinkers or liver disease — hepatotoxicity reports',
+      'Do not open capsules, enteric coating prevents GI degradation',
+      'Avoid in heavy drinkers or liver disease, hepatotoxicity reports',
       'Taper slowly to discontinue; brain zaps and discontinuation syndrome common'
     ],
     routes: ['oral'],
@@ -2560,9 +2560,9 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '2–3 hours',
     effects: ['Anxiolytic', 'Serotonin 5-HT1A partial agonist', 'No sedation', 'No dependence', 'Delayed onset (2–4 weeks)'],
-    interactions: ['MAOIs (serotonin syndrome)', 'CYP3A4 inhibitors (erythromycin, ketoconazole — increase levels)', 'Grapefruit juice (increases levels)', 'Haloperidol (increased levels)'],
+    interactions: ['MAOIs (serotonin syndrome)', 'CYP3A4 inhibitors (erythromycin, ketoconazole, increase levels)', 'Grapefruit juice (increases levels)', 'Haloperidol (increased levels)'],
     harmReduction: [
-      'Non-benzodiazepine anxiolytic — no dependence or withdrawal',
+      'Non-benzodiazepine anxiolytic, no dependence or withdrawal',
       'Must be taken consistently; not effective PRN like benzos',
       'Standard dose: 5–10mg three times daily (max 60mg/day)',
       'Takes 2–4 weeks for full anxiolytic effect',
@@ -2581,8 +2581,8 @@ export const SUBSTANCES = [
     interactions: ['MAOIs (serotonin syndrome)', 'CYP3A4 inhibitors', 'Other serotonergic drugs', 'CNS depressants (additive sedation)', 'Alcohol'],
     harmReduction: [
       'Used far more for insomnia (25–100mg) than depression (150–600mg)',
-      'Priapism is rare but a medical emergency — seek ER immediately',
-      'Orthostatic hypotension common — get up slowly',
+      'Priapism is rare but a medical emergency, seek ER immediately',
+      'Orthostatic hypotension common, get up slowly',
       'Standard sleep dose: 25–100mg at bedtime',
       'Morning grogginess common; start at 25mg'
     ],
@@ -2599,9 +2599,9 @@ export const SUBSTANCES = [
     interactions: ['MAOIs (serotonin syndrome)', 'Other serotonergic drugs', 'CNS depressants', 'Alcohol (additive sedation)', 'CYP3A4 inhibitors'],
     harmReduction: [
       'More sedating at lower doses (7.5–15mg) than higher doses (30–45mg)',
-      'Significant appetite increase and weight gain — most common reason for discontinuation',
+      'Significant appetite increase and weight gain, most common reason for discontinuation',
       'Standard dose: 15–45mg at bedtime',
-      'No sexual dysfunction (unlike SSRIs) — often used as augmentation',
+      'No sexual dysfunction (unlike SSRIs), often used as augmentation',
       'Paradoxically less sedating at higher doses (noradrenergic activity offsets)'
     ],
     routes: ['oral'],
@@ -2614,13 +2614,13 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '6–7 hours',
     effects: ['Antipsychotic', 'Sleep aid (low dose)', 'Mood stabilization', 'Anti-anxiety', 'Antihistaminic sedation'],
-    interactions: ['CYP3A4 inhibitors (ketoconazole — increase levels)', 'CNS depressants (additive)', 'Alcohol (additive sedation)', 'QT-prolonging drugs', 'Strong CYP3A4 inducers (carbamazepine)'],
+    interactions: ['CYP3A4 inhibitors (ketoconazole, increase levels)', 'CNS depressants (additive)', 'Alcohol (additive sedation)', 'QT-prolonging drugs', 'Strong CYP3A4 inducers (carbamazepine)'],
     harmReduction: [
       'Atypical antipsychotic used off-label for insomnia at low doses (25–100mg)',
       'Metabolic syndrome risk: weight gain, diabetes, dyslipidemia',
       'Monitor fasting glucose and lipids regularly',
       'Standard dose: 300–800mg for schizophrenia; 25–100mg for sleep',
-      'Orthostatic hypotension — titrate slowly'
+      'Orthostatic hypotension, titrate slowly'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -2632,17 +2632,17 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '75 hours (active metabolite: 94 hours)',
     effects: ['Antipsychotic', 'Mood stabilization', 'Dopamine partial agonist', 'Antidepressant augmentation', 'Activating (not sedating)'],
-    interactions: ['CYP2D6 inhibitors (fluoxetine, paroxetine — increase levels)', 'CYP3A4 inhibitors (ketoconazole)', 'Strong CYP3A4 inducers (carbamazepine — reduce levels)'],
+    interactions: ['CYP2D6 inhibitors (fluoxetine, paroxetine, increase levels)', 'CYP3A4 inhibitors (ketoconazole)', 'Strong CYP3A4 inducers (carbamazepine, reduce levels)'],
     harmReduction: [
       'Unique mechanism: partial dopamine agonist ("dopamine stabilizer")',
-      'Activating rather than sedating — may cause akathisia (restlessness)',
+      'Activating rather than sedating, may cause akathisia (restlessness)',
       'Akathisia is the most common reason for discontinuation',
       'Standard dose: 5–30mg daily; augmentation: 2–5mg',
       'Less metabolic risk than quetiapine or olanzapine'
     ],
     routes: ['oral', 'IM'],
     unit: 'mg',
-    notes: 'Atypical antipsychotic. Abilify brand. Third-generation — partial D2 agonist rather than antagonist. Used for schizophrenia, bipolar, depression augmentation, and irritability in autism.'
+    notes: 'Atypical antipsychotic. Abilify brand. Third-generation, partial D2 agonist rather than antagonist. Used for schizophrenia, bipolar, depression augmentation, and irritability in autism.'
   },
   {
     id: 'lamotrigine',
@@ -2650,11 +2650,11 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '25–33 hours',
     effects: ['Mood stabilization', 'Anticonvulsant', 'Bipolar depression prevention', 'Neuroprotection', 'Sodium channel blockade'],
-    interactions: ['Valproate (doubles lamotrigine levels — halve the dose)', 'Carbamazepine (halves lamotrigine levels)', 'Oral contraceptives (reduce lamotrigine levels; lamotrigine may reduce OCP efficacy)'],
+    interactions: ['Valproate (doubles lamotrigine levels, halve the dose)', 'Carbamazepine (halves lamotrigine levels)', 'Oral contraceptives (reduce lamotrigine levels; lamotrigine may reduce OCP efficacy)'],
     harmReduction: [
       'MUST titrate slowly to avoid Stevens-Johnson syndrome (SJS)',
       'Starting dose: 25mg/day, increase by 25mg every 2 weeks',
-      'Any rash — stop immediately and seek medical attention',
+      'Any rash, stop immediately and seek medical attention',
       'SJS risk highest in first 8 weeks and with rapid titration',
       'Standard maintenance: 100–200mg daily (50–100mg with valproate)'
     ],
@@ -2670,9 +2670,9 @@ export const SUBSTANCES = [
     effects: ['Anticonvulsant', 'Migraine prevention', 'Weight loss', 'Appetite suppression', 'Cognitive dulling ("Dopamax")'],
     interactions: ['Oral contraceptives (reduces efficacy)', 'Carbonic anhydrase inhibitors (kidney stone risk)', 'Valproate (hyperammonemia risk)', 'CNS depressants', 'Metformin (may increase levels)'],
     harmReduction: [
-      'Cognitive side effects are dose-dependent — word-finding difficulty common',
-      'Stay very hydrated — kidney stone risk (carbonic anhydrase inhibition)',
-      'Weight loss is significant — sometimes prescribed for this purpose (Qsymia)',
+      'Cognitive side effects are dose-dependent, word-finding difficulty common',
+      'Stay very hydrated, kidney stone risk (carbonic anhydrase inhibition)',
+      'Weight loss is significant, sometimes prescribed for this purpose (Qsymia)',
       'Standard dose: 50–100mg twice daily for migraines; up to 400mg for seizures',
       'Paresthesia (tingling) is common and usually transient'
     ],
@@ -2688,11 +2688,11 @@ export const SUBSTANCES = [
     effects: ['Heart rate reduction', 'Blood pressure reduction', 'Performance anxiety relief', 'Tremor reduction', 'Migraine prevention'],
     interactions: ['Calcium channel blockers (additive bradycardia)', 'Clonidine (rebound hypertension if propranolol stopped first)', 'Insulin (masks hypoglycemia symptoms)', 'CYP2D6 inhibitors', 'Epinephrine (unopposed alpha stimulation)'],
     harmReduction: [
-      'Beta-blocker — do not stop abruptly (rebound tachycardia/hypertension)',
+      'Beta-blocker, do not stop abruptly (rebound tachycardia/hypertension)',
       'PRN dose for performance anxiety: 10–40mg, 30 min before event',
-      'Masks hypoglycemia signs in diabetics — use with caution',
-      'Contraindicated in asthma — non-selective beta blockade causes bronchospasm',
-      'Lipophilic — crosses BBB, which is why it treats anxiety and tremor'
+      'Masks hypoglycemia signs in diabetics, use with caution',
+      'Contraindicated in asthma, non-selective beta blockade causes bronchospasm',
+      'Lipophilic, crosses BBB, which is why it treats anxiety and tremor'
     ],
     routes: ['oral', 'IV'],
     unit: 'mg',
@@ -2706,8 +2706,8 @@ export const SUBSTANCES = [
     effects: ['Blood pressure reduction', 'ADHD treatment', 'Anxiety reduction', 'Opioid withdrawal aid', 'Sedation', 'Tic reduction'],
     interactions: ['Beta-blockers (rebound hypertension if clonidine stopped first)', 'CNS depressants (additive sedation)', 'Tricyclic antidepressants (may reduce efficacy)', 'Stimulants (often co-prescribed for ADHD)'],
     harmReduction: [
-      'Alpha-2 adrenergic agonist — reduces sympathetic nervous system output',
-      'Never stop abruptly — rebound hypertension can be severe/dangerous',
+      'Alpha-2 adrenergic agonist, reduces sympathetic nervous system output',
+      'Never stop abruptly, rebound hypertension can be severe/dangerous',
       'Standard dose: 0.1–0.3mg, 2–3 times daily',
       'Kapvay (ER) for ADHD; Catapres (IR) for hypertension',
       'Very useful for opioid/benzo withdrawal (reduces autonomic symptoms)'
@@ -2722,17 +2722,17 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '6–7 days',
     effects: ['Thyroid hormone replacement (T4)', 'Metabolic rate regulation', 'Energy improvement', 'TSH suppression'],
-    interactions: ['Calcium (reduces absorption — separate by 4 hours)', 'Iron (reduces absorption — separate by 4 hours)', 'PPIs (may reduce absorption)', 'Estrogen (increases TBG, may require dose increase)', 'Warfarin (may increase anticoagulant effect)'],
+    interactions: ['Calcium (reduces absorption, separate by 4 hours)', 'Iron (reduces absorption, separate by 4 hours)', 'PPIs (may reduce absorption)', 'Estrogen (increases TBG, may require dose increase)', 'Warfarin (may increase anticoagulant effect)'],
     harmReduction: [
       'Take on empty stomach, 30–60 minutes before food',
-      'Consistent timing is critical — same time daily',
+      'Consistent timing is critical, same time daily',
       'Separate from calcium, iron, and antacids by 4+ hours',
       'TSH monitored every 6–8 weeks during dose adjustment',
       'Overreplacement causes hyperthyroid symptoms: anxiety, tachycardia, bone loss'
     ],
     routes: ['oral'],
     unit: 'mcg',
-    notes: 'Synthetic T4 thyroid hormone. Synthroid brand. Most prescribed medication in the US. Narrow therapeutic index — brand consistency matters. Dose in micrograms, not milligrams.'
+    notes: 'Synthetic T4 thyroid hormone. Synthroid brand. Most prescribed medication in the US. Narrow therapeutic index, brand consistency matters. Dose in micrograms, not milligrams.'
   },
   {
     id: 'montelukast',
@@ -2744,7 +2744,7 @@ export const SUBSTANCES = [
     harmReduction: [
       'FDA black box warning for neuropsychiatric effects (suicidality, depression, agitation)',
       'Monitor for mood changes, sleep disturbances, behavioral changes',
-      'Not a rescue inhaler — prophylactic use only',
+      'Not a rescue inhaler, prophylactic use only',
       'Standard dose: 10mg at bedtime (adults)',
       'Discuss psychiatric risks with prescriber before starting'
     ],
@@ -2758,10 +2758,10 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '3–6 hours',
     effects: ['Bronchodilation', 'Rescue inhaler', 'Beta-2 agonist', 'Tremor (side effect)', 'Tachycardia'],
-    interactions: ['Beta-blockers (opposing effects — avoid non-selective)', 'MAOIs (cardiovascular risk)', 'Diuretics (hypokalemia risk)', 'Digoxin (arrhythmia risk with hypokalemia)'],
+    interactions: ['Beta-blockers (opposing effects, avoid non-selective)', 'MAOIs (cardiovascular risk)', 'Diuretics (hypokalemia risk)', 'Digoxin (arrhythmia risk with hypokalemia)'],
     harmReduction: [
-      'Short-acting beta-2 agonist (SABA) — rescue use only',
-      'If using more than 2 times per week, asthma is not controlled — see prescriber',
+      'Short-acting beta-2 agonist (SABA), rescue use only',
+      'If using more than 2 times per week, asthma is not controlled, see prescriber',
       'Standard dose: 1–2 puffs every 4–6 hours as needed',
       'Shake well before use; prime if not used in 2 weeks',
       'Tremor and tachycardia are common side effects'
@@ -2776,13 +2776,13 @@ export const SUBSTANCES = [
     category: 'stimulant',
     halfLife: '<1 hour (prodrug); d-amphetamine: 10–12 hours',
     effects: ['Focus', 'ADHD treatment', 'Binge eating disorder treatment', 'Appetite suppression', 'Wakefulness'],
-    interactions: ['MAOIs (hypertensive crisis — fatal)', 'SSRIs (serotonin syndrome risk)', 'Urinary alkalinizers (increase half-life)', 'Urinary acidifiers (decrease half-life)', 'Antihypertensives (reduced efficacy)'],
+    interactions: ['MAOIs (hypertensive crisis, fatal)', 'SSRIs (serotonin syndrome risk)', 'Urinary alkalinizers (increase half-life)', 'Urinary acidifiers (decrease half-life)', 'Antihypertensives (reduced efficacy)'],
     harmReduction: [
-      'Prodrug — must be metabolized to d-amphetamine in blood (abuse-deterrent design)',
-      'Cannot be injected or snorted effectively — prodrug design prevents this',
+      'Prodrug, must be metabolized to d-amphetamine in blood (abuse-deterrent design)',
+      'Cannot be injected or snorted effectively, prodrug design prevents this',
       'Standard dose: 30–70mg daily in morning',
       'Drug holidays on weekends may help maintain efficacy',
-      'Schedule II — significant abuse potential despite prodrug design'
+      'Schedule II, significant abuse potential despite prodrug design'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -2794,12 +2794,12 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '5 hours (extensive metabolizers); 21 hours (poor metabolizers)',
     effects: ['ADHD treatment (non-stimulant)', 'Norepinephrine reuptake inhibition', 'Delayed onset (4–6 weeks)', 'Anxiety reduction (sometimes)'],
-    interactions: ['MAOIs (contraindicated)', 'CYP2D6 inhibitors (fluoxetine, paroxetine — increase levels dramatically)', 'Albuterol (cardiovascular effects)', 'QT-prolonging drugs'],
+    interactions: ['MAOIs (contraindicated)', 'CYP2D6 inhibitors (fluoxetine, paroxetine, increase levels dramatically)', 'Albuterol (cardiovascular effects)', 'QT-prolonging drugs'],
     harmReduction: [
-      'Non-stimulant — no abuse potential; not scheduled',
+      'Non-stimulant, no abuse potential; not scheduled',
       'Takes 4–6 weeks for full effect (unlike stimulants)',
       'Standard dose: 40–80mg daily (1.2mg/kg target)',
-      'GI side effects (nausea) common — take with food',
+      'GI side effects (nausea) common, take with food',
       'FDA warning for suicidal ideation in children/adolescents'
     ],
     routes: ['oral'],
@@ -2812,17 +2812,17 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '17 hours (IR); 18 hours (ER)',
     effects: ['ADHD treatment', 'Blood pressure reduction', 'Prefrontal cortex enhancement', 'Working memory support', 'Impulse control'],
-    interactions: ['CYP3A4 inhibitors (ketoconazole — increase levels)', 'CYP3A4 inducers (rifampin — decrease levels)', 'CNS depressants (additive sedation)', 'Antihypertensives (additive hypotension)'],
+    interactions: ['CYP3A4 inhibitors (ketoconazole, increase levels)', 'CYP3A4 inducers (rifampin, decrease levels)', 'CNS depressants (additive sedation)', 'Antihypertensives (additive hypotension)'],
     harmReduction: [
-      'Alpha-2A adrenergic agonist — more selective than clonidine',
+      'Alpha-2A adrenergic agonist, more selective than clonidine',
       'Intuniv (ER) for ADHD; Tenex (IR) for hypertension',
       'Standard ADHD dose: 1–4mg daily (ER formulation)',
-      'Do not stop abruptly — rebound hypertension',
+      'Do not stop abruptly, rebound hypertension',
       'Sedation and hypotension most common side effects; usually transient'
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'Selective alpha-2A adrenergic agonist. Intuniv brand (ER). Non-stimulant ADHD treatment. More selective than clonidine — fewer side effects. Often combined with stimulants for ADHD.'
+    notes: 'Selective alpha-2A adrenergic agonist. Intuniv brand (ER). Non-stimulant ADHD treatment. More selective than clonidine, fewer side effects. Often combined with stimulants for ADHD.'
   },
 
   // --- VITAMINS ---
@@ -2835,9 +2835,9 @@ export const SUBSTANCES = [
     effects: ['Energy metabolism (carbohydrate)', 'Nervous system function', 'Heart function', 'Cognitive function'],
     interactions: ['Loop diuretics (deplete thiamine)', 'Alcohol (severely depletes)', 'Metformin (may deplete)', 'Fluorouracil (inhibits thiamine)'],
     harmReduction: [
-      'Water-soluble — excess excreted in urine',
+      'Water-soluble, excess excreted in urine',
       'Standard supplemental dose: 50–100mg daily',
-      'Alcoholics frequently deficient — Wernicke encephalopathy risk',
+      'Alcoholics frequently deficient, Wernicke encephalopathy risk',
       'IV thiamine before glucose in alcoholics (prevents Wernicke encephalopathy)',
       'Benfotiamine is fat-soluble form with better bioavailability'
     ],
@@ -2853,10 +2853,10 @@ export const SUBSTANCES = [
     effects: ['Energy metabolism', 'Antioxidant support (glutathione recycling)', 'Migraine prevention', 'Red blood cell production'],
     interactions: ['Anticholinergics (may reduce absorption)', 'Tricyclic antidepressants (may reduce levels)', 'Doxorubicin (may interact)', 'Methotrexate (may reduce absorption)'],
     harmReduction: [
-      'Turns urine bright yellow — harmless and expected',
+      'Turns urine bright yellow, harmless and expected',
       'Standard dose: 25–100mg daily; migraine prevention: 400mg daily',
-      'Very safe — essentially no toxicity at any dose',
-      'Light-sensitive — store away from direct sunlight',
+      'Very safe, essentially no toxicity at any dose',
+      'Light-sensitive, store away from direct sunlight',
       'Riboflavin-5-phosphate (R5P) is the active coenzyme form'
     ],
     routes: ['oral'],
@@ -2871,15 +2871,15 @@ export const SUBSTANCES = [
     effects: ['Coenzyme A synthesis', 'Energy metabolism', 'Hormone synthesis', 'Wound healing', 'Acne treatment (high dose, controversial)'],
     interactions: ['No significant drug interactions known', 'Biotin (shares intestinal transporter)'],
     harmReduction: [
-      'Deficiency is extremely rare — "pantothenic" means "from everywhere"',
+      'Deficiency is extremely rare, "pantothenic" means "from everywhere"',
       'Standard supplemental dose: 5–10mg (adequate intake)',
-      'High doses (5–10g) studied for acne — may cause diarrhea',
+      'High doses (5–10g) studied for acne, may cause diarrhea',
       'Dexpanthenol (provitamin) used topically for wound healing',
       'Very safe even at high doses; GI upset is the only concern'
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'Water-soluble. Component of Coenzyme A (CoA) — critical for fatty acid synthesis and oxidation, citric acid cycle. Name derived from Greek "pantos" (everywhere). Deficiency essentially unknown.'
+    notes: 'Water-soluble. Component of Coenzyme A (CoA), critical for fatty acid synthesis and oxidation, citric acid cycle. Name derived from Greek "pantos" (everywhere). Deficiency essentially unknown.'
   },
   {
     id: 'vitamin-b6',
@@ -2887,13 +2887,13 @@ export const SUBSTANCES = [
     category: 'vitamin',
     halfLife: '15–20 days (PLP form in tissues)',
     effects: ['Neurotransmitter synthesis (serotonin, dopamine, GABA)', 'Hemoglobin synthesis', 'Homocysteine metabolism', 'Immune function', 'Morning sickness treatment'],
-    interactions: ['Levodopa (B6 reduces efficacy — unless combined with carbidopa)', 'Phenytoin (B6 may reduce levels)', 'Phenobarbital (B6 may reduce levels)', 'Isoniazid (depletes B6)'],
+    interactions: ['Levodopa (B6 reduces efficacy, unless combined with carbidopa)', 'Phenytoin (B6 may reduce levels)', 'Phenobarbital (B6 may reduce levels)', 'Isoniazid (depletes B6)'],
     harmReduction: [
-      'Peripheral neuropathy at chronic doses >100mg/day — this is serious',
+      'Peripheral neuropathy at chronic doses >100mg/day, this is serious',
       'Standard supplemental dose: 25–50mg daily',
       'Do not exceed 100mg/day without medical supervision',
       'Pyridoxal-5-phosphate (P5P) is the active coenzyme form',
-      'Isoniazid (TB treatment) depletes B6 — always co-supplement'
+      'Isoniazid (TB treatment) depletes B6, always co-supplement'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -2905,13 +2905,13 @@ export const SUBSTANCES = [
     category: 'mineral',
     halfLife: 'N/A (mineral)',
     effects: ['Insulin sensitivity enhancement', 'Blood sugar regulation', 'Carbohydrate and lipid metabolism', 'Appetite/craving reduction (some evidence)'],
-    interactions: ['Insulin (may potentiate — adjust dose)', 'Diabetes medications (may potentiate)', 'NSAIDs (may increase absorption)', 'Antacids (may reduce absorption)'],
+    interactions: ['Insulin (may potentiate, adjust dose)', 'Diabetes medications (may potentiate)', 'NSAIDs (may increase absorption)', 'Antacids (may reduce absorption)'],
     harmReduction: [
       'Chromium picolinate is the most studied form',
       'Standard dose: 200–1000mcg daily',
       'Evidence for blood sugar effects is modest',
-      'Hexavalent chromium (Cr VI) is toxic — supplements use trivalent (Cr III)',
-      'Kidney toxicity reported at very high doses — stay within recommended range'
+      'Hexavalent chromium (Cr VI) is toxic, supplements use trivalent (Cr III)',
+      'Kidney toxicity reported at very high doses, stay within recommended range'
     ],
     routes: ['oral'],
     unit: 'mcg',
@@ -2925,15 +2925,15 @@ export const SUBSTANCES = [
     effects: ['Bone formation', 'Antioxidant (MnSOD cofactor)', 'Carbohydrate metabolism', 'Wound healing', 'Collagen production'],
     interactions: ['Iron (competes for absorption)', 'Calcium (competes for absorption)', 'Antacids (reduce absorption)', 'Tetracycline antibiotics'],
     harmReduction: [
-      'Deficiency is rare — abundant in whole grains, nuts, tea',
+      'Deficiency is rare, abundant in whole grains, nuts, tea',
       'Adequate intake: 2.3mg/day (males), 1.8mg/day (females)',
-      'Excess manganese is neurotoxic — manganism (Parkinson-like syndrome)',
+      'Excess manganese is neurotoxic, manganism (Parkinson-like syndrome)',
       'Welders and miners at occupational risk for manganese toxicity',
       'Do not supplement >11mg/day without medical guidance'
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'Essential trace mineral. Cofactor for MnSOD (major mitochondrial antioxidant). Neurotoxic in excess — manganism causes irreversible Parkinson-like symptoms. Supplementation rarely needed.'
+    notes: 'Essential trace mineral. Cofactor for MnSOD (major mitochondrial antioxidant). Neurotoxic in excess, manganism causes irreversible Parkinson-like symptoms. Supplementation rarely needed.'
   },
   {
     id: 'molybdenum',
@@ -2941,11 +2941,11 @@ export const SUBSTANCES = [
     category: 'mineral',
     halfLife: 'N/A (mineral)',
     effects: ['Sulfite oxidase cofactor', 'Xanthine oxidase cofactor', 'Aldehyde oxidase cofactor', 'Detoxification of sulfites'],
-    interactions: ['Copper (high molybdenum depletes copper — "teart" pastures)', 'No significant drug interactions known'],
+    interactions: ['Copper (high molybdenum depletes copper, "teart" pastures)', 'No significant drug interactions known'],
     harmReduction: [
       'Deficiency is essentially unknown in humans with normal diet',
       'Adequate intake: 45mcg/day',
-      'Very safe — upper limit set at 2mg/day (very conservative)',
+      'Very safe, upper limit set at 2mg/day (very conservative)',
       'Important for people with sulfite sensitivity',
       'Found in legumes, grains, nuts'
     ],
@@ -2977,7 +2977,7 @@ export const SUBSTANCES = [
     category: 'mineral',
     halfLife: 'N/A (mineral)',
     effects: ['Bone metabolism', 'Testosterone support', 'Vitamin D metabolism', 'Cognitive function', 'Anti-inflammatory'],
-    interactions: ['No significant drug interactions known', 'Estrogen (may increase levels — caution in hormone-sensitive conditions)'],
+    interactions: ['No significant drug interactions known', 'Estrogen (may increase levels, caution in hormone-sensitive conditions)'],
     harmReduction: [
       'Not officially recognized as essential, but strong evidence for health benefits',
       'Typical dose: 3–6mg daily',
@@ -2998,7 +2998,7 @@ export const SUBSTANCES = [
     category: 'herb',
     halfLife: '2–4 hours (estimated; limited data)',
     effects: ['Mild euphoria', 'Relaxation', 'Dream enhancement', 'Aphrodisiac', 'Anxiolytic'],
-    interactions: ['CNS depressants (additive sedation)', 'MAOIs (theoretical — contains apomorphine-related alkaloids)', 'Anticoagulants (theoretical)'],
+    interactions: ['CNS depressants (additive sedation)', 'MAOIs (theoretical, contains apomorphine-related alkaloids)', 'Anticoagulants (theoretical)'],
     harmReduction: [
       'Active compounds: nuciferine (dopaminergic) and aporphine',
       'Consumed as tea, tincture, or smoked',
@@ -3018,9 +3018,9 @@ export const SUBSTANCES = [
     effects: ['Mild euphoria', 'Relaxation', 'Visual brightening', 'Calming', 'Cannabis-like (very mild)'],
     interactions: ['CNS depressants (additive)', 'Blood pressure medications (may lower BP)', 'Anticoagulants (theoretical)'],
     harmReduction: [
-      'Also called "lion\'s tail" — native to South Africa',
+      'Also called "lion\'s tail", native to South Africa',
       'Leonurine is the primary active compound',
-      'Effects are very mild — often disappointing for those expecting cannabis-like effects',
+      'Effects are very mild, often disappointing for those expecting cannabis-like effects',
       'Typically smoked or brewed as tea',
       'Typical dose: 1–2g dried flowers smoked, or 5–10g as tea',
       'Legal in most jurisdictions'
@@ -3037,31 +3037,31 @@ export const SUBSTANCES = [
     category: 'stimulant',
     halfLife: '3.5 hours (OROS delivery sustains plasma levels 10–12 hours)',
     effects: ['Focus', 'Alertness', 'Reduced appetite', 'Increased heart rate', 'Insomnia (if taken late)'],
-    interactions: ['MAOIs (hypertensive crisis — contraindicated)', 'SSRIs (mild serotonin interaction)', 'Clonidine (additive cardiovascular effects)', 'Alcohol (increased side effects)', 'Anticonvulsants (altered levels)'],
+    interactions: ['MAOIs (hypertensive crisis, contraindicated)', 'SSRIs (mild serotonin interaction)', 'Clonidine (additive cardiovascular effects)', 'Alcohol (increased side effects)', 'Anticonvulsants (altered levels)'],
     harmReduction: [
       'OROS system: 22% IR coating releases immediately, 78% ER pumped over 10–12 hours',
-      'Do not crush, split, or chew — destroys ER mechanism and causes dose dumping',
+      'Do not crush, split, or chew, destroys ER mechanism and causes dose dumping',
       'Swallow whole with water; empty tablet shell in stool is normal',
-      'Typical doses: 18mg, 27mg, 36mg, 54mg — titrate slowly',
+      'Typical doses: 18mg, 27mg, 36mg, 54mg, titrate slowly',
       'Take in the morning; afternoon doses cause insomnia',
       'Cardiovascular screening before starting; monitor BP and HR'
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'OROS (osmotic release oral system) extended-release methylphenidate. Concerta brand. Distinct PK from IR Ritalin — smoother plasma curve, single daily dose. Schedule II. Dopamine/norepinephrine reuptake inhibitor.'
+    notes: 'OROS (osmotic release oral system) extended-release methylphenidate. Concerta brand. Distinct PK from IR Ritalin, smoother plasma curve, single daily dose. Schedule II. Dopamine/norepinephrine reuptake inhibitor.'
   },
   {
     id: 'zolpidem',
     name: 'Zolpidem',
     category: 'depressant',
     halfLife: '1.5–2.5 hours',
-    effects: ['Sleep induction', 'Sedation', 'Anterograde amnesia', 'Muscle relaxation', 'Parasomnia (sleepwalking, sleep-eating — rare)'],
-    interactions: ['Alcohol (dangerous CNS depression)', 'Benzodiazepines (additive)', 'CNS depressants', 'CYP3A4 inhibitors (ketoconazole, itraconazole — greatly increase levels)', 'Opioids (respiratory depression)'],
+    effects: ['Sleep induction', 'Sedation', 'Anterograde amnesia', 'Muscle relaxation', 'Parasomnia (sleepwalking, sleep-eating, rare)'],
+    interactions: ['Alcohol (dangerous CNS depression)', 'Benzodiazepines (additive)', 'CNS depressants', 'CYP3A4 inhibitors (ketoconazole, itraconazole, greatly increase levels)', 'Opioids (respiratory depression)'],
     harmReduction: [
-      'Take immediately before bed — onset 15–30 min',
+      'Take immediately before bed, onset 15–30 min',
       'Do not take if you cannot get 7–8 hours of sleep',
       'Avoid alcohol on the same night',
-      'Parasomnias (sleepwalking, eating, driving while asleep) — discontinue if these occur',
+      'Parasomnias (sleepwalking, eating, driving while asleep), discontinue if these occur',
       'Rebound insomnia common on stopping; taper or use intermittently',
       'Lower dose for women and elderly (slower clearance)'
     ],
@@ -3075,14 +3075,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '18–36 hours',
     effects: ['Mood stabilization', 'Antimanic', 'Antidepressant augmentation', 'Antisuicidal (robust evidence)', 'Neuroprotective'],
-    interactions: ['NSAIDs (increase lithium levels — toxicity risk)', 'Thiazide diuretics (increase levels)', 'ACE inhibitors (increase levels)', 'SSRIs (serotonin syndrome risk)', 'Caffeine (decreases levels slightly)', 'Low-sodium diet (increases levels)'],
+    interactions: ['NSAIDs (increase lithium levels, toxicity risk)', 'Thiazide diuretics (increase levels)', 'ACE inhibitors (increase levels)', 'SSRIs (serotonin syndrome risk)', 'Caffeine (decreases levels slightly)', 'Low-sodium diet (increases levels)'],
     harmReduction: [
       'Narrow therapeutic index: target 0.6–1.2 mEq/L; toxicity above 1.5 mEq/L',
       'Regular blood monitoring (levels, creatinine, TSH) every 3–6 months',
-      'Stay hydrated — dehydration concentrates lithium and causes toxicity',
-      'Maintain consistent sodium intake — low salt raises lithium levels',
-      'Toxicity signs: tremor, confusion, vomiting, slurred speech — seek ER',
-      'Never stop abruptly — taper over months to avoid rebound mania'
+      'Stay hydrated, dehydration concentrates lithium and causes toxicity',
+      'Maintain consistent sodium intake, low salt raises lithium levels',
+      'Toxicity signs: tremor, confusion, vomiting, slurred speech, seek ER',
+      'Never stop abruptly, taper over months to avoid rebound mania'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -3094,14 +3094,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '3–20 hours (9-hydroxyrisperidone active metabolite: ~21 hours)',
     effects: ['Antipsychotic', 'Mood stabilization', 'Reduced hallucinations/delusions', 'Sedation', 'Prolactin elevation'],
-    interactions: ['CYP2D6 inhibitors (fluoxetine, paroxetine — increase levels)', 'Carbamazepine (reduces levels by ~50%)', 'QT-prolonging drugs (additive)', 'Antihypertensives (additive hypotension)', 'CNS depressants (additive sedation)'],
+    interactions: ['CYP2D6 inhibitors (fluoxetine, paroxetine, increase levels)', 'Carbamazepine (reduces levels by ~50%)', 'QT-prolonging drugs (additive)', 'Antihypertensives (additive hypotension)', 'CNS depressants (additive sedation)'],
     harmReduction: [
-      'Start low and titrate slowly — 0.5–1mg initially',
+      'Start low and titrate slowly, 0.5–1mg initially',
       'EPS (extrapyramidal symptoms) more common than newer antipsychotics, especially at higher doses',
       'Metabolic monitoring: weight, glucose, lipids every 3 months',
       'Prolactin elevation can cause sexual dysfunction and galactorrhea',
       'Available as long-acting injectable (Risperdal Consta) for adherence',
-      'Do not stop abruptly — taper to avoid rebound psychosis'
+      'Do not stop abruptly, taper to avoid rebound psychosis'
     ],
     routes: ['oral', 'IM'],
     unit: 'mg',
@@ -3113,18 +3113,18 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '21–54 hours',
     effects: ['Antipsychotic', 'Mood stabilization', 'Heavy sedation', 'Appetite stimulation', 'Antiemetic'],
-    interactions: ['Fluvoxamine (dramatically increases levels — CYP1A2 inhibition)', 'Carbamazepine (reduces levels by ~50%)', 'Smoking (induces CYP1A2 — reduces levels; stopping smoking increases levels)', 'CNS depressants (additive)', 'QT-prolonging drugs'],
+    interactions: ['Fluvoxamine (dramatically increases levels, CYP1A2 inhibition)', 'Carbamazepine (reduces levels by ~50%)', 'Smoking (induces CYP1A2, reduces levels; stopping smoking increases levels)', 'CNS depressants (additive)', 'QT-prolonging drugs'],
     harmReduction: [
       'Significant metabolic risk: weight gain (average 4–12kg), glucose dysregulation, dyslipidemia',
       'Monitor weight, fasting glucose, and lipids at baseline, 3 months, then annually',
-      'Among the most sedating antipsychotics — often used for acute agitation (IM)',
-      'Smoking status affects levels — dosing may need adjustment if patient quits',
+      'Among the most sedating antipsychotics, often used for acute agitation (IM)',
+      'Smoking status affects levels, dosing may need adjustment if patient quits',
       'Tardive dyskinesia risk with long-term use',
       'Zyprexa Zydis: orally disintegrating tablet for refusal/non-adherence'
     ],
     routes: ['oral', 'IM'],
     unit: 'mg',
-    notes: 'Second-generation (atypical) antipsychotic. Zyprexa brand. High metabolic liability but effective. Also used for treatment-resistant depression (with fluoxetine — Symbyax). IM form used in emergency psychiatry.'
+    notes: 'Second-generation (atypical) antipsychotic. Zyprexa brand. High metabolic liability but effective. Also used for treatment-resistant depression (with fluoxetine, Symbyax). IM form used in emergency psychiatry.'
   },
   {
     id: 'amitriptyline',
@@ -3132,13 +3132,13 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '9–27 hours',
     effects: ['Antidepressant', 'Analgesic (neuropathic pain)', 'Sleep aid', 'Migraine prevention', 'Heavy sedation'],
-    interactions: ['MAOIs (fatal — serotonin syndrome/hypertensive crisis)', 'SSRIs (serotonin syndrome + increased TCA levels)', 'Anticholinergic drugs (additive toxicity)', 'Alcohol (severe CNS depression)', 'QT-prolonging drugs', 'CYP2D6 inhibitors (fluoxetine, paroxetine — greatly increase levels)'],
+    interactions: ['MAOIs (fatal, serotonin syndrome/hypertensive crisis)', 'SSRIs (serotonin syndrome + increased TCA levels)', 'Anticholinergic drugs (additive toxicity)', 'Alcohol (severe CNS depression)', 'QT-prolonging drugs', 'CYP2D6 inhibitors (fluoxetine, paroxetine, greatly increase levels)'],
     harmReduction: [
       'Strong anticholinergic effects: dry mouth, constipation, urinary retention, blurred vision, confusion',
-      'Dangerous in overdose — cardiotoxic (wide therapeutic index but narrow safety window)',
+      'Dangerous in overdose, cardiotoxic (wide therapeutic index but narrow safety window)',
       'Start low (10–25mg at night); therapeutic antidepressant doses are 75–150mg',
       'Low doses (10–50mg) often used for pain, sleep, and headache prevention',
-      'Avoid in elderly — high fall risk and anticholinergic cognitive effects',
+      'Avoid in elderly, high fall risk and anticholinergic cognitive effects',
       'Take at bedtime due to sedation'
     ],
     routes: ['oral'],
@@ -3151,14 +3151,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '~1 week',
     effects: ['Weight loss', 'Blood glucose reduction', 'Appetite suppression', 'Cardiovascular protection', 'Delayed gastric emptying'],
-    interactions: ['Oral medications (delayed gastric emptying may reduce absorption)', 'Insulin/sulfonylureas (hypoglycemia risk — reduce dose)', 'Alcohol (hypoglycemia risk)'],
+    interactions: ['Oral medications (delayed gastric emptying may reduce absorption)', 'Insulin/sulfonylureas (hypoglycemia risk, reduce dose)', 'Alcohol (hypoglycemia risk)'],
     harmReduction: [
       'Titrate slowly to minimize GI side effects: nausea, vomiting, diarrhea',
       'Standard titration: 0.25mg/week × 4 weeks → 0.5mg → 1mg → 2mg (Wegovy: up to 2.4mg)',
       'Inject subcutaneously (abdomen, thigh, upper arm) once weekly, any time of day',
       'Take on empty stomach or with small meal to reduce nausea',
       'Avoid if personal/family history of medullary thyroid cancer or MEN2',
-      'Pancreatitis has been reported — discontinue if severe abdominal pain'
+      'Pancreatitis has been reported, discontinue if severe abdominal pain'
     ],
     routes: ['subcutaneous', 'oral'],
     unit: 'mg',
@@ -3172,30 +3172,30 @@ export const SUBSTANCES = [
     effects: ['Opioid blockade', 'Reduced alcohol cravings', 'Mood effects (LDN)', 'Endorphin rebound (LDN mechanism)'],
     interactions: ['Opioids (blocks effects completely; precipitates acute withdrawal if opioids in system)', 'Opioid-containing medications (cough syrups, antidiarrheal)', 'Thioridazine (hepatotoxicity)'],
     harmReduction: [
-      'Must be opioid-free for 7–10 days (methadone: 10–14 days) before starting — naltrexone precipitates severe withdrawal',
+      'Must be opioid-free for 7–10 days (methadone: 10–14 days) before starting, naltrexone precipitates severe withdrawal',
       'Perform naloxone challenge test to confirm opioid-free status before initiating',
       'LDN (low-dose naltrexone 1.5–4.5mg): taken at bedtime; different mechanism for autoimmune/pain conditions',
       'Standard doses: 50mg/day or Vivitrol 380mg IM monthly injection',
-      'Inform surgeons before any procedure — pain management requires much higher opioid doses',
-      'Hepatotoxicity at high doses — baseline LFTs recommended'
+      'Inform surgeons before any procedure, pain management requires much higher opioid doses',
+      'Hepatotoxicity at high doses, baseline LFTs recommended'
     ],
     routes: ['oral', 'IM'],
     unit: 'mg',
-    notes: 'Opioid antagonist. Vivitrol brand (monthly injection). FDA-approved for opioid use disorder and alcohol use disorder. LDN (1.5–4.5mg) used off-label for fibromyalgia, Crohn\'s, multiple sclerosis, and chronic pain — different mechanism at low doses.'
+    notes: 'Opioid antagonist. Vivitrol brand (monthly injection). FDA-approved for opioid use disorder and alcohol use disorder. LDN (1.5–4.5mg) used off-label for fibromyalgia, Crohn\'s, multiple sclerosis, and chronic pain, different mechanism at low doses.'
   },
   {
     id: 'cyclobenzaprine',
     name: 'Cyclobenzaprine',
     category: 'medication',
     halfLife: '8–37 hours',
-    effects: ['Muscle spasm relief', 'Sedation', 'Pain relief (indirect — via spasm reduction)'],
-    interactions: ['MAOIs (contraindicated — serotonin syndrome/hypertensive crisis)', 'CNS depressants (additive sedation)', 'Alcohol (severe sedation)', 'TCAs (additive — structurally related)', 'Anticholinergic drugs (additive toxicity)'],
+    effects: ['Muscle spasm relief', 'Sedation', 'Pain relief (indirect, via spasm reduction)'],
+    interactions: ['MAOIs (contraindicated, serotonin syndrome/hypertensive crisis)', 'CNS depressants (additive sedation)', 'Alcohol (severe sedation)', 'TCAs (additive, structurally related)', 'Anticholinergic drugs (additive toxicity)'],
     harmReduction: [
-      'Structurally related to TCAs — shares anticholinergic and sedating properties',
-      'Not for long-term use (>3 weeks) — limited evidence beyond acute musculoskeletal injuries',
-      'Avoid in elderly — high fall risk, anticholinergic toxicity',
+      'Structurally related to TCAs, shares anticholinergic and sedating properties',
+      'Not for long-term use (>3 weeks), limited evidence beyond acute musculoskeletal injuries',
+      'Avoid in elderly, high fall risk, anticholinergic toxicity',
       'Not effective for fibromyalgia or central pain syndromes',
-      'Drowsiness is expected — do not drive',
+      'Drowsiness is expected, do not drive',
       'Standard dose: 5–10mg three times daily'
     ],
     routes: ['oral'],
@@ -3208,18 +3208,18 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '10–20 hours (4-oxo-isotretinoin active metabolite: 17–50 hours)',
     effects: ['Sebum suppression (up to 90%)', 'Sebaceous gland shrinkage', 'Anti-inflammatory', 'Long-term acne remission'],
-    interactions: ['Vitamin A supplements (additive toxicity — hypervitaminosis A)', 'Tetracyclines (pseudotumor cerebri — contraindicated combination)', 'Alcohol (liver stress)', 'St. John\'s Wort (reduced contraceptive efficacy)'],
+    interactions: ['Vitamin A supplements (additive toxicity, hypervitaminosis A)', 'Tetracyclines (pseudotumor cerebri, contraindicated combination)', 'Alcohol (liver stress)', 'St. John\'s Wort (reduced contraceptive efficacy)'],
     harmReduction: [
-      'TERATOGENIC — causes severe birth defects; requires two forms of contraception and monthly pregnancy tests (iPLEDGE in US)',
-      'Baseline and monthly LFTs and lipids — can cause hepatotoxicity and hypertriglyceridemia',
-      'Cheilitis (dry cracked lips) is nearly universal — use lip balm constantly',
+      'TERATOGENIC, causes severe birth defects; requires two forms of contraception and monthly pregnancy tests (iPLEDGE in US)',
+      'Baseline and monthly LFTs and lipids, can cause hepatotoxicity and hypertriglyceridemia',
+      'Cheilitis (dry cracked lips) is nearly universal, use lip balm constantly',
       'Avoid waxing, laser, and dermabrasion during treatment and 6 months after (skin fragility)',
       'Do not donate blood during treatment or for 1 month after',
       'Typical course: 0.5–1mg/kg/day for 15–20 weeks; total cumulative dose targets 120–150mg/kg'
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'Retinoid (vitamin A derivative). Accutane/Claravis brand. Most effective acne treatment — produces permanent remission in ~85% after one course. Mechanism: dramatically shrinks sebaceous glands. Requires enrollment in iPLEDGE (US) or equivalent monitoring program.'
+    notes: 'Retinoid (vitamin A derivative). Accutane/Claravis brand. Most effective acne treatment, produces permanent remission in ~85% after one course. Mechanism: dramatically shrinks sebaceous glands. Requires enrollment in iPLEDGE (US) or equivalent monitoring program.'
   },
   {
     id: 'valproate',
@@ -3227,14 +3227,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '9–16 hours',
     effects: ['Anticonvulsant', 'Mood stabilization', 'Antimanic', 'Migraine prevention', 'Sedation'],
-    interactions: ['Lamotrigine (valproate doubles lamotrigine levels — reduce lamotrigine dose by 50%)', 'Aspirin (increases free valproate levels)', 'Carbamazepine (lowers valproate levels)', 'Other anticonvulsants', 'CNS depressants (additive)'],
+    interactions: ['Lamotrigine (valproate doubles lamotrigine levels, reduce lamotrigine dose by 50%)', 'Aspirin (increases free valproate levels)', 'Carbamazepine (lowers valproate levels)', 'Other anticonvulsants', 'CNS depressants (additive)'],
     harmReduction: [
-      'TERATOGENIC (neural tube defects) — avoid in women of childbearing potential; use contraception',
-      'Monitor liver function — hepatotoxicity risk, especially in children under 2',
+      'TERATOGENIC (neural tube defects), avoid in women of childbearing potential; use contraception',
+      'Monitor liver function, hepatotoxicity risk, especially in children under 2',
       'Regular serum levels (50–100 mcg/mL therapeutic range) and LFTs',
-      'Pancreatitis: abdominal pain + nausea during treatment — seek evaluation',
+      'Pancreatitis: abdominal pain + nausea during treatment, seek evaluation',
       'Weight gain and hair thinning common side effects',
-      'Do not stop abruptly — taper to prevent seizure rebound'
+      'Do not stop abruptly, taper to prevent seizure rebound'
     ],
     routes: ['oral', 'IV'],
     unit: 'mg',
@@ -3246,13 +3246,13 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '25–65 hours initially; autoinduces to 12–17 hours with chronic use',
     effects: ['Anticonvulsant', 'Mood stabilization', 'Trigeminal neuralgia relief', 'Sedation'],
-    interactions: ['Major CYP3A4 inducer — reduces levels of oral contraceptives, SSRIs, antipsychotics, many others', 'Valproate (lowers carbamazepine levels; valproate levels also fall)', 'Lithium (neurotoxicity risk)', 'MAOIs (contraindicated)', 'Grapefruit (increases levels)'],
+    interactions: ['Major CYP3A4 inducer, reduces levels of oral contraceptives, SSRIs, antipsychotics, many others', 'Valproate (lowers carbamazepine levels; valproate levels also fall)', 'Lithium (neurotoxicity risk)', 'MAOIs (contraindicated)', 'Grapefruit (increases levels)'],
     harmReduction: [
-      'Autoinduces its own metabolism — levels fall after first few weeks; dose adjustment often needed',
-      'HLA-B*1502 genetic test before starting in patients of Asian descent — risk of Stevens-Johnson syndrome',
-      'Baseline and periodic CBC, LFTs — rare aplastic anemia and agranulocytosis',
-      'Use backup contraception — strong OCP inducer',
-      'Many drug interactions — check every new medication against carbamazepine',
+      'Autoinduces its own metabolism, levels fall after first few weeks; dose adjustment often needed',
+      'HLA-B*1502 genetic test before starting in patients of Asian descent, risk of Stevens-Johnson syndrome',
+      'Baseline and periodic CBC, LFTs, rare aplastic anemia and agranulocytosis',
+      'Use backup contraception, strong OCP inducer',
+      'Many drug interactions, check every new medication against carbamazepine',
       'Therapeutic range: 4–12 mcg/mL; check levels at initiation and after dose changes'
     ],
     routes: ['oral'],
@@ -3265,18 +3265,18 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '15–25 hours',
     effects: ['Broad-spectrum antibiotic', 'Anti-inflammatory (sub-antimicrobial doses)', 'Malaria prophylaxis'],
-    interactions: ['Antacids/dairy (chelation — dramatically reduces absorption; separate by 2 hours)', 'Warfarin (increases anticoagulant effect)', 'Isotretinoin (pseudotumor cerebri — contraindicated)', 'Oral contraceptives (theoretical minor interaction)', 'Rifampin (reduces doxycycline levels)'],
+    interactions: ['Antacids/dairy (chelation, dramatically reduces absorption; separate by 2 hours)', 'Warfarin (increases anticoagulant effect)', 'Isotretinoin (pseudotumor cerebri, contraindicated)', 'Oral contraceptives (theoretical minor interaction)', 'Rifampin (reduces doxycycline levels)'],
     harmReduction: [
-      'Take with full glass of water and remain upright for 30 min — risk of esophageal ulceration',
+      'Take with full glass of water and remain upright for 30 min, risk of esophageal ulceration',
       'Photosensitivity: use sunscreen; avoid prolonged sun exposure during treatment',
-      'Do not take with dairy, calcium, magnesium, iron, or antacids — chelation severely reduces absorption',
+      'Do not take with dairy, calcium, magnesium, iron, or antacids, chelation severely reduces absorption',
       'Can be taken with food (unlike other tetracyclines) to reduce GI upset',
       'Complete the full course even if feeling better',
       'Subantimicrobial dose (40mg modified-release) used for rosacea and periodontitis'
     ],
     routes: ['oral', 'IV'],
     unit: 'mg',
-    notes: 'Second-generation tetracycline antibiotic. Vibramycin/Doryx brand. Bacteriostatic — inhibits 30S ribosomal subunit. Broad spectrum: Lyme disease, chlamydia, acne, malaria prophylaxis, community-acquired pneumonia, anthrax. Better GI tolerance and longer half-life than tetracycline.'
+    notes: 'Second-generation tetracycline antibiotic. Vibramycin/Doryx brand. Bacteriostatic, inhibits 30S ribosomal subunit. Broad spectrum: Lyme disease, chlamydia, acne, malaria prophylaxis, community-acquired pneumonia, anthrax. Better GI tolerance and longer half-life than tetracycline.'
   },
   {
     id: 'amoxicillin',
@@ -3284,14 +3284,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '1–1.5 hours',
     effects: ['Broad-spectrum bactericidal antibiotic', 'Cell wall synthesis inhibition'],
-    interactions: ['Warfarin (increased INR — monitor closely)', 'Methotrexate (reduced renal elimination — toxicity risk)', 'Probenecid (increases amoxicillin levels)', 'Oral contraceptives (theoretical minor reduction in efficacy)'],
+    interactions: ['Warfarin (increased INR, monitor closely)', 'Methotrexate (reduced renal elimination, toxicity risk)', 'Probenecid (increases amoxicillin levels)', 'Oral contraceptives (theoretical minor reduction in efficacy)'],
     harmReduction: [
-      'Penicillin allergy cross-reactivity ~2% — clarify allergy type before prescribing',
+      'Penicillin allergy cross-reactivity ~2%, clarify allergy type before prescribing',
       'Complete the full course to prevent resistance',
       'Take with or without food',
-      'Diarrhea and GI upset common — probiotics may help',
-      'Maculopapular rash in mononucleosis patients — not true allergy but avoid in EBV',
-      'C. difficile risk with any antibiotic — report severe diarrhea'
+      'Diarrhea and GI upset common, probiotics may help',
+      'Maculopapular rash in mononucleosis patients, not true allergy but avoid in EBV',
+      'C. difficile risk with any antibiotic, report severe diarrhea'
     ],
     routes: ['oral', 'IV'],
     unit: 'mg',
@@ -3303,9 +3303,9 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '1.5 hours (canrenone active metabolite: 13–24 hours)',
     effects: ['Diuresis (potassium-sparing)', 'Antihypertensive', 'Antiandrogen', 'Acne reduction', 'Reduces aldosterone effects'],
-    interactions: ['ACE inhibitors/ARBs (hyperkalemia — monitor potassium)', 'Potassium supplements (hyperkalemia)', 'NSAIDs (reduce diuretic effect and worsen renal function)', 'Digoxin (spironolactone increases digoxin levels)', 'Lithium (increases lithium levels)'],
+    interactions: ['ACE inhibitors/ARBs (hyperkalemia, monitor potassium)', 'Potassium supplements (hyperkalemia)', 'NSAIDs (reduce diuretic effect and worsen renal function)', 'Digoxin (spironolactone increases digoxin levels)', 'Lithium (increases lithium levels)'],
     harmReduction: [
-      'Monitor potassium levels regularly — hyperkalemia can be life-threatening',
+      'Monitor potassium levels regularly, hyperkalemia can be life-threatening',
       'Avoid high-potassium foods (bananas, oranges, potassium salt) when on higher doses',
       'Take with food to reduce GI upset',
       'Gynecomastia in males at higher doses (>100mg) due to antiandrogen effects',
@@ -3314,7 +3314,7 @@ export const SUBSTANCES = [
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'Aldosterone antagonist (mineralocorticoid receptor blocker). Aldactone brand. Uses: heart failure (Aldactone), hypertension, hyperaldosteronism, acne, hirsutism, gender-affirming HRT for trans women (antiandrogen). Potassium-sparing diuretic — monitor K+ closely.'
+    notes: 'Aldosterone antagonist (mineralocorticoid receptor blocker). Aldactone brand. Uses: heart failure (Aldactone), hypertension, hyperaldosteronism, acne, hirsutism, gender-affirming HRT for trans women (antiandrogen). Potassium-sparing diuretic, monitor K+ closely.'
   },
   {
     id: 'sildenafil',
@@ -3322,14 +3322,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '3–5 hours',
     effects: ['Erectile dysfunction treatment', 'Pulmonary arterial hypertension (PAH) treatment', 'Smooth muscle relaxation (penile/pulmonary vasculature)', 'Enhanced exercise capacity (PAH)'],
-    interactions: ['Nitrates (severe life-threatening hypotension — absolute contraindication)', 'Alpha-blockers (additive hypotension)', 'CYP3A4 inhibitors (ritonavir increases sildenafil levels 11×)', 'Other PDE5 inhibitors', 'Alcohol (additive hypotension)'],
+    interactions: ['Nitrates (severe life-threatening hypotension, absolute contraindication)', 'Alpha-blockers (additive hypotension)', 'CYP3A4 inhibitors (ritonavir increases sildenafil levels 11×)', 'Other PDE5 inhibitors', 'Alcohol (additive hypotension)'],
     harmReduction: [
-      'NEVER combine with nitrates (nitroglycerin, isosorbide, amyl nitrite/poppers) — fatal hypotension',
+      'NEVER combine with nitrates (nitroglycerin, isosorbide, amyl nitrite/poppers), fatal hypotension',
       'Take 30–60 min before sexual activity; food (especially high-fat meal) delays onset',
       'Common side effects: headache, flushing, nasal congestion, visual disturbances (blue tint)',
-      'Priapism (erection >4 hours) — seek ER immediately to prevent permanent damage',
+      'Priapism (erection >4 hours), seek ER immediately to prevent permanent damage',
       'Start at 25mg in elderly or those on alpha-blockers',
-      'PAH dosing (Revatio): 20mg three times daily — different from ED dosing'
+      'PAH dosing (Revatio): 20mg three times daily, different from ED dosing'
     ],
     routes: ['oral', 'IV (PAH only)'],
     unit: 'mg',
@@ -3341,14 +3341,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '3–7 hours (IR); 7–15 hours (XL/succinate)',
     effects: ['Heart rate reduction', 'Blood pressure reduction', 'Angina relief', 'Heart failure (Toprol-XL)', 'Migraine prevention'],
-    interactions: ['CYP2D6 inhibitors (fluoxetine, paroxetine, bupropion — dramatically increase levels)', 'Calcium channel blockers (verapamil, diltiazem — heart block risk)', 'Insulin/antidiabetics (masks hypoglycemia signs)', 'Clonidine (rebound hypertension on clonidine withdrawal)', 'NSAIDs (reduce antihypertensive effect)'],
+    interactions: ['CYP2D6 inhibitors (fluoxetine, paroxetine, bupropion, dramatically increase levels)', 'Calcium channel blockers (verapamil, diltiazem, heart block risk)', 'Insulin/antidiabetics (masks hypoglycemia signs)', 'Clonidine (rebound hypertension on clonidine withdrawal)', 'NSAIDs (reduce antihypertensive effect)'],
     harmReduction: [
       'Beta-1 selective at normal doses; selectivity lost at high doses (avoid in severe asthma)',
-      'Do not stop abruptly — gradual taper to prevent rebound tachycardia and angina',
-      'CYP2D6 poor metabolizers have higher plasma levels — be aware if on fluoxetine/paroxetine',
+      'Do not stop abruptly, gradual taper to prevent rebound tachycardia and angina',
+      'CYP2D6 poor metabolizers have higher plasma levels, be aware if on fluoxetine/paroxetine',
       'Take with food to improve absorption (tartrate/IR form)',
       'Succinate (XL) can be taken without food; do not crush or chew',
-      'Masks hypoglycemia symptoms in diabetics — sweating still occurs'
+      'Masks hypoglycemia symptoms in diabetics, sweating still occurs'
     ],
     routes: ['oral', 'IV'],
     unit: 'mg',
@@ -3360,14 +3360,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: 'Varies by ester: cypionate ~8 days, enanthate ~4.5 days, propionate ~2 days, gel/topical: daily application',
     effects: ['Muscle mass increase', 'Libido increase', 'Energy and mood elevation', 'Secondary male characteristics', 'Erythropoiesis (increased RBC production)', 'Bone density increase'],
-    interactions: ['Anticoagulants (warfarin — potentiates anticoagulation)', 'Insulin (increases insulin sensitivity — may need dose adjustment)', 'Corticosteroids (additive fluid retention)', 'Hepatotoxic drugs (oral 17-alpha-alkylated forms only)'],
+    interactions: ['Anticoagulants (warfarin, potentiates anticoagulation)', 'Insulin (increases insulin sensitivity, may need dose adjustment)', 'Corticosteroids (additive fluid retention)', 'Hepatotoxic drugs (oral 17-alpha-alkylated forms only)'],
     harmReduction: [
-      'Monitor hematocrit — testosterone raises RBC production; >54% increases clot risk',
+      'Monitor hematocrit, testosterone raises RBC production; >54% increases clot risk',
       'Monitor PSA in men >40; testosterone may accelerate prostate issues',
-      'Aromatization to estradiol occurs — gynecomastia and mood effects; aromatase inhibitor may be needed',
+      'Aromatization to estradiol occurs, gynecomastia and mood effects; aromatase inhibitor may be needed',
       'Inject IM or subQ (subQ slower absorption, less PIP); rotate injection sites',
       'Gel: apply to clean dry skin; wash hands; avoid skin-to-skin contact with others for 4 hours',
-      'Testicular atrophy and reduced fertility — hCG co-administration preserves testicular function'
+      'Testicular atrophy and reduced fertility, hCG co-administration preserves testicular function'
     ],
     routes: ['IM', 'subcutaneous', 'transdermal', 'oral (undecanoate)'],
     unit: 'mg',
@@ -3379,12 +3379,12 @@ export const SUBSTANCES = [
     category: 'opioid',
     halfLife: '24–42 hours',
     effects: ['Opioid partial agonism', 'Pain relief', 'Opioid craving suppression', 'Reduced withdrawal symptoms', 'Ceiling effect on respiratory depression'],
-    interactions: ['Full opioid agonists (precipitates withdrawal if used too soon — must be in moderate withdrawal before first dose)', 'CNS depressants (additive)', 'Benzodiazepines (respiratory depression — FDA black box warning)', 'CYP3A4 inhibitors (increase buprenorphine levels)', 'MAOIs (serotonin syndrome risk)'],
+    interactions: ['Full opioid agonists (precipitates withdrawal if used too soon, must be in moderate withdrawal before first dose)', 'CNS depressants (additive)', 'Benzodiazepines (respiratory depression, FDA black box warning)', 'CYP3A4 inhibitors (increase buprenorphine levels)', 'MAOIs (serotonin syndrome risk)'],
     harmReduction: [
-      'Suboxone (buprenorphine + naloxone) — naloxone deters injection; dissolves poorly if injected',
+      'Suboxone (buprenorphine + naloxone), naloxone deters injection; dissolves poorly if injected',
       'Must be in moderate withdrawal (COWS score ≥8) before first dose to avoid precipitated withdrawal',
       'Place film/tablet under tongue or between cheek and gum until dissolved; do not swallow',
-      'Partial agonist ceiling effect makes overdose less likely than full agonists — but still possible with benzos/alcohol',
+      'Partial agonist ceiling effect makes overdose less likely than full agonists, but still possible with benzos/alcohol',
       'Film daily dosing for OUD; sublingual or buccal for pain (more frequent dosing)',
       'Stable patients can receive 30-day prescriptions (DATA 2000 waiver eliminated in 2023 in US)'
     ],
@@ -3396,16 +3396,16 @@ export const SUBSTANCES = [
     id: 'paroxetine',
     name: 'Paroxetine',
     category: 'medication',
-    halfLife: '21 hours (highly variable; autoinhibits CYP2D6 — non-linear kinetics)',
+    halfLife: '21 hours (highly variable; autoinhibits CYP2D6, non-linear kinetics)',
     effects: ['Antidepressant', 'Anxiolytic', 'Anti-OCD', 'PMDD treatment', 'Sedating (more than other SSRIs)'],
-    interactions: ['MAOIs (serotonin syndrome — fatal)', 'Tramadol (serotonin syndrome)', 'Most potent CYP2D6 inhibitor of all SSRIs — greatly increases TCAs, antipsychotics, codeine (reduced analgesia), tamoxifen (reduced efficacy)', 'Thioridazine/pimozide (QT prolongation — contraindicated)'],
+    interactions: ['MAOIs (serotonin syndrome, fatal)', 'Tramadol (serotonin syndrome)', 'Most potent CYP2D6 inhibitor of all SSRIs, greatly increases TCAs, antipsychotics, codeine (reduced analgesia), tamoxifen (reduced efficacy)', 'Thioridazine/pimozide (QT prolongation, contraindicated)'],
     harmReduction: [
-      'Worst discontinuation syndrome of all SSRIs — taper slowly (10% per month for long-term users)',
-      'Never stop abruptly — brain zaps, dizziness, flu-like symptoms, irritability',
-      'Strong CYP2D6 inhibitor — check all medications before adding to regimen',
+      'Worst discontinuation syndrome of all SSRIs, taper slowly (10% per month for long-term users)',
+      'Never stop abruptly, brain zaps, dizziness, flu-like symptoms, irritability',
+      'Strong CYP2D6 inhibitor, check all medications before adding to regimen',
       'Tamoxifen patients: paroxetine should be avoided (reduces active tamoxifen metabolite)',
       'Most sedating and anticholinergic of the SSRIs',
-      'Avoid in pregnancy (neonatal adaptation syndrome, cardiac defects — Category D)'
+      'Avoid in pregnancy (neonatal adaptation syndrome, cardiac defects, Category D)'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -3416,12 +3416,12 @@ export const SUBSTANCES = [
     name: 'Fluvoxamine',
     category: 'medication',
     halfLife: '15–20 hours',
-    effects: ['Anti-OCD', 'Antidepressant', 'Anti-anxiety', 'Sigma-1 receptor agonism (anti-inflammatory — COVID-19 research)'],
-    interactions: ['MAOIs (serotonin syndrome)', 'Tizanidine (contraindicated — extreme hypotension/sedation)', 'Theophylline (greatly increases levels — toxicity)', 'Warfarin (increases INR)', 'Clozapine/olanzapine (CYP1A2 inhibition — dramatically increases levels)', 'Caffeine (CYP1A2 — increases caffeine levels)'],
+    effects: ['Anti-OCD', 'Antidepressant', 'Anti-anxiety', 'Sigma-1 receptor agonism (anti-inflammatory, COVID-19 research)'],
+    interactions: ['MAOIs (serotonin syndrome)', 'Tizanidine (contraindicated, extreme hypotension/sedation)', 'Theophylline (greatly increases levels, toxicity)', 'Warfarin (increases INR)', 'Clozapine/olanzapine (CYP1A2 inhibition, dramatically increases levels)', 'Caffeine (CYP1A2, increases caffeine levels)'],
     harmReduction: [
-      'Strongest CYP1A2 inhibitor — many interactions; check every new drug',
-      'Tizanidine absolutely contraindicated with fluvoxamine — severe hypotension and sedation',
-      'Smokers have lower levels (smoking induces CYP1A2) — levels rise if patient quits',
+      'Strongest CYP1A2 inhibitor, many interactions; check every new drug',
+      'Tizanidine absolutely contraindicated with fluvoxamine, severe hypotension and sedation',
+      'Smokers have lower levels (smoking induces CYP1A2), levels rise if patient quits',
       'First-line SSRI for OCD; less commonly used for depression than other SSRIs',
       'More sedating than sertraline or escitalopram',
       'Take at bedtime if sedation occurs'
@@ -3436,11 +3436,11 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '18–44 hours',
     effects: ['Antidepressant', 'Neuropathic pain relief', 'Migraine prevention', 'Sleep improvement', 'Moderate sedation'],
-    interactions: ['MAOIs (serotonin syndrome — fatal)', 'SSRIs (serotonin syndrome + CYP2D6 inhibitors increase nortriptyline levels)', 'CYP2D6 inhibitors (fluoxetine, paroxetine — dramatically increase levels)', 'QT-prolonging drugs', 'Anticholinergic drugs (additive)'],
+    interactions: ['MAOIs (serotonin syndrome, fatal)', 'SSRIs (serotonin syndrome + CYP2D6 inhibitors increase nortriptyline levels)', 'CYP2D6 inhibitors (fluoxetine, paroxetine, dramatically increase levels)', 'QT-prolonging drugs', 'Anticholinergic drugs (additive)'],
     harmReduction: [
-      'Active metabolite of amitriptyline — less sedating and less anticholinergic than parent',
+      'Active metabolite of amitriptyline, less sedating and less anticholinergic than parent',
       'Therapeutic drug monitoring recommended: target 50–150 ng/mL',
-      'Dangerous in overdose — cardiotoxic (wide complex tachycardia, QRS prolongation)',
+      'Dangerous in overdose, cardiotoxic (wide complex tachycardia, QRS prolongation)',
       'Lower anticholinergic burden than amitriptyline but still present',
       'Take at bedtime; relatively well-tolerated TCA for neuropathic pain',
       'CYP2D6 poor metabolizers have much higher plasma levels'
@@ -3455,12 +3455,12 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '3–4 hours (biological effect persists 18–36 hours)',
     effects: ['Anti-inflammatory', 'Immunosuppressive', 'Antiallergic', 'Blood glucose elevation', 'Fluid retention'],
-    interactions: ['NSAIDs (additive GI ulcer risk — use with PPI)', 'Warfarin (variable — usually increases INR)', 'Insulin/antidiabetics (raises blood glucose)', 'Live vaccines (immunosuppression — avoid while on significant doses)', 'Rifampin (reduces prednisone effect)', 'Potassium-depleting diuretics (additive hypokalemia)'],
+    interactions: ['NSAIDs (additive GI ulcer risk, use with PPI)', 'Warfarin (variable, usually increases INR)', 'Insulin/antidiabetics (raises blood glucose)', 'Live vaccines (immunosuppression, avoid while on significant doses)', 'Rifampin (reduces prednisone effect)', 'Potassium-depleting diuretics (additive hypokalemia)'],
     harmReduction: [
       'Take with food or milk to reduce GI irritation',
       'Short courses (<2 weeks) rarely require tapering; longer courses must be tapered to allow adrenal recovery',
-      'Adrenal suppression with >3 weeks of use — do not stop abruptly',
-      'Monitor blood glucose in diabetics — significant hyperglycemia can occur',
+      'Adrenal suppression with >3 weeks of use, do not stop abruptly',
+      'Monitor blood glucose in diabetics, significant hyperglycemia can occur',
       'Calcium + vitamin D supplementation for courses >3 months (bone density loss)',
       'Mood changes, insomnia, and increased appetite are common, especially at higher doses'
     ],
@@ -3474,18 +3474,18 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '2 hours',
     effects: ['Potent diuresis', 'Blood pressure reduction', 'Edema reduction', 'Rapid fluid removal'],
-    interactions: ['Aminoglycosides (additive ototoxicity)', 'NSAIDs (reduce diuretic efficacy; worsen renal function)', 'Lithium (reduces renal clearance — lithium toxicity risk)', 'Digoxin (hypokalemia increases digoxin toxicity)', 'ACE inhibitors (first-dose hypotension)', 'Warfarin (mild increase in anticoagulation)'],
+    interactions: ['Aminoglycosides (additive ototoxicity)', 'NSAIDs (reduce diuretic efficacy; worsen renal function)', 'Lithium (reduces renal clearance, lithium toxicity risk)', 'Digoxin (hypokalemia increases digoxin toxicity)', 'ACE inhibitors (first-dose hypotension)', 'Warfarin (mild increase in anticoagulation)'],
     harmReduction: [
-      'Monitor electrolytes regularly — hypokalemia, hyponatremia, hypomagnesemia common',
+      'Monitor electrolytes regularly, hypokalemia, hyponatremia, hypomagnesemia common',
       'Supplement potassium if levels fall below 3.5 mEq/L',
-      'Ototoxicity at high IV doses — avoid rapid IV infusion',
-      'Take in morning or early afternoon — strong diuresis disrupts sleep if taken at night',
-      'Monitor renal function (creatinine, BUN) — can cause prerenal azotemia',
-      'Volume depletion signs: dizziness, weakness, hypotension — reduce dose'
+      'Ototoxicity at high IV doses, avoid rapid IV infusion',
+      'Take in morning or early afternoon, strong diuresis disrupts sleep if taken at night',
+      'Monitor renal function (creatinine, BUN), can cause prerenal azotemia',
+      'Volume depletion signs: dizziness, weakness, hypotension, reduce dose'
     ],
     routes: ['oral', 'IV', 'IM'],
     unit: 'mg',
-    notes: 'Loop diuretic. Lasix brand. Inhibits NKCC2 in the thick ascending limb — the most potent diuretic class. Used for edema (heart failure, cirrhosis, nephrotic syndrome), hypertension, and hypercalcemia. Rapid onset (IV: 5 min; oral: 30–60 min). Electrolyte monitoring essential.'
+    notes: 'Loop diuretic. Lasix brand. Inhibits NKCC2 in the thick ascending limb, the most potent diuretic class. Used for edema (heart failure, cirrhosis, nephrotic syndrome), hypertension, and hypercalcemia. Rapid onset (IV: 5 min; oral: 30–60 min). Electrolyte monitoring essential.'
   },
   {
     id: 'warfarin',
@@ -3493,14 +3493,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '20–60 hours',
     effects: ['Anticoagulation', 'Stroke prevention', 'DVT/PE prevention and treatment', 'Prosthetic valve protection'],
-    interactions: ['Extensive interactions — virtually everything affects INR', 'NSAIDs (bleeding risk)', 'Antibiotics (gut flora disruption elevates INR)', 'SSRIs (increased bleeding)', 'Vitamin K foods (greens reduce INR)', 'St. John\'s Wort (reduces warfarin effect)', 'Alcohol (acute: increases; chronic: decreases INR)', 'Amiodarone (dramatically increases INR)', 'Fish oil/omega-3 (mild antiplatelet, additive)'],
+    interactions: ['Extensive interactions, virtually everything affects INR', 'NSAIDs (bleeding risk)', 'Antibiotics (gut flora disruption elevates INR)', 'SSRIs (increased bleeding)', 'Vitamin K foods (greens reduce INR)', 'St. John\'s Wort (reduces warfarin effect)', 'Alcohol (acute: increases; chronic: decreases INR)', 'Amiodarone (dramatically increases INR)', 'Fish oil/omega-3 (mild antiplatelet, additive)'],
     harmReduction: [
-      'Regular INR monitoring — therapeutic range 2.0–3.0 (mechanical valves: 2.5–3.5)',
-      'Maintain consistent vitamin K intake — do not eliminate leafy greens, just be consistent',
-      'Any new medication, supplement, or herbal product may affect INR — always check',
+      'Regular INR monitoring, therapeutic range 2.0–3.0 (mechanical valves: 2.5–3.5)',
+      'Maintain consistent vitamin K intake, do not eliminate leafy greens, just be consistent',
+      'Any new medication, supplement, or herbal product may affect INR, always check',
       'Avoid contact sports and activities with bleeding risk',
-      'Carry anticoagulant card/alert — inform all healthcare providers',
-      'If dose missed: take same day if remembered; skip if next day — do not double dose'
+      'Carry anticoagulant card/alert, inform all healthcare providers',
+      'If dose missed: take same day if remembered; skip if next day, do not double dose'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -3511,10 +3511,10 @@ export const SUBSTANCES = [
     name: 'Estradiol',
     category: 'medication',
     halfLife: 'Oral: 13–20 hours; transdermal: sustained; IM valerate: ~4 days; IM cypionate: ~8 days',
-    effects: ['Feminization (trans women/AMAB HRT)', 'Menopausal symptom relief', 'Bone density maintenance', 'Cardiovascular effects (complex — route dependent)', 'Mood regulation'],
-    interactions: ['CYP3A4 inducers (carbamazepine, rifampin — reduce levels)', 'CYP3A4 inhibitors (increase levels)', 'Thyroid hormones (estrogen increases TBG; may need thyroid dose increase)', 'Warfarin (variable effect on INR)', 'Antiretrovirals (many affect estradiol metabolism)'],
+    effects: ['Feminization (trans women/AMAB HRT)', 'Menopausal symptom relief', 'Bone density maintenance', 'Cardiovascular effects (complex, route dependent)', 'Mood regulation'],
+    interactions: ['CYP3A4 inducers (carbamazepine, rifampin, reduce levels)', 'CYP3A4 inhibitors (increase levels)', 'Thyroid hormones (estrogen increases TBG; may need thyroid dose increase)', 'Warfarin (variable effect on INR)', 'Antiretrovirals (many affect estradiol metabolism)'],
     harmReduction: [
-      'Transdermal/injectable routes bypass hepatic first-pass — lower VTE risk than oral',
+      'Transdermal/injectable routes bypass hepatic first-pass, lower VTE risk than oral',
       'Oral estradiol (not ethinyl estradiol) preferred over synthetic estrogens for HRT',
       'Monitor estradiol, LH/FSH, and (if applicable) testosterone levels',
       'VTE risk: oral > transdermal; patch or gel preferred in those with VTE history',
@@ -3531,13 +3531,13 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '30–50 hours',
     effects: ['Blood pressure reduction', 'Angina relief', 'Coronary artery dilation', 'Peripheral vasodilation'],
-    interactions: ['CYP3A4 inhibitors (ketoconazole, ritonavir — increase amlodipine levels)', 'Simvastatin (amlodipine raises simvastatin levels — cap simvastatin at 20mg)', 'Cyclosporine/tacrolimus (increases immunosuppressant levels)', 'Other antihypertensives (additive hypotension)', 'Sildenafil (additive hypotension)'],
+    interactions: ['CYP3A4 inhibitors (ketoconazole, ritonavir, increase amlodipine levels)', 'Simvastatin (amlodipine raises simvastatin levels, cap simvastatin at 20mg)', 'Cyclosporine/tacrolimus (increases immunosuppressant levels)', 'Other antihypertensives (additive hypotension)', 'Sildenafil (additive hypotension)'],
     harmReduction: [
       'Take once daily at same time; can be taken with or without food',
-      'Ankle/leg edema is very common — not a sign of fluid overload (peripheral vasodilation)',
-      'Do not stop abruptly — gradual taper recommended',
+      'Ankle/leg edema is very common, not a sign of fluid overload (peripheral vasodilation)',
+      'Do not stop abruptly, gradual taper recommended',
       'Long half-life: effects persist days after missed doses; also means slow steady state',
-      'Simvastatin cap at 20mg when co-prescribed — use atorvastatin instead for higher statin needs',
+      'Simvastatin cap at 20mg when co-prescribed, use atorvastatin instead for higher statin needs',
       'Flushing and headache common at initiation, usually resolves with time'
     ],
     routes: ['oral'],
@@ -3550,18 +3550,18 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '68 hours (tissue half-life; extends treatment effect beyond course)',
     effects: ['Broad-spectrum bacteriostatic antibiotic', 'Anti-inflammatory (low-dose, chronic)'],
-    interactions: ['Warfarin (increases INR — monitor)', 'QT-prolonging drugs (additive risk)', 'Antacids with aluminum/magnesium (reduce absorption by 24%)', 'Digoxin (may increase levels)', 'Nelfinavir (increases azithromycin levels)'],
+    interactions: ['Warfarin (increases INR, monitor)', 'QT-prolonging drugs (additive risk)', 'Antacids with aluminum/magnesium (reduce absorption by 24%)', 'Digoxin (may increase levels)', 'Nelfinavir (increases azithromycin levels)'],
     harmReduction: [
-      'QT prolongation risk — avoid in patients with existing QT prolongation or on other QT-prolonging drugs',
+      'QT prolongation risk, avoid in patients with existing QT prolongation or on other QT-prolonging drugs',
       'Take on empty stomach or with food (food does not significantly affect tablets/capsules)',
-      'Z-pack (5-day, 500/250mg) commonly prescribed — short course but tissue levels persist',
+      'Z-pack (5-day, 500/250mg) commonly prescribed, short course but tissue levels persist',
       'Resistance concern: overuse has led to significant macrolide resistance globally',
       'GI side effects (nausea, diarrhea) common but usually mild',
-      'Cardiac risk in patients with existing cardiovascular disease — consider alternatives'
+      'Cardiac risk in patients with existing cardiovascular disease, consider alternatives'
     ],
     routes: ['oral', 'IV'],
     unit: 'mg',
-    notes: 'Macrolide/azalide antibiotic. Zithromax/Z-pack brand. Inhibits 50S ribosomal subunit. Extremely long tissue half-life enables short courses. Used for community-acquired pneumonia, STIs (chlamydia — single 1g dose), strep, otitis media, and H. pylori. QT prolongation risk has led to FDA safety communications.'
+    notes: 'Macrolide/azalide antibiotic. Zithromax/Z-pack brand. Inhibits 50S ribosomal subunit. Extremely long tissue half-life enables short courses. Used for community-acquired pneumonia, STIs (chlamydia, single 1g dose), strep, otitis media, and H. pylori. QT prolongation risk has led to FDA safety communications.'
   },
   {
     id: 'finasteride',
@@ -3569,18 +3569,18 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '5–6 hours',
     effects: ['DHT reduction (~70%)', 'Hair loss prevention/reversal', 'BPH symptom reduction', 'Prostate size reduction'],
-    interactions: ['No major drug-drug interactions', 'Alpha-blockers (additive for BPH — tamsulosin commonly combined)', 'PSA interpretation: finasteride lowers PSA ~50% — multiply value by 2 for baseline comparison'],
+    interactions: ['No major drug-drug interactions', 'Alpha-blockers (additive for BPH, tamsulosin commonly combined)', 'PSA interpretation: finasteride lowers PSA ~50%, multiply value by 2 for baseline comparison'],
     harmReduction: [
-      'Post-finasteride syndrome (PFS): sexual dysfunction, depression, cognitive changes reported to persist after stopping — controversial, under-researched',
-      'PSA reduction (~50%) can mask prostate cancer — adjust reference ranges accordingly',
-      'Women of childbearing potential must not handle crushed/broken tablets — DHT inhibition causes fetal genital abnormalities',
+      'Post-finasteride syndrome (PFS): sexual dysfunction, depression, cognitive changes reported to persist after stopping, controversial, under-researched',
+      'PSA reduction (~50%) can mask prostate cancer, adjust reference ranges accordingly',
+      'Women of childbearing potential must not handle crushed/broken tablets, DHT inhibition causes fetal genital abnormalities',
       'Effects on hair loss take 3–6 months minimum to assess; 1–2 years for full response',
       'BPH effects take 6 months; sexual side effects typically reversible on stopping',
       'Annual PSA monitoring recommended in patients >50'
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: '5-alpha reductase inhibitor (Type II). Propecia (1mg — hair loss) / Proscar (5mg — BPH) brand. Reduces conversion of testosterone to DHT. Irreversible in BPH; hair regrowth may be permanent if maintained. Post-finasteride syndrome remains a debated post-market safety concern. Dutasteride (inhibits both Type I+II) is alternative.'
+    notes: '5-alpha reductase inhibitor (Type II). Propecia (1mg, hair loss) / Proscar (5mg, BPH) brand. Reduces conversion of testosterone to DHT. Irreversible in BPH; hair regrowth may be permanent if maintained. Post-finasteride syndrome remains a debated post-market safety concern. Dutasteride (inhibits both Type I+II) is alternative.'
   },
   {
     id: 'eszopiclone',
@@ -3588,14 +3588,14 @@ export const SUBSTANCES = [
     category: 'depressant',
     halfLife: '6 hours',
     effects: ['Sleep onset and maintenance', 'Sedation', 'Anxiolytic (mild)', 'Anterograde amnesia (possible)'],
-    interactions: ['CYP3A4 inhibitors (ketoconazole, itraconazole — dramatically increase exposure)', 'CNS depressants (additive)', 'Alcohol (synergistic CNS depression)', 'CYP3A4 inducers (rifampin — reduce levels)', 'Olanzapine (additive psychomotor impairment)'],
+    interactions: ['CYP3A4 inhibitors (ketoconazole, itraconazole, dramatically increase exposure)', 'CNS depressants (additive)', 'Alcohol (synergistic CNS depression)', 'CYP3A4 inducers (rifampin, reduce levels)', 'Olanzapine (additive psychomotor impairment)'],
     harmReduction: [
-      'Longer duration than zolpidem — better for sleep maintenance, but more next-day impairment',
-      'Metallic or bitter taste is nearly universal — warn patients (use sugar-free gum after)',
+      'Longer duration than zolpidem, better for sleep maintenance, but more next-day impairment',
+      'Metallic or bitter taste is nearly universal, warn patients (use sugar-free gum after)',
       'Take immediately before bed with 8 hours available for sleep',
-      'Avoid alcohol — CNS depression synergism',
-      'Rebound insomnia on discontinuation — taper gradually',
-      'Complex sleep behaviors (sleepwalking, sleep-driving) possible — discontinue if these occur'
+      'Avoid alcohol, CNS depression synergism',
+      'Rebound insomnia on discontinuation, taper gradually',
+      'Complex sleep behaviors (sleepwalking, sleep-driving) possible, discontinue if these occur'
     ],
     routes: ['oral'],
     unit: 'mg',
@@ -3607,10 +3607,10 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '19–37 hours (desmethylclomipramine active metabolite: 54–77 hours)',
     effects: ['Anti-OCD (most effective SSRI/TCA for OCD)', 'Antidepressant', 'Antipanic', 'Anticataplexy (narcolepsy)'],
-    interactions: ['MAOIs (serotonin syndrome — fatal)', 'SSRIs (serotonin syndrome + pharmacokinetic interactions)', 'CYP2D6 inhibitors (fluoxetine, paroxetine — dramatically increase levels)', 'QT-prolonging drugs (additive)', 'Anticholinergic drugs (additive toxicity)'],
+    interactions: ['MAOIs (serotonin syndrome, fatal)', 'SSRIs (serotonin syndrome + pharmacokinetic interactions)', 'CYP2D6 inhibitors (fluoxetine, paroxetine, dramatically increase levels)', 'QT-prolonging drugs (additive)', 'Anticholinergic drugs (additive toxicity)'],
     harmReduction: [
-      'Most serotonergic TCA — serotonin syndrome risk higher than other TCAs',
-      'Dangerous in overdose — cardiotoxic, seizures',
+      'Most serotonergic TCA, serotonin syndrome risk higher than other TCAs',
+      'Dangerous in overdose, cardiotoxic, seizures',
       'Start at 25mg; titrate slowly to 100–250mg over weeks',
       'Strong anticholinergic: dry mouth, constipation, urinary retention, blurred vision',
       'Seizure threshold lowered at higher doses (>250mg)',
@@ -3618,7 +3618,7 @@ export const SUBSTANCES = [
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'TCA with the highest serotonin reuptake inhibition of any TCA. Anafranil brand. Gold standard for OCD — often more effective than SSRIs for severe OCD. Also FDA-approved for depression and cataplexy (narcolepsy). Active metabolite desmethylclomipramine (noradrenergic) has very long half-life. High side effect burden limits use to SSRI-refractory cases.'
+    notes: 'TCA with the highest serotonin reuptake inhibition of any TCA. Anafranil brand. Gold standard for OCD, often more effective than SSRIs for severe OCD. Also FDA-approved for depression and cataplexy (narcolepsy). Active metabolite desmethylclomipramine (noradrenergic) has very long half-life. High side effect burden limits use to SSRI-refractory cases.'
   },
   {
     id: 'celecoxib',
@@ -3626,18 +3626,18 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '11 hours',
     effects: ['Anti-inflammatory', 'Analgesic', 'Antipyretic', 'Lower GI side effect profile vs. non-selective NSAIDs'],
-    interactions: ['Warfarin (increased bleeding — monitor INR)', 'Lithium (increases lithium levels)', 'ACE inhibitors/ARBs (reduced antihypertensive efficacy)', 'Aspirin (partially negates GI benefit of COX-2 selectivity)', 'Fluconazole (CYP2C9 inhibitor — doubles celecoxib levels)', 'Furosemide/thiazides (reduced diuretic effect)'],
+    interactions: ['Warfarin (increased bleeding, monitor INR)', 'Lithium (increases lithium levels)', 'ACE inhibitors/ARBs (reduced antihypertensive efficacy)', 'Aspirin (partially negates GI benefit of COX-2 selectivity)', 'Fluconazole (CYP2C9 inhibitor, doubles celecoxib levels)', 'Furosemide/thiazides (reduced diuretic effect)'],
     harmReduction: [
-      'COX-2 selective — spares gastric COX-1 (gastroprotective prostaglandins) but not fully safe GI-wise',
+      'COX-2 selective, spares gastric COX-1 (gastroprotective prostaglandins) but not fully safe GI-wise',
       'Still carry renal and cardiovascular risks similar to non-selective NSAIDs',
-      'Sulfonamide allergy: celecoxib contains a sulfonamide moiety — use caution (cross-reactivity debated but reported)',
+      'Sulfonamide allergy: celecoxib contains a sulfonamide moiety, use caution (cross-reactivity debated but reported)',
       'Take with food to reduce GI irritation',
-      'Avoid in last trimester of pregnancy — premature closure of ductus arteriosus',
+      'Avoid in last trimester of pregnancy, premature closure of ductus arteriosus',
       'Monitor renal function and blood pressure with chronic use'
     ],
     routes: ['oral'],
     unit: 'mg',
-    notes: 'COX-2 selective NSAID. Celebrex brand. Preferentially inhibits cyclooxygenase-2 (inflammatory) over COX-1 (gastric protection). Significantly lower risk of peptic ulcer vs. ibuprofen/naproxen — no gastroprotective benefit lost if patient is also on aspirin. Cardiovascular risk similar to non-selective NSAIDs. Sulfonamide structural component.'
+    notes: 'COX-2 selective NSAID. Celebrex brand. Preferentially inhibits cyclooxygenase-2 (inflammatory) over COX-1 (gastric protection). Significantly lower risk of peptic ulcer vs. ibuprofen/naproxen, no gastroprotective benefit lost if patient is also on aspirin. Cardiovascular risk similar to non-selective NSAIDs. Sulfonamide structural component.'
   },
   {
     id: 'hydroxychloroquine',
@@ -3645,14 +3645,14 @@ export const SUBSTANCES = [
     category: 'medication',
     halfLife: '40–50 days',
     effects: ['Antimalarial', 'Immunomodulatory', 'Anti-inflammatory', 'Glucose-lowering (mild)'],
-    interactions: ['QT-prolonging drugs (significant additive risk)', 'Tamoxifen (retinal toxicity — avoid combination)', 'Insulin/antidiabetics (hypoglycemia risk)', 'Digoxin (may increase digoxin levels)', 'Antacids (reduce absorption — separate by 4 hours)', 'Cyclosporine (increases cyclosporine levels)'],
+    interactions: ['QT-prolonging drugs (significant additive risk)', 'Tamoxifen (retinal toxicity, avoid combination)', 'Insulin/antidiabetics (hypoglycemia risk)', 'Digoxin (may increase digoxin levels)', 'Antacids (reduce absorption, separate by 4 hours)', 'Cyclosporine (increases cyclosporine levels)'],
     harmReduction: [
       'Retinal toxicity: annual ophthalmology exam after 5 years of use (or 1 year if risk factors)',
       'Risk factors for retinopathy: dose >5mg/kg/day, >10 years use, renal/hepatic impairment',
       'Take with food or milk to reduce GI upset',
-      'Very long half-life — effects persist weeks after stopping; also slow to reach therapeutic levels',
+      'Very long half-life, effects persist weeks after stopping; also slow to reach therapeutic levels',
       'Baseline and periodic ECG for QT monitoring in at-risk patients',
-      'G6PD deficiency: hemolysis risk — test in high-risk populations before starting'
+      'G6PD deficiency: hemolysis risk, test in high-risk populations before starting'
     ],
     routes: ['oral'],
     unit: 'mg',

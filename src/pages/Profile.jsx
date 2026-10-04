@@ -138,7 +138,7 @@ export default function Profile() {
                 {t.name}
               </div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 2 }}>
-                {t.location}{t.notes ? ` — ${t.notes}` : ''}
+                {t.location}{t.notes ? `, ${t.notes}` : ''}
               </div>
             </div>
           </div>

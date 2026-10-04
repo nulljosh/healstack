@@ -264,7 +264,7 @@ export default function Landing({ onGetStarted }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '1.25rem' }}>
           {[
             { name: 'Web', status: 'Live', detail: 'healstack.heyitsmejosh.com', live: true },
-            { name: 'iOS', status: 'Coming soon', detail: 'Submission in progress', live: false },
+            { name: 'iOS', status: 'Live', detail: 'On the App Store, iOS 17 and up', live: true },
           ].map(p => (
             <div key={p.name} style={{ padding: '1.5rem', background: 'var(--bg-secondary)', border: '1px solid var(--border)', borderRadius: 14 }}>
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem', marginBottom: '0.75rem' }}>

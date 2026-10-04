@@ -231,6 +231,7 @@ button { user-select: none; font-family: inherit; }
   .page {
     padding: 32px 40px 60px;
     margin-left: 260px;
+    width: calc(100% - 260px);
   }
 }
 
@@ -496,12 +497,6 @@ button { user-select: none; font-family: inherit; }
   height: 14px;
 }
 
-@media (min-width: 768px) {
-  .theme-toggle {
-    left: 208px;
-    right: auto;
-  }
-}
 
 /* --- Pills / Tags --- */
 
@@ -796,7 +791,6 @@ button { user-select: none; font-family: inherit; }
     overflow: hidden;
     text-overflow: ellipsis;
     flex: 1;
-    max-width: 60px;
   }
 
   .nav-link.active::after {
@@ -1688,3 +1682,15 @@ footer.lp-foot .foot-rule > :last-child { order: 2; }
 .foot-bar .foot-meta { margin: 0; text-align: left; color: var(--text-secondary); font-size: 12.5px; line-height: 1.9; }
 .foot-bar .foot-meta a { color: var(--text-secondary); }
 @media (max-width: 700px) { .foot-dir { grid-template-columns: repeat(2, 1fr); } }
+
+/* --- Sharing: printable summary --- */
+.print-only { display: none; }
+@media print {
+  .print-only { display: block; }
+  .nav, .theme-toggle, .btn-primary { display: none !important; }
+}
+
+/* --- Profile button beside the theme toggle; keep the Summary ring clear of both --- */
+.profile-link { right: 56px; }
+.summary-head { padding-right: 84px; }
+.browse-row + .browse-row { border-top: 1px solid var(--border); }

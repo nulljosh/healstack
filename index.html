@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="description" content="Personal substance tracker and educational wiki. Log doses, browse harm reduction info, and track patterns over time." />
   <script>
-    // ponytail: App.jsx sets data-theme on mount, which is one frame too late — the sticky
+    // ponytail: App.jsx sets data-theme on mount, which is one frame too late, so the sticky
     // landing nav paints white on a dark-mode device. Same key and fallback as App.jsx.
     try {
       document.documentElement.setAttribute('data-theme',

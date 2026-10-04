@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route, Link } from 'react-router-dom';
 import { SessionProvider } from './context/SessionContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import Auth from './pages/Auth';
@@ -24,6 +24,8 @@ import LabResults from './pages/LabResults';
 import Routine from './pages/Routine';
 import Supplements from './pages/Supplements';
 import Profile from './pages/Profile';
+import Browse from './pages/Browse';
+import Sharing from './pages/Sharing';
 import WhatsNew from './components/WhatsNew';
 import { WebMCP } from './lib/webmcp';
 
@@ -47,7 +49,7 @@ function ThemeToggle({ theme, setTheme }) {
 
 function AppShell({ theme, setTheme }) {
   const { user, loading, isPasswordRecovery } = useAuth();
-  // ponytail: signed-out view is a two-state toggle, not a route — no router needed above AuthProvider
+  // ponytail: signed-out view is a two-state toggle, not a route, no router needed above AuthProvider
   const [showAuth, setShowAuth] = useState(false);
 
   if (loading) return null;
@@ -58,8 +60,13 @@ function AppShell({ theme, setTheme }) {
     <SessionProvider>
       <main style={{ minHeight: '100dvh' }}>
         <ThemeToggle theme={theme} setTheme={setTheme} />
+        <Link to="/profile" className="theme-toggle profile-link" aria-label="Profile">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </Link>
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/browse" element={<Browse />} />
+          <Route path="/sharing" element={<Sharing />} />
           <Route path="/substances" element={<Substances />} />
           <Route path="/substances/:id" element={<SubstanceDetail />} />
           <Route path="/interactions" element={<Substances defaultTab="interactions" />} />

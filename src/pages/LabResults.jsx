@@ -92,7 +92,7 @@ function ResultCard({ result, flaggedCount }) {
           <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
             {result.date}
           </div>
-          <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{result.lab} — {result.panel}</div>
+          <div style={{ fontWeight: 600, fontSize: '0.95rem' }}>{result.lab}, {result.panel}</div>
           <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
             {result.markers.length} marker{result.markers.length !== 1 ? 's' : ''}
           </div>
@@ -448,7 +448,7 @@ export default function LabResults() {
       {tab === 'import' && (
         <div>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', marginBottom: 20 }}>
-            Drag a LifeLabs PDF to auto-extract your lab values. Results are processed locally — nothing is uploaded.
+            Drag a LifeLabs PDF to auto-extract your lab values. Results are processed locally, nothing is uploaded.
           </p>
           <div
             onDragOver={e => { e.preventDefault(); setDragging(true); }}
@@ -490,7 +490,7 @@ export default function LabResults() {
                   }}>
                   <span style={{ fontWeight: 600 }}>{p.panel}</span>
                   <span style={{ color: 'var(--text-secondary)', fontSize: '0.82rem', marginLeft: 8 }}>
-                    {p.markers.length} markers — click to review &amp; save
+                    {p.markers.length} markers, click to review &amp; save
                   </span>
                 </button>
               ))}

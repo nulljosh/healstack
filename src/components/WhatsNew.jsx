@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const VERSION = '2.2.0';
+const VERSION = '2.4.0';
 const KEY = 'dose_whats_new_seen';
 
 export default function WhatsNew() {
@@ -12,10 +12,9 @@ export default function WhatsNew() {
       <div className="modal-content" onClick={e => e.stopPropagation()} style={{ maxWidth: 380 }}>
         <h2 style={{ marginBottom: 12 }}>What's New in v{VERSION}</h2>
         <ul style={{ paddingLeft: 18, lineHeight: 1.7, marginBottom: 20 }}>
-          <li>GitHub Sign In</li>
-          <li>Lab Results tracker</li>
-          <li>Bodywork, Facemaxxing &amp; Routine pages</li>
-          <li>Interaction warnings when logging active stack</li>
+          <li>New Summary with pinned metrics you choose</li>
+          <li>Browse: every tool in one list</li>
+          <li>Sharing: send, print or export a summary</li>
         </ul>
         <button className="btn-primary" onClick={dismiss} style={{ width: '100%' }}>Got it</button>
       </div>

@@ -4,6 +4,7 @@ import { useDoseLog } from '../hooks/useDoseLog';
 import { useSubstances } from '../hooks/useSubstances';
 import { useBiometrics } from '../hooks/useBiometrics';
 import { useLabResults } from '../hooks/useLabResults';
+import PinnedCards from '../components/PinnedCards';
 import LogEntry from '../components/LogEntry';
 import AddEntryModal from '../components/AddEntryModal';
 import { CATEGORY_COLORS } from '../constants/colors';
@@ -109,7 +110,7 @@ export default function Dashboard() {
 
   return (
     <main className="page">
-      <div style={{ marginBottom: 28, display: 'flex', alignItems: 'flex-start', gap: 16 }}>
+      <div className="summary-head" style={{ marginBottom: 28, display: 'flex', alignItems: 'flex-start', gap: 16 }}>
         <div style={{ flex: 1 }}>
           <h1 className="page-title" style={{ fontSize: 'clamp(1.5rem, 6vw, 2rem)', marginBottom: 6 }}>
             {longDate(new Date())}
@@ -122,6 +123,8 @@ export default function Dashboard() {
         </div>
         <HealthRing score={healthScore} />
       </div>
+
+      <PinnedCards />
 
       {activeSubIds.length > 0 && (
         <section style={{ marginBottom: 24 }}>
