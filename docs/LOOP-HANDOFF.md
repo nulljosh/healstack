@@ -10,7 +10,7 @@ QA the Healstack landing page and app until A+ quality. Each pass: run tests and
 - Tests: 60/60 passing.
 - Landing refreshed with real screenshots, iOS marked Live, macOS card says "in review".
 - Privacy critical fix: new accounts now start empty instead of being seeded with a hardcoded personal profile.
-- Native builds: iOS 2.3.6 WAITING_FOR_REVIEW (resubmitted 2026-10-03 with Sign in with Apple fix), macOS 2.3.5 IN_REVIEW (same version record).
+- Native builds: iOS 2.3.6 approved and live on App Store (READY_FOR_SALE, since 2026-10-04). macOS 2.3.5 IN_REVIEW on same version record, waiting on screenshot feedback.
 
 ## Known blockers (open roadmap items)
 
