@@ -1,5 +1,5 @@
 # Healstack
-v2.2.0
+v2.4.0
 
 Renamed from Dose 2026-07-01 (Dose, Balm, Tonic, and several others all taken on the App Store, Healstack cleared). GitHub repo renamed to nulljosh/healstack, domain moved to healstack.heyitsmejosh.com. Bundle IDs, App Group, and URL scheme (dose://) intentionally left as `dose` to avoid re-provisioning/App Store relinking.
 
@@ -14,6 +14,10 @@ Renamed from Dose 2026-07-01 (Dose, Balm, Tonic, and several others all taken on
 - Supabase auth: login, register, password reset (PASSWORD_RECOVERY event flow)
 - Interaction checker must warn when logging substance that interacts with active stack
 - No emojis
+
+## The loop
+
+Current handoff: `docs/LOOP-HANDOFF.md`. QA the landing and app until spotless.
 
 ## Run
 ```bash
