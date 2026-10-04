@@ -93,7 +93,7 @@ export default function Profile() {
 
   return (
     <div className="page" style={{ maxWidth: 600 }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
+      <div className="summary-head" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 4 }}>
         <h1 className="page-title" style={{ margin: 0 }}>Health Profile</h1>
         <button
           onClick={signOut}

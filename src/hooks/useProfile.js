@@ -2,8 +2,6 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../context/AuthContext';
 
-const SEED_PROFILE = { substances: [], conditions: [], pendingTests: [], notes: '' };
-
 const EMPTY_PROFILE = { substances: [], conditions: [], pendingTests: [], notes: '' };
 
 export function useProfile() {
@@ -21,8 +19,8 @@ export function useProfile() {
       .single()
       .then(async ({ data, error }) => {
         if (error || !data) {
-          await supabase.from('dose_profiles').insert({ id: user.id, data: SEED_PROFILE });
-          setProfile(SEED_PROFILE);
+          await supabase.from('dose_profiles').insert({ id: user.id, data: EMPTY_PROFILE });
+          setProfile(EMPTY_PROFILE);
         } else {
           setProfile(data.data);
         }

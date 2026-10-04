@@ -80,7 +80,7 @@ export function findInteractions(substanceA, substanceB) {
         );
         if (!alreadyFound) {
           results.push({
-            text: `Both interact with ${sharedTarget}: "${substanceA.interactions[i]}" / "${substanceB.interactions[j]}"`,
+            text: `Both interact with ${sharedTarget === 'maois' ? 'MAOIs' : sharedTarget === 'ssris' ? 'SSRIs' : sharedTarget}: "${substanceA.interactions[i]}" / "${substanceB.interactions[j]}"`,
             source: 'shared',
             severity: classifySeverity(
               substanceA.interactions[i] + ' ' + substanceB.interactions[j]

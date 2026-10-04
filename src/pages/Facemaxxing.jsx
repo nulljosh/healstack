@@ -128,7 +128,7 @@ export default function Facemaxxing() {
                   <div className="card-effects">{p.summary}</div>
                   <div style={{ display: 'flex', gap: 8, marginTop: 6, fontSize: 11, color: 'var(--muted)' }}>
                     <span>{p.category}</span>
-                    <span>--</span>
+                    <span>·</span>
                     <span>{p.difficulty}</span>
                   </div>
                 </div>
