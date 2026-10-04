@@ -77,3 +77,15 @@ extension View {
         #endif
     }
 }
+
+
+extension View {
+    /// macOS sheets size to their content, which clipped long labels. Give them room; no-op on iOS.
+    @ViewBuilder func macSheetSize() -> some View {
+        #if os(macOS)
+        frame(minWidth: 520, idealWidth: 560, minHeight: 600, idealHeight: 640)
+        #else
+        self
+        #endif
+    }
+}
