@@ -307,7 +307,7 @@ export default function Landing({ onGetStarted }) {
       <ul>
         <li><a href="https://apps.apple.com/app/id6785764864">App Store</a></li>
         <li><a href="/">Open the web app</a></li>
-        <li><a href="https://github.com/nulljosh/healstack/blob/main/WHITEPAPER.md">Whitepaper</a></li>
+        <li><a href="https://github.com/nulljosh/intake/blob/main/WHITEPAPER.md">Whitepaper</a></li>
       </ul>
     </div>
     <div className="foot-col">
@@ -320,11 +320,11 @@ export default function Landing({ onGetStarted }) {
     <div className="foot-col">
       <h3>Developers</h3>
       <ul>
-        <li><a href="https://github.com/nulljosh/healstack">Source</a></li>
-        <li><a href="https://github.com/nulljosh/healstack/blob/main/docs/API.md">API reference</a></li>
-        <li><a href="https://github.com/nulljosh/healstack/blob/main/docs/ARCHITECTURE.md">Architecture</a></li>
-        <li><a href="https://github.com/nulljosh/healstack/issues">Report a bug</a></li>
-        <li><a href="https://github.com/nulljosh/healstack/blob/main/CONTRIBUTING.md">Contributing</a></li>
+        <li><a href="https://github.com/nulljosh/intake">Source</a></li>
+        <li><a href="https://github.com/nulljosh/intake/blob/main/docs/API.md">API reference</a></li>
+        <li><a href="https://github.com/nulljosh/intake/blob/main/docs/ARCHITECTURE.md">Architecture</a></li>
+        <li><a href="https://github.com/nulljosh/intake/issues">Report a bug</a></li>
+        <li><a href="https://github.com/nulljosh/intake/blob/main/CONTRIBUTING.md">Contributing</a></li>
       </ul>
     </div>
     <div className="foot-col">
@@ -332,8 +332,8 @@ export default function Landing({ onGetStarted }) {
       <ul>
         <li><a href="/privacy.html">Privacy</a></li>
         <li><a href="/tos.html">Terms</a></li>
-        <li><a href="https://github.com/nulljosh/healstack/blob/main/SECURITY.md">Security</a></li>
-        <li><a href="https://github.com/nulljosh/healstack/blob/main/LICENSE">License (MIT)</a></li>
+        <li><a href="https://github.com/nulljosh/intake/blob/main/SECURITY.md">Security</a></li>
+        <li><a href="https://github.com/nulljosh/intake/blob/main/LICENSE">License (MIT)</a></li>
         <li><a href="https://heyitsmejosh.com">Portfolio</a></li>
         <li><a href="#top">Back to top</a></li>
       </ul>

@@ -1,7 +1,7 @@
 <img src="icon.svg" width="80" style="border-radius:18px">
 
 # Healstack
-![version](https://img.shields.io/badge/version-v2.3.5-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fhealstack-black?logo=github)](https://github.com/nulljosh/healstack)
+![version](https://img.shields.io/badge/version-v2.3.5-blue) ![license](https://img.shields.io/badge/license-MIT-green) [![GitHub](https://img.shields.io/badge/GitHub-nulljosh%2Fhealstack-black?logo=github)](https://github.com/nulljosh/intake)
 
 **Live:** https://healstack.heyitsmejosh.com
 

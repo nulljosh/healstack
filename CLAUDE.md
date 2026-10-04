@@ -3,6 +3,8 @@ v2.4.0
 
 Renamed from Dose 2026-07-01 (Dose, Balm, Tonic, and several others all taken on the App Store, Healstack cleared). GitHub repo renamed to nulljosh/healstack, domain moved to healstack.heyitsmejosh.com. Bundle IDs, App Group, and URL scheme (dose://) intentionally left as `dose` to avoid re-provisioning/App Store relinking.
 
+Renaming to Intake, started 2026-10-04. Done: local folder `~/Documents/Code/intake` and GitHub repo `nulljosh/intake`. Not yet: the App Store name (locked while the Mac build is in review, availability unconfirmed), the in-app display name, the web brand text, the domain and the Cloudflare Pages project, which all still say Healstack.
+
 ## Shipped (2026-06-28)
 - [x] ToS checkbox required on register tab, `src/pages/Auth.jsx`, `/tos.html`
 - [x] GitHub Sign In button via Supabase OAuth

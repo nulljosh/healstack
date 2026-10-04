@@ -23,5 +23,5 @@ QA the Healstack landing page and app until A+ quality. Each pass: run tests and
 ## Restart prompt
 
 ```
-/loop QA the Healstack landing page and app (~/Documents/Code/healstack) until A+ quality: spotless visuals and every line sound. Each pass: run tests+build, record the live landing and app (record-web / headless, no Chrome), fix real bugs, redeploy, re-verify. No subagent fan-out, no em dashes, no emojis, portfolio vibe design rules from CLAUDE.md.
+/loop QA the Healstack landing page and app (~/Documents/Code/intake) until A+ quality: spotless visuals and every line sound. Each pass: run tests+build, record the live landing and app (record-web / headless, no Chrome), fix real bugs, redeploy, re-verify. No subagent fan-out, no em dashes, no emojis, portfolio vibe design rules from CLAUDE.md.
 ```
