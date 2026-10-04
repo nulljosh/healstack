@@ -24,6 +24,10 @@ targets:
     sources:
       - path: .
         excludes:
+          - '*.md'
+          - 'ExportOptions*.plist'
+          - 'icon.svg'
+          - 'fastlane'
           - '*.xcodeproj'
           - '*.yml'
           - .git
@@ -74,6 +78,10 @@ targets:
     sources:
       - path: .
         excludes:
+          - '*.md'
+          - 'ExportOptions*.plist'
+          - 'icon.svg'
+          - 'fastlane'
           - '*.xcodeproj'
           - '*.yml'
           - .git
