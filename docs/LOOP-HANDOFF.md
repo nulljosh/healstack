@@ -14,8 +14,8 @@ QA the Healstack landing page and app until A+ quality. Each pass: run tests and
 
 ## Known blockers (open roadmap items)
 
-1. Git history contains old seeded profile (backup at ~/Documents/healstack-pre-scrub.bundle, script at ~/Documents/Code/healstack-scrub.sh, permission-blocked for agent).
-2. Existing accounts in dose_profiles table still hold old seeded profile (DB cleanup permission-blocked).
+1. Git history was scrubbed and force-pushed on 2026-10-04, tag included. A fresh clone is clean. GitHub may still serve the old commits by direct link until Support purges them. Delete ~/Documents/healstack-pre-scrub.bundle once satisfied.
+2. No database cleanup needed: the only row in dose_profiles is Joshua's own account.
 3. App Store name rename to "Intake" was Joshua's pick, but submission is in review so name field is locked until review clears.
 4. Three-tab layout exists only on web; native Swift apps still have old layout (port not started).
 5. macOS 2.3.5 text cut-off bug noted in Resolution Center (not yet reproduced locally).
