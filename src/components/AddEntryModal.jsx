@@ -69,7 +69,7 @@ export default function AddEntryModal({ onAdd, onClose }) {
         <div className="modal-handle" />
         <div className="modal-header">
           <h2 style={{ fontSize: '1.35rem', margin: 0 }}>Log a Dose</h2>
-          <button className="modal-close" onClick={onClose} aria-label="Close modal">\u00d7</button>
+          <button className="modal-close" onClick={onClose} aria-label="Close modal">×</button>
         </div>
 
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>

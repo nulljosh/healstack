@@ -112,6 +112,14 @@ const FEATURES = [
   },
 ];
 
+const SHOWCASE = [
+  { shot: 'summary', kicker: 'Summary', title: 'Your day on one screen.', body: 'Pin the numbers you care about. Heart rate, sleep, steps. Your active stack sits right under them.', alt: 'Summary screen with pinned heart rate, sleep and steps' },
+  { shot: 'interactions', kicker: 'Interactions', title: 'Check before you take it.', body: 'Pick two or more substances and see how they mix. You get the warning before the dose, not after.', alt: 'Interaction checker' },
+  { shot: 'insights', kicker: 'Insights', title: 'See what actually works.', body: 'A heatmap of when you dose, what you use most, and how your body numbers move on the days you take it.', alt: 'Insights screen with usage heatmap' },
+  { shot: 'library', kicker: 'Library', title: '200 substances, explained.', body: 'Dosing ranges, timing and harm reduction notes for every entry. Search it like a reference book.', alt: 'Substance library' },
+  { shot: 'sharing', kicker: 'Sharing', title: 'Hand it to your doctor.', body: 'Send a summary, print it, or export the whole log. Nothing leaves your device until you tap.', alt: 'Sharing screen' },
+];
+
 export default function Landing({ onGetStarted }) {
   const wallRef = useRef(null);
   const [featuresRef, featuresIn] = useRevealOnScroll();
@@ -210,12 +218,12 @@ export default function Landing({ onGetStarted }) {
         <div style={{ position: 'relative', zIndex: 2, display: 'flex', justifyContent: 'center', minWidth: 0 }}>
           <div style={{ display: 'flex', gap: 'clamp(0.5rem, 2vw, 1rem)', width: '100%', maxWidth: 376, justifyContent: 'center' }}>
             <img
-              src="/screenshots/iPhone-home.png"
+              src="/screenshots/web-summary.png"
               alt="Healstack dashboard"
               style={{ width: '100%', maxWidth: 180, minWidth: 0, height: 'auto', borderRadius: 28, border: '1px solid var(--border)' }}
             />
             <img
-              src="/screenshots/iPhone-insights.png"
+              src="/screenshots/web-insights.png"
               alt="Healstack insights"
               style={{ width: '100%', maxWidth: 180, minWidth: 0, height: 'auto', borderRadius: 28, border: '1px solid var(--border)', transform: 'translateY(20px)' }}
             />
@@ -244,6 +252,20 @@ export default function Landing({ onGetStarted }) {
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Showcase: one real screen per feature */}
+      <section style={{ maxWidth: 960, margin: '0 auto', padding: SECTION_PAD }}>
+        {SHOWCASE.map((f, i) => (
+          <div key={f.shot} className="showcase-row" style={{ display: 'flex', flexWrap: 'wrap', flexDirection: i % 2 ? 'row-reverse' : 'row', alignItems: 'center', justifyContent: 'center', gap: 'clamp(1.5rem, 6vw, 4rem)', marginBottom: 'clamp(3rem, 8vw, 5rem)' }}>
+            <img src={`/screenshots/web-${f.shot}.png`} alt={f.alt} loading="lazy" width="260" height="563" style={{ width: 260, maxWidth: '70vw', height: 'auto', borderRadius: 32, border: '1px solid var(--border)' }} />
+            <div style={{ flex: '1 1 280px', maxWidth: 400 }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: 'var(--accent)', marginBottom: '0.75rem' }}>{f.kicker}</div>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 4vw, 2rem)', fontWeight: 600, margin: '0 0 0.75rem', letterSpacing: '-0.02em', lineHeight: 1.15 }}>{f.title}</h2>
+              <p style={{ fontSize: '1rem', lineHeight: 1.6, color: 'var(--text-secondary)', margin: 0 }}>{f.body}</p>
+            </div>
+          </div>
+        ))}
       </section>
 
       {/* Platforms */}

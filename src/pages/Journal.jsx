@@ -110,7 +110,7 @@ export default function Journal() {
               <LogEntry entry={entry} onDelete={handleDelete} />
               {deleteConfirm === entry.id && (
                 <div className="delete-tooltip" role="alert">
-                  Tap \u00d7 again to confirm delete
+                  Tap × again to confirm delete
                 </div>
               )}
             </div>

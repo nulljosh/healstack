@@ -52,7 +52,7 @@ export default function LogEntry({ entry, onDelete }) {
       </div>
       {onDelete && (
         <button className="btn-icon" onClick={() => onDelete(entry.id)} aria-label="Delete entry">
-          \u00d7
+          ×
         </button>
       )}
     </div>

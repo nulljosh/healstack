@@ -152,7 +152,7 @@ export default function Insights() {
                         <div className="bar-fill" style={{ width: `${pct}%` }} />
                       </div>
                       <div style={{ fontSize: '0.78rem', color: 'var(--text-secondary)', width: 28, textAlign: 'right', flexShrink: 0 }}>
-                        {count}\u00d7
+                        {count}×
                       </div>
                     </div>
                   );

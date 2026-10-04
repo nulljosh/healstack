@@ -74,7 +74,7 @@ function InsightCard({ insight, getName }) {
       marginBottom: 8,
     }}>
       <span style={{ color, flexShrink: 0, marginTop: 1 }}>{iconMap[insight.type]}</span>
-      <span style={{ fontSize: '0.85rem', lineHeight: 1.5, color: 'var(--text-primary)' }}>{text}</span>
+      <span style={{ fontSize: '0.85rem', lineHeight: 1.5, color: 'var(--text-primary)' }}>{text[0].toUpperCase() + text.slice(1)}</span>
     </div>
   );
 }

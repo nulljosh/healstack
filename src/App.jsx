@@ -69,11 +69,11 @@ function AppShell({ theme, setTheme }) {
           <Route path="/sharing" element={<Sharing />} />
           <Route path="/substances" element={<Substances />} />
           <Route path="/substances/:id" element={<SubstanceDetail />} />
-          <Route path="/interactions" element={<Substances defaultTab="interactions" />} />
+          <Route path="/interactions" element={<Substances key="interactions" defaultTab="interactions" />} />
           <Route path="/insights" element={<Insights />} />
           <Route path="/body" element={<Body />} />
           <Route path="/biometrics" element={<Biometrics />} />
-          <Route path="/health" element={<Biometrics defaultTab="health" />} />
+          <Route path="/health" element={<Biometrics key="health" defaultTab="health" />} />
           <Route path="/bodywork" element={<Bodywork />} />
           <Route path="/feet" element={<Feet />} />
           <Route path="/hands" element={<Hands />} />
