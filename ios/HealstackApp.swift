@@ -143,6 +143,7 @@ struct HealstackApp: App {
             }
             } // end auth check
             } // end Group
+            .formStyle(.grouped) // macOS defaults to a two-column form that clipped labels in sheets (4, 2.3.5)
             .preferredColorScheme(rawTheme == "dark" ? .dark : rawTheme == "light" ? .light : nil)
             .onOpenURL { url in
                 Task { try? await supabaseClient.auth.session(from: url) }

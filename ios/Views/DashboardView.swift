@@ -220,12 +220,15 @@ struct DashboardView: View {
             }
             .sheet(isPresented: $showAddDose) {
                 AddDoseSheet(dataStore: dataStore)
+                    .macSheetSize()
             }
             .sheet(isPresented: $showReminders) {
                 RemindersView(notificationService: notificationService)
+                    .macSheetSize()
             }
             .sheet(isPresented: $showSettings) {
                 SettingsView(dataStore: dataStore, syncService: syncService, authService: authService)
+                    .macSheetSize()
             }
         }
     }
