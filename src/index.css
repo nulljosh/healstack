@@ -1697,3 +1697,7 @@ footer.lp-foot .foot-rule > :last-child { order: 2; }
 
 /* Light theme is white, not the portfolio cream. Dark keeps the shared tokens. */
 :root:not([data-theme="dark"]) { --bg: #ffffff; --bg2: #f5f5f7; --color-code-bg: #ececef; --border: #e5e5ea; --border2: #ededf0; }
+
+/* Blue accent to match the icon. */
+:root { --clay: #007aff; --clay-deep: #0062cc; --link: #0066d6; }
+:root[data-theme="dark"] { --clay: #0a84ff; --clay-deep: #0a84ff; --link: #0a84ff; --accent: #0a84ff; }

@@ -153,12 +153,7 @@ export default function Landing({ onGetStarted }) {
       }}>
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0.9rem clamp(1.25rem, 4vw, 1.5rem)', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', fontSize: '1.05rem', fontWeight: 700, letterSpacing: '-0.01em' }}>
-            <div style={{
-              width: 32, height: 32, borderRadius: 8, background: 'var(--accent)', flexShrink: 0,
-              display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff',
-            }}>
-              <Mark i={0} size={18} />
-            </div>
+            <img src="/icon.svg" alt="" width="32" height="32" style={{ flexShrink: 0 }} />
             Healstack
           </div>
           <button

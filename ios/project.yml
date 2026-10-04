@@ -22,11 +22,16 @@ targets:
     type: application
     platform: iOS
     sources:
+      # Icon Composer document, Liquid Glass layers. AppIcon.appiconset stays as the flat fallback.
+      - path: Healstack.icon
+        type: file
+        buildPhase: resources
       - path: .
         excludes:
           - '*.md'
           - 'ExportOptions*.plist'
           - 'icon.svg'
+          - 'Healstack.icon'
           - 'fastlane'
           - '*.xcodeproj'
           - '*.yml'
@@ -76,11 +81,16 @@ targets:
     type: application
     platform: macOS
     sources:
+      # Icon Composer document, Liquid Glass layers. AppIcon.appiconset stays as the flat fallback.
+      - path: Healstack.icon
+        type: file
+        buildPhase: resources
       - path: .
         excludes:
           - '*.md'
           - 'ExportOptions*.plist'
           - 'icon.svg'
+          - 'Healstack.icon'
           - 'fastlane'
           - '*.xcodeproj'
           - '*.yml'
